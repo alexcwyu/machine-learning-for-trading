@@ -1,5 +1,8 @@
 # Machine Learning for Trading - Documentation
 
+> **Last Updated**: 2026-04-06T17:20:03Z  \
+> **Git Hash**: `9f5faa5`
+
 > Comprehensive guide to Stefan Jansen's ML for Algorithmic Trading, 2nd Edition.
 > Over 150 Jupyter notebooks covering the full ML4T workflow from data sourcing to strategy backtesting.
 
