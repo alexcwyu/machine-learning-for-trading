@@ -1,0 +1,469 @@
+# ML4T 3rd Edition - Weekly External Workflow (Tier 2)
+#
+# Runs notebooks tagged `tier: weekly` in tests/overrides.yaml - these have
+# external dependencies (IB Gateway, OKX, chromadb, real LLM APIs, real HTTP)
+# that aren't available in the per-commit Tier 1 workflow.
+#
+# Routing: ML4T_TEST_TIER=weekly env var → conftest tier-skip allows weekly NBs
+# to run (per-commit run skips them automatically with the inverse rule).
+#
+# Today most still skip via existing `skip: true` because the underlying
+# infrastructure (IB Gateway, OKX, etc.) isn't provisioned yet. The job's
+# purpose is to exercise the routing/flake-retry/issue-opening plumbing so
+# that when fixtures land (Steps 4-9 of the test-infra coverage plan) the
+# weekly job auto-picks them up with no workflow change.
+#
+# Failure handling: each job hands its JUnit report to
+# .github/scripts/weekly_issues.py, which files, reopens and CLOSES one issue per
+# failing notebook or source, keyed on the id in the title. A notebook that
+# executes and passes closes its issue, so an open `weekly-flake` issue always
+# means a standing failure rather than a fixed one nobody retired. A skip is not
+# a pass, a missing report is not a pass, and an unreadable issue list is not a
+# pass: none of them closes anything and the last two fail the step.
+#
+# Retries are bounded and per notebook: `reruns: N` in tests/overrides.yaml,
+# applied by tests/conftest.py as a `flaky` marker with a 30-second delay.
+# 22_rag_financial_research/02_domain_embeddings_comparison carries `reruns: 2`,
+# so at most three attempts.
+#
+# Checkpoint downloads are cached on the pinned revisions in
+# .github/weekly-hf-models.yaml, never on a schedule. The cache is restored and saved
+# by the notebook job on Monday and touched by a restore-only job on Wednesday and
+# Friday, because GitHub removes an entry nobody has accessed in over seven days and a
+# Monday-only workflow sits exactly on that boundary.
+
+name: Weekly External
+
+on:
+  schedule:
+    # Monday runs the notebooks. Wednesday and Friday only restore the checkpoint
+    # cache, so its last-accessed date never reaches seven days. GitHub's documented
+    # policy removes "cache entries that have not been accessed in over 7 days", and a
+    # weekly workflow plus the scheduler's own delay lands on or past that; a single
+    # missed week was enough to throw the 1.659 GB away and pay for it again. With
+    # three days a week, dropping any one scheduled run still leaves a maximum gap of
+    # five days. tests/test_weekly_cache_contract.py computes that from these crons.
+    - cron: '0 6 * * 1'   # Monday 06:00 UTC - notebooks, and the cache save
+    - cron: '0 6 * * 3'   # Wednesday 06:00 UTC - restore only
+    - cron: '0 6 * * 5'   # Friday 06:00 UTC - restore only
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "full: run the weekly notebooks. touch: only restore the checkpoint cache."
+        type: choice
+        options: [full, touch]
+        default: full
+      test_filter:
+        description: "Optional pytest -k filter to narrow scope (mode: full)"
+        type: string
+        default: ""
+
+env:
+  ML4T_TEST_TIER: weekly
+  ML4T_DATA_PATH: ${{ github.workspace }}/test-data/data
+  ML4T_OUTPUT_DIR: /tmp/ml4t-test-output
+  MPLBACKEND: Agg
+  PLOTLY_RENDERER: json
+
+jobs:
+  weekly-chapters:
+    name: weekly-chapters
+    # Only Monday's schedule runs the notebooks; the midweek crons exist for the cache.
+    if: >-
+      github.event.schedule == '0 6 * * 1'
+      || (github.event_name == 'workflow_dispatch' && inputs.mode != 'touch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    container:
+      image: ml4t/ml4t:latest
+    permissions:
+      contents: read
+      issues: write
+    env:
+      # Under the job container `~` is /root, which actions/cache can save but which
+      # nothing else in this file names. A path under the bind-mounted workspace is the
+      # one both the container and the cache action agree on.
+      HF_HOME: ${{ github.workspace }}/.hf-cache
+      # HF_HUB_CACHE is set explicitly, not left to default from HF_HOME, because
+      # 05_10k_rag_assistant reads `os.environ["HF_HUB_CACHE"]` itself and passes it to
+      # HuggingFaceEmbedding as `cache_folder`. Unset, that notebook caches somewhere
+      # this job does not save.
+      HF_HUB_CACHE: ${{ github.workspace }}/.hf-cache/hub
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    steps:
+      - name: Install git
+        run: |
+          # A transient apt mirror failure used to kill the whole job.
+          for attempt in 1 2 3; do
+            apt-get update -qq && apt-get install -y -qq git git-lfs openssh-client >/dev/null && exit 0
+            echo "apt-get failed (attempt $attempt of 3); retrying in $((attempt * 15))s"
+            sleep $((attempt * 15))
+          done
+          echo "::error::apt-get could not install git after three attempts"
+          exit 1
+
+      - uses: actions/checkout@v6
+
+      - name: Checkout test data
+        uses: actions/checkout@v6
+        with:
+          repository: ml4t/third-edition-test-data
+          ref: ci
+          path: test-data
+          ssh-key: ${{ secrets.TEST_DATA_DEPLOY_KEY }}
+          lfs: false
+
+      - name: Record the fixture this job read
+        run: |
+          # tee, not a plain redirect: the summary is where a reader looks, and the log is
+          # where this is greppable and where a broken command would be visible at all. A
+          # step whose whole output goes somewhere no API exposes cannot be checked.
+          printf '%s\n' "test-data $(git -C test-data rev-parse HEAD)" \
+            "$(git -C test-data log -1 --format='%cs %s')" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      # Chapter 22 pulls its embedding checkpoints at run time, and this job set no
+      # cache directory and cached nothing, so every Monday re-downloaded them inside a
+      # fresh container. 02_domain_embeddings_comparison pulls BAAI/bge-large-en-v1.5,
+      # about 1.3 GB, and it is the only weekly notebook that fails: in run 37320316180
+      # it raised "couldn't connect to huggingface.co" at cell 27 while
+      # 03_hybrid_retrieval (31 s) and 05_10k_rag_assistant (48 s) pulled their ~90 MB
+      # models and passed in the same job. That is a throttled shared-IP runner losing a
+      # long transfer, not an unreachable host, which is why passing HF_TOKEN on
+      # 2026-09-12 did not help.
+      #
+      # The key is a digest of the pinned revisions in .github/weekly-hf-models.yaml,
+      # with no date in it, so a warm cache stays warm until a pin moves. A weekly
+      # bucket would throw ~1.6 GB away every Monday and pay for it again, which is the
+      # cost this exists to remove. The manifest cannot drift from the notebooks
+      # quietly: tests/test_weekly_hf_manifest.py reads the pins out of the notebook
+      # sources and fails when they disagree.
+      #
+      # The prefetch is restricted to the files the loaders open, and that restriction
+      # is what makes the cache affordable. Unrestricted, these four repositories are
+      # 6.287 GB: each ships the same weights as safetensors, as pytorch_model.bin and
+      # as a stack of ONNX and OpenVINO variants. The selection is 1.659 GB. Measured
+      # 2026-10-09 against the Hub's file metadata at the four pinned revisions.
+      #
+      # Budget, measured the same day with `gh api .../actions/cache/usage`:
+      # 2,654,779,421 bytes across 7 entries, which is 2.655 GB decimal and 2.473 GiB,
+      # against a documented 10 GB limit. The largest single entry is hf-ch11-12 at
+      # 814,967,790 bytes. Adding the 1.659 GB selection under one key rather than one
+      # per week lands near 4.3 GB. The unrestricted 6.287 GB would have reached about
+      # 8.94 GB, under the limit rather than over it: the reason to select files is the
+      # three or four redundant copies of the same weights, not a breached cap.
+      # Headroom is thinner than it looks because test.yml's hf-ch* keys carry an ISO
+      # week, so last week's copies sit beside this week's until they age out.
+      # Over the limit GitHub evicts least-recently-used, and that eviction is silent;
+      # nothing here can make a cache survive storage pressure.
+      - name: HuggingFace cache key
+        id: hfkey
+        run: |
+          echo "key=$(python .github/scripts/hf_prefetch.py key)" >> "$GITHUB_OUTPUT"
+
+      # Restore and save are separate actions deliberately. actions/cache declares
+      # `post-if: success()`, so its save runs only when the job succeeded: on a red
+      # weekly run - which is the state this branch exists to fix - a cold cache was
+      # populated by the prefetch below and then thrown away, and the next run paid for
+      # the 1.659 GB again. actions/cache/save placed straight after the prefetch
+      # persists it before a notebook can fail.
+      # The path is relative and literal on purpose. actions/cache hashes the `path`
+      # input into the cache version, and an entry is addressed by key AND version, so
+      # `${{ github.workspace }}` here would have keyed this on /__w/... inside the
+      # container while a host-based touch job keyed on /home/runner/work/... and
+      # missed every time. A relative path is the same string in both.
+      - name: Restore the HuggingFace checkpoints
+        id: hfcache
+        uses: actions/cache/restore@v4
+        with:
+          path: .hf-cache
+          key: hf-weekly-${{ steps.hfkey.outputs.key }}
+
+      # Fetch the pinned revisions before pytest, so a cold cache downloads once here
+      # with a visible failure instead of inside a notebook cell, and a warm cache makes
+      # this a no-op. The notebooks pin the same revisions, so what is prefetched is
+      # what they resolve.
+      - name: Prefetch the pinned checkpoints
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python .github/scripts/hf_prefetch.py fetch
+
+      # Only on a miss: saving an existing key is a conflict, and on a hit there is
+      # nothing new to store. No `always()` and no dependence on the pytest outcome,
+      # because this step runs before pytest does.
+      - name: Save the HuggingFace checkpoints
+        if: steps.hfcache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .hf-cache
+          key: hf-weekly-${{ steps.hfkey.outputs.key }}
+
+      - name: Report the warm cache
+        run: |
+          # A cold run and a warm run are indistinguishable in this job's log
+          # otherwise, and "the cache works" is the claim the step above rests on.
+          printf 'hf cache %s\n' "$(du -sh "$HF_HOME" 2>/dev/null | cut -f1)" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Seed case study intermediates
+        run: |
+          mkdir -p "$ML4T_OUTPUT_DIR"
+          if [ -d test-data/intermediates ]; then
+            cp -r test-data/intermediates/* "$ML4T_OUTPUT_DIR"/
+          fi
+
+      - name: Run weekly chapter notebooks
+        id: pytest_chapters
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+          TEST_FILTER_INPUT: ${{ github.event.inputs.test_filter }}
+          # NO-SPEND POLICY: only FREE providers are wired here. Billed APIs
+          # (OpenAI, OKX authenticated, Databento) are intentionally NOT passed,
+          # so any notebook needing them skips rather than incurs a charge.
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+          # A HuggingFace token is free and buys a per-account rate limit instead of
+          # the per-IP one a shared runner pool exhausts, so it is inside the policy
+          # above. test.yml started passing it on 2026-09-12 and this workflow was
+          # missed; 22_rag_financial_research/02_domain_embeddings_comparison then
+          # failed here on 2026-09-14 with "couldn't connect to huggingface.co",
+          # which is what transformers raises for a 429 as well as for a real network
+          # failure. An unset secret leaves downloads anonymous, which is the state
+          # this job was already in, so the change cannot make it worse.
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          set +e
+          # Build -k via positional params so a multi-word filter (e.g.
+          # "foo or bar") stays a single pytest argument instead of being
+          # word-split. POSIX sh has no arrays and this container's default
+          # shell is dash, so "$@" is the portable stand-in for an array.
+          set --
+          if [ -n "${TEST_FILTER_INPUT:-}" ]; then
+            set -- -k "${TEST_FILTER_INPUT}"
+          fi
+          # Public repo: chapter notebooks only. Case-study pipeline tests need
+          # gated results/registries that aren't shipped, so they're excluded.
+          python -m pytest tests/test_chapter_notebooks.py \
+            -v --tb=short -m weekly "$@" \
+            --junitxml=junit-weekly.xml
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Upload junit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-weekly
+          path: junit-weekly.xml
+          retention-days: 30
+
+      - name: File, reopen and close `weekly-flake` issues
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Parsing and the issue transitions live in a tested module, not in this
+          # file. The inline regex this replaces read the `name="` inside
+          # `classname="`, so every failure was filed under the test class and no
+          # issue named the notebook. The module also reports what PASSED, which is
+          # what closes an issue, and exits non-zero rather than treating a missing
+          # report or an unreadable issue list as a clean week.
+          python .github/scripts/weekly_issues.py \
+            --junit junit-weekly.xml \
+            --id-style notebook \
+            --prefix weekly-flake \
+            --repo "$GITHUB_REPOSITORY" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --intro 'The weekly external workflow failed to execute this notebook.'
+
+      - name: Fail job if pytest failed
+        if: steps.pytest_chapters.outputs.exit_code != '0'
+        run: |
+          echo "Weekly pytest exited with code ${{ steps.pytest_chapters.outputs.exit_code }}"
+          exit 1
+
+  # ---------------------------------------------------------------------------
+  # Phase 3 - live external drift smoke.
+  #
+  # One tiny REAL pull per free data source (tests/test_external_drift.py, marked
+  # `drift`). Catches upstream provider/schema drift: when a source moves,
+  # renames a file, or changes its payload shape, the matching test fails and we
+  # file a deduped issue. No billed APIs - key-gated sources (FRED, OANDA) skip
+  # when their free key is absent; geo-restricted sources (Kalshi/Polymarket)
+  # skip when blocked. Flake-tolerant via pytest-rerunfailures when available.
+  # ---------------------------------------------------------------------------
+  weekly-drift:
+    name: weekly-drift
+    # Same routing as weekly-chapters: once a week, not on the cache-touch crons.
+    if: >-
+      github.event.schedule == '0 6 * * 1'
+      || (github.event_name == 'workflow_dispatch' && inputs.mode != 'touch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: ml4t/ml4t:latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Install git
+        run: |
+          # A transient apt mirror failure used to kill the whole job.
+          for attempt in 1 2 3; do
+            apt-get update -qq && apt-get install -y -qq git >/dev/null && exit 0
+            echo "apt-get failed (attempt $attempt of 3); retrying in $((attempt * 15))s"
+            sleep $((attempt * 15))
+          done
+          echo "::error::apt-get could not install git after three attempts"
+          exit 1
+
+      - uses: actions/checkout@v6
+
+      - name: Run external drift smoke
+        id: pytest_drift
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+          # NO-SPEND POLICY: only FREE keys. Billed APIs stay unset → their
+          # drift tests skip rather than charge.
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+        run: |
+          set +e
+          # utils.config requires a .env file to exist; create a minimal one and
+          # point the data path at the repo's own data/ dir (no test-data here).
+          printf 'ML4T_PATH=%s\nML4T_DATA_PATH=%s/data\n' \
+            "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE" > .env
+          # Flake tolerance only if pytest-rerunfailures is installed in the image.
+          RERUN_ARGS=""
+          if python -c "import pytest_rerunfailures" 2>/dev/null; then
+            RERUN_ARGS="--reruns 2 --reruns-delay 30"
+          fi
+          # RERUN_ARGS holds two flags and their values and has to split into four
+          # words. Quoting it passes "--reruns 2 --reruns-delay 30" as one argument,
+          # which pytest rejects, so the unquoted expansion is the point.
+          # shellcheck disable=SC2086
+          python -m pytest tests/test_external_drift.py -m drift \
+            -v --tb=short $RERUN_ARGS \
+            --junitxml=junit-drift.xml
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Upload junit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-drift
+          path: junit-drift.xml
+          retention-days: 30
+
+      - name: File, reopen and close `external-drift` issues
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Parsing and the issue transitions live in a tested module, not in this
+          # file. The inline regex this replaces read the `name="` inside
+          # `classname="`, so every failure was filed under the test class and no
+          # issue named the notebook. The module also reports what PASSED, which is
+          # what closes an issue, and exits non-zero rather than treating a missing
+          # report or an unreadable issue list as a clean week.
+          python .github/scripts/weekly_issues.py \
+            --junit junit-drift.xml \
+            --id-style drift \
+            --prefix external-drift \
+            --repo "$GITHUB_REPOSITORY" \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            --intro 'The weekly external drift smoke failed for this source: an upstream free data provider appears to have moved, renamed a file, or changed its payload schema.'
+
+      - name: Fail job if drift smoke failed
+        if: steps.pytest_drift.outputs.exit_code != '0'
+        run: |
+          echo "Drift smoke exited with code ${{ steps.pytest_drift.outputs.exit_code }}"
+          exit 1
+
+  # ---------------------------------------------------------------------------
+  # Cache retention.
+  #
+  # GitHub "will remove any cache entries that have not been accessed in over 7 days"
+  # (docs: Actions > dependency caching > usage limits and eviction policy). A workflow
+  # that runs only on Monday therefore touches its entry every 168 hours, with the
+  # scheduler's own queueing delay on top, so the checkpoint cache can expire between
+  # two consecutive green runs and a single missed week guarantees it. A stable key and
+  # a working offline load say nothing about remote retention.
+  #
+  # This job restores the same entry, under the identical key and path, on Wednesday
+  # and Friday. It is a real restore and not `lookup-only`, because a lookup is not
+  # documented to update the last-accessed date and nothing here would prove it did.
+  # It runs no notebooks, downloads no models and saves no cache, so the only cost is
+  # the archive download.
+  #
+  # A miss is reported and does not fail the job: it is the normal state after a pin
+  # moves, and Monday repopulates. Nothing here protects the entry from storage-pressure
+  # eviction, which deletes by last-accessed date regardless of how recent that is.
+  # ---------------------------------------------------------------------------
+  hf-cache-touch:
+    name: hf-cache-touch
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule != '0 6 * * 1')
+      || (github.event_name == 'workflow_dispatch' && inputs.mode == 'touch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # The same image as weekly-chapters, which is not cosmetic. An entry is addressed
+    # by its key and by a version hashed from the `path` input and the compression
+    # method, so this job has to agree with the job that saved the entry on both. A
+    # host runner resolves a workspace path differently and may select a different
+    # compressor, and either difference turns every midweek restore into a miss on an
+    # entry that is sitting there.
+    container:
+      image: ml4t/ml4t:latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Install git
+        run: |
+          # A transient apt mirror failure used to kill the whole job.
+          for attempt in 1 2 3; do
+            apt-get update -qq && apt-get install -y -qq git >/dev/null && exit 0
+            echo "apt-get failed (attempt $attempt of 3); retrying in $((attempt * 15))s"
+            sleep $((attempt * 15))
+          done
+          echo "::error::apt-get could not install git after three attempts"
+          exit 1
+
+      - uses: actions/checkout@v6
+
+      - name: HuggingFace cache key
+        id: hfkey
+        run: |
+          echo "key=$(python .github/scripts/hf_prefetch.py key)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore the HuggingFace checkpoints
+        id: hfcache
+        uses: actions/cache/restore@v4
+        with:
+          path: .hf-cache
+          key: hf-weekly-${{ steps.hfkey.outputs.key }}
+
+      - name: Report what the restore touched
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CACHE_KEY: hf-weekly-${{ steps.hfkey.outputs.key }}
+          CACHE_HIT: ${{ steps.hfcache.outputs.cache-hit }}
+        run: |
+          set -eu
+          if [ "$CACHE_HIT" != "true" ]; then
+            echo "::warning::no cache under $CACHE_KEY; Monday's run will repopulate it"
+            printf 'hf cache MISS on %s\n' "$CACHE_KEY" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # du, not the action's own word for it: a restore that unpacked nothing and a
+          # restore that unpacked 1.6 GB both report cache-hit true.
+          printf 'hf cache HIT on %s, %s on disk\n' \
+            "$CACHE_KEY" "$(du -sh .hf-cache | cut -f1)" \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+          # The measurement that decides whether this job does its job. If
+          # last_accessed_at does not move to today, a restore does not count as an
+          # access and this approach to retention is wrong rather than unproven.
+          # python and urllib, because this image ships neither gh nor curl.
+          python .github/scripts/cache_entry.py --repo "$GITHUB_REPOSITORY" \
+            --key "$CACHE_KEY" | tee -a "$GITHUB_STEP_SUMMARY"
