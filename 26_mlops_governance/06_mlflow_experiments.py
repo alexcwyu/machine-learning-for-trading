@@ -567,7 +567,7 @@ def log_catalog_to_mlflow(catalog: pd.DataFrame, max_runs: int = MAX_MLFLOW_RUNS
 
 
 leader_hashes = set(best_validation["training_hash"])
-leaders = run_catalog[run_catalog["training_hash"].isin(leader_hashes)]
+leaders = best_validation.copy()
 remaining = run_catalog[~run_catalog["training_hash"].isin(leader_hashes)].sort_values(
     "ic_mean", ascending=False
 )
