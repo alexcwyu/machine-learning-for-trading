@@ -1,0 +1,11 @@
+$ uv pip install --python /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0 esig==1.0.0
+Using Python 3.15.0 environment at: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-esig-native315
+Resolved 4 packages in 417ms
+   Building roughpy @ file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0
+      Built roughpy @ file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0
+Prepared 1 package in 2m 48s
+Installed 4 packages in 15ms
+ + esig==1.0.0
+ + numpy==2.5.4
+ + pyrecombine==1.0.1
+ + roughpy==0.3.0 (from file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0)
