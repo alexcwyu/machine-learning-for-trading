@@ -554,6 +554,18 @@
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-crypto-model-fixtures.py</code></td>
 </tr>
 <tr>
+<td>original-etf-completed-strategy-declaration-contracts-corrected-existing-scope</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">29.42s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis] tests/test_skip_blockers.py tests/test_overrides_schema.py</code></td>
+</tr>
+<tr>
+<td>original-etf-completed-strategy-declaration-contracts</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.77s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis] tests/test_skip_blockers.py tests/test_overrides.py</code></td>
+</tr>
+<tr>
 <td>original-etf-equality-contracts</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">12.18s</td>
@@ -566,10 +578,22 @@
 <td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-etf-exact-provider/data .venv/bin/python -m pytest -vv tests/test_etf_baseline_parity.py</code></td>
 </tr>
 <tr>
+<td>original-etf-holdout-strategy-producers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">37.15s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-etf-holdout-strategy.py</code></td>
+</tr>
+<tr>
 <td>original-financial-phrasebank-ci-builder</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.13s</td>
 <td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset financial_phrasebank</code></td>
+</tr>
+<tr>
+<td>original-firm-canonical-causal-producer</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">75.52s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-canonical-causal.py</code></td>
 </tr>
 <tr>
 <td>original-firm-canonical-holdout-strategy-producers</td>
@@ -636,6 +660,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">6.67s</td>
 <td><code>.venv/bin/python -m pytest -vv tests/test_artifact_digest_encoding.py tests/test_holdout_cv_derivation.py tests/test_model_source_identity_versions.py tests/test_registry_lineage.py</code></td>
+</tr>
+<tr>
+<td>original-genuine-etf-holdout-live-consumers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25.48s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-18_holdout_predictions] tests/test_case_studies.py::test_case_study_pipeline[etfs-19_holdout_backtest] tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis] tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::06_quantconnect_case_study.py] tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::06_quantconnect_case_study.py]</code></td>
 </tr>
 <tr>
 <td>original-itch-genuine-input-existing-cases</td>

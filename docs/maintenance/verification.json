@@ -2113,6 +2113,58 @@
       ".venv/bin/python",
       "-m",
       "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis]",
+      "tests/test_skip_blockers.py",
+      "tests/test_overrides_schema.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 29.42,
+    "step": "original-etf-completed-strategy-declaration-contracts-corrected-existing-scope",
+    "started": 1791785622.340736,
+    "seconds": 29.42,
+    "evidence_record": "machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.json",
+    "original_log": "machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+    "log_sha256": "6b5af7a15881b7e920fe59eaab5a0847d82e90c90e1c9be052d4f9b6abf8793c",
+    "log_bytes": 13142,
+    "outcome_lines": [
+      "================== 79 passed, 7 skipped, 8 warnings in 28.13s =================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis]",
+      "tests/test_skip_blockers.py",
+      "tests/test_overrides.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 4,
+    "elapsed_seconds": 0.77,
+    "step": "original-etf-completed-strategy-declaration-contracts",
+    "started": 1791785606.84339,
+    "seconds": 0.77,
+    "evidence_record": "machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts.json",
+    "original_log": "machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts.log",
+    "log_sha256": "92f899261746280759b27aa558aa98a653cc6f2b008f9bc504ed022d55958d0a",
+    "log_bytes": 878,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
       "-vv",
       "tests/test_etf_baseline_parity.py",
       "tests/test_chapter_notebooks.py::test_chapter_notebook[18_transaction_costs::12_commission_slippage_comparison.py]",
@@ -2159,6 +2211,23 @@
   {
     "command": [
       ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-etf-holdout-strategy.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 37.15,
+    "step": "original-etf-holdout-strategy-producers",
+    "started": 1791785508.379628,
+    "seconds": 37.15,
+    "evidence_record": "machine-learning-for-trading-original-etf-holdout-strategy-producers.json",
+    "original_log": "machine-learning-for-trading-original-etf-holdout-strategy-producers.log",
+    "log_sha256": "64cb10efecb90f3b080d066641a9cea9d7ad5f3f6dc7b4602f4690a140ddcdd8",
+    "log_bytes": 3045,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "tests/create_test_data.py",
       "--source",
       "data",
@@ -2177,6 +2246,23 @@
     "original_log": "machine-learning-for-trading-original-financial-phrasebank-ci-builder.log",
     "log_sha256": "fc796864f229fc443198ec25abdc3b87c56d3144a6105d20430583a23bd78213",
     "log_bytes": 733,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-canonical-causal.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 75.52,
+    "step": "original-firm-canonical-causal-producer",
+    "started": 1791785687.336962,
+    "seconds": 75.52,
+    "evidence_record": "machine-learning-for-trading-original-firm-canonical-causal-producer.json",
+    "original_log": "machine-learning-for-trading-original-firm-canonical-causal-producer.log",
+    "log_sha256": "596920cf61546bc78da5a2b2a5f6b7f9aae4cdcfc1450b91059a266e15334d60",
+    "log_bytes": 1356,
     "outcome_lines": []
   },
   {
@@ -2424,6 +2510,35 @@
     "log_bytes": 7094,
     "outcome_lines": [
       "============================== 53 passed in 4.91s =============================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_case_studies.py::test_case_study_pipeline[etfs-18_holdout_predictions]",
+      "tests/test_case_studies.py::test_case_study_pipeline[etfs-19_holdout_backtest]",
+      "tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::06_quantconnect_case_study.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::06_quantconnect_case_study.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 25.48,
+    "step": "original-genuine-etf-holdout-live-consumers",
+    "started": 1791785555.10149,
+    "seconds": 25.48,
+    "evidence_record": "machine-learning-for-trading-original-genuine-etf-holdout-live-consumers.json",
+    "original_log": "machine-learning-for-trading-original-genuine-etf-holdout-live-consumers.log",
+    "log_sha256": "021b1812d96aaed21418d5ee5400ca8fbc36a2eddfcd07b138d99a4512280658",
+    "log_bytes": 3375,
+    "outcome_lines": [
+      "================== 4 passed, 1 skipped, 8 warnings in 24.28s ==================="
     ]
   },
   {
