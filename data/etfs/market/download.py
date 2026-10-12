@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sys
+from contextlib import contextmanager
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -19,6 +20,32 @@ from utils.downloading import (
     resolve_data_dir,
     resolve_storage_path,
 )
+
+
+@contextmanager
+def exact_equal_close_adjustment():
+    """Preserve Yahoo's adjusted close when an original OHLC value equals close.
+
+    yfinance multiplies OHLC by Adj Close / Close but assigns Adj Close directly
+    to Close. The multiply can round an equal raw low above the adjusted close.
+    Keep its conversion for every unequal value and restore its callable on exit.
+    """
+    import yfinance.utils as yf_utils
+
+    original = yf_utils.auto_adjust
+
+    def adjust(data):
+        adjusted = original(data)
+        for field in ("Open", "High", "Low"):
+            equal_close = data[field].eq(data["Close"])
+            adjusted.loc[equal_close, field] = data.loc[equal_close, "Adj Close"]
+        return adjusted
+
+    yf_utils.auto_adjust = adjust
+    try:
+        yield
+    finally:
+        yf_utils.auto_adjust = original
 
 
 def undo_splits(panel: pl.DataFrame) -> pl.DataFrame:
@@ -236,12 +263,13 @@ def main() -> None:
         print(f"Written: {unadjusted_path}")
         return
 
-    if output_path.exists() and not args.force:
-        stats = manager.update()
-        action = "updated"
-    else:
-        stats = manager.download_all(force=args.force)
-        action = "downloaded"
+    with exact_equal_close_adjustment():
+        if output_path.exists() and not args.force:
+            stats = manager.update()
+            action = "updated"
+        else:
+            stats = manager.download_all(force=args.force)
+            action = "downloaded"
 
     print("Traded (unadjusted) close and volume, for dollar- and share-denominated screens:")
     unadjusted_path = write_unadjusted(manager)
