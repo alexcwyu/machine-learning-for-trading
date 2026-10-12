@@ -26,6 +26,24 @@
 <td><code>.venv/bin/python data/etfs/market/download.py --force --data-path &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-etf-exact-provider/data</code></td>
 </tr>
 <tr>
+<td>bsts-final-root-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.37s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
+<td>bsts-final-root-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.92s</td>
+<td><code>uv run --no-sync python -Werror -c import pathlib,subprocess,py_compile; files=subprocess.check_output(["git","ls-files","*.py"],text=True).splitlines(); [py_compile.compile(f,doraise=True) for f in files if pathlib.Path(f).is_file()]; print(len(files),"tracked Python files compiled")</code></td>
+</tr>
+<tr>
+<td>bsts-original-numpy1-reader-compatible-pyarrow-control</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.92s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-bsts-native312/.venv/bin/python pyarrow&lt;26</code></td>
+</tr>
+<tr>
 <td>build-batch-provenance-final</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">3.0s</td>
@@ -176,6 +194,12 @@
 <td><code>env POLARS_MAX_THREADS=2 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 MPLBACKEND=Agg .venv/bin/python -m pytest -p no:torchtyping -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-09_dl_lstm]</code></td>
 </tr>
 <tr>
+<td>diagnostic-original-bsts-wrong-real-interpreter-rejected</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18.94s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]</code></td>
+</tr>
+<tr>
 <td>dml-original-current-genuine-data</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">36.99s</td>
@@ -186,6 +210,18 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">27.02s</td>
 <td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/machine-learning-for-trading/data uv run --no-sync python data/etfs/market/download.py --data-path &lt;workspace&gt;/machine-learning-for-trading/data</code></td>
+</tr>
+<tr>
+<td>final-bsts-profile-existing-routing-schema-skip-guards</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">31.98s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_pm_helpers.py tests/test_overrides_schema.py tests/test_skip_blockers.py</code></td>
+</tr>
+<tr>
+<td>final-reviewed-original-bsts-native-profile-and-guards</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">151.9s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py] tests/test_pm_helpers.py tests/test_overrides_schema.py tests/test_skip_blockers.py</code></td>
 </tr>
 <tr>
 <td>fred-public-csv-book-alignment</td>
@@ -596,10 +632,28 @@
 <td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]</code></td>
 </tr>
 <tr>
+<td>original-bsts-native-author-profile-compatible-reader</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">76.04s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py</code></td>
+</tr>
+<tr>
 <td>original-bsts-native-author-profile-producer</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">7.47s</td>
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py</code></td>
+</tr>
+<tr>
+<td>original-bsts-routing-before-source-fix</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12.48s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]</code></td>
+</tr>
+<tr>
+<td>original-bsts-routing-repaired-existing-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">119.04s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py] tests/test_pm_helpers.py tests/test_overrides_schema.py tests/test_skip_blockers.py</code></td>
 </tr>
 <tr>
 <td>original-canonical-seeding-affected-consumers</td>
@@ -966,6 +1020,12 @@
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4.56s</td>
 <td><code>uv lock --upgrade --python 3.15</code></td>
+</tr>
+<tr>
+<td>reproducible-original-bsts-native-reader-profile-sync</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.23s</td>
+<td><code>uv sync --project &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-bsts-native312 --python /Users/alex/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12</code></td>
 </tr>
 <tr>
 <td>reviewed-finite-provider-guard-build</td>

@@ -46,6 +46,72 @@
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
     "exit_code": 0,
+    "seconds": 1.37,
+    "check": "bsts-final-root-build",
+    "source_snapshot": {
+      "head": "ae1cd8609036f2130f4fc058b65858e4f749ab57",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-bsts-final-root-build.json",
+    "original_log": "machine-learning-for-trading-bsts-final-root-build.log",
+    "log_sha256": "92aea4768cc8f371ef9d68a31fa622de62b1265900db1509fb2883132ba17d95",
+    "log_bytes": 41965,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-Werror",
+      "-c",
+      "import pathlib,subprocess,py_compile; files=subprocess.check_output([\"git\",\"ls-files\",\"*.py\"],text=True).splitlines(); [py_compile.compile(f,doraise=True) for f in files if pathlib.Path(f).is_file()]; print(len(files),\"tracked Python files compiled\")"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.92,
+    "check": "bsts-final-root-compile",
+    "source_snapshot": {
+      "head": "ae1cd8609036f2130f4fc058b65858e4f749ab57",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-bsts-final-root-compile.json",
+    "original_log": "machine-learning-for-trading-bsts-final-root-compile.log",
+    "log_sha256": "58a8046281fb1e6000683690a8eba4a7ab3d092586eba7f3cf9a099f626194eb",
+    "log_bytes": 425,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-bsts-native312/.venv/bin/python",
+      "pyarrow<26"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 1.92,
+    "step": "bsts-original-numpy1-reader-compatible-pyarrow-control",
+    "started": 1791789173.883573,
+    "seconds": 1.92,
+    "evidence_record": "machine-learning-for-trading-bsts-original-numpy1-reader-compatible-pyarrow-control.json",
+    "original_log": "machine-learning-for-trading-bsts-original-numpy1-reader-compatible-pyarrow-control.log",
+    "log_sha256": "dd14ac9c32a30aa46082e050f74565aed9cb8b85d5bc0b288123671789050b22",
+    "log_bytes": 465,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
     "elapsed_seconds": 3.0,
     "step": "build-batch-provenance-final",
     "started": 1791744623.238882,
@@ -592,6 +658,31 @@
   },
   {
     "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 18.94,
+    "step": "diagnostic-original-bsts-wrong-real-interpreter-rejected",
+    "started": 1791790974.3774002,
+    "seconds": 18.94,
+    "evidence_record": "machine-learning-for-trading-diagnostic-original-bsts-wrong-real-interpreter-rejected.json",
+    "original_log": "machine-learning-for-trading-diagnostic-original-bsts-wrong-real-interpreter-rejected.log",
+    "log_sha256": "cf1e44e4c1e542fb4cac4f115d5ee477405806d5840056e34817b6d9c6423879",
+    "log_bytes": 3196,
+    "outcome_lines": [
+      "======================== 1 failed, 8 warnings in 16.77s ========================"
+    ]
+  },
+  {
+    "command": [
       "env",
       "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
       "ML4T_OUTPUT_DIR=<workspace>/.runtime/maintenance-2026-10-12/mlft-dml-review/intermediates",
@@ -647,6 +738,62 @@
     "log_sha256": "6a203d852cc6c5defd4cc7f676384a64c2f2014249f32a50eaf0c4fbef0e5bfe",
     "log_bytes": 15387,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_pm_helpers.py",
+      "tests/test_overrides_schema.py",
+      "tests/test_skip_blockers.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 31.98,
+    "step": "final-bsts-profile-existing-routing-schema-skip-guards",
+    "started": 1791790379.633773,
+    "seconds": 31.98,
+    "evidence_record": "machine-learning-for-trading-final-bsts-profile-existing-routing-schema-skip-guards.json",
+    "original_log": "machine-learning-for-trading-final-bsts-profile-existing-routing-schema-skip-guards.log",
+    "log_sha256": "8eb3a928c8e3815ecffc234c84a60f15605f9e455c591a3ecdaec72fc85d86f9",
+    "log_bytes": 25847,
+    "outcome_lines": [
+      "================= 202 passed, 7 skipped, 8 warnings in 29.89s =================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+      "tests/test_pm_helpers.py",
+      "tests/test_overrides_schema.py",
+      "tests/test_skip_blockers.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 151.9,
+    "step": "final-reviewed-original-bsts-native-profile-and-guards",
+    "started": 1791791258.9949272,
+    "seconds": 151.9,
+    "evidence_record": "machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.json",
+    "original_log": "machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+    "log_sha256": "bb438d40842c4fc55b1f5f28439bb606cd9b6cfea1a50d79d78dbadf74b4c551",
+    "log_bytes": 26123,
+    "outcome_lines": [
+      "============ 204 passed, 7 skipped, 8 warnings in 150.29s (0:02:30) ============"
+    ]
   },
   {
     "command": [
@@ -2270,6 +2417,23 @@
       "<workspace>/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 76.04,
+    "step": "original-bsts-native-author-profile-compatible-reader",
+    "started": 1791789263.632375,
+    "seconds": 76.04,
+    "evidence_record": "machine-learning-for-trading-original-bsts-native-author-profile-compatible-reader.json",
+    "original_log": "machine-learning-for-trading-original-bsts-native-author-profile-compatible-reader.log",
+    "log_sha256": "525b8224da7b27905fce6f6938277dd2631402581c76a58e05f630e9c2b69743",
+    "log_bytes": 383,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
     "exit_code": 1,
     "elapsed_seconds": 7.47,
     "step": "original-bsts-native-author-profile-producer",
@@ -2280,6 +2444,61 @@
     "log_sha256": "01435de74f5e690edd5fea7e437717b3c99abbcb52837db14c44611ca888ebff",
     "log_bytes": 979,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 12.48,
+    "step": "original-bsts-routing-before-source-fix",
+    "started": 1791789792.1599722,
+    "seconds": 12.48,
+    "evidence_record": "machine-learning-for-trading-original-bsts-routing-before-source-fix.json",
+    "original_log": "machine-learning-for-trading-original-bsts-routing-before-source-fix.log",
+    "log_sha256": "7ce0e868345708e4da44cb11a29687ab328a76b776468f3a34fc5ebe994296fd",
+    "log_bytes": 3548,
+    "outcome_lines": [
+      "================== 1 failed, 1 skipped, 8 warnings in 10.41s ==================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+      "tests/test_pm_helpers.py",
+      "tests/test_overrides_schema.py",
+      "tests/test_skip_blockers.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 119.04,
+    "step": "original-bsts-routing-repaired-existing-cases",
+    "started": 1791789887.676981,
+    "seconds": 119.04,
+    "evidence_record": "machine-learning-for-trading-original-bsts-routing-repaired-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-bsts-routing-repaired-existing-cases.log",
+    "log_sha256": "69d2e67474c7422a2a12a3b2282a71d157b9a8a5201db122889fb7f3a780a308",
+    "log_bytes": 26123,
+    "outcome_lines": [
+      "============ 204 passed, 7 skipped, 8 warnings in 117.75s (0:01:57) ============"
+    ]
   },
   {
     "command": [
@@ -3695,6 +3914,27 @@
     "original_log": "machine-learning-for-trading-python315-lock.log",
     "log_sha256": "a6d2c51a0daf8b216834b3224a758c2453f734d08adb2a9bb8a29997928456ec",
     "log_bytes": 892,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "sync",
+      "--project",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-bsts-native312",
+      "--python",
+      "/Users/alex/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 1.23,
+    "step": "reproducible-original-bsts-native-reader-profile-sync",
+    "started": 1791790228.0977862,
+    "seconds": 1.23,
+    "evidence_record": "machine-learning-for-trading-reproducible-original-bsts-native-reader-profile-sync.json",
+    "original_log": "machine-learning-for-trading-reproducible-original-bsts-native-reader-profile-sync.log",
+    "log_sha256": "c7097e029a756af19619a3f70c938d8db10a6088712ca09dc5165323a46ecad2",
+    "log_bytes": 654,
     "outcome_lines": []
   },
   {
