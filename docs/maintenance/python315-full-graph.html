@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Complete MLFT dependency graph — current Python 3.15 control</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="complete-mlft-dependency-graph-current-python-315-control">Complete MLFT dependency graph — current Python 3.15 control</h1>
+<p>The current complete graph cannot resolve on Python 3.15 under its published
+dependency contracts. The universal control fails in 2.53 seconds, and a second
+control restricted to this actual macOS arm64 host fails in 1.75 seconds. Both
+stop at the same Pandas version contradiction before compilation or notebook
+execution. These are dependency-resolution results, not test-node outcomes.</p>
+<p>The separate control copies the current 548-entry lock and complete project
+metadata, retaining every dependency, compatibility cap, extra, development
+group and official Gensim source route. Only the control's Python range changes
+from <code>&gt;=3.13,&lt;3.15</code> to <code>&gt;=3.15,&lt;3.16</code>. The actual-host control additionally limits
+resolution to Darwin arm64. The main source, lock and runtime remain unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>Current official release</th>
+<th>Source dependency contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://pypi.org/project/feast/0.66.0/">Feast 0.66.0</a></td>
+<td><code>pandas&gt;=1.4.3,&lt;3</code></td>
+</tr>
+<tr>
+<td><a href="https://pypi.org/project/ml4t-backtest/0.1.12/">ml4t-backtest 0.1.12</a></td>
+<td><code>pandas&gt;=3.0.5</code> when <code>python_version &gt;= '3.15'</code>; <code>pandas&gt;=2.3.3</code> below 3.15</td>
+</tr>
+</tbody>
+</table>
+<p>The verified official source archives contain these same requirements in their
+<code>pyproject.toml</code> files, at Feast line 25 and ml4t-backtest lines 84–85. Their
+Pandas version intersection is empty for Python 3.15. Compiling a missing wheel
+does not alter that declared conflict; a validated upstream compatibility change
+would be required. No bound is overridden, dependency withheld, or old package
+selected merely to suppress this result.</p>
+<p>The <a href="roughpy-native315.md">native RoughPy/esig source control</a> separately builds
+and passes 1,495 unchanged upstream cases on actual Python 3.15. That genuine
+source route cures its compiler-header issue and demonstrates why a missing
+wheel alone does not establish an unavoidable interpreter limitation. It does
+not resolve the complete project's independent dependency contradiction.</p>
+<h2 id="retained-standalone-evidence">Retained standalone evidence</h2>
+<ul>
+<li><a href="mlft-full548-python315-resolution-control-provenance.json">Control provenance and unchanged main source/lock hashes</a></li>
+<li><a href="mlft-current315-feast-pandas-backtest-official-metadata.json">Current official release metadata</a></li>
+<li><a href="mlft-current315-original-source-dependency-constraints.json">Verified official source archive hashes and requirement lines</a></li>
+<li><a href="machine-learning-for-trading-current-full548-python315-universal-metadata-resolution.json">Universal command/result</a> and <a href="machine-learning-for-trading-current-full548-python315-universal-metadata-resolution.log">terminal log</a></li>
+<li><a href="machine-learning-for-trading-current-full548-python315-actual-arm64-metadata-resolution.json">Actual-host command/result</a> and <a href="machine-learning-for-trading-current-full548-python315-actual-arm64-metadata-resolution.log">terminal log</a></li>
+</ul>
+<p>Python 3.14 remains the highest verified compatible complete-project runtime.
+No new MLFT cases are counted and no Python 3.15 full-suite success is claimed.</p></main>
+</body></html>

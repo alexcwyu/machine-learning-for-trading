@@ -1353,6 +1353,27 @@
   },
   {
     "command": [
+      "uv",
+      "sync",
+      "--project",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-bsts-native312",
+      "--python",
+      "/Users/alex/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 15.23,
+    "step": "genuine-native-original-bsts312-profile",
+    "started": 1791788843.9305978,
+    "seconds": 15.23,
+    "evidence_record": "machine-learning-for-trading-genuine-native-original-bsts312-profile.json",
+    "original_log": "machine-learning-for-trading-genuine-native-original-bsts312-profile.log",
+    "log_sha256": "8c0ec758e245bb6b3397038d1a2bcc55aa8688c82654ccc6cef5d3adfd30fe63",
+    "log_bytes": 3709,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       "env",
       "DYLD_LIBRARY_PATH=<workspace>/machine-learning-for-trading/.venv/lib/python3.14/site-packages/torch/lib",
       "OMP_NUM_THREADS=1",
@@ -2242,6 +2263,23 @@
     "outcome_lines": [
       "======================== 1 passed, 8 warnings in 15.90s ========================"
     ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 7.47,
+    "step": "original-bsts-native-author-profile-producer",
+    "started": 1791789049.035608,
+    "seconds": 7.47,
+    "evidence_record": "machine-learning-for-trading-original-bsts-native-author-profile-producer.json",
+    "original_log": "machine-learning-for-trading-original-bsts-native-author-profile-producer.log",
+    "log_sha256": "01435de74f5e690edd5fea7e437717b3c99abbcb52837db14c44611ca888ebff",
+    "log_bytes": 979,
+    "outcome_lines": []
   },
   {
     "command": [
