@@ -2,9 +2,9 @@
   "scope": "Composite retained original-node evidence, not one full-suite green run",
   "original_nodes": 8333,
   "counts": {
-    "passed": 7583,
-    "skipped": 481,
-    "failed": 269
+    "passed": 7621,
+    "skipped": 472,
+    "failed": 240
   },
   "inventory_sha256": "32a2b3037d3dd9514a89b502c7430cd2c5a3a7ea05cc079b21559826176f7078",
   "coverage": {
@@ -4039,63 +4039,63 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[sp500_equity_option_analytics-20_strategy_analysis]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-01_feasibility_analysis]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-02_labels]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-03_financial_features]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-04_evaluation]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-05_linear]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-06_gbm]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-07_tabular_dl]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-08a_ipca]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-08b_conditional_autoencoder]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-08c_stochastic_discount_factor]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-08d_supervised_autoencoder]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-08_latent_factors]": {
@@ -4104,78 +4104,78 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-09_causal_dml]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-10_model_analysis]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-11_backtest-fwd_ret_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-11_backtest-fwd_class_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-11_backtest-fwd_ret_1m_win]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-12_portfolio_management-fwd_ret_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-12_portfolio_management-fwd_class_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-12_portfolio_management-fwd_ret_1m_win]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-13_risk_management-fwd_ret_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-13_risk_management-fwd_class_1m]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-13_risk_management-fwd_ret_1m_win]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-14_costs]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[fx_pairs-01_feasibility_analysis]": {
@@ -7100,7 +7100,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::08_ml_backtest_intro.py]": {
@@ -7165,7 +7165,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[13_dl_time_series::01_core_architectures.py]": {
@@ -7419,8 +7419,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[17_portfolio_construction::01_portfolio_metrics.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[17_portfolio_construction::02_mean_variance_optimization.py]": {
@@ -7595,7 +7595,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::02_feature_evaluation.py]": {
@@ -7620,7 +7620,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::06_cost_survival.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::07_regime_risk.py]": {
@@ -7840,7 +7840,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::06_quantconnect_case_study.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::07_order_state_machine.py]": {
@@ -7919,8 +7919,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::equities::firm_characteristics::dataset_card.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-genuine-input-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::equities::market::microstructure::dataset_card.py]": {
@@ -12205,7 +12205,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::08_ml_backtest_intro.py]": {
@@ -12270,7 +12270,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[13_dl_time_series::01_core_architectures.py]": {
@@ -12524,8 +12524,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[17_portfolio_construction::01_portfolio_metrics.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[17_portfolio_construction::02_mean_variance_optimization.py]": {
@@ -12700,7 +12700,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::02_feature_evaluation.py]": {
@@ -12725,7 +12725,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::06_cost_survival.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::07_regime_risk.py]": {
@@ -12945,7 +12945,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::06_quantconnect_case_study.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::07_order_state_machine.py]": {
@@ -13024,8 +13024,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::equities::firm_characteristics::dataset_card.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-genuine-input-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::equities::market::microstructure::dataset_card.py]": {
@@ -20208,62 +20208,62 @@
     },
     "tests/test_model_registry.py::test_model_notebook[sp500_equity_option_analytics::19_holdout_backtest]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-public-model-registry-retired-input-blockers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::05_linear]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::06_gbm]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::07_tabular_dl]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::08a_ipca]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::08b_conditional_autoencoder]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::08c_stochastic_discount_factor]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::08d_supervised_autoencoder]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::08_latent_factors]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::09_causal_dml]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::15_holdout_predictions]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_firm_characteristics::16_holdout_backtest]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-model-registry-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_registry.py::test_model_notebook[us_equities_panel::06_linear]": {
@@ -20498,38 +20498,38 @@
     },
     "tests/test_modeling_input_lineage.py::test_the_fingerprint_is_stable_across_identical_loads": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_a_changed_artifact_moves_the_fingerprint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_a_changed_cv_window_moves_the_fingerprint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_a_changed_reduction_or_buffer_moves_the_fingerprint[max_symbols-25]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_a_changed_reduction_or_buffer_moves_the_fingerprint[label_buffer-21d]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_the_same_window_fingerprints_the_same_whether_or_not_it_is_tz_aware": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_modeling_input_lineage.py::test_the_cached_lineage_is_dropped_when_a_holdout_fold_is_appended": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_modeling_input_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_mvo_reaches_the_optimizer.py::test_a_universe_wider_than_the_lookback_still_optimizes": {
       "status": "passed",
@@ -30033,13 +30033,13 @@
     },
     "tests/test_registry_lineage.py::test_registry_lineage_source_matches_audited_fixture_bytes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_registry_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_registry_lineage.py::test_registry_exports_modeling_input_fingerprint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_registry_lineage.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_registry_maintenance.py::test_semantic_backtest_deduplication_is_idempotent": {
       "status": "passed",
@@ -34048,28 +34048,28 @@
     },
     "tests/test_seeded_output_dir.py::test_seed_replaces_a_registry_left_by_a_previous_run": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_seeded_output_dir.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_seeded_output_dir.py::test_seed_removes_a_subdir_the_fixture_no_longer_ships": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_seeded_output_dir.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_seeded_output_dir.py::test_seed_refreshes_top_level_files": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_seeded_output_dir.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_seeded_output_dir.py::test_seed_is_idempotent": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_seeded_output_dir.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_seeded_output_dir.py::test_every_seeded_subdir_is_reset": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_seeded_output_dir.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_seeded_prediction_eval_target.py::test_a_fabricated_classification_set_gets_a_continuous_eval_target": {
       "status": "passed",
@@ -35342,9 +35342,9 @@
       "method": "ordered original collection / quiet pytest progress"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-skipblocker-exact-failure-diagnosis.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration2-True]": {
       "status": "passed",

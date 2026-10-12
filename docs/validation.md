@@ -1,6 +1,6 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. Validation combines retained terminal module results and exact original-node recovery runs. It is not a claim that one full-suite invocation passed. The authoritative per-node record is [original case coverage](maintenance/mlft-original-case-coverage.json); unresolved identities and genuine prerequisites are recorded in [failure explanations](maintenance/mlft-original-failure-explanations.json). The current source publication snapshot reconciles all original identities: **7,583 pass, 481 original conditional skips and 269 fail, with zero unverified nodes**. These are composite results across actual input/platform scopes. The unresolved failures remain visible; genuine ETF and equity-option validation/backtest/allocation/risk/cost producers are currently running with unchanged original parameters. Locally producible artifacts are not classified as externally unavailable.
+The original inventory contains **8,333 existing test nodes in 430 modules**. Validation combines retained terminal module results and exact original-node recovery runs. It is not a claim that one full-suite invocation passed. The authoritative per-node record is [original case coverage](maintenance/mlft-original-case-coverage.json); unresolved identities and genuine prerequisites are recorded in [failure explanations](maintenance/mlft-original-failure-explanations.json). The current source publication snapshot reconciles all original identities: **7,621 pass, 472 original conditional skips and 240 fail, with zero unverified nodes**. These are composite results across actual input/platform scopes. The unresolved failures remain visible; genuine ETF and equity-option validation/backtest/allocation/risk/cost producers are currently running with unchanged original parameters. Locally producible artifacts are not classified as externally unavailable.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -94,3 +94,36 @@ Chapter 11/12 consumers advance to absent US firm-characteristic model populatio
 Other latent-factor/DL/causal and downstream allocation/cost populations still
 require their actual producers; the current failed-node record distinguishes
 these from credentialed inputs and image-specific native prerequisites.
+
+
+### Further genuine public fixture recovery
+
+The unchanged author-data downloader and persistent tensor converter produce
+1,218,555 firm-characteristic stock-month observations (115.66 seconds). The
+original CI builder retains its prescribed 200 most-observed firms per split
+and all their monthly histories: 119,898 rows. All six canonical original
+feature/evaluation/linear/GBM stages pass in 42.87 seconds. The recovered original
+firm pipeline/model-registry scope records 32 passes, four failures and five
+existing conditional skips in 495.76 seconds. Actual canonical data is routed
+to the selected CI data root's sibling intermediates, with preceding views
+retained. The Chapter 11/12 consumers now reach absent FX populations.
+
+All 26 original ETF and equity-option analysis/validation/allocation/risk/cost
+producer invocations pass in 618.50 seconds. The analogous eleven original
+firm validation producer invocations pass in 104.07 seconds. These are genuine
+producer scopes, distinct from original test-node counts.
+
+A real seeding defect overwrote canonical prediction digests with whole-frame
+digests including the label metadata. The actual writer and reader use the
+unchanged `published_prediction_digest`, excluding that constant label. The
+[seeding helper](../tests/fixtures/seed_results.py) now uses that same function.
+Identical genuine prediction frames retain their original content identities;
+no literal, writer or numeric golden changes. Twenty original seeding, encoding,
+source-lineage and consumer contracts pass in 16.68 seconds, including the
+previously failing equity-option strategy analysis.
+
+The genuine Financial Phrasebank author archive supplies all four agreement
+levels (2,264/3,453/4,217/4,846 sentences). Its original CI builder copies the
+2,264 all-agreement rows verbatim. The source-declared official Python 3.12
+image and genuine NASDAQ ITCH session/parser workflows continue separately;
+these currently running checks are not reported as passing.
