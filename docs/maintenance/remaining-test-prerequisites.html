@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Remaining existing-test prerequisites</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="remaining-existing-test-prerequisites">Remaining existing-test prerequisites</h1>
+<p>The maintained inventory still has 215 failed nodes. These diagnostics explain causes; they do not turn failed tests into passes. The <a href="mlft-original-case-coverage.json">node coverage</a> and <a href="mlft-original-failure-explanations.json">original failure trace summaries</a> preserve their original outcomes.</p>
+<h2 id="mlflow-experiment-catalog">MLflow experiment catalog</h2>
+<p>Both unchanged Chapter and Docker <a href="../../26_mlops_governance/06_mlflow_experiments.py">MLflow notebook</a> nodes were rerun on current source <code>b208ca666d77</code>: both fail at <code>best_validation.iloc[0]</code>. A separate read-only query executes the exact SQL extracted from that source against the registry created by the existing pytest fixtures. It returns <strong>zero qualifying validation records</strong>, despite 21 training rows, 21 prediction rows, 21 metric rows and four backtest rows. The registry SHA is identical before and after the read.</p>
+<p>The original selector requires the original two labels, a validation split, non-null IC and positive IC day coverage. Existing fixture rows do not satisfy that contract. Changing the labels, admitting incomplete metrics, selecting a different study, or fabricating a prediction would change what the notebook claims to demonstrate. Genuine US-equity producer output is needed. The <a href="mlft-current-mlflow-empty-validation-diagnosis.json">SQL and registry proof</a> records the exact query, source hash and counts. This proves the missing catalog prerequisite; it does not establish a Pandas indexing regression or certify any unseen prediction set.</p>
+<div class="diagram"><pre class="mermaid">sequenceDiagram
+    participant Fixture as Existing pytest fixture
+    participant Registry as Fixture registry
+    participant Notebook as Original MLflow notebook
+    participant Probe as Read-only diagnosis
+    Fixture-&gt;&gt;Registry: Original seeded records and available authored outputs
+    Notebook-&gt;&gt;Registry: Original validation/label/IC query
+    Registry--&gt;&gt;Notebook: Zero qualifying records
+    Notebook--&gt;&gt;Notebook: Original iloc[0] raises IndexError
+    Probe-&gt;&gt;Registry: Execute exact source SQL in read-only mode
+    Registry--&gt;&gt;Probe: Zero records; unchanged database hash</pre></div><details><summary>Diagram source</summary><pre><code>sequenceDiagram
+    participant Fixture as Existing pytest fixture
+    participant Registry as Fixture registry
+    participant Notebook as Original MLflow notebook
+    participant Probe as Read-only diagnosis
+    Fixture-&gt;&gt;Registry: Original seeded records and available authored outputs
+    Notebook-&gt;&gt;Registry: Original validation/label/IC query
+    Registry--&gt;&gt;Notebook: Zero qualifying records
+    Notebook--&gt;&gt;Notebook: Original iloc[0] raises IndexError
+    Probe-&gt;&gt;Registry: Execute exact source SQL in read-only mode
+    Registry--&gt;&gt;Probe: Zero records; unchanged database hash</code></pre></details>
+<h2 id="sec-supply-chain-workflow">SEC supply-chain workflow</h2>
+<p>The <a href="../../23_knowledge_graphs/02_supply_chain_kg_construction.py">original supply-chain producer</a> already ships its <a href="../../23_knowledge_graphs/output/supply_chain_cache/extracted_triples.parquet">extracted triples</a> and <a href="../../23_knowledge_graphs/output/supply_chain_cache/extracted_triples.meta.json">immutable metadata</a>. The default cached route <strong>does not require CUDA</strong>. CUDA is required only when regeneration is requested or the cache is missing. The cache's SHA is <code>b20bdf979f79bc32afb9760d979ff533a162dc053618fe81af78dbc4830e29f5</code>, with 2,049 triples.</p>
+<p>The default route still reads genuine full SEC filing records before loading and analysing the cached graph. Those records were absent. The <a href="../../data/equities/fundamentals/filings_download.py">unchanged canonical downloader</a> is now fetching its declared 101-company, 2020–2025 10-K corpus using the repository's configured real EDGAR identity. This work is not yet a passing notebook claim. Actual producer and original consumer tests must finish before that status changes.</p>
+<p>The owned Neo4j service is available; a healthy empty service alone does not establish the named supply-chain snapshot. The cache, corpus and snapshot are different prerequisites.</p>
+<h2 id="other-outstanding-scopes">Other outstanding scopes</h2>
+<p>Explicit traces require FRED/DataBento authentication, complete FX model populations, US-equity datasets and model outputs, canonical deep-learning results, complete validation/holdout populations and publication fixtures. Each retains its failed identity. CPU previews, reduced coverage and different public datasets cannot be relabelled as those original populations.</p></main></body></html>

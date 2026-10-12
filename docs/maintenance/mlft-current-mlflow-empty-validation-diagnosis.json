@@ -1,0 +1,21 @@
+{
+  "source": "26_mlops_governance/06_mlflow_experiments.py",
+  "source_sha256": "69fc63447bf0e59b05a2642fdb48e0faa8f601d5c019b4f19f60b516f0675d92",
+  "original_run_catalog_sql": "\n    SELECT\n        tr.training_hash,\n        tr.family,\n        tr.label,\n        tr.config_name,\n        tr.created_at,\n        ps.prediction_hash,\n        ps.split,\n        pm.ic_mean_daily AS ic_mean\n    FROM training_runs tr\n    JOIN prediction_sets ps ON tr.training_hash = ps.training_hash\n    LEFT JOIN prediction_metrics pm\n        ON ps.prediction_hash = pm.prediction_hash\n    WHERE tr.label IN (?, ?)\n      AND ps.split = 'validation'\n      AND pm.ic_mean_daily IS NOT NULL\n      AND pm.ic_n_days > 0\n    ORDER BY tr.label, tr.family, pm.ic_mean_daily DESC\n    ",
+  "original_labels": [
+    "fwd_ret_1d",
+    "fwd_ret_5d"
+  ],
+  "exact_qualifying_validation_rows": 0,
+  "registry_table_counts": {
+    "training_runs": 21,
+    "prediction_sets": 21,
+    "prediction_metrics": 21,
+    "backtest_runs": 4
+  },
+  "registry_read_only": true,
+  "registry_unchanged_sha256": "d0b4de835158de9329fc8274d2347977e955b82e840a65a513867993d22a3cae",
+  "fresh_original_cases": "two failed with the original IndexError at best_validation.iloc[0]",
+  "root_cause": "The original SQL produces zero qualifying validation records. No canonical US-equity prediction/metric evidence is available for the selected labels; existing seeded rows do not satisfy this contract. This is not evidence of a Pandas indexing regression.",
+  "scope": "Original pytest fixture-created registry; no data, model population, selector, assertions or source changed."
+}

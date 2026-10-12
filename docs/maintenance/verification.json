@@ -578,6 +578,42 @@
   },
   {
     "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "--basetemp=<workspace>/.runtime/maintenance-2026-10-12/mlft-mlflow-prerequisite-root-b208",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::06_mlflow_experiments.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::06_mlflow_experiments.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 14.73,
+    "check": "current-mlflow-original-prerequisite-diagnostic",
+    "source_snapshot": {
+      "head": "b208ca666d771036d9cc3289b90f075868658081",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.json",
+    "original_log": "machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log",
+    "log_sha256": "b9fb17273d0079992c29e3bba1d0e8bbf0596944105817b6a7e8a7b202040f00",
+    "log_bytes": 5635,
+    "outcome_lines": [
+      "======================== 2 failed, 8 warnings in 12.93s ========================"
+    ]
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "-m",
       "pytest",

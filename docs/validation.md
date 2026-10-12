@@ -227,3 +227,7 @@ fails explicitly. Original parameters, backend, assertions, tier/GPU/credential
 guards and model remain unchanged; the core Python 3.14 environment is untouched.
 The [standalone source/profile and terminal proof](maintenance/bsts-native-profile.md)
 records the original failure, independent review and exact original-case scope.
+
+## Current prerequisite diagnosis
+
+Both original MLflow nodes still fail on current source. An independent read-only query proves their exact original catalog SQL returns zero qualifying records, despite nonempty seeded tables. This explains two runtime-diagnosis outcomes as unavailable qualifying US-equity experiment evidence, without altering their status. The default supply-chain route already has its genuine checked-in Qwen cache and does not require CUDA; recovery of the missing genuine SEC corpus is now active. See [remaining prerequisite analysis](maintenance/remaining-test-prerequisites.md).
