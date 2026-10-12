@@ -938,16 +938,16 @@ strict OHLC validation and strategy parameters remain unchanged.
 ### Current publication evidence and continuing work
 
 The [per-node snapshot](maintenance/mlft-original-case-coverage.json) records
-7,633 passes, 471 conditional skips and 224 failures in the current 8,328-node
+7,637 passes, 468 conditional skips and 222 failures in the current 8,327-node
 collection, with no unknown identities. The original 8,333-node inventory is
-retained separately: nine obsolete skip-guard parameter identities and one
+retained separately: ten obsolete skip-guard parameter identities and one
 empty fold placeholder retire; genuine artifacts activate five parameterizations
 of the unchanged fold test. [Reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json)
 retains every retired outcome without calling it a current pass. No test source
 cases or assertions change. Composite platform/input scopes are explicit;
 [remaining failures](maintenance/mlft-original-failure-explanations.json) include
-187 genuine prerequisite gaps and 37 runtime/contract diagnoses. ETF canonical
-holdout/strategy producers are the next concrete recovery chain.
+187 genuine prerequisite gaps and 35 runtime/contract diagnoses. The ETF canonical
+holdout/strategy chain now passes and supplies the genuine live-trading winner.
 
 ### Further genuine public fixture recovery
 
@@ -990,3 +990,13 @@ proof is not an upstream support claim; uv source configuration is necessary and
 plain pip wheel metadata does not carry that Git route. PEP 517 build lower bounds
 do not fully lock the compiler toolchain. Fresh wheel/sdist and strict compilation
 of all 1,218 tracked Python files pass at `4736e270`.
+
+
+The genuine ETF canonical holdout/strategy producers complete all 11, eight and
+40 original cells, respectively. The recovered live-trading consumers pass
+against their genuine seeded artifacts. The obsolete ETF strategy declaration
+retires one additional parameterized skip guard, giving the current collection
+8,327 identities while preserving all 8,333 original identities and historical
+outcomes separately. The next active producer is the unchanged full-population
+canonical firm causal-DML notebook, with its original per-cell timeout; no result
+is claimed before its terminal record.

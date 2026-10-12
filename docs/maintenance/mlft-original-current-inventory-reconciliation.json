@@ -1,10 +1,10 @@
 {
   "original_inventory": 8333,
-  "current_inventory": 8328,
+  "current_inventory": 8327,
   "current_counts": {
-    "passed": 7633,
-    "skipped": 471,
-    "failed": 224
+    "passed": 7637,
+    "skipped": 468,
+    "failed": 222
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -56,6 +56,13 @@
       "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
       "current_collection_contains_node": false
     },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/20_strategy_analysis]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/15_holdout_predictions]": {
       "status": "passed",
       "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
@@ -86,5 +93,5 @@
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_options]"
   ],
   "new_test_source_cases": 0,
-  "reason": "Nine parameterized skip-declaration guard identities retire with their obsolete declarations; one empty fold placeholder retires when genuine artifacts activate five parameterizations of the unchanged existing test. Retired evidence is retained separately and is not counted as a current pass."
+  "reason": "Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire; genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical retired evidence remains separate and is not counted as a current pass."
 }

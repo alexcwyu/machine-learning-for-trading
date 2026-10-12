@@ -2425,12 +2425,6 @@ case_studies/etfs/19_holdout_backtest:
 case_studies/etfs/20_strategy_analysis:
   research_preview: false
   timeout: 900
-  skip: true
-  skip_reason: "The complete-run filter admits no risk-overlay backtest in the fixture, so cell 8 indexes an empty selection and raises OutOfBoundsError: index 0 is out of bounds for sequence of length 0. Measured 2026-09-11 by un-skipping and running it. The bar is the population's maximum ic_n_days: the seeded deep_learning predictions carry more scored days than the ones this job fits, so a fitted run cannot reach a maximum a seeded row holds. The refusal is the guard working - an incomplete run compared as complete manufactures a false leader - and the fixture is what cannot satisfy it. Stages 14 through 17 run unskipped and pass, so the chain below this notebook is exercised."
-  skip_blocker:
-    fixture_shortfall:
-      note: "Cell 8 raises OutOfBoundsError: index 0 is out of bounds for sequence of length 0 - the complete-run filter admits no risk-overlay backtest from the fixture, so the selection it indexes is empty. Measured 2026-09-11 by un-skipping and running it."
-      verified: 2026-09-11
 case_studies/fx_pairs/01_feasibility_analysis:
   timeout: 120
 case_studies/fx_pairs/02_labels:

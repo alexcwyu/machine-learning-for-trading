@@ -1,14 +1,14 @@
 {
   "scope": "Exact original failed node explanations from retained terminal summaries; missing inputs are not assumed to be unavailable privately unless proven",
   "coverage_counts": {
-    "passed": 7633,
-    "skipped": 471,
-    "failed": 224
+    "passed": 7637,
+    "skipped": 468,
+    "failed": 222
   },
-  "explained": 224,
+  "explained": 222,
   "categories": {
     "missing genuine input/artifact prerequisite": 187,
-    "runtime or contract failure requiring diagnosis": 37
+    "runtime or contract failure requiring diagnosis": 35
   },
   "failures": {
     "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs": {
@@ -478,12 +478,6 @@
       "cause": "Error: Cell 8 (DataNotFoundError): ",
       "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
       "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log"
-    },
-    "tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::06_quantconnect_case_study.py]": {
-      "category": "runtime or contract failure requiring diagnosis",
-      "cause": "Error: Cell 7 (RuntimeError): ETF registry has no eligible cross-stage backtest winner",
-      "details": "Failed: \n======================================================================\nNotebook failed: 25_live_trading/06_quantconnect_case_study\n======================================================================\nError: Cell 7 (RuntimeError): ETF registry has no eligible cross-stage backtest winner\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::01_drift_monitoring.py]": {
       "category": "runtime or contract failure requiring diagnosis",
@@ -1084,12 +1078,6 @@
       "cause": "Error: Cell 8 (DataNotFoundError): ",
       "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
       "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log"
-    },
-    "tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::06_quantconnect_case_study.py]": {
-      "category": "runtime or contract failure requiring diagnosis",
-      "cause": "Error: Cell 7 (RuntimeError): ETF registry has no eligible cross-stage backtest winner",
-      "details": "Failed: \n======================================================================\nNotebook failed: 25_live_trading/06_quantconnect_case_study\n======================================================================\nError: Cell 7 (RuntimeError): ETF registry has no eligible cross-stage backtest winner\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-validation-unlocked-consumers.log"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::01_drift_monitoring.py]": {
       "category": "runtime or contract failure requiring diagnosis",
