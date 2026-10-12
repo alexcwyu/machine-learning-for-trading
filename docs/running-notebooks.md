@@ -759,6 +759,8 @@ CPython 3.14 arm64 wheel and genuine pyrecombine 1.0.1 source build. Both
 original Chapter and Docker-named path-signature cases execute successfully
 using native Python 3.14 and genuine ETF inputs. Their parameters and mathematics
 are unchanged. The separate signatory notebooks retain their documented runtime
-requirements. The Python 3.15 source control currently stops at an external
-range-v3/libc++ header compatibility error; it does not justify claiming Python
-3.15 compatibility or changing the main interpreter.
+requirements. The isolated Python 3.15 native dependency build passes after an exact licensed
+upstream range-v3 header fix, with 1,495 unchanged upstream cases passing and
+35 existing skips. This [dependency source proof](maintenance/roughpy-native315.md)
+does not establish complete-project Python 3.15 compatibility or change the
+main interpreter.

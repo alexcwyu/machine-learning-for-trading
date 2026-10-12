@@ -1,0 +1,45 @@
+From bef4198ccababd6d130e1f56aa015faaaddd1f1d Mon Sep 17 00:00:00 2001
+From: Chris Glover <chris_glover@apple.com>
+Date: Sat, 3 Oct 2026 00:06:49 +0100
+Subject: [PATCH] Don't use _LIBCPP_TEMPLATE_VIS on libcxx >= 220000
+
+The use of _LIBCPP_TEMPLATE_VIS in libcxx was removed for the 22.0
+release. This results in an error when combined with the forward
+declarations in meta_fwd.hpp
+
+range-v3-src/include/meta/meta.hpp:3797:25: error: redefinition of
+'allocator' as different kind of symbol
+ 3797 | class META_TEMPLATE_VIS allocator;
+      |                         ^
+/usr/include/c++/v1/__memory/allocator.h:62:7: note: previous definition
+is here
+   62 | class allocator
+
+The change that removed support is here:
+https://github.com/llvm/llvm-project/pull/134885
+
+With the subsequent version bump here:
+https://github.com/llvm/llvm-project/commit/01f36b39bd2475a271bbeb95fb9db8ed65e2d065
+---
+ include/meta/meta_fwd.hpp | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/include/meta/meta_fwd.hpp b/include/meta/meta_fwd.hpp
+index 9b99bacb0f..1dadb5f71a 100644
+--- a/include/meta/meta_fwd.hpp
++++ b/include/meta/meta_fwd.hpp
+@@ -217,10 +217,12 @@
+ #define META_END_NAMESPACE_CONTAINER
+ #endif
+ 
+-#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION >= 4000
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 220000
++#if _LIBCPP_VERSION >= 4000 
+ #define META_TEMPLATE_VIS _LIBCPP_TEMPLATE_VIS
+-#elif defined(_LIBCPP_VERSION)
++#else
+ #define META_TEMPLATE_VIS _LIBCPP_TYPE_VIS_ONLY
++#endif
+ #else
+ #define META_TEMPLATE_VIS
+ #endif

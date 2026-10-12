@@ -1,0 +1,18 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "genuine-roughpy-native315-supported-upstream-port",
+  "command": [
+    "uv",
+    "pip",
+    "install",
+    "--python",
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0",
+    "esig==1.0.0"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791787647.5459032,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-roughpy-native315-supported-upstream-port.log",
+  "exit_code": 0,
+  "elapsed_seconds": 169.55
+}

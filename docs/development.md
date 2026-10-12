@@ -1037,9 +1037,14 @@ The Python 3.15 source attempt first stops at missing Autoconf tools. After thei
 genuine installation, it reaches native compilation and fails on range-v3/meta
 standard-library forward declarations against the host's newer libc++ headers
 (282.39 seconds). All 814 checked official RoughPy core files are unchanged.
-This is not a demonstrated Python 3.15 binding-API failure. A reviewed exact
-upstream dependency-header fix is being tested in an isolated supported port
-overlay; no Python 3.15 main-runtime success is claimed.
+This is not a demonstrated Python 3.15 binding-API failure. The reviewed exact
+upstream dependency-header fix subsequently passes in the isolated supported
+port overlay: native build 169.55 seconds, followed by 1,495 unchanged upstream
+Python cases passing and 35 existing skips in 1.60 seconds. All 814 original
+core/configuration/Python/C++ files remain identical. The [standalone source and
+binding proof](maintenance/roughpy-native315.md) retains the exact upstream
+commit, license, patch and terminal evidence. No Python 3.15 main-runtime
+success or additional MLFT test-node passes are claimed.
 
 The original EconML DML teaching Chapter and Docker-named cases also pass with
 current genuine inputs (34.85 seconds). Their source, parameters and assertions

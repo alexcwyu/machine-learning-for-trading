@@ -1,0 +1,13 @@
+{
+  "scope": "Isolated original official RoughPy source uses its existing declared tools/ports overlay; exact licensed upstream dependency-header backport only; no core code/math/compiler flags changed",
+  "roughpy_source_sha256": "db5d5ee5319c504603061687756c7f88cdd28a3103b58ecc01a411e98dfa0119",
+  "official_upstream_commit": "bef4198ccababd6d130e1f56aa015faaaddd1f1d",
+  "official_patch_url": "https://github.com/ericniebler/range-v3/commit/bef4198ccababd6d130e1f56aa015faaaddd1f1d.patch",
+  "patch_sha256": "b49c9a5f1aebdd5dbad14ce20678e14c9421f9769774a27c6299251e66317949",
+  "upstream_license_url": "https://raw.githubusercontent.com/ericniebler/range-v3/bef4198ccababd6d130e1f56aa015faaaddd1f1d/LICENSE.txt",
+  "upstream_license_sha256": "2b74ee37dd1a90b2b385534b7dbc171938409bda468673a123ff25302c9c5739",
+  "source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0",
+  "overlay_port": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/tools/ports/range-v3",
+  "range_v3_version": "0.12.0#4",
+  "original_vcpkg_registry_port": "909bba8e9818ca395699107ce92bdb73c221ace2"
+}

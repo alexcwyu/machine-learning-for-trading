@@ -1,0 +1,19 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "roughpy-upstream-existing-python315-binding-cases",
+  "command": [
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+    "-m",
+    "pytest",
+    "-c",
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/pyproject.toml",
+    "-q",
+    "--tb=short",
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/tests"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791787940.9875891,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-roughpy-upstream-existing-python315-binding-cases.log",
+  "exit_code": 0,
+  "elapsed_seconds": 2.08
+}
