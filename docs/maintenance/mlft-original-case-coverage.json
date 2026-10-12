@@ -3,14 +3,14 @@
   "original_nodes": 8333,
   "current_nodes": 8327,
   "counts": {
-    "passed": 7637,
+    "passed": 7641,
     "skipped": 468,
-    "failed": 222
+    "failed": 218
   },
   "retained_original_evidence_counts": {
-    "passed": 7643,
+    "passed": 7647,
     "skipped": 464,
-    "failed": 226
+    "failed": 222
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -6963,8 +6963,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-preprocessing-original-green.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::03_label_methods.py]": {
@@ -7364,7 +7364,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-genuine-firm-canonical-ipca-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::01_library_overview.py]": {
@@ -7413,8 +7413,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::10_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-genuine-firm-canonical-causal-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::11_factor_zoo_validation.py]": {
@@ -12068,8 +12068,8 @@
       "method": "ordered original collection / quiet pytest progress"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-preprocessing-original-green.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::03_label_methods.py]": {
@@ -12469,7 +12469,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-genuine-firm-canonical-ipca-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::01_library_overview.py]": {
@@ -12518,8 +12518,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::10_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-crypto-canonical-consumers.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-genuine-firm-canonical-causal-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::11_factor_zoo_validation.py]": {

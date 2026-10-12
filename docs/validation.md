@@ -1,8 +1,8 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,637 pass, 468 conditional skips and 222 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
+The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,641 pass, 468 conditional skips and 218 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
 
-Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 222 current failures comprise 187 missing genuine input/artifact prerequisites and 35 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 85, Docker notebooks 90, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
+Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 218 current failures comprise 188 missing genuine input/artifact prerequisites and 30 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 82, Docker notebooks 87, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -145,6 +145,24 @@ The genuine ETF canonical holdout/strategy producers complete all 11, eight and
 against their genuine seeded artifacts. The obsolete ETF strategy declaration
 retires one additional parameterized skip guard, giving the current collection
 8,327 identities while preserving all 8,333 original identities and historical
-outcomes separately. The next active producer is the unchanged full-population
-canonical firm causal-DML notebook, with its original per-cell timeout; no result
-is claimed before its terminal record.
+outcomes separately. The unchanged full-population canonical firm causal-DML producer passes all
+11 cells in 75.52 seconds; its original per-cell timeout is retained.
+
+
+The actual canonical firm causal producer uses the full declared genuine CI
+population and unchanged defaults, with no preview reductions. Both original
+Chapter/Docker causal-insights nodes now pass in 12.77 seconds. The actual
+canonical firm IPCA producer also passes all 14 cells in 77.10 seconds, using
+the source's declared CPU implementation and four workers. Previous owned seed
+views are backed up before genuine output is copied. Its two original latent
+insights consumers still fail, now reaching the absent FX latent population
+rather than the firm prerequisite. Configured OANDA, ALFRED and paid market-data
+credentials are absent; no alternate financial observations are substituted.
+
+The separately reviewed optional-cleaning repair preserves the original loader
+exception branches and guards. Both original preprocessing nodes pass; the
+absent Sharadar section does not execute. The [source review and actual input
+scope](maintenance/preprocessing-review.md) records the original failure,
+minimal repair, unchanged AST outside the intended assignments and genuine
+executed datasets. An isolated official esig/RoughPy native Python 3.15 source
+build continues; no result is claimed before its terminal record.
