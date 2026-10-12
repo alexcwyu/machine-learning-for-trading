@@ -112,8 +112,9 @@ dependencies = [
     # ===================
     # NLP / Text
     # ===================
-    # gensim: word2vec/Doc2Vec only (Ch10 NB01-02). No Python 3.14 support.
-    # Use Docker: docker compose --profile word2vec run --rm word2vec python ...
+    # The complete official release source regenerates native Cython for current
+    # CPython; PyPI's generated C is stale and its sdist omits fastss.pyx.
+    "gensim>=4.4.0",
     "datasets>=2.19",
     "evaluate>=0.4",
     # ===================
@@ -286,6 +287,11 @@ python-preference = "only-managed"
 override-dependencies = [
     "protobuf>=5.0",
 ]
+
+[tool.uv.sources]
+# Official Gensim 4.4.0 release commit. Complete unchanged .pyx sources let its
+# own build backend regenerate C with current Cython, preserving algorithms.
+gensim = { git = "https://github.com/piskvorky/gensim.git", rev = "ee2642b4fa26e689ba4595067504668bc7a89016" }
 
 [build-system]
 requires = ["setuptools>=77", "wheel"]

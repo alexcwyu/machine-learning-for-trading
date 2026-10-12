@@ -2553,6 +2553,16 @@ wheels = [
 ]
 
 [[package]]
+name = "gensim"
+version = "4.4.0"
+source = { git = "https://github.com/piskvorky/gensim.git?rev=ee2642b4fa26e689ba4595067504668bc7a89016#ee2642b4fa26e689ba4595067504668bc7a89016" }
+dependencies = [
+    { name = "numpy" },
+    { name = "scipy" },
+    { name = "smart-open" },
+]
+
+[[package]]
 name = "gitdb"
 version = "4.0.12"
 source = { registry = "https://pypi.org/simple" }
@@ -4711,6 +4721,7 @@ dependencies = [
     { name = "feast" },
     { name = "filterpy" },
     { name = "gdown" },
+    { name = "gensim" },
     { name = "google-genai" },
     { name = "granite-tsfm" },
     { name = "gymnasium" },
@@ -4870,6 +4881,7 @@ requires-dist = [
     { name = "feast", marker = "extra == 'mlops'", specifier = ">=0.61" },
     { name = "filterpy", specifier = ">=1.4" },
     { name = "gdown", specifier = ">=5.1" },
+    { name = "gensim", git = "https://github.com/piskvorky/gensim.git?rev=ee2642b4fa26e689ba4595067504668bc7a89016" },
     { name = "google-genai", specifier = ">=0.3" },
     { name = "granite-tsfm", specifier = ">=0.3" },
     { name = "gymnasium", specifier = ">=1.2" },
@@ -8699,6 +8711,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d3/f9/b4bce2825b39b57760b361e6131a3dacee3d8951c58cb97ad120abb90317/slicer-0.0.8.tar.gz", hash = "sha256:2e7553af73f0c0c2d355f4afcc3ecf97c6f2156fcf4593955c3f56cf6c4d6eb7", size = 14894, upload-time = "2024-03-09T23:35:26.826Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/63/81/9ef641ff4e12cbcca30e54e72fb0951a2ba195d0cda0ba4100e532d929db/slicer-0.0.8-py3-none-any.whl", hash = "sha256:6c206258543aecd010d497dc2eca9d2805860a0b3758673903456b7df7934dc3", size = 15251, upload-time = "2024-03-09T07:03:07.708Z" },
+]
+
+[[package]]
+name = "smart-open"
+version = "8.0.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "wrapt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6e/f1/f57ca3ddc7983173d4aa2df570393009d7572a91f7f54369de8d58675e9b/smart_open-8.0.2.tar.gz", hash = "sha256:d5b5c85d2d31a6657bb18b3725856125f3b5be0ae3020c0fafa4649f6c493122", size = 61790, upload-time = "2026-09-29T18:38:30.156Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1c/48/d362978544ab08b385c6222ccb048fab1db3e3b820a07ef652c5d75678ae/smart_open-8.0.2-py3-none-any.whl", hash = "sha256:7ff6e4acf454269905db0c747f5d14fdba6056db572c0f8398043676dc91515c", size = 73414, upload-time = "2026-09-29T18:38:28.491Z" },
 ]
 
 [[package]]
