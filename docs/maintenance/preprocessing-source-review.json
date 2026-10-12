@@ -1,0 +1,18 @@
+{
+  "base_head": "67c8680208c77d823f88e6ff36809d58de1d3b8b",
+  "source": "07_defining_the_learning_task/02_preprocessing_pipeline.py",
+  "base_source_sha256": "7dc895b1e58a9156e941130e3555dfa5265a7eafcb4870175b36791926523ed6",
+  "maintained_source_sha256": "84dbd54cd0c4922490f20e67dd4a0c4dceecb354217123aac7744aea6b25d6bd",
+  "only_added_ast": [
+    "us_equities_cleaned",
+    "etfs_cleaned"
+  ],
+  "all_other_module_ast_identical": true,
+  "original_test_source_unmodified": true,
+  "original_nodes_red": "2 failed at NameError on undefined optional cleaned dataset",
+  "original_nodes_green": "2 passed in19.08wall; existing genuine ETF/crypto/firm fixtures, original Sharadar stillunavailable",
+  "scope": "Restores original optional load-and-guard contract; not proof of US equities cleaning or complete dataset availability",
+  "comment_followup": "Replace unsupported both-datasets-pass prose with actual per-available-dataset count reporting; executable AST unchanged.",
+  "actual_green_tested_source_sha256": "91b28395ed66cb634ce2237fa51346ea478888aea00df708ff3adc0a394610a0",
+  "final_followup_changes_comments_only": true
+}
