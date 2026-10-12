@@ -1,0 +1,584 @@
+{
+  "publisher_metadata_rows": 51,
+  "legacy_keys": 12,
+  "collision_groups": 12,
+  "incorrect_reuse_requests": 39,
+  "evidence": [
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2025_000114036125.parquet",
+      "cached_sha256": "15a57930756d30db219fe8da4b0ab9c3c962e43425840afc79193fb3f21ff3c5",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-044561",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-12-05",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-027340",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-07-25",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-025275",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-07-09",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-018400",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-05-12",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-005876",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-02-25",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-25-000228",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-01-03",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001140361-25-044561",
+        "form": "8-K",
+        "year": 2025,
+        "filing_date": "2025-12-05"
+      },
+      "incorrect_reuse_requests": 5
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2025_000032019325.parquet",
+      "cached_sha256": "368706cc672e21641d0cd9bd598dfe208795c540b07eb1a83b0694ee7ee19049",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-25-000077",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-10-30",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-25-000071",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-07-31",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-25-000055",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-05-01",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-25-000007",
+          "form": "8-K",
+          "year": 2025,
+          "filing_date": "2025-01-30",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-25-000077",
+        "form": "8-K",
+        "year": 2025,
+        "filing_date": "2025-10-30"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2024_000032019324.parquet",
+      "cached_sha256": "6c0985ab4228e79e58642c157e2fd53baa002fd68ca93a99453f165da0ef90f7",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-24-000120",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-10-31",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-24-000080",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-08-01",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-24-000067",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-05-02",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-24-000005",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-02-01",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-24-000120",
+        "form": "8-K",
+        "year": 2024,
+        "filing_date": "2024-10-31"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2024_000114036124.parquet",
+      "cached_sha256": "aa6bcec4fbd9cb12ebf1875ba22dd730a79e350fedda16c0219b25443d493365",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-24-040659",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-09-10",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-24-038601",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-08-26",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-24-038403",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-08-23",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-24-024352",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-05-03",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-24-010155",
+          "form": "8-K",
+          "year": 2024,
+          "filing_date": "2024-02-28",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001140361-24-040659",
+        "form": "8-K",
+        "year": 2024,
+        "filing_date": "2024-09-10"
+      },
+      "incorrect_reuse_requests": 4
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2023_000032019323.parquet",
+      "cached_sha256": "6480b5e7e16e6b044f3bb66728b3d17f2838b67d71edd2b7cc087ebe92bacf9e",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-23-000104",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-11-02",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-23-000075",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-08-03",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-23-000063",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-05-04",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-23-000005",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-02-02",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-23-000104",
+        "form": "8-K",
+        "year": 2023,
+        "filing_date": "2023-11-02"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2023_000114036123.parquet",
+      "cached_sha256": "dd9cd3aa7213f58fc2c910943c48c5249218c6827979876497a5b5d361defb74",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-23-023909",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-05-10",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001140361-23-011192",
+          "form": "8-K",
+          "year": 2023,
+          "filing_date": "2023-03-10",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001140361-23-023909",
+        "form": "8-K",
+        "year": 2023,
+        "filing_date": "2023-05-10"
+      },
+      "incorrect_reuse_requests": 1
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2022_000119312522.parquet",
+      "cached_sha256": "87c44200eb35bcc9766c94f7e8a29abb6a06dca6db0612afb748e6afeeec8bad",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-22-278435",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-11-07",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-22-225365",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-08-19",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-22-214914",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-08-08",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-22-066169",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-03-04",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001193125-22-278435",
+        "form": "8-K",
+        "year": 2022,
+        "filing_date": "2022-11-07"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2022_000032019322.parquet",
+      "cached_sha256": "a11ddf53405b1a0b4f0e1387444ee99d723d539f4f5409f8116dd758e41f53ca",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-22-000107",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-10-27",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-22-000069",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-07-28",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-22-000058",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-04-28",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-22-000006",
+          "form": "8-K",
+          "year": 2022,
+          "filing_date": "2022-01-27",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-22-000107",
+        "form": "8-K",
+        "year": 2022,
+        "filing_date": "2022-10-27"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2021_000119312521.parquet",
+      "cached_sha256": "984b2dbef4834e9163a03fa4cf69b4d5bc2b8ea8a5072ad27549dfb7de2c4bd9",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-21-328151",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-11-12",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-21-237787",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-08-05",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-21-054710",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-02-24",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-21-032394",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-02-08",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-21-001982",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-01-05",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001193125-21-328151",
+        "form": "8-K",
+        "year": 2021,
+        "filing_date": "2021-11-12"
+      },
+      "incorrect_reuse_requests": 4
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2021_000032019321.parquet",
+      "cached_sha256": "ec5e1a471b477fbc0a2831be161d93a9c38afeda04e079f0c664726a9ba67a3d",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-21-000104",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-10-28",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-21-000063",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-07-27",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-21-000055",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-04-28",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-21-000009",
+          "form": "8-K",
+          "year": 2021,
+          "filing_date": "2021-01-27",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-21-000104",
+        "form": "8-K",
+        "year": 2021,
+        "filing_date": "2021-10-28"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2020_000032019320.parquet",
+      "cached_sha256": "27b2ac9e0590163ca8e1062d12223345171ef60cfc8f58c1ea9afe246251b718",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-20-000094",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-10-29",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-20-000060",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-07-30",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-20-000050",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-04-30",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0000320193-20-000008",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-01-28",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0000320193-20-000094",
+        "form": "8-K",
+        "year": 2020,
+        "filing_date": "2020-10-29"
+      },
+      "incorrect_reuse_requests": 3
+    },
+    {
+      "legacy_path": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2020_000119312520.parquet",
+      "cached_sha256": "e355f9eef1b22f792a772c7815b29f6ad540110bc98a3fead8e02271694c3e2f",
+      "publisher_filings": [
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-20-225672",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-08-20",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-20-213158",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-08-07",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-20-139112",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-05-11",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-20-050884",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-02-27",
+          "cik": "0000320193"
+        },
+        {
+          "symbol": "AAPL",
+          "accession_no": "0001193125-20-039203",
+          "form": "8-K",
+          "year": 2020,
+          "filing_date": "2020-02-18",
+          "cik": "0000320193"
+        }
+      ],
+      "cached_identity": {
+        "symbol": "AAPL",
+        "accession_no": "0001193125-20-225672",
+        "form": "8-K",
+        "year": 2020,
+        "filing_date": "2020-08-20"
+      },
+      "incorrect_reuse_requests": 4
+    }
+  ]
+}

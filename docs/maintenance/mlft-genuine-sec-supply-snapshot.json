@@ -1,0 +1,16 @@
+{
+  "snapshot_name": "ch23_supply_chain",
+  "properties": {
+    "entity_count": 817,
+    "cache_content_hash": "b20bdf979f79bc32afb9760d979ff533a162dc053618fe81af78dbc4830e29f5",
+    "edge_total": 995,
+    "company_count": 106,
+    "name": "ch23_supply_chain",
+    "extractor": "Qwen/Qwen2.5-7B-Instruct",
+    "competitor_edges": 432,
+    "graph_sha256": "ce7a52bf68f18d1a87a09963f93e2a586eafc0a9f154851390395af815351d0e",
+    "supplier_edges": 268,
+    "customer_edges": 295
+  },
+  "scope": "Read-only inspection of snapshot created by the original full-corpus, unchanged cached supply-chain producer; owned Neo4j service"
+}

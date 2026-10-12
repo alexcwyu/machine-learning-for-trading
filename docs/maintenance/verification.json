@@ -777,6 +777,31 @@
   },
   {
     "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-c",
+      "print(\"Maintenance command timestamp control; no pytest cases\")"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 0.07,
+    "check": "evidence-start-timestamp-control",
+    "started": 1791822152.643231,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-evidence-start-timestamp-control.json",
+    "original_log": "machine-learning-for-trading-evidence-start-timestamp-control.log",
+    "log_sha256": "87219b5fef96560a95b5320702b6caa0ea328603e9a276ee4ca11a6d1693fc75",
+    "log_bytes": 241,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "-m",
       "pytest",
@@ -1730,6 +1755,221 @@
     "original_log": "machine-learning-for-trading-genuine-roughpy-required-autotools.log",
     "log_sha256": "ba3d6400e92b0241558e14c9ded0ad9b01d3b67875d0c839504c1ae8bd7592da",
     "log_bytes": 1428,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "NEO4J_URI=bolt://127.0.0.1:17687",
+      "NEO4J_USER=neo4j",
+      "NEO4J_PASSWORD=password",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::01_sp100_sec_download.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::03_graph_rag_qa.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::01_sp100_sec_download.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::03_graph_rag_qa.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 35.82,
+    "check": "genuine-sec-cache-original-graph-consumers",
+    "started": 1791822355.087353,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-sec-cache-original-graph-consumers.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-cache-original-graph-consumers.log",
+    "log_sha256": "ca58541adea2d2cd24c987d833e1257b180102c36eb9b506051b08573b179e42",
+    "log_bytes": 28377,
+    "outcome_lines": [
+      "=================== 8 failed, 2 passed, 8 warnings in 34.34s ==================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "NEO4J_URI=bolt://127.0.0.1:17687",
+      "NEO4J_USER=neo4j",
+      "NEO4J_PASSWORD=password",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::01_sp100_sec_download.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::03_graph_rag_qa.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::01_sp100_sec_download.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::03_graph_rag_qa.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 39.55,
+    "check": "genuine-sec-explicit-root-original-graph-consumers",
+    "started": 1791822616.743386,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
+    "log_sha256": "ccf3f9c8a79e69b430097f82604597bfa553dca608b102845c69a7e2657a706a",
+    "log_bytes": 17527,
+    "outcome_lines": [
+      "=================== 4 failed, 6 passed, 8 warnings in 38.31s ==================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::01_sp100_sec_download.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::01_sp100_sec_download.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 12.25,
+    "check": "genuine-sec-full-8k-original-preview-cases",
+    "started": 1791822886.44275,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-sec-full-8k-original-preview-cases.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-full-8k-original-preview-cases.log",
+    "log_sha256": "783953847aaeeb9fd96a8809048b3efeeb53b9516ca91acafc70aad8a19a9eb7",
+    "log_bytes": 2670,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 10.90s ========================"
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "PYTHONUNBUFFERED=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "../docs/maintenance-2026-10-12/tools/run_mlft_genuine_sec_filings.py",
+      "8-K"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1228.08,
+    "check": "genuine-sec-sp100-full-original-8k-downloader",
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-sec-sp100-full-original-8k-downloader.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-sp100-full-original-8k-downloader.log",
+    "log_sha256": "d3e49140b6e2234dc6e798ac449aab2bafcdc43fb607be97cc549eddfcc8088b",
+    "log_bytes": 7380,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "PYTHONUNBUFFERED=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/run_mlft_genuine_sec_filings.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 170.92,
+    "check": "genuine-sec-sp100-full-original-downloader-resume-after-bound",
+    "started": 1791822183.967372,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-sec-sp100-full-original-downloader-resume-after-bound.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-sp100-full-original-downloader-resume-after-bound.log",
+    "log_sha256": "788c1614203752566bc6ad6280c27cfd5cea8e0f7e345afda1bbe710c18b12d9",
+    "log_bytes": 2769,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "PYTHONUNBUFFERED=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "../docs/maintenance-2026-10-12/tools/run_mlft_genuine_sec_filings.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 124,
+    "seconds": 1200.01,
+    "check": "genuine-sec-sp100-full-original-downloader",
+    "source_snapshot": {
+      "head": "b208ca666d771036d9cc3289b90f075868658081",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "interruption_reason": "Own check exceeded 1200-second bound.",
+    "evidence_record": "machine-learning-for-trading-genuine-sec-sp100-full-original-downloader.json",
+    "original_log": "machine-learning-for-trading-genuine-sec-sp100-full-original-downloader.log",
+    "log_sha256": "364414d7b2b75d67415c52224d3eafcf438771c8ee8ec295d36081e99d00ab78",
+    "log_bytes": 5854,
     "outcome_lines": []
   },
   {
@@ -4158,6 +4398,85 @@
     "log_sha256": "d86acff389a88db2eeb9bbea158678636ef580f774314dac7e4999fbc7e084d7",
     "log_bytes": 271,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.48,
+    "check": "sec-cache-repair-root-build",
+    "started": 1791823446.267616,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "6e48a27093ace56d0fc608acb4aaf4b151437510b64ea5587e4d4ac4ab020442",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-sec-cache-repair-root-build.json",
+    "original_log": "machine-learning-for-trading-sec-cache-repair-root-build.log",
+    "log_sha256": "4f73ff236b3809b0ed3ceeefbd070b4a8717e21f459c7e9b3e557d8d006d9bf9",
+    "log_bytes": 41965,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-Werror",
+      "-c",
+      "import pathlib,subprocess,py_compile; files=subprocess.check_output([\"git\",\"ls-files\",\"*.py\"],text=True).splitlines(); [py_compile.compile(f,doraise=True) for f in files if pathlib.Path(f).is_file()]; print(len(files),\"tracked Python files compiled\")"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 2.19,
+    "check": "sec-cache-repair-root-compile",
+    "started": 1791823447.885365,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "6e48a27093ace56d0fc608acb4aaf4b151437510b64ea5587e4d4ac4ab020442",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-sec-cache-repair-root-compile.json",
+    "original_log": "machine-learning-for-trading-sec-cache-repair-root-compile.log",
+    "log_sha256": "58a8046281fb1e6000683690a8eba4a7ab3d092586eba7f3cf9a099f626194eb",
+    "log_bytes": 425,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-q",
+      "tests/test_create_test_data.py",
+      "tests/test_data_exceptions.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 2.43,
+    "check": "sec-cache-repair-root-existing-cases",
+    "started": 1791823443.770371,
+    "source_snapshot": {
+      "head": "47aa0778bc273454de3488fab04014350b1da61e",
+      "tracked_source_diff_sha256": "6e48a27093ace56d0fc608acb4aaf4b151437510b64ea5587e4d4ac4ab020442",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-sec-cache-repair-root-existing-cases.json",
+    "original_log": "machine-learning-for-trading-sec-cache-repair-root-existing-cases.log",
+    "log_sha256": "02a3044d4b4ab4b0ee7ba4079be314b3baf41f5eadd8e33214f9142449bb82c2",
+    "log_bytes": 317,
+    "outcome_lines": [
+      "33 passed in 1.34s"
+    ]
   },
   {
     "command": [

@@ -1,0 +1,36 @@
+{
+  "scope": "Owned isolated source candidate only; full-corpus correction remains separate",
+  "base_commit": "47aa0778bc27",
+  "worktree": "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-review",
+  "owned_changed_source": [
+    "data/equities/fundamentals/filings_download.py"
+  ],
+  "source_sha256": "65712f2d2bb61fb4c450ac8394c27c00857ef8fa8c03000c3f15435466a1147d",
+  "manual_control": "actual-downloader-red-green.json",
+  "collision_metadata": "real-prefix-collision-evidence.json",
+  "existing_tests": {
+    "command": [
+      "<workspace>/machine-learning-for-trading/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_create_test_data.py",
+      "tests/test_data_exceptions.py"
+    ],
+    "cwd": "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-review",
+    "exit_code": 0,
+    "passed": 33,
+    "pytest_seconds": 1.46,
+    "log": "existing-related-cases.log"
+  },
+  "strict_ruff_exit_code": 0,
+  "py_compile_exit_code": 0,
+  "git_diff_check_exit_code": 0,
+  "text_extraction_and_record_generation_bytes_unchanged": true,
+  "new_pytest_cases": 0,
+  "main_source_or_docs_modified": false,
+  "legacy_policy": "Leave prefix-keyed files untouched and do not read them; separately copy only genuine individually validated records into their complete accession keys."
+}

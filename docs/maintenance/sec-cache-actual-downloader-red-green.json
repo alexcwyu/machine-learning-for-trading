@@ -1,0 +1,76 @@
+{
+  "scope": "Manual genuine-publisher/native-downloader diagnostic with three actual AAPL2025 filings; not full-corpus proof or added pytest cases",
+  "source_sha256": "65712f2d2bb61fb4c450ac8394c27c00857ef8fa8c03000c3f15435466a1147d",
+  "publisher_expected_accessions": [
+    "0001140361-25-044561",
+    "0000320193-25-000077",
+    "0000320193-25-000071"
+  ],
+  "original_actual_returned_accessions": [
+    "0001140361-25-044561",
+    "0000320193-25-000077",
+    "0000320193-25-000077"
+  ],
+  "candidate_actual_returned_accessions": [
+    "0001140361-25-044561",
+    "0000320193-25-000077",
+    "0000320193-25-000071"
+  ],
+  "validated_replay_identical": true,
+  "distinct_full_accession_paths": [
+    "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-control/candidate-cache/AAPL/2025_000114036125044561.parquet",
+    "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-control/candidate-cache/AAPL/2025_000032019325000077.parquet",
+    "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-control/candidate-cache/AAPL/2025_000032019325000071.parquet"
+  ],
+  "real_record_mismatch_controls": [
+    {
+      "mismatch": "accession",
+      "actual_source": "<workspace>/.runtime/maintenance-2026-10-12/mlft-sec-cache-control/candidate-cache/AAPL/2025_000032019325000077.parquet",
+      "actual_source_sha256": "368706cc672e21641d0cd9bd598dfe208795c540b07eb1a83b0694ee7ee19049",
+      "actual_source_identity": {
+        "accession_no": "0000320193-25-000077",
+        "symbol": "AAPL",
+        "form": "8-K",
+        "year": 2025
+      },
+      "recovered_accession": "0001140361-25-044561"
+    },
+    {
+      "mismatch": "year",
+      "actual_source": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/AAPL/2024_000032019324.parquet",
+      "actual_source_sha256": "6c0985ab4228e79e58642c157e2fd53baa002fd68ca93a99453f165da0ef90f7",
+      "actual_source_identity": {
+        "accession_no": "0000320193-24-000120",
+        "symbol": "AAPL",
+        "form": "8-K",
+        "year": 2024
+      },
+      "recovered_accession": "0001140361-25-044561"
+    },
+    {
+      "mismatch": "symbol",
+      "actual_source": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_8k/MSFT/2025_000095017025.parquet",
+      "actual_source_sha256": "88f5529d07eeb7d6414daeac5e2958f9d2b430993c1440ca58f7e8d0cafb39d6",
+      "actual_source_identity": {
+        "accession_no": "0000950170-25-100226",
+        "symbol": "MSFT",
+        "form": "8-K",
+        "year": 2025
+      },
+      "recovered_accession": "0001140361-25-044561"
+    },
+    {
+      "mismatch": "form",
+      "actual_source": "<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/fundamentals/cache/sp100_10k/AAPL/2025_000032019325.parquet",
+      "actual_source_sha256": "a2d78201c7db2a67417e4a2ca743ab88ce3102f4bd9a1cff60af8491cfc7adfc",
+      "actual_source_identity": {
+        "accession_no": "0000320193-25-000079",
+        "symbol": "AAPL",
+        "form": "10-K",
+        "year": 2025
+      },
+      "recovered_accession": "0001140361-25-044561"
+    }
+  ],
+  "original_legacy_files_unchanged": true
+}

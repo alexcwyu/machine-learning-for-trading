@@ -1079,3 +1079,7 @@ fails explicitly. Original parameters, backend, assertions, tier/GPU/credential
 guards and model remain unchanged; the core Python 3.14 environment is untouched.
 The [standalone source/profile and terminal proof](maintenance/bsts-native-profile.md)
 records the original failure, independent review and exact original-case scope.
+
+## Genuine SEC recovery and cache identity repair
+
+Eight original Chapter/Docker graph and preview nodes now pass on actual publisher inputs and the original extraction cache. The reviewed full-accession cache repair prevents one filing from impersonating another. Full corrected 8-K corpus recovery remains active; the prior 1,249-row schema pass is explicitly not a completeness proof. See [cache design, source-linked controls and recovery scope](maintenance/sec-filing-cache-identity.md).

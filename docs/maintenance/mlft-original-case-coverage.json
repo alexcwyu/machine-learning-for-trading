@@ -3,14 +3,14 @@
   "original_nodes": 8333,
   "current_nodes": 8327,
   "counts": {
-    "passed": 7646,
+    "passed": 7654,
     "skipped": 466,
-    "failed": 215
+    "failed": 207
   },
   "retained_original_evidence_counts": {
-    "passed": 7652,
+    "passed": 7660,
     "skipped": 462,
-    "failed": 219
+    "failed": 211
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -7803,18 +7803,18 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::01_sp100_sec_download.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-full-8k-original-preview-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::03_graph_rag_qa.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::04_rag_comparison_benchmark.py]": {
@@ -7843,13 +7843,13 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[24_autonomous_agents::01_react_reasoning.py]": {
@@ -8004,7 +8004,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::06_mlflow_experiments.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-fresh-genuine-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::crypto::market::dataset_card.py]": {
@@ -12908,18 +12908,18 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::01_sp100_sec_download.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-full-8k-original-preview-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::03_graph_rag_qa.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::04_rag_comparison_benchmark.py]": {
@@ -12948,13 +12948,13 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[24_autonomous_agents::01_react_reasoning.py]": {
@@ -13109,7 +13109,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::06_mlflow_experiments.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-fresh-genuine-canonical-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::crypto::market::dataset_card.py]": {

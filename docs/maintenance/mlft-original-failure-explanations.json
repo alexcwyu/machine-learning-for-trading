@@ -1,14 +1,14 @@
 {
   "scope": "Exact original failed node explanations from retained terminal summaries; missing inputs are not assumed to be unavailable privately unless proven",
   "coverage_counts": {
-    "passed": 7646,
+    "passed": 7654,
     "skipped": 466,
-    "failed": 215
+    "failed": 207
   },
-  "explained": 215,
+  "explained": 207,
   "categories": {
-    "missing genuine input/artifact prerequisite": 188,
-    "runtime or contract failure requiring diagnosis": 27
+    "missing genuine input/artifact prerequisite": 182,
+    "runtime or contract failure requiring diagnosis": 25
   },
   "failures": {
     "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs": {
@@ -437,35 +437,11 @@
       "details": "Failed: \n======================================================================\nNotebook failed: 22_rag_financial_research/08_rag_security\n======================================================================\nError: Cell 11 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
       "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log"
     },
-    "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::01_sp100_sec_download.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 6 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/01_sp100_sec_download\n======================================================================\nError: Cell 6 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log"
-    },
-    "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 10 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/02_supply_chain_kg_construction\n======================================================================\nError: Cell 10 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
-    "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::03_graph_rag_qa.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 6 (FileNotFoundError): [Errno 2] No such file or directory: '/Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/positioning/13f/institutional_holdings.parquet'",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/03_graph_rag_qa\n======================================================================\nError: Cell 6 (FileNotFoundError): [Errno 2] No such file or directory: '/Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/positioning/13f/institutional_holdings.parquet'\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
-    "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]": {
-      "category": "runtime or contract failure requiring diagnosis",
-      "cause": "Error: Cell 13 (RuntimeError): Neo4j holds no SupplyGraphSnapshot named ch23_supply_chain. Run 02_supply_chain_kg_construction.py first.",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/09_knowledge_graph_features\n======================================================================\nError: Cell 13 (RuntimeError): Neo4j holds no SupplyGraphSnapshot named ch23_supply_chain. Run 02_supply_chain_kg_construction.py first.\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]": {
       "category": "missing genuine input/artifact prerequisite",
       "cause": "Error: Cell 8 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log"
+      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::01_drift_monitoring.py]": {
       "category": "runtime or contract failure requiring diagnosis",
@@ -501,7 +477,7 @@
       "category": "runtime or contract failure requiring diagnosis",
       "cause": "Error: Cell 20 (IndexError): single positional indexer is out-of-bounds",
       "details": "Failed: \n======================================================================\nNotebook failed: 26_mlops_governance/06_mlflow_experiments\n======================================================================\nError: Cell 20 (IndexError): single positional indexer is out-of-bounds\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-fresh-genuine-canonical-consumers.log"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::equities::market::microstructure::dataset_card.py]": {
       "category": "missing genuine input/artifact prerequisite",
@@ -1013,35 +989,11 @@
       "details": "Failed: \n======================================================================\nNotebook failed: 22_rag_financial_research/08_rag_security\n======================================================================\nError: Cell 11 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
       "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log"
     },
-    "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::01_sp100_sec_download.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 6 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/01_sp100_sec_download\n======================================================================\nError: Cell 6 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log"
-    },
-    "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::02_supply_chain_kg_construction.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 10 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/02_supply_chain_kg_construction\n======================================================================\nError: Cell 10 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: SEC 10-K Filings (sp100)\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/fundamentals/10k/sp100/reference/all_10k_filings.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/fundamentals/filings_download.py --form 10-K --universe sp100\n\nFor complete instructions, see: data/equities/fundamentals/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
-    "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::03_graph_rag_qa.py]": {
-      "category": "missing genuine input/artifact prerequisite",
-      "cause": "Error: Cell 6 (FileNotFoundError): [Errno 2] No such file or directory: '/Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/positioning/13f/institutional_holdings.parquet'",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/03_graph_rag_qa\n======================================================================\nError: Cell 6 (FileNotFoundError): [Errno 2] No such file or directory: '/Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/positioning/13f/institutional_holdings.parquet'\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
-    "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::09_knowledge_graph_features.py]": {
-      "category": "runtime or contract failure requiring diagnosis",
-      "cause": "Error: Cell 13 (RuntimeError): Neo4j holds no SupplyGraphSnapshot named ch23_supply_chain. Run 02_supply_chain_kg_construction.py first.",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/09_knowledge_graph_features\n======================================================================\nError: Cell 13 (RuntimeError): Neo4j holds no SupplyGraphSnapshot named ch23_supply_chain. Run 02_supply_chain_kg_construction.py first.\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log"
-    },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]": {
       "category": "missing genuine input/artifact prerequisite",
       "cause": "Error: Cell 8 (DataNotFoundError): ",
-      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/machine-learning-for-trading/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/machine-learning-for-trading/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log"
+      "details": "Failed: \n======================================================================\nNotebook failed: 23_knowledge_graphs/10_network_portfolio_construction\n======================================================================\nError: Cell 8 (DataNotFoundError): \n======================================================================\nDATA NOT FOUND: US Equities Dataset\n======================================================================\n\nExpected location: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/market/us_equities/us_equities.parquet\n\nData root: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/data\n  Set by the ML4T_DATA_PATH environment variable.\n  If you already have this data elsewhere, point ML4T_DATA_PATH at\n  that directory - export it, or set it in .env - rather than downloading\n  it again.\n\nTo download this dataset (from repo root):\n  uv run python data/equities/market/us_equities/download.py\n\nNote: Requires QUANDL_API_KEY in .env file\n\nFor complete instructions, see: data/README.md\n======================================================================\n======================================================================",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-sec-explicit-root-original-graph-consumers.log"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::01_drift_monitoring.py]": {
       "category": "runtime or contract failure requiring diagnosis",
@@ -1077,7 +1029,7 @@
       "category": "runtime or contract failure requiring diagnosis",
       "cause": "Error: Cell 20 (IndexError): single positional indexer is out-of-bounds",
       "details": "Failed: \n======================================================================\nNotebook failed: 26_mlops_governance/06_mlflow_experiments\n======================================================================\nError: Cell 20 (IndexError): single positional indexer is out-of-bounds\n======================================================================",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-fresh-genuine-canonical-consumers.log"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::equities::market::microstructure::dataset_card.py]": {
       "category": "missing genuine input/artifact prerequisite",

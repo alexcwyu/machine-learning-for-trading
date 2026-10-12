@@ -1,0 +1,16 @@
+{
+  "original_downloader_terminal": "machine-learning-for-trading-genuine-sec-sp100-full-original-downloader-resume-after-bound.json",
+  "source_parquet_sha256": "d069dc05ea04e144c62d0a8e48a655eb12817a46240b1984a3baed7e1c625cc6",
+  "rows": 601,
+  "symbols": 101,
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "text_lengths_match": true,
+  "invented_market_or_filing_rows": false
+}
