@@ -143,12 +143,14 @@ dependencies = [
     # ===================
     "ta-lib>=0.6.8",
     "ta>=0.11",
+    # Current esig uses the genuine native RoughPy CPython 3.14 wheels.
+    "esig>=1.0.0",
     # ===================
     # Synthetic Data
     # ===================
     "be-great>=0.0.5",
     "opacus>=1.4",
-    # signatory/esig: separate env (envs/py312/). Only Ch5 NB03, Ch9 NB06/12.
+    # signatory: separate env (envs/py312/). Ch5 NB03 and Ch9 NB12.
     # ===================
     # Strategy
     # ===================

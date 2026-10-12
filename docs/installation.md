@@ -133,7 +133,7 @@ does not work on Intel Macs or in native Windows Python.
 | Image | What it covers | Platforms |
 |-------|----------------|-----------|
 | **ml4t** | All chapters (Ch01-Ch27) + all 9 case studies | amd64 + arm64 |
-| **ml4t-py312** | Ch05 NB01/03/07, Ch09 NB06/12, Ch10 NB01-03, Ch12 NB10, Ch14 NB06, Ch15 NB06 (signatory, esig, tfcausalimpact) | amd64 only |
+| **ml4t-py312** | Ch05 NB01/03/07, Ch09 NB06/12, Ch10 NB01-03, Ch12 NB10, Ch14 NB06, Ch15 NB06 (signatory, tfcausalimpact) | amd64 only |
 | **benchmark** | Ch02 storage benchmarks (DuckDB, HDF5, database clients) | amd64 + arm64 |
 | **rapids** | Ch12 GBM GPU benchmark (RAPIDS cuML, LightGBM CUDA) | amd64 + NVIDIA GPU |
 
@@ -512,7 +512,7 @@ A small number of notebooks require Python 3.12 libraries not available on Pytho
 | Notebook | Library | Chapter |
 |----------|---------|---------|
 | `01_timegan`, `03_sigcwgan_signatures`, `07_dp_gan` | signatory, torch CUDA bug on 3.14 | Ch05 |
-| `06_path_signatures` | signatory, esig | Ch09 |
+| `12_neural_path_signatures` | signatory | Ch09 |
 | `10_shap_nlp_sentiment` | torch CUDA bug + shap | Ch12 |
 | `06_conditional_autoencoder` | torch CUDA bug + shap | Ch14 |
 | `06_fed_announcement_bsts` | tfcausalimpact (TFP BSTS) | Ch15 |
@@ -733,7 +733,6 @@ A few notebooks require Docker because their dependencies have no Python 3.14 wh
 | Notebook | Reason | Docker Image |
 |----------|--------|-------------|
 | Ch05 `03_sigcwgan_signatures` | signatory requires Python 3.12 | py312 |
-| Ch09 `06_path_signatures` | esig requires Python 3.12 | py312 |
 | Ch12 `10_shap_nlp_sentiment` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch14 `06_conditional_autoencoder` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch15 `06_fed_announcement_bsts` | tfcausalimpact requires Python 3.12 | py312 |
@@ -771,3 +770,15 @@ of this project's wheel does not carry the Git source selection. The dependency'
 PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
 The original word2vec and asset-embedding cases pass with genuine Phrasebank and
 SEC holdings inputs. Other notebooks still need their own documented prerequisites.
+
+
+### Locally verified native path signatures
+
+Frozen uv sync installs current esig 1.0.0 with the official RoughPy 0.3.0
+CPython 3.14 arm64 wheel and genuine pyrecombine 1.0.1 source build. Both
+original Chapter and Docker-named path-signature cases execute successfully
+using native Python 3.14 and genuine ETF inputs. Their parameters and mathematics
+are unchanged. The separate signatory notebooks retain their documented runtime
+requirements. The Python 3.15 source control currently stops at an external
+range-v3/libc++ header compatibility error; it does not justify claiming Python
+3.15 compatibility or changing the main interpreter.

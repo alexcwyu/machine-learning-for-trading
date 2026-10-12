@@ -2120,6 +2120,20 @@ wheels = [
 ]
 
 [[package]]
+name = "esig"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pyrecombine" },
+    { name = "roughpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/34/55/972a2ec51b455bcddf633632abc7e7777e701f38fd2d8551c394632925fc/esig-1.0.0.tar.gz", hash = "sha256:b34e74d0a7378beb1df616480573057eef4ab4cd227b1a89a446559abc3439bc", size = 29984, upload-time = "2024-12-17T14:03:57.045Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f3/50/9053ce316bd2e501d463e3447e26ce8f42b0f37d5cdc92c52faffba49f35/esig-1.0.0-py3-none-any.whl", hash = "sha256:370d7f3f5c5a8466be8db548c3c7ce35868f6c5f69a81fdcd9f57b4e1cf48c0d", size = 19620, upload-time = "2024-12-17T14:03:55.151Z" },
+]
+
+[[package]]
 name = "et-xmlfile"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3308,6 +3322,30 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/80/cc/d9b8e4e0684033388c9a88df56c47f639758e4ac946e9eb3789d1b4d13d4/instructor-1.17.0.tar.gz", hash = "sha256:aeab1e7f21f5214deedf60e8e264951408057ce21d9589743f533580dc0d6bfb", size = 70240472, upload-time = "2026-09-09T02:26:00.614Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/42/22/429e950b50569cb56eb324cc62992c0a458121e5d5a43acec295a127ade7/instructor-1.17.0-py3-none-any.whl", hash = "sha256:f6b1832d178e899ee0a6a3f247e221f19580fa525c815211c02447691d761217", size = 269394, upload-time = "2026-09-09T02:25:54.888Z" },
+]
+
+[[package]]
+name = "intel-cmplr-lib-ur"
+version = "2026.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "umf" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/80/f0/b7e8305da2d2ea162599795886d03a809bf1554ec5079c59f147b506f277/intel_cmplr_lib_ur-2026.1.2-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:b27207f3b42d12ce88cd53ca8b3b7a7e79755aa07a84eccf1c209fcbefe468bf", size = 31636265, upload-time = "2026-09-05T10:34:45.121Z" },
+    { url = "https://files.pythonhosted.org/packages/83/52/bf0781e69da7f02141635b68c16daa7756e980f0ba29f78a7f4332ee3985/intel_cmplr_lib_ur-2026.1.2-py2.py3-none-win_amd64.whl", hash = "sha256:e2ef94d758948a5c52090f723bc113b8614a8a4187f017668d0375b72a8be653", size = 1321751, upload-time = "2026-09-05T10:34:55.501Z" },
+]
+
+[[package]]
+name = "intel-openmp"
+version = "2026.1.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "intel-cmplr-lib-ur" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8b/4d/27cb1284bee222fdd4f4280a651c264031bc1f8ebbdbd29cdfd0f906a466/intel_openmp-2026.1.2-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:4612231a3605db891265c1d8cc4af49ee66009dc55f24012770a9faf3d8ac35e", size = 52545398, upload-time = "2026-09-05T10:34:33.577Z" },
+    { url = "https://files.pythonhosted.org/packages/0c/a8/7b7c00ac0f74cedf36f8623c5eb57fe43d0e172b8ce939043f63beb1f16e/intel_openmp-2026.1.2-py2.py3-none-win_amd64.whl", hash = "sha256:c5fd1bfb8306f7a21abc7494c700ca117bf4abbde841e48b263904ac50b1d694", size = 26355279, upload-time = "2026-09-05T10:35:02.971Z" },
 ]
 
 [[package]]
@@ -4716,6 +4754,7 @@ dependencies = [
     { name = "econml" },
     { name = "edgartools" },
     { name = "einops" },
+    { name = "esig" },
     { name = "evaluate" },
     { name = "exchange-calendars" },
     { name = "feast" },
@@ -4875,6 +4914,7 @@ requires-dist = [
     { name = "econml", specifier = ">=0.15" },
     { name = "edgartools", specifier = ">=5.61.1" },
     { name = "einops", specifier = ">=0.7" },
+    { name = "esig", specifier = ">=1.0.0" },
     { name = "evaluate", specifier = ">=0.4" },
     { name = "exchange-calendars", specifier = ">=4.5" },
     { name = "feast", specifier = ">=0.61" },
@@ -7478,6 +7518,22 @@ wheels = [
 ]
 
 [[package]]
+name = "pyrecombine"
+version = "1.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "intel-openmp", marker = "(platform_machine == 'AMD64' and sys_platform != 'darwin') or (platform_machine == 'x86_64' and sys_platform != 'darwin')" },
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c8/5c/e477311ae5940fb4ce704b7931d530e3f8591d2ac5a783db8a0870e6c0ee/pyrecombine-1.0.1.tar.gz", hash = "sha256:9355c6d6b1fd17a5123dfd22538b9bc140dffaa855588383fd689cdfa4ed9957", size = 63203, upload-time = "2025-04-15T09:24:54.503Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/29/aa/03500a0c424f0d178458ef12efd797d7fa16b391f92e2f596f73afadc9f1/pyrecombine-1.0.1-cp313-cp313-macosx_13_0_x86_64.whl", hash = "sha256:90b2c79aa38e5b318847e9d40e43ec3b207ddd797c473c26d6cb6c82fc7d1465", size = 305316, upload-time = "2025-04-15T09:24:40.425Z" },
+    { url = "https://files.pythonhosted.org/packages/48/57/90c16f96e0f4826f42a06b292532e9b233652d73cbb9d5aae184cddcb884/pyrecombine-1.0.1-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:6e52bef77e786f0f7574091c99aafa9bed5a7613c826a9e318fadd356970e315", size = 272391, upload-time = "2025-04-15T09:24:42.17Z" },
+    { url = "https://files.pythonhosted.org/packages/b2/a8/839aee31a32445ea993a37ecc84697e7bdae5dc48268159f7c8f14b26ded/pyrecombine-1.0.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3c86c6401d2924a654365ee975e9ee35e54905b0e40322e341746c016f6e4f38", size = 2740348, upload-time = "2025-04-15T09:24:44.358Z" },
+    { url = "https://files.pythonhosted.org/packages/46/ee/eeac06b401bdccc6b11a4b1ddcd75361ae480dd283564b8e1259a15e76f5/pyrecombine-1.0.1-cp313-cp313-win_amd64.whl", hash = "sha256:2d86feff4d8ca24e73232e3f6fca6f69bde63cad685a8e4445e8b5f3e7d976d6", size = 2710745, upload-time = "2025-04-15T09:24:46.126Z" },
+]
+
+[[package]]
 name = "pysocks"
 version = "1.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -8157,6 +8213,26 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/33/66/0ef30cc6e81971a8b6a9ed4fee8ab914922b8f97819008ec8e83e6cd461a/riskfolio_lib-7.4.0-cp314-cp314-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:df3004f237f9b0b21e151597e3898022948b95c0014e106598c8a8abba28d5c3", size = 292617, upload-time = "2026-10-04T05:08:45.909Z" },
     { url = "https://files.pythonhosted.org/packages/a5/d3/96d14a77103430108c596d4c8657e33055c09dff4503aedc82099b6e49e3/riskfolio_lib-7.4.0-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8abe73ca4b46d2e41d7a3ce22b9e9492e53277ead421e4ebe8fd6579563b8e0d", size = 305168, upload-time = "2026-10-04T05:08:47.524Z" },
     { url = "https://files.pythonhosted.org/packages/1f/4c/360e0613e53fa88f595b0faa314c5f4819b1466d93bae29739a97a79cb76/riskfolio_lib-7.4.0-cp314-cp314-win_amd64.whl", hash = "sha256:03f4c20f57fd2ed2a81d90ea9a65a58b9f1a7d58cd540364f0a40b8f858a105e", size = 473150, upload-time = "2026-10-04T05:08:48.594Z" },
+]
+
+[[package]]
+name = "roughpy"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5b/55/4fe9b66e60adfd93e208924364b45e1684d3014f11bb1d466daf42a3ddbb/roughpy-0.3.0.tar.gz", hash = "sha256:db5d5ee5319c504603061687756c7f88cdd28a3103b58ecc01a411e98dfa0119", size = 1262081, upload-time = "2026-03-23T18:03:09.174Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/06/d4/afe59b3547ec07c6f2413e09407b8223f4a6f3b2876f3c6c8eb277be2c8b/roughpy-0.3.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:e866096a640e3fc09ea60cac308bd591aa5a82079f79dcf22bf6484b0a307404", size = 3334277, upload-time = "2026-03-23T18:02:57.093Z" },
+    { url = "https://files.pythonhosted.org/packages/e1/02/52cbe5b1cb8331bf4bddfdcc283142c8f0a9a06d5e0f8aa5581a445b60ec/roughpy-0.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:3ccaeeace6b6e72db02e00c38c19c55bfe40b9d08347ef69225a0db06778647c", size = 4982840, upload-time = "2026-03-23T18:02:58.276Z" },
+    { url = "https://files.pythonhosted.org/packages/32/3f/b0965a8173d90dbdfd8baf1a9fb178b23f5ca74e9ccee15f591650d49a7b/roughpy-0.3.0-cp313-cp313-win_amd64.whl", hash = "sha256:53a7a15fa80f352651503e9b23070c04d86e0f8200931d8dcd2a7e5e5d5d91f9", size = 3287417, upload-time = "2026-03-23T18:02:59.501Z" },
+    { url = "https://files.pythonhosted.org/packages/64/c3/ed376e55f5c7d3cfb7d51b05c53efe0625924c654aabd7c1f1c6455cd757/roughpy-0.3.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:94ae43cb931041e88ab41381bcdb5cad8abeb4415e70eebbc6d38d50fc85a856", size = 3334345, upload-time = "2026-03-23T18:03:00.648Z" },
+    { url = "https://files.pythonhosted.org/packages/f6/39/f7f09fe7820688723cfff9feab69bc4793643f9ee3248002bf3bf966d23a/roughpy-0.3.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:31ee7bb9d1c27c78fd34a5d909d50e0478ad9546838c2975f4a844cfda3a6964", size = 4985414, upload-time = "2026-03-23T18:03:02.248Z" },
+    { url = "https://files.pythonhosted.org/packages/77/c2/ba9a99baf5c8ee2352309da400a055b91f0d2244e8eb939903f504946807/roughpy-0.3.0-cp314-cp314-win_amd64.whl", hash = "sha256:770cc1a50e0b656884b91c9a6fcaafdc9c03691e06cce5b9395c7d00de13c7aa", size = 3384243, upload-time = "2026-03-23T18:03:03.581Z" },
+    { url = "https://files.pythonhosted.org/packages/52/99/c8597e0a89b85894946211d5a3a1ac5c494581bd8aa6335d18a1381f0de3/roughpy-0.3.0-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:e263bbaf7342113c067a8e442a1c3bc6e9cd9bcb6544d9e4e042f247da28ebc6", size = 3376660, upload-time = "2026-03-23T18:03:04.681Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/cc/73efe95cbd597a65d41a0da43ca02f53f2423ae0c20650b6ff3a2dc55581/roughpy-0.3.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:27244a3da0347d4511e463c326516a849ddde0eec49681cf682e2a8bc523d5f5", size = 4936293, upload-time = "2026-03-23T18:03:05.889Z" },
+    { url = "https://files.pythonhosted.org/packages/14/d7/8491bf2bb937fc6af47c535bfa8b7b1c445ec235217fff242086a8b482e2/roughpy-0.3.0-cp314-cp314t-win_amd64.whl", hash = "sha256:874841610275cff8553cf462c6fb0e595c32e518a1ef8e4bd3ce0f866234cf2e", size = 3439717, upload-time = "2026-03-23T18:03:08.023Z" },
 ]
 
 [[package]]
@@ -9099,6 +9175,15 @@ wheels = [
 ]
 
 [[package]]
+name = "tcmlib"
+version = "1.5.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/60/24/aa409bb20703acc70cf4d3bc620a55c789639c2995b2667fb44ae7236ec9/tcmlib-1.5.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:9d7c01cff35aae9bf5390b620680ebdf10a7d211c22d6488a27a029502e7d0aa", size = 2812669, upload-time = "2026-04-24T14:14:18.557Z" },
+    { url = "https://files.pythonhosted.org/packages/67/6d/9095c93326d0f8a5469ab22480d02795f24c08f1e7f383c73316ff106347/tcmlib-1.5.0-py2.py3-none-win_amd64.whl", hash = "sha256:f7b62787214083d490b39d7650f1e477eeacc875e7f86799feb9aa1fd34460d4", size = 366719, upload-time = "2026-04-24T14:09:45.977Z" },
+]
+
+[[package]]
 name = "tenacity"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -9569,6 +9654,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz", hash = "sha256:8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4", size = 31170, upload-time = "2026-06-29T08:03:40.026Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9e/a4/017a7a6cbe387d961a688ec31364ae60a5c4e22c96ae9921b79a947c855d/tzlocal-5.4.4-py3-none-any.whl", hash = "sha256:aae09f0126a8a86fa736be266eb4a471380d26a0de3bc14844e7821fee3e2a15", size = 18115, upload-time = "2026-06-29T08:03:38.666Z" },
+]
+
+[[package]]
+name = "umf"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "tcmlib" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/72/2e0182f4e6a727a15d0a8a99a82182a4f5bdec1a4f5767acfd2abdc72070/umf-1.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:567152c5ee6b8e16cc56b29a8a9a6b918de1febf89877f71ea2e8247ef39fc32", size = 424455, upload-time = "2026-04-24T14:13:51.436Z" },
+    { url = "https://files.pythonhosted.org/packages/2d/43/d89fee46bed22a461714a8786b833a89bff2f0a5e058b02eed3be842752e/umf-1.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:a8c5ff84901fe6348715b6c1c85de4d195a6c69185d99ce4ebf7449b5d04011c", size = 289901, upload-time = "2026-04-24T14:08:31.647Z" },
 ]
 
 [[package]]

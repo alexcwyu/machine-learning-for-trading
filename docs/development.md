@@ -938,7 +938,7 @@ strict OHLC validation and strategy parameters remain unchanged.
 ### Current publication evidence and continuing work
 
 The [per-node snapshot](maintenance/mlft-original-case-coverage.json) records
-7,641 passes, 468 conditional skips and 218 failures in the current 8,327-node
+7,644 passes, 467 conditional skips and 216 failures in the current 8,327-node
 collection, with no unknown identities. The original 8,333-node inventory is
 retained separately: ten obsolete skip-guard parameter identities and one
 empty fold placeholder retire; genuine artifacts activate five parameterizations
@@ -946,7 +946,7 @@ of the unchanged fold test. [Reconciliation](maintenance/mlft-original-current-i
 retains every retired outcome without calling it a current pass. No test source
 cases or assertions change. Composite platform/input scopes are explicit;
 [remaining failures](maintenance/mlft-original-failure-explanations.json) include
-188 genuine prerequisite gaps and 30 runtime/contract diagnoses. The ETF canonical
+188 genuine prerequisite gaps and 28 runtime/contract diagnoses. The ETF canonical
 holdout/strategy chain now passes and supplies the genuine live-trading winner.
 
 ### Further genuine public fixture recovery
@@ -1016,5 +1016,36 @@ exception branches and guards. Both original preprocessing nodes pass; the
 absent Sharadar section does not execute. The [source review and actual input
 scope](maintenance/preprocessing-review.md) records the original failure,
 minimal repair, unchanged AST outside the intended assignments and genuine
-executed datasets. An isolated official esig/RoughPy native Python 3.15 source
-build continues; no result is claimed before its terminal record.
+executed datasets. The isolated official native signature controls are recorded below.
+
+
+### Genuine native signature recovery
+
+Current esig 1.0.0 and RoughPy 0.3.0 provide a genuine official CPython 3.14
+arm64 native wheel; pyrecombine 1.0.1 builds from its unchanged source. The exact
+frozen isolated environment preserves all original package versions and adds
+only those three dependencies. Both original path-signature notebook nodes and
+53 unchanged identity guards pass (55 cases, 40.20 seconds). After frozen main
+sync adds the same dependencies, that exact original scope passes again in
+38.37 seconds. These are native Python 3.14 runs of the Chapter and Docker-named
+cases; the earlier official-image kernel-startup failures remain separate.
+Actual esig/RoughPy, NumPy 2.3.5, Torch 2.11.0, sklearn and LightGBM imports plus
+signature calculation load one physical Homebrew libomp 23.1.3 image. No runtime
+patch, backend substitution or golden change is used.
+
+The Python 3.15 source attempt first stops at missing Autoconf tools. After their
+genuine installation, it reaches native compilation and fails on range-v3/meta
+standard-library forward declarations against the host's newer libc++ headers
+(282.39 seconds). All 814 checked official RoughPy core files are unchanged.
+This is not a demonstrated Python 3.15 binding-API failure. A reviewed exact
+upstream dependency-header fix is being tested in an isolated supported port
+overlay; no Python 3.15 main-runtime success is claimed.
+
+The original EconML DML teaching Chapter and Docker-named cases also pass with
+current genuine inputs (34.85 seconds). Their source, parameters and assertions
+remain unchanged; the former Docker-node zero-sample failure is retained as
+historical evidence. The aggregate-synthesis nodes still refuse genuine
+incomplete backtest coverage, now at the actual GBM one-day candidate; that
+coverage bar remains unchanged. The equity-option holdout registry case requires
+the genuine original stage-18 canonical CUDA holdout population, not an empty
+replacement database.

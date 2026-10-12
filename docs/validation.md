@@ -1,8 +1,8 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,641 pass, 468 conditional skips and 218 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
+The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,644 pass, 467 conditional skips and 216 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
 
-Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 218 current failures comprise 188 missing genuine input/artifact prerequisites and 30 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 82, Docker notebooks 87, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
+Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 216 current failures comprise 188 missing genuine input/artifact prerequisites and 28 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 82, Docker notebooks 85, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -42,7 +42,7 @@ The earlier 114.94 MiB single-file failure and lossless encoding controls (112.6
 
 ## Build and remaining scope
 
-The current source `4736e270` passes fresh wheel/source-distribution builds (1.34 seconds) and strict compilation of all 1,218 Git-tracked Python files (1.71 seconds). The frozen all-groups/all-extras environment contains 541 packages. Focused source Ruff checks pass. Genuine completed prerequisites permit obsolete skip declarations to retire; remaining conditional skips retain their blocker logic.
+The current source `4736e270` passes fresh wheel/source-distribution builds (1.34 seconds) and strict compilation of all 1,218 Git-tracked Python files (1.71 seconds). The universal frozen lock now contains 548 package entries; the native host contains 516 installed distributions. All prior locked package versions are preserved. Focused source Ruff checks pass. Genuine completed prerequisites permit obsolete skip declarations to retire; remaining conditional skips retain their blocker logic.
 
 Remaining original notebook nodes execute with their declared parameters and prerequisites. The original model registry fixture explicitly reads production case-study directories, so it must receive actual matching producer artifacts rather than merely an environment path. Missing paid CME/DataBento and US-equity/Quandl inputs, ALFRED API access, private test-data checkout access, model populations, specialized containers/services and native platform requirements are reported separately. A missing artifact is not called privately unobtainable without proving its genuine public producer prerequisites.
 
@@ -164,5 +164,36 @@ exception branches and guards. Both original preprocessing nodes pass; the
 absent Sharadar section does not execute. The [source review and actual input
 scope](maintenance/preprocessing-review.md) records the original failure,
 minimal repair, unchanged AST outside the intended assignments and genuine
-executed datasets. An isolated official esig/RoughPy native Python 3.15 source
-build continues; no result is claimed before its terminal record.
+executed datasets. The isolated official native signature controls are recorded below.
+
+
+### Genuine native signature recovery
+
+Current esig 1.0.0 and RoughPy 0.3.0 provide a genuine official CPython 3.14
+arm64 native wheel; pyrecombine 1.0.1 builds from its unchanged source. The exact
+frozen isolated environment preserves all original package versions and adds
+only those three dependencies. Both original path-signature notebook nodes and
+53 unchanged identity guards pass (55 cases, 40.20 seconds). After frozen main
+sync adds the same dependencies, that exact original scope passes again in
+38.37 seconds. These are native Python 3.14 runs of the Chapter and Docker-named
+cases; the earlier official-image kernel-startup failures remain separate.
+Actual esig/RoughPy, NumPy 2.3.5, Torch 2.11.0, sklearn and LightGBM imports plus
+signature calculation load one physical Homebrew libomp 23.1.3 image. No runtime
+patch, backend substitution or golden change is used.
+
+The Python 3.15 source attempt first stops at missing Autoconf tools. After their
+genuine installation, it reaches native compilation and fails on range-v3/meta
+standard-library forward declarations against the host's newer libc++ headers
+(282.39 seconds). All 814 checked official RoughPy core files are unchanged.
+This is not a demonstrated Python 3.15 binding-API failure. A reviewed exact
+upstream dependency-header fix is being tested in an isolated supported port
+overlay; no Python 3.15 main-runtime success is claimed.
+
+The original EconML DML teaching Chapter and Docker-named cases also pass with
+current genuine inputs (34.85 seconds). Their source, parameters and assertions
+remain unchanged; the former Docker-node zero-sample failure is retained as
+historical evidence. The aggregate-synthesis nodes still refuse genuine
+incomplete backtest coverage, now at the actual GBM one-day candidate; that
+coverage bar remains unchanged. The equity-option holdout registry case requires
+the genuine original stage-18 canonical CUDA holdout population, not an empty
+replacement database.

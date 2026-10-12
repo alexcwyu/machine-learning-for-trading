@@ -46,7 +46,6 @@ subset requires a non-default profile such as `py312`, `benchmark`, or `rapids`.
 | Docker-Only Notebooks | Reason | Image |
 |----------------------|--------|-------|
 | Ch05 `03_sigcwgan_signatures` | signatory (no Python 3.14 wheel) | py312 |
-| Ch09 `06_path_signatures` | signatory, esig (no Python 3.14 wheel) | py312 |
 | Ch12 `10_shap_nlp_sentiment` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch14 `06_conditional_autoencoder` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch15 `06_fed_announcement_bsts` | tfcausalimpact (TFP BSTS, isolated `/opt/bsts/bin/python`) | py312 |
@@ -751,3 +750,15 @@ of this project's wheel does not carry the Git source selection. The dependency'
 PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
 The original word2vec and asset-embedding cases pass with genuine Phrasebank and
 SEC holdings inputs. Other notebooks still need their own documented prerequisites.
+
+
+### Locally verified native path signatures
+
+Frozen uv sync installs current esig 1.0.0 with the official RoughPy 0.3.0
+CPython 3.14 arm64 wheel and genuine pyrecombine 1.0.1 source build. Both
+original Chapter and Docker-named path-signature cases execute successfully
+using native Python 3.14 and genuine ETF inputs. Their parameters and mathematics
+are unchanged. The separate signatory notebooks retain their documented runtime
+requirements. The Python 3.15 source control currently stops at an external
+range-v3/libc++ header compatibility error; it does not justify claiming Python
+3.15 compatibility or changing the main interpreter.

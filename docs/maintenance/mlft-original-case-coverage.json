@@ -3,14 +3,14 @@
   "original_nodes": 8333,
   "current_nodes": 8327,
   "counts": {
-    "passed": 7641,
-    "skipped": 468,
-    "failed": 218
+    "passed": 7644,
+    "skipped": 467,
+    "failed": 216
   },
   "retained_original_evidence_counts": {
-    "passed": 7647,
-    "skipped": 464,
-    "failed": 222
+    "passed": 7650,
+    "skipped": 463,
+    "failed": 220
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -1059,27 +1059,27 @@
     },
     "tests/test_artifact_digest_encoding.py::test_the_bytes_a_fixed_frame_produces_are_the_recorded_ones": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_settings_are_stated_rather_than_inherited": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_encoding_is_what_the_byte_digest_is_sensitive_to": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_settings_map_names_only_parameters_the_writer_accepts": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_chunk_layout_a_frame_arrives_in_does_not_move_the_bytes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_quality.py::test_a_complete_frame_that_is_a_thousandth_of_the_universe_reports_the_shortfall": {
@@ -7068,8 +7068,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::06_path_signatures.py]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-remaining313.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::07_arima_features.py]": {
@@ -7379,7 +7379,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::03_econml_dml.py]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-dml-original-current-genuine-data.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::04_dml_crypto_regime.py]": {
@@ -7689,7 +7689,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-synthesis-original-current-genuine-data.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::02_feature_evaluation.py]": {
@@ -12173,8 +12173,8 @@
       "method": "ordered original collection / quiet pytest progress"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-py312-canonical-image-existing-cases.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::07_arima_features.py]": {
@@ -12483,8 +12483,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::03_econml_dml.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-dml-original-current-genuine-data.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::04_dml_crypto_regime.py]": {
@@ -12794,7 +12794,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-synthesis-original-current-genuine-data.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::02_feature_evaluation.py]": {
@@ -17079,162 +17079,162 @@
     },
     "tests/test_holdout_cv_derivation.py::test_the_evaluation_interval_is_the_case_studys_own_declared_holdout_window": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_training_starts_at_the_earliest_fold_not_the_first_one_in_the_list": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_buffer_is_counted_in_observations_not_calendar_time": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_month_buffer_on_a_monthly_panel_is_one_observation": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_buffer_shorter_than_the_outcome_horizon_is_refused_as_a_leak": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_case_study_with_no_declared_holdout_window_is_refused_by_name": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_empty_training_interval_is_refused_rather_than_produced": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_spec_with_no_resolved_folds_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_folds_missing_a_boundary_are_named_rather_than_read_as_none": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_derived_interval_is_a_new_one_and_not_the_validation_interval": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_holdout_reusing_a_validation_fold_id_is_refused_on_that_folds_rows": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_holdout_fold_absent_from_the_artifact_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_case_study_without_fold_scoped_temporal_features_is_not_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_gap_is_the_case_studys_widest_buffer_whatever_label_is_selected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_no_case_study_declares_an_outcome_horizon_its_widest_buffer_cannot_cover": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_midnight_boundary_is_written_as_a_date_because_the_panel_carries_dates": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_consumer_reads_either_rendering_of_the_same_midnight_boundary[date]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_consumer_reads_either_rendering_of_the_same_midnight_boundary[datetime]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_boundary_that_is_not_a_date_at_all_is_named_rather_than_read_as_none": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_date_only_val_end_covers_the_whole_final_session_on_an_intraday_panel[naive]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_date_only_val_end_covers_the_whole_final_session_on_an_intraday_panel[aware]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_covered_holdout_fold_is_accepted_and_a_gap_in_it_is_not": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_hole_in_the_middle_of_a_covered_range_is_still_a_gap": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_artifact_one_session_short_of_the_window_end_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_coverage_refuses_both_cases_the_fold_id_check_refuses": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_later_than_the_earliest_fold_moves_the_training_start": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_earlier_than_the_earliest_fold_changes_nothing_at_all": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_that_swallows_the_training_interval_is_refused_not_silently_empty": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_reduced_fold_list_numbers_the_holdout_over_a_fold_that_still_exists": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_intraday_panel_derives_its_holdout_rather_than_raising_on_the_comparison": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_tz_naive_panel_hashes_exactly_as_it_did_before_the_zone_was_resolved": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_daily_panel_still_closes_its_holdout_on_the_declared_date": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_generation_retirement.py::test_a_validation_fitted_row_is_found_rather_than_filtered_out": {
@@ -20447,72 +20447,72 @@
     },
     "tests/test_model_source_identity_versions.py::test_sequence_identity_is_declared_and_architecture_scoped": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_sequence_identity_rejects_an_unversioned_architecture": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_tabm_identity_is_declared": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[pca]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[ipca]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[cae]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[sae]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[sdf]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_causal_identity_is_declared": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[<lambda>0]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[_tabm_source_identity]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[<lambda>1]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[_causal_source_identity]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_active_source_identities_contain_no_file_digests": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_viz_alt_text.py::test_fold_heatmap_publishes_alt_carrying_the_plotted_range": {
@@ -30147,12 +30147,12 @@
     },
     "tests/test_registry_lineage.py::test_registry_lineage_source_matches_audited_fixture_bytes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_registry_lineage.py::test_registry_exports_modeling_input_fingerprint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-current-native-signature-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_registry_maintenance.py::test_semantic_backtest_deduplication_is_idempotent": {
