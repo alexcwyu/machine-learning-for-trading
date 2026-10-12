@@ -1,0 +1,17 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "reproducible-original-bsts-native-reader-profile-sync",
+  "command": [
+    "uv",
+    "sync",
+    "--project",
+    "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312",
+    "--python",
+    "/Users/alex/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791790228.0977862,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-reproducible-original-bsts-native-reader-profile-sync.log",
+  "exit_code": 0,
+  "elapsed_seconds": 1.23
+}

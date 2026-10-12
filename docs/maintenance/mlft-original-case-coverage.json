@@ -3,14 +3,14 @@
   "original_nodes": 8333,
   "current_nodes": 8327,
   "counts": {
-    "passed": 7644,
-    "skipped": 467,
-    "failed": 216
+    "passed": 7646,
+    "skipped": 466,
+    "failed": 215
   },
   "retained_original_evidence_counts": {
-    "passed": 7650,
-    "skipped": 463,
-    "failed": 220
+    "passed": 7652,
+    "skipped": 462,
+    "failed": 219
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -7393,8 +7393,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-remaining313.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::07_tigramite_time_series.py]": {
@@ -12498,8 +12498,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-py312-canonical-image-existing-cases.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::07_tigramite_time_series.py]": {
@@ -26967,42 +26967,42 @@
     },
     "tests/test_overrides_schema.py::test_no_entry_carries_a_key_nothing_reads": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::test_every_declared_reduction_reaches_papermill": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_key_check_rejects_the_entry_that_prompted_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_key_check_passes_a_key_the_loader_does_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_rejects_the_entry_that_prompted_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_passes_the_same_names_written_correctly": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_reads_invocations_too": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_a_non_parameter_mapping_is_not_read_as_a_reduction": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_paired_metrics_retired_lineage.py::test_a_retired_validation_prediction_retires_its_holdout_sibling": {
@@ -27442,623 +27442,623 @@
     },
     "tests/test_pm_helpers.py::test_collect_chapter_notebooks_keeps_real_notebooks_and_skips_helpers": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_tier_defaults_to_per_commit": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_tier_accepts_valid_values": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_tier_rejects_invalid": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_current_test_tier_defaults_to_per_commit": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_current_test_tier_reads_env": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_current_test_tier_rejects_invalid": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_reruns_default_zero": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_reruns_returns_int": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_reruns_rejects_negative_or_nonint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_record_mode_defaults_to_replay": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_record_mode_accepts_rewrite": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_get_record_mode_rejects_invalid": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_missing_required_env_empty_without_declaration": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_missing_required_env_reports_unset": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_missing_required_env_treats_blank_as_unset": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_missing_required_env_empty_when_all_present": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_missing_required_env_reports_only_the_absent_ones": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_credential_gated_notebooks_declare_requires_env_not_skip": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_no_entry_declares_a_reason_for_a_skip_it_does_not_take": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_passes_when_nothing_is_declared": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_rejects_a_missing_interpreter": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_names_no_image_when_the_override_declares_none": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_rejects_a_launcher_with_no_interpreter": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_rejects_a_missing_launcher": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_rejects_a_directory": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_rejects_a_file_without_the_executable_bit": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_check_kernel_routing_returns_what_it_validated": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_declared_kernel_launcher_resolves": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_no_override_declares_a_launcher_without_an_interpreter": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_override_key_names_a_notebook": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_declared_parameter_reaches_its_notebook[preview]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_declared_parameter_reaches_its_notebook[canonical]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_an_entry_whose_shape_is_not_understood_is_refused_rather_than_skipped": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_named_invocation_is_swept_like_any_other_parameter_block": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_declared_reduction_key_is_one_some_family_accepts": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_reduction_that_raises_the_patched_preset_says_why": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_entry_that_claims_a_raise_still_makes_one": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_causal_reduction_declares_all_four_fields": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_one_case_study_fits_its_models_on_one_set_of_folds": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_an_undeclared_fold_set_disagrees_with_a_declared_one": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_two_different_declared_fold_sets_disagree": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_causal_entry_is_not_read_as_a_fold_disagreement": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_requested_configurations_survive_the_fixture_trim": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_resolved_registry_path_follows_the_tier_the_harness_binds": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_resolved_registry_path_stays_canonical_for_an_unmigrated_notebook": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_union_annotated_declaration": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_an_equals_sign_in_a_trailing_comment": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_accepts_the_forms_that_carry_the_same_meaning": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_asks_nothing_of_papermill_without_a_paired_notebook": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_accepts_a_name_bound_in_the_parameters_cell": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_accepts_a_name_the_notebook_assigns_above_that_cell": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_name_the_notebook_never_reads": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_name_bound_only_below_the_parameters_cell": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_allows_a_rebind_that_reads_the_injected_value_first": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_asks_only_that_one_read_get_the_injected_value": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_branch_local_overwrite": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_allows_a_rebind_on_a_branch_that_does_not_read_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_rebind_that_reads_nothing_first": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_allows_a_conditional_derivation": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_leaves_a_binding_nested_in_control_flow_alone": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_reads_both_branch_orders_the_same_way": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_leaves_a_name_a_function_reads_alone": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_take_a_function_local_for_a_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_ignores_a_committed_injected_parameters_cell": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_take_a_comprehension_target_for_a_rebind": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_accepts_a_name_that_reaches_by_preview_translation": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_still_rejects_an_untranslated_name_on_such_a_notebook": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_exempt_a_translated_name_without_the_mapping": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_notebook_with_no_parameters_cell": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_notebook_that_does_not_exist": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_is_silent_on_an_entry_with_no_parameters": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_overrides_shares_no_config_block_between_notebooks": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_name_an_import_below_the_cell_rebinds": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_take_a_comprehension_local_for_a_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_treats_a_class_body_as_running_where_it_is_written": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_counts_a_class_body_read_as_a_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_let_a_nested_local_hide_an_outer_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_counts_a_comprehension_inside_a_function": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_does_not_treat_a_try_body_as_certain": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_orders_a_multiline_self_rebinding_correctly": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_sees_a_class_body_nested_in_a_function": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_keeps_a_nested_class_attribute_class_local": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_ignores_a_bare_annotation": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_orders_a_walrus_value_before_its_target": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_rejects_a_rebind_no_call_can_precede": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_keeps_a_rebind_a_local_call_precedes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_ignores_an_imported_call_before_a_rebind": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_ignores_a_call_that_cannot_read_the_name": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_follows_a_call_through_a_local_helper": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_keeps_the_exemption_for_a_lambda_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_orders_a_call_in_a_multiline_assignment": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_treats_a_class_attribute_as_shadowing": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_keeps_a_class_read_before_its_attribute": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_run_notebook_caps_the_kernel_thread_pools": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_reduced_harness_injects_only_migrated_study_preview_parameters": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_run_notebook_requires_explicit_research_preview_opt_in": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_notebook_worker_caps_the_same_pools": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_drops_preview_reductions_on_a_canonical_run": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_strips_every_preview_prefixed_name_on_a_canonical_run": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_strips_the_device_and_the_name_that_carries_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_keeps_a_population_name_that_carries_no_device": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_no_entry_pairs_a_device_with_a_canonical_ci_run": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_keeps_everything_else_on_a_canonical_run": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_canonical_run_drops_a_parameter_the_notebook_itself_refuses": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_requirement_guard_is_not_read_as_a_refusal": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_the_flattened_and_guard_shape_is_read_too": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_no_override_entry_declares_a_parameter_its_notebook_refuses_canonically": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_injected_parameters_keeps_preview_reductions_under_the_preview_tier": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_catches_a_preview_mapping_the_notebook_never_reads": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_catches_a_preview_mapping_rebound_before_any_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_unusable_parameters_catches_a_preview_mapping_rebound_above_every_reader": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_complete_causal_mapping_is_not_given_a_fold_key_its_resolver_rejects": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_model_mapping_without_a_fold_count_still_gets_one": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_no_gpu_declaration_never_skips": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_gpu_true_still_means_torch": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_lightgbm_notebook_skips_where_only_torch_has_a_card": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_torch_notebook_runs_where_only_torch_has_a_card": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_notebook_naming_both_needs_both": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_an_unknown_capability_is_refused_rather_than_ignored": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_every_declared_capability_in_overrides_is_one_the_guard_knows": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_the_real_probe_runs_and_stays_quiet_under_pytest_capture": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_a_busy_card_is_not_reported_as_a_missing_build": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_pm_helpers.py::test_the_missing_build_message_is_the_one_lightgbm_actually_raises": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_pm_helpers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_population_supersedes.py::TestWhatTheHelperDecides::test_an_empty_declaration_is_never_offered": {
       "status": "passed",
@@ -35092,387 +35092,387 @@
     },
     "tests/test_skip_blockers.py::test_every_skip_declares_a_blocker": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/06_futures_continuous]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/16_provider_comparison]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/17_complete_pipeline]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[03_market_microstructure/01_itch_parser]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[03_market_microstructure/10_iex_lob_reconstruction]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[15_causal_estimation/05_momentum_causal_trading]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[23_knowledge_graphs/07_dynamic_kg_temporal]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[24_autonomous_agents/11_research_operator]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/03_ib_paper_trading_demo]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/09_crypto_funding_deployment_loop]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/11_fx_deployment_loop]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/12_ib_basket_rebalance_demo]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/10b_stochastic_discount_factor]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/12_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/18_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/19_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/20_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/11_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/14_risk_management]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/16_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/17_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/18_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/20_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/21_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/22_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[data/equities/market/us_equities/dataset_card]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_external_blockers_are_off_the_per_commit_tier": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_undecidable_blockers_stay_a_minority": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[02_financial_data_universe/06_futures_continuous]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[03_market_microstructure/01_itch_parser]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[03_market_microstructure/10_iex_lob_reconstruction]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/cme_futures/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/cme_futures/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/crypto_perps_funding/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/crypto_perps_funding/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/18_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/19_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/20_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/11_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/14_risk_management]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/16_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/17_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/18_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/20_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/21_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/22_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration0-True]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration1-False]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration2-True]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration3-False]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration0-True]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration2-True]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_no_canonical_selection_reports_an_expiry_when_the_resolver_returns": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_declaration_naming_two_kinds_is_rejected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_declaration_naming_no_kind_is_rejected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_every_decidable_kind_is_exercised_by_the_declarations": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_docker_runner_honours_a_skip_whose_blocker_still_holds": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_docker_runner_still_executes_once_the_blocker_expires": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_fixture_checkout_is_recognised": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_another_repository_and_a_plain_directory_are_not_the_fixture": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_root_that_is_not_the_fixture_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_no_data_root_at_all_is_still_the_other_undecidable": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_skip_is_honoured_on_a_machine_holding_the_file": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_same_skip_expires_against_a_fixture_that_grew_the_file": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-etf-completed-strategy-declaration-contracts-corrected-existing-scope.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_recent_momentum_construction.py::test_skip_momentum_is_not_a_difference_of_returns[cme_futures/03_financial_features.py]": {

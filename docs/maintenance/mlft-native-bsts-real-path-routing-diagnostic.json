@@ -1,0 +1,45 @@
+{
+  "scope": "Real interpreter/directory/missing/blank/name validation diagnostics, no source testcases added or inventory counts changed",
+  "results": {
+    "real_native_interpreter": {
+      "problem": null,
+      "python": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312/.venv/bin/python",
+      "launcher": "/Users/alex/workspaces/trading/machine-learning-for-trading/envs/py312/bsts_kernel.py"
+    },
+    "directory": {
+      "problem": "overrides.yaml routes this notebook to /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312/.venv/bin, which is a directory, not an executable file. Correct the kernel_python entry.",
+      "python": null,
+      "launcher": null
+    },
+    "missing": {
+      "problem": "overrides.yaml routes this notebook to /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312/.venv/bin/missing-owned-interpreter, which is not an executable file on this host. That path lives inside the py312 image, where this test is meant to execute, so nothing here says the image is stale. Run it through the docker job instead.",
+      "python": null,
+      "launcher": null
+    },
+    "blank": {
+      "problem": "ML4T_BSTS_PYTHON selects a blank kernel interpreter path.",
+      "python": null,
+      "launcher": null
+    },
+    "invalid_name": {
+      "problem": "kernel_python_env must name an environment variable.",
+      "python": null,
+      "launcher": null
+    },
+    "empty_name": {
+      "problem": "kernel_python_env must name an environment variable.",
+      "python": null,
+      "launcher": null
+    },
+    "nonstring_name": {
+      "problem": "kernel_python_env must name an environment variable.",
+      "python": null,
+      "launcher": null
+    },
+    "unrelated_profile_not_redirected": {
+      "problem": null,
+      "python": "/Users/alex/workspaces/trading/machine-learning-for-trading/.venv/bin/python",
+      "launcher": null
+    }
+  }
+}

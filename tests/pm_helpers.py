@@ -56,6 +56,8 @@ overrides.yaml schema (per-notebook, all optional):
         dependencies live in a venv other than the one running pytest (the
         py312 image keeps tfcausalimpact in /opt/bsts on NumPy 1.x).
     kernel_launcher: str — repo-relative launcher script for that interpreter.
+    kernel_python_env: str — an explicit per-profile environment variable that
+        can select a real host interpreter instead of its declared image path.
     tier: "per_commit" | "weekly" | "on_demand" — default "per_commit"
         Per-commit runs the Tests workflow on every PR/push.
         Weekly runs the weekly-external scheduled workflow (Step 2).
@@ -104,6 +106,7 @@ KNOWN_OVERRIDE_KEYS = frozenset(
         "invocations",  # pm_helpers.invocations_for
         "kernel_launcher",  # pm_helpers.check_kernel_routing
         "kernel_python",  # pm_helpers.check_kernel_routing
+        "kernel_python_env",  # pm_helpers.check_kernel_routing
         "long_running",  # tests/conftest.py, marker application
         "parameters",  # pm_helpers.sole_invocation -> papermill
         "record_mode",  # pm_helpers.get_record_mode
@@ -1074,6 +1077,20 @@ def check_kernel_routing(overrides: dict) -> KernelRouting:
     """
     kernel_python = overrides.get("kernel_python")
     launcher = overrides.get("kernel_launcher")
+    kernel_env = overrides.get("kernel_python_env")
+    selected_from_env = False
+
+    if kernel_env is not None:
+        if not kernel_python:
+            return KernelRouting("kernel_python_env requires a declared kernel_python route.")
+        if not isinstance(kernel_env, str) or not re.fullmatch(r"[A-Za-z_][A-Za-z_0-9]*", kernel_env):
+            return KernelRouting("kernel_python_env must name an environment variable.")
+        selected_python = os.environ.get(kernel_env)
+        if selected_python is not None:
+            if not selected_python.strip():
+                return KernelRouting(f"{kernel_env} selects a blank kernel interpreter path.")
+            kernel_python = selected_python
+            selected_from_env = True
 
     if not kernel_python:
         # run_notebook gates the whole kernelspec on kernel_python, so a launcher
@@ -1104,13 +1121,16 @@ def check_kernel_routing(overrides: dict) -> KernelRouting:
         # Which filesystem was looked at decides who is at fault, and the two read alike
         # otherwise: run this file from the host venv and a correct image is reported as
         # needing a rebuild. /.dockerenv is written by the runtime, not by our images.
-        where = (
-            f"inside this container. {rebuild}"
-            if Path("/.dockerenv").exists()
-            else "on this host. That path lives inside the "
-            f"{image or 'notebook'} image, where this test is meant to execute, so nothing "
-            "here says the image is stale. Run it through the docker job instead."
-        )
+        if selected_from_env:
+            where = f"selected by {kernel_env}. Supply a real executable for that profile."
+        else:
+            where = (
+                f"inside this container. {rebuild}"
+                if Path("/.dockerenv").exists()
+                else "on this host. That path lives inside the "
+                f"{image or 'notebook'} image, where this test is meant to execute, so nothing "
+                "here says the image is stale. Run it through the docker job instead."
+            )
         return KernelRouting(
             f"overrides.yaml routes this notebook to {kernel_python}, "
             f"which is not an executable file {where}"

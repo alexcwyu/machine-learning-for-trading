@@ -1063,3 +1063,19 @@ Pandas at least 3.0.5 for ml4t-backtest 0.1.12 on Python 3.15. This declared
 version contradiction is distinct from native artifact feasibility. The main
 Python range, frozen lock and runtime remain unchanged; current MLFT inventory
 and composite case counts are unaffected.
+
+
+### Genuine native BSTS recovery
+
+The separate author Python 3.12 profile executes the actual tfcausalimpact/TFP
+model with NumPy 1.26.4 and Pandas 2.2.0. Its explicit compatible PyArrow range
+selects 25.0.1; Arrow 26 fails the retained NumPy 1 contract. Only BSTS opts into
+`ML4T_BSTS_PYTHON`, which selects a validated real interpreter and retains the
+author launcher; unset keeps the original Docker `/opt/bsts/bin/python` route.
+The Chapter import probe now uses that actual interpreter. Both original BSTS
+cases and the existing routing/schema/skip guards pass: 204 passes and seven
+existing conditional skips in 150.29 seconds. A real invalid-interpreter control
+fails explicitly. Original parameters, backend, assertions, tier/GPU/credential
+guards and model remain unchanged; the core Python 3.14 environment is untouched.
+The [standalone source/profile and terminal proof](maintenance/bsts-native-profile.md)
+records the original failure, independent review and exact original-case scope.

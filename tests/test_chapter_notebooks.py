@@ -21,10 +21,12 @@ Usage:
 """
 
 from pathlib import Path
+import subprocess
 
 import pytest
 
 from tests.pm_helpers import (
+    check_kernel_routing,
     collect_chapter_notebooks,
     current_test_tier,
     get_overrides,
@@ -89,14 +91,39 @@ def test_chapter_notebook(notebook_path, populated_data_dir, seeded_output_dir):
     if absent := missing_required_env(overrides):
         pytest.skip(f"Requires {', '.join(absent)} (unset in this environment)")
 
-    # Check required imports (e.g., gensim, signatory, duckdb)
+    routing = check_kernel_routing(overrides)
+    if routing.problem:
+        pytest.fail(f"{rel_path}: {routing.problem}")
+
+    # Check the module in the interpreter that will actually execute the notebook.
     requires = overrides.get("requires_import")
     if requires:
         pkg = requires if isinstance(requires, str) else requires[0]
-        try:
-            __import__(pkg)
-        except ImportError:
-            pytest.skip(f"Requires {pkg} (not installed in this Docker image)")
+        if routing.python:
+            probe = subprocess.run(
+                [
+                    routing.python,
+                    "-c",
+                    "import importlib, sys\n"
+                    "try: importlib.import_module(sys.argv[1])\n"
+                    "except ImportError as exc:\n"
+                    "    print('ML4T_REQUIRED_IMPORT_UNAVAILABLE:', exc, file=sys.stderr)\n"
+                    "    sys.exit(2)\n",
+                    pkg,
+                ],
+                capture_output=True,
+                text=True,
+                timeout=60,
+            )
+            if probe.returncode == 2 and "ML4T_REQUIRED_IMPORT_UNAVAILABLE:" in probe.stderr:
+                pytest.skip(f"Requires {pkg} (not installed in the selected kernel runtime)")
+            if probe.returncode:
+                pytest.fail(f"{pkg} import failed in the selected kernel: {probe.stderr}")
+        else:
+            try:
+                __import__(pkg)
+            except ImportError:
+                pytest.skip(f"Requires {pkg} (not installed in this Docker image)")
 
     # Check GPU requirement
     reason = gpu_skip_reason(overrides)
@@ -119,6 +146,8 @@ def test_chapter_notebook(notebook_path, populated_data_dir, seeded_output_dir):
         output_dir=seeded_output_dir,
         data_dir=populated_data_dir,
         cwd=notebook_cwd,
+        kernel_python=routing.python,
+        kernel_launcher=routing.launcher,
     )
 
     if result["status"] == "error":

@@ -1,0 +1,6 @@
+{
+  "scope": "Exact author standaloneBSTS profile, native isolatedPython312 provisioning only, no main source/env change",
+  "source": "/Users/alex/workspaces/trading/machine-learning-for-trading/envs/py312/bsts-pyproject.toml",
+  "target": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312",
+  "original_profile_sha256": "637b0b78edfd6bb065fb8b065af5c9b42a4613ddadc2b320cb19afd53b1dc878"
+}

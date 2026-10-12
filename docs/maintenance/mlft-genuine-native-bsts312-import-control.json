@@ -1,0 +1,16 @@
+{
+  "scope": "Actual author standaloneBSTS profile on nativePython312, originalNumPy/Pandas/tfcausalimpact contracts; no mainenv change",
+  "python": "3.12.15 (main, Oct  9 2026, 15:10:57) [Clang 22.1.3 ]",
+  "numpy": "1.26.4",
+  "pandas": "2.2.0",
+  "polars": "1.44.2",
+  "tensorflow": "2.21.0",
+  "tfcausalimpact": "0.0.18",
+  "tfp": "0.25.0",
+  "devices": [
+    {
+      "name": "/physical_device:CPU:0",
+      "type": "CPU"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+$ .venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0 -- /Users/alex/workspaces/trading/machine-learning-for-trading/.venv/bin/python
+cachedir: .pytest_cache
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/machine-learning-for-trading
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collecting ... collected 1 item
+
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] FAILED [100%]
+
+=================================== FAILURES ===================================
+___ test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] ___
+tests/test_chapter_notebooks.py:121: in test_chapter_notebook
+    pytest.fail(f"{pkg} import failed in the selected kernel: {probe.stderr}")
+E   Failed: causalimpact import failed in the selected kernel: causalimpact: import: command not found
+E   causalimpact: -c: line 1: syntax error near unexpected token `('
+E   causalimpact: -c: line 1: `try: importlib.import_module(sys.argv[1])'
+=============================== warnings summary ===============================
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]
+  /Users/alex/workspaces/trading/machine-learning-for-trading/tests/fixtures/seed_results.py:965: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+    .explode("timestamp")["timestamp"]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py] - Failed: causalimpact import failed in the selected kernel: causalimpact: import: command not found
+causalimpact: -c: line 1: syntax error near unexpected token `('
+causalimpact: -c: line 1: `try: importlib.import_module(sys.argv[1])'
+======================== 1 failed, 8 warnings in 16.77s ========================

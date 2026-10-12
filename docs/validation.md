@@ -1,8 +1,8 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,644 pass, 467 conditional skips and 216 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
+The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,327 identities: 7,646 pass, 466 conditional skips and 215 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
 
-Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 216 current failures comprise 188 missing genuine input/artifact prerequisites and 28 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 82, Docker notebooks 85, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
+Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all eleven retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 215 current failures comprise 188 missing genuine input/artifact prerequisites and 27 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 82, Docker notebooks 84, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -211,3 +211,19 @@ Pandas at least 3.0.5 for ml4t-backtest 0.1.12 on Python 3.15. This declared
 version contradiction is distinct from native artifact feasibility. The main
 Python range, frozen lock and runtime remain unchanged; current MLFT inventory
 and composite case counts are unaffected.
+
+
+### Genuine native BSTS recovery
+
+The separate author Python 3.12 profile executes the actual tfcausalimpact/TFP
+model with NumPy 1.26.4 and Pandas 2.2.0. Its explicit compatible PyArrow range
+selects 25.0.1; Arrow 26 fails the retained NumPy 1 contract. Only BSTS opts into
+`ML4T_BSTS_PYTHON`, which selects a validated real interpreter and retains the
+author launcher; unset keeps the original Docker `/opt/bsts/bin/python` route.
+The Chapter import probe now uses that actual interpreter. Both original BSTS
+cases and the existing routing/schema/skip guards pass: 204 passes and seven
+existing conditional skips in 150.29 seconds. A real invalid-interpreter control
+fails explicitly. Original parameters, backend, assertions, tier/GPU/credential
+guards and model remain unchanged; the core Python 3.14 environment is untouched.
+The [standalone source/profile and terminal proof](maintenance/bsts-native-profile.md)
+records the original failure, independent review and exact original-case scope.

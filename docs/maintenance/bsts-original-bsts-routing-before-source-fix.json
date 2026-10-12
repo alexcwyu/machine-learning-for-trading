@@ -1,0 +1,20 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "original-bsts-routing-before-source-fix",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-o",
+    "addopts=",
+    "-vv",
+    "--tb=short",
+    "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+    "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791789792.1599722,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-original-bsts-routing-before-source-fix.log",
+  "exit_code": 1,
+  "elapsed_seconds": 12.48
+}

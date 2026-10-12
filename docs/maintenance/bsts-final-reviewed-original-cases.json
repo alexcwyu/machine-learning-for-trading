@@ -1,0 +1,23 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "final-reviewed-original-bsts-native-profile-and-guards",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-o",
+    "addopts=",
+    "-vv",
+    "--tb=short",
+    "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+    "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]",
+    "tests/test_pm_helpers.py",
+    "tests/test_overrides_schema.py",
+    "tests/test_skip_blockers.py"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791791258.9949272,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-final-reviewed-original-bsts-native-profile-and-guards.log",
+  "exit_code": 0,
+  "elapsed_seconds": 151.9
+}

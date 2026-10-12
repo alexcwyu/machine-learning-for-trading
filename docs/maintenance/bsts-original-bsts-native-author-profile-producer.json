@@ -1,0 +1,13 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "original-bsts-native-author-profile-producer",
+  "command": [
+    ".venv/bin/python",
+    "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791789049.035608,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-original-bsts-native-author-profile-producer.log",
+  "exit_code": 1,
+  "elapsed_seconds": 7.47
+}

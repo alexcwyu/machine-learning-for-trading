@@ -1,0 +1,8 @@
+$ uv sync --project /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312 --python /Users/alex/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12
+Resolved 123 packages in 375ms
+   Building ml4t-bsts @ file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312
+      Built ml4t-bsts @ file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312
+Prepared 1 package in 677ms
+Uninstalled 1 package in 1ms
+Installed 1 package in 2ms
+ ~ ml4t-bsts==3.0.0 (from file:///Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-bsts-native312)

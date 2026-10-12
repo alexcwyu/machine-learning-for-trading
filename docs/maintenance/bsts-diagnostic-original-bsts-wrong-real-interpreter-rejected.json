@@ -1,0 +1,19 @@
+{
+  "repo": "machine-learning-for-trading",
+  "step": "diagnostic-original-bsts-wrong-real-interpreter-rejected",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-o",
+    "addopts=",
+    "-vv",
+    "--tb=short",
+    "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::06_fed_announcement_bsts.py]"
+  ],
+  "cwd": "/Users/alex/workspaces/trading/machine-learning-for-trading",
+  "started": 1791790974.3774002,
+  "log": "/Users/alex/workspaces/trading/docs/maintenance-2026-10-12/machine-learning-for-trading-diagnostic-original-bsts-wrong-real-interpreter-rejected.log",
+  "exit_code": 1,
+  "elapsed_seconds": 18.94
+}
