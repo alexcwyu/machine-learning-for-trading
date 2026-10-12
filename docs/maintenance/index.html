@@ -242,6 +242,12 @@
 <td><code>env DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -c import lightgbm, sklearn, torch; from threadpoolctl import threadpool_info; print(threadpool_info()); print(torch.mm(torch.ones((8,8)),torch.ones((8,8))))</code></td>
 </tr>
 <tr>
+<td>genuine-financial-phrasebank-original-README-producer</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3.13s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-genuine-financial-phrasebank.py</code></td>
+</tr>
+<tr>
 <td>genuine-lossless-financial-storage-control</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">7.64s</td>
@@ -252,6 +258,18 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">4.85s</td>
 <td><code>env DYLD_LIBRARY_PATH=&lt;workspace&gt;/machine-learning-for-trading/.venv/lib/python3.14/site-packages/torch/lib OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -c import lightgbm, sklearn, torch; from threadpoolctl import threadpool_info; print(threadpool_info()); from darts.models import RNNModel; print(RNNModel); print(torch.mm(torch.ones((8,8)),torch.ones((8,8))))</code></td>
+</tr>
+<tr>
+<td>genuine-original-itch-parser-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">186.08s</td>
+<td><code>cargo build --release --manifest-path &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-genuine-itch-parser/Cargo.toml</code></td>
+</tr>
+<tr>
+<td>genuine-original-py312-image-pull</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">328.01s</td>
+<td><code>docker pull --platform linux/amd64 ml4t/ml4t-py312:latest</code></td>
 </tr>
 <tr>
 <td>genuine-public-firm-characteristics-original-downloader</td>
@@ -410,6 +428,18 @@
 <td><code>env POLARS_MAX_THREADS=2 MPLBACKEND=Agg uv run --no-sync python data/equities/market/sp500/materialize_options.py</code></td>
 </tr>
 <tr>
+<td>original-canonical-seeding-affected-consumers</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">41.52s</td>
+<td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-canonical-seeding-affected-consumer-nodeids.txt</code></td>
+</tr>
+<tr>
+<td>original-canonical-seeding-digest-contracts</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">17.78s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_seeded_output_dir.py tests/test_artifact_digest_encoding.py tests/test_registry_lineage.py tests/test_modeling_input_lineage.py tests/test_case_studies.py::test_case_study_pipeline[sp500_equity_option_analytics-20_strategy_analysis]</code></td>
+</tr>
+<tr>
 <td>original-crypto-canonical-consumers</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">47.27s</td>
@@ -434,10 +464,52 @@
 <td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-etf-exact-provider/data .venv/bin/python -m pytest -vv tests/test_etf_baseline_parity.py</code></td>
 </tr>
 <tr>
+<td>original-financial-phrasebank-ci-builder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.13s</td>
+<td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset financial_phrasebank</code></td>
+</tr>
+<tr>
+<td>original-firm-canonical-insight-consumers-correct-sibling</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">26.68s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py] tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]</code></td>
+</tr>
+<tr>
+<td>original-firm-canonical-unlocked-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">496.89s</td>
+<td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-firm-canonical-unlocked-nodeids.txt</code></td>
+</tr>
+<tr>
+<td>original-firm-genuine-input-consumers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10.6s</td>
+<td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-firm-input-unlocked-nodeids.txt</code></td>
+</tr>
+<tr>
+<td>original-firm-validation-backtest-producers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">104.07s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-validation-backtests.py</code></td>
+</tr>
+<tr>
+<td>original-public-firm-canonical-stages1-6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">42.87s</td>
+<td><code>.venv/bin/python tests/generate_intermediates.py --output &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-firm/intermediates --case-studies us_firm_characteristics --through-stage 6</code></td>
+</tr>
+<tr>
 <td>original-public-firm-characteristics-ci-builder</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">2.09s</td>
 <td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset firm_characteristics</code></td>
+</tr>
+<tr>
+<td>original-public-validation-backtest-producers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">618.5s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-public-validation-backtests.py</code></td>
 </tr>
 <tr>
 <td>original-published-fixture-ceiling-final</td>
@@ -446,10 +518,22 @@
 <td><code>.venv/bin/python -m pytest -vv tests/test_fixture_file_size_ceiling.py</code></td>
 </tr>
 <tr>
+<td>original-py312-canonical-image-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">284.46s</td>
+<td><code>docker run --rm --name mlft-maintenance-py312-original-cases --label codex.task=mlft-maintenance-2026-10-12 --platform linux/amd64 -v &lt;workspace&gt;/machine-learning-for-trading:/app -v &lt;workspace&gt;/machine-learning-for-trading/data:/data:ro -v &lt;workspace&gt;/machine-learning-for-trading/intermediates:/intermediates:ro -v &lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-py312-source-nodeids.txt:/tmp/original-nodeids.txt:ro -e ML4T_DATA_PATH=/data -e ML4T_PATH=/app -w /app ml4t/ml4t-py312@sha256:2cbccb0fa069160d6a3e8a3a45902fa9a25ff26fb8c0a567af6500f72455f388 timeout 3900 python -m pytest -vv @/tmp/original-nodeids.txt</code></td>
+</tr>
+<tr>
 <td>original-skipblocker-exact-failure-diagnosis</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">5.1s</td>
 <td><code>.venv/bin/python -m pytest -vv tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]</code></td>
+</tr>
+<tr>
+<td>original-validation-unlocked-consumers</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">47.62s</td>
+<td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-validation-unlocked-consumer-nodeids.txt</code></td>
 </tr>
 <tr>
 <td>prepare-original-official-crypto-funding-settlements</td>
@@ -1118,4 +1202,5 @@
 <td><code>uv pip install --python .venv/bin/python --dry-run torch&lt;2.14.1</code></td>
 </tr>
 </tbody>
-</table></main></body></html>
+</table></main>
+</body></html>

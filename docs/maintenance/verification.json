@@ -937,6 +937,23 @@
   },
   {
     "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/mlft-genuine-financial-phrasebank.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 3.13,
+    "step": "genuine-financial-phrasebank-original-README-producer",
+    "started": 1791781325.900892,
+    "seconds": 3.13,
+    "evidence_record": "machine-learning-for-trading-genuine-financial-phrasebank-original-README-producer.json",
+    "original_log": "machine-learning-for-trading-genuine-financial-phrasebank-original-README-producer.log",
+    "log_sha256": "f0bb3564b6502642fc253e47fd890d8632a8f05b7ae81237599466a50ea6ad67",
+    "log_bytes": 1790,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       "env",
       "POLARS_MAX_THREADS=2",
       ".venv/bin/python",
@@ -975,6 +992,46 @@
     "original_log": "machine-learning-for-trading-genuine-omp-loader-runtime-control.log",
     "log_sha256": "27adde9997578ad4026c157c2abe1f715639ad7421593782a344436856a4387c",
     "log_bytes": 1052,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "cargo",
+      "build",
+      "--release",
+      "--manifest-path",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-genuine-itch-parser/Cargo.toml"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 186.08,
+    "step": "genuine-original-itch-parser-build",
+    "started": 1791781184.596075,
+    "seconds": 186.08,
+    "evidence_record": "machine-learning-for-trading-genuine-original-itch-parser-build.json",
+    "original_log": "machine-learning-for-trading-genuine-original-itch-parser-build.log",
+    "log_sha256": "9e5539323500561c1216bd6420376fa59b75b9851eb969b0abc9c533290962e9",
+    "log_bytes": 4749,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "docker",
+      "pull",
+      "--platform",
+      "linux/amd64",
+      "ml4t/ml4t-py312:latest"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 328.01,
+    "step": "genuine-original-py312-image-pull",
+    "started": 1791781285.4889631,
+    "seconds": 328.01,
+    "evidence_record": "machine-learning-for-trading-genuine-original-py312-image-pull.json",
+    "original_log": "machine-learning-for-trading-genuine-original-py312-image-pull.log",
+    "log_sha256": "90580b8f63b0d2bb9c44557bc25c4044c22658db33ecdbd21ce1dcc458c5bc91",
+    "log_bytes": 2240,
     "outcome_lines": []
   },
   {
@@ -1613,6 +1670,54 @@
       "-m",
       "pytest",
       "-vv",
+      "@<workspace>/docs/maintenance-2026-10-12/mlft-original-canonical-seeding-affected-consumer-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 41.52,
+    "step": "original-canonical-seeding-affected-consumers",
+    "started": 1791781830.254852,
+    "seconds": 41.52,
+    "evidence_record": "machine-learning-for-trading-original-canonical-seeding-affected-consumers.json",
+    "original_log": "machine-learning-for-trading-original-canonical-seeding-affected-consumers.log",
+    "log_sha256": "1dedc662864e558c1293b50252a5ba3bc346a6a473c2572157d899a62f25de92",
+    "log_bytes": 16293,
+    "outcome_lines": [
+      "======================== 8 failed, 8 warnings in 40.46s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_seeded_output_dir.py",
+      "tests/test_artifact_digest_encoding.py",
+      "tests/test_registry_lineage.py",
+      "tests/test_modeling_input_lineage.py",
+      "tests/test_case_studies.py::test_case_study_pipeline[sp500_equity_option_analytics-20_strategy_analysis]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 17.78,
+    "step": "original-canonical-seeding-digest-contracts",
+    "started": 1791781792.2902699,
+    "seconds": 17.78,
+    "evidence_record": "machine-learning-for-trading-original-canonical-seeding-digest-contracts.json",
+    "original_log": "machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+    "log_sha256": "cbf8ce821df58937cd97ba1a4fc1f780415eb66b45f66f369e31738f46a54489",
+    "log_bytes": 4337,
+    "outcome_lines": [
+      "======================= 20 passed, 8 warnings in 16.68s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
       "@<workspace>/docs/maintenance-2026-10-12/mlft-original-crypto-canonical-consumer-nodeids.txt"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
@@ -1703,6 +1808,140 @@
       "--output",
       "../.runtime/maintenance-2026-10-12/mlft-fixture/data",
       "--dataset",
+      "financial_phrasebank"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 0.13,
+    "step": "original-financial-phrasebank-ci-builder",
+    "started": 1791782003.559811,
+    "seconds": 0.13,
+    "evidence_record": "machine-learning-for-trading-original-financial-phrasebank-ci-builder.json",
+    "original_log": "machine-learning-for-trading-original-financial-phrasebank-ci-builder.log",
+    "log_sha256": "fc796864f229fc443198ec25abdc3b87c56d3144a6105d20430583a23bd78213",
+    "log_bytes": 733,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 26.68,
+    "step": "original-firm-canonical-insight-consumers-correct-sibling",
+    "started": 1791781967.366975,
+    "seconds": 26.68,
+    "evidence_record": "machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.json",
+    "original_log": "machine-learning-for-trading-original-firm-canonical-insight-consumers-correct-sibling.log",
+    "log_sha256": "b6f95b4675e7004fe94cbade8092610c43a363479a79cba602fd1a42753fdd0c",
+    "log_bytes": 8471,
+    "outcome_lines": [
+      "======================== 4 failed, 8 warnings in 25.61s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "@<workspace>/docs/maintenance-2026-10-12/mlft-original-firm-canonical-unlocked-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 496.89,
+    "step": "original-firm-canonical-unlocked-existing-cases",
+    "started": 1791781080.818272,
+    "seconds": 496.89,
+    "evidence_record": "machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
+    "log_sha256": "4a012dcc353538778f5215db7f8bd47233abb1ff4358edf6d8b89627308ee8bd",
+    "log_bytes": 14125,
+    "outcome_lines": [
+      "======= 4 failed, 32 passed, 5 skipped, 8 warnings in 495.76s (0:08:15) ========"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "@<workspace>/docs/maintenance-2026-10-12/mlft-original-firm-input-unlocked-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 10.6,
+    "step": "original-firm-genuine-input-consumers",
+    "started": 1791781003.02193,
+    "seconds": 10.6,
+    "evidence_record": "machine-learning-for-trading-original-firm-genuine-input-consumers.json",
+    "original_log": "machine-learning-for-trading-original-firm-genuine-input-consumers.log",
+    "log_sha256": "50e0e7409a10ec13dd294bb02dda6491b728b81fd7012aa7a66e1c6fb37bb3b0",
+    "log_bytes": 2353,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 9.19s ========================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-validation-backtests.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 104.07,
+    "step": "original-firm-validation-backtest-producers",
+    "started": 1791782002.417973,
+    "seconds": 104.07,
+    "evidence_record": "machine-learning-for-trading-original-firm-validation-backtest-producers.json",
+    "original_log": "machine-learning-for-trading-original-firm-validation-backtest-producers.log",
+    "log_sha256": "f668403b263fd51921affaf6e30080f71ef3a83366c1d6bada8807ee626977dc",
+    "log_bytes": 14284,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tests/generate_intermediates.py",
+      "--output",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-firm/intermediates",
+      "--case-studies",
+      "us_firm_characteristics",
+      "--through-stage",
+      "6"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 42.87,
+    "step": "original-public-firm-canonical-stages1-6",
+    "started": 1791780993.092312,
+    "seconds": 42.87,
+    "evidence_record": "machine-learning-for-trading-original-public-firm-canonical-stages1-6.json",
+    "original_log": "machine-learning-for-trading-original-public-firm-canonical-stages1-6.log",
+    "log_sha256": "99f006bcc2372970b79ca3a73d92663098a0815ae6d9f525625ff191c602c902",
+    "log_bytes": 3621,
+    "outcome_lines": [
+      "Summary (43s total)"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tests/create_test_data.py",
+      "--source",
+      "data",
+      "--output",
+      "../.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "--dataset",
       "firm_characteristics"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
@@ -1715,6 +1954,23 @@
     "original_log": "machine-learning-for-trading-original-public-firm-characteristics-ci-builder.log",
     "log_sha256": "bda81c4f427006eac20b81461ba52971482ebc9d22c884d4c2fee9167374cec2",
     "log_bytes": 844,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-public-validation-backtests.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 618.5,
+    "step": "original-public-validation-backtest-producers",
+    "started": 1791780695.030427,
+    "seconds": 618.5,
+    "evidence_record": "machine-learning-for-trading-original-public-validation-backtest-producers.json",
+    "original_log": "machine-learning-for-trading-original-public-validation-backtest-producers.log",
+    "log_sha256": "fb5e701d6bd59f8f0d3b268ce91fc3c219c5d9ed548200d464c11d7c29aee01d",
+    "log_bytes": 22067,
     "outcome_lines": []
   },
   {
@@ -1741,6 +1997,54 @@
   },
   {
     "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--name",
+      "mlft-maintenance-py312-original-cases",
+      "--label",
+      "codex.task=mlft-maintenance-2026-10-12",
+      "--platform",
+      "linux/amd64",
+      "-v",
+      "<workspace>/machine-learning-for-trading:/app",
+      "-v",
+      "<workspace>/machine-learning-for-trading/data:/data:ro",
+      "-v",
+      "<workspace>/machine-learning-for-trading/intermediates:/intermediates:ro",
+      "-v",
+      "<workspace>/docs/maintenance-2026-10-12/mlft-original-py312-source-nodeids.txt:/tmp/original-nodeids.txt:ro",
+      "-e",
+      "ML4T_DATA_PATH=/data",
+      "-e",
+      "ML4T_PATH=/app",
+      "-w",
+      "/app",
+      "ml4t/ml4t-py312@sha256:2cbccb0fa069160d6a3e8a3a45902fa9a25ff26fb8c0a567af6500f72455f388",
+      "timeout",
+      "3900",
+      "python",
+      "-m",
+      "pytest",
+      "-vv",
+      "@/tmp/original-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 284.46,
+    "step": "original-py312-canonical-image-existing-cases",
+    "started": 1791782114.6966348,
+    "seconds": 284.46,
+    "evidence_record": "machine-learning-for-trading-original-py312-canonical-image-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-py312-canonical-image-existing-cases.log",
+    "log_sha256": "cf0e1d25215405441b6e525f29b2684444775157ae0ae938e099fedb9b750162",
+    "log_bytes": 9413,
+    "outcome_lines": [
+      "================== 4 failed, 7 warnings in 282.50s (0:04:42) ==================="
+    ]
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "-m",
       "pytest",
@@ -1759,6 +2063,28 @@
     "log_bytes": 2084,
     "outcome_lines": [
       "======================== 1 passed, 8 warnings in 4.13s ========================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "@<workspace>/docs/maintenance-2026-10-12/mlft-original-validation-unlocked-consumer-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 47.62,
+    "step": "original-validation-unlocked-consumers",
+    "started": 1791781363.9894059,
+    "seconds": 47.62,
+    "evidence_record": "machine-learning-for-trading-original-validation-unlocked-consumers.json",
+    "original_log": "machine-learning-for-trading-original-validation-unlocked-consumers.log",
+    "log_sha256": "c7e41a1483348eb796808e47b960e2cc54cf3e9e0806ca1de9e8c12b21e5be6d",
+    "log_bytes": 20018,
+    "outcome_lines": [
+      "=================== 8 failed, 2 passed, 8 warnings in 46.32s ==================="
     ]
   },
   {
