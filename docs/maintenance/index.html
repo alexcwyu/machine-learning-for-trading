@@ -272,6 +272,12 @@
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-genuine-itch-pipeline.py</code></td>
 </tr>
 <tr>
+<td>genuine-current-esig-roughpy-native315-install</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">139.08s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python esig</code></td>
+</tr>
+<tr>
 <td>genuine-current-homebrew-omp-image-inventory</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">2.81s</td>
@@ -608,6 +614,12 @@
 <td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py] tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]</code></td>
 </tr>
 <tr>
+<td>original-firm-canonical-ipca-producer</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">77.1s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-canonical-ipca.py</code></td>
+</tr>
+<tr>
 <td>original-firm-canonical-unlocked-existing-cases</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">496.89s</td>
@@ -666,6 +678,18 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">25.48s</td>
 <td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-18_holdout_predictions] tests/test_case_studies.py::test_case_study_pipeline[etfs-19_holdout_backtest] tests/test_case_studies.py::test_case_study_pipeline[etfs-20_strategy_analysis] tests/test_chapter_notebooks.py::test_chapter_notebook[25_live_trading::06_quantconnect_case_study.py] tests/test_docker_notebooks.py::test_docker_notebook[25_live_trading::06_quantconnect_case_study.py]</code></td>
+</tr>
+<tr>
+<td>original-genuine-firm-canonical-causal-consumers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">13.98s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::10_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::10_case_study_insights.py]</code></td>
+</tr>
+<tr>
+<td>original-genuine-firm-canonical-ipca-consumers</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">22.13s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py] tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]</code></td>
 </tr>
 <tr>
 <td>original-itch-genuine-input-existing-cases</td>
@@ -762,6 +786,36 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">292.82s</td>
 <td><code>.venv/bin/python data/crypto/market/download.py</code></td>
+</tr>
+<tr>
+<td>preprocessing-final-comment-source-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.19s</td>
+<td><code>uv run --no-sync python -W error -m py_compile 07_defining_the_learning_task/02_preprocessing_pipeline.py</code></td>
+</tr>
+<tr>
+<td>preprocessing-original-green</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">19.08s</td>
+<td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-fixture/data ML4T_OUTPUT_DIR=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-preprocessing-review/intermediates DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py] tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]</code></td>
+</tr>
+<tr>
+<td>preprocessing-original-red</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">21.99s</td>
+<td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-fixture/data ML4T_OUTPUT_DIR=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-preprocessing-review/intermediates DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py] tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]</code></td>
+</tr>
+<tr>
+<td>preprocessing-reviewed-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.79s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
+<td>preprocessing-reviewed-source-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.77s</td>
+<td><code>uv run --no-sync python -W error -c import pathlib,py_compile,subprocess; paths=subprocess.check_output(["git","ls-files","-z","--","*.py"]).decode().split("\0"); files=[p for p in paths if p and pathlib.Path(p).is_file()]; [py_compile.compile(p,doraise=True) for p in files]; print("Strict tracked Python source compilation:",len(files),"files")</code></td>
 </tr>
 <tr>
 <td>provision-original-own-neo4j-community-service</td>

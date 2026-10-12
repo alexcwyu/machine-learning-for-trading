@@ -1049,6 +1049,27 @@
   },
   {
     "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+      "esig"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 139.08,
+    "step": "genuine-current-esig-roughpy-native315-install",
+    "started": 1791786177.355201,
+    "seconds": 139.08,
+    "evidence_record": "machine-learning-for-trading-genuine-current-esig-roughpy-native315-install.json",
+    "original_log": "machine-learning-for-trading-genuine-current-esig-roughpy-native315-install.log",
+    "log_sha256": "d1c2deedfc8ff1fafff388955826f445859a63ad2666592530254182a1689afb",
+    "log_bytes": 119598,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       "env",
       "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
       "OMP_NUM_THREADS=1",
@@ -2310,6 +2331,23 @@
   {
     "command": [
       ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-canonical-ipca.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 77.1,
+    "step": "original-firm-canonical-ipca-producer",
+    "started": 1791785910.687792,
+    "seconds": 77.1,
+    "evidence_record": "machine-learning-for-trading-original-firm-canonical-ipca-producer.json",
+    "original_log": "machine-learning-for-trading-original-firm-canonical-ipca-producer.log",
+    "log_sha256": "d7528fd9eb1181358e06a4fbe6fc367f289f99eea6f3e0d437b95ebe31adb303",
+    "log_bytes": 599,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "-m",
       "pytest",
       "-vv",
@@ -2539,6 +2577,58 @@
     "log_bytes": 3375,
     "outcome_lines": [
       "================== 4 passed, 1 skipped, 8 warnings in 24.28s ==================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::10_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::10_case_study_insights.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 13.98,
+    "step": "original-genuine-firm-canonical-causal-consumers",
+    "started": 1791785824.822197,
+    "seconds": 13.98,
+    "evidence_record": "machine-learning-for-trading-original-genuine-firm-canonical-causal-consumers.json",
+    "original_log": "machine-learning-for-trading-original-genuine-firm-canonical-causal-consumers.log",
+    "log_sha256": "6e279e570aff4cadfeb2938369b9294d59b09c2b5573cd0487413171491ddf10",
+    "log_bytes": 2416,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 12.77s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 22.13,
+    "step": "original-genuine-firm-canonical-ipca-consumers",
+    "started": 1791786023.9449952,
+    "seconds": 22.13,
+    "evidence_record": "machine-learning-for-trading-original-genuine-firm-canonical-ipca-consumers.json",
+    "original_log": "machine-learning-for-trading-original-genuine-firm-canonical-ipca-consumers.log",
+    "log_sha256": "ccb85802f249db6dd222c33f0fb1d7ec962acc62c18257bc90f2eb5b8207b268",
+    "log_bytes": 5378,
+    "outcome_lines": [
+      "======================== 2 failed, 8 warnings in 20.74s ========================"
     ]
   },
   {
@@ -2912,6 +3002,147 @@
       "OK (866,868 rows, 19 symbols, 0 failed)",
       "OK (107,839 rows, 19 symbols, 0 failed)"
     ]
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-W",
+      "error",
+      "-m",
+      "py_compile",
+      "07_defining_the_learning_task/02_preprocessing_pipeline.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 0.19,
+    "check": "preprocessing-final-comment-source-compile",
+    "source_snapshot": {
+      "head": "81eacf0e3a3d78bae888813f09af0e46b0d30e42",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-preprocessing-final-comment-source-compile.json",
+    "original_log": "machine-learning-for-trading-preprocessing-final-comment-source-compile.log",
+    "log_sha256": "f5bcc66c2de6334b79aac3d9eb81d452f1cef3de5c60cd9bd104d36ea39f26db",
+    "log_bytes": 208,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "ML4T_OUTPUT_DIR=<workspace>/.runtime/maintenance-2026-10-12/mlft-preprocessing-review/intermediates",
+      "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
+      "OMP_NUM_THREADS=1",
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 19.08,
+    "check": "preprocessing-original-green",
+    "source_snapshot": {
+      "head": "67c8680208c77d823f88e6ff36809d58de1d3b8b",
+      "tracked_source_diff_sha256": "412478faaa2e99c36eb5b4c55ac1139aab10245a7dfbcf4a1c985cad452b3d98",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-preprocessing-original-green.json",
+    "original_log": "machine-learning-for-trading-preprocessing-original-green.log",
+    "log_sha256": "0f3a19884ea5a567e984c072854316258726ce6d07377fe862023b34fc107a28",
+    "log_bytes": 2959,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 17.52s ========================"
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "ML4T_OUTPUT_DIR=<workspace>/.runtime/maintenance-2026-10-12/mlft-preprocessing-review/intermediates",
+      "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
+      "OMP_NUM_THREADS=1",
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[07_defining_the_learning_task::02_preprocessing_pipeline.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 21.99,
+    "check": "preprocessing-original-red",
+    "source_snapshot": {
+      "head": "67c8680208c77d823f88e6ff36809d58de1d3b8b",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-preprocessing-original-red.json",
+    "original_log": "machine-learning-for-trading-preprocessing-original-red.log",
+    "log_sha256": "024fff2cfca17106fddfd0d4d6795fdeeed212cdbf3cfcf01ef30eab87def53c",
+    "log_bytes": 5934,
+    "outcome_lines": [
+      "======================== 2 failed, 8 warnings in 20.37s ========================"
+    ]
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.79,
+    "check": "preprocessing-reviewed-build",
+    "source_snapshot": {
+      "head": "67c8680208c77d823f88e6ff36809d58de1d3b8b",
+      "tracked_source_diff_sha256": "412478faaa2e99c36eb5b4c55ac1139aab10245a7dfbcf4a1c985cad452b3d98",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-preprocessing-reviewed-build.json",
+    "original_log": "machine-learning-for-trading-preprocessing-reviewed-build.log",
+    "log_sha256": "42ab116b0e2f15377f62c22e04cb144d7fb72f4fbde8db4a84b9f211523c2c25",
+    "log_bytes": 41965,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-W",
+      "error",
+      "-c",
+      "import pathlib,py_compile,subprocess; paths=subprocess.check_output([\"git\",\"ls-files\",\"-z\",\"--\",\"*.py\"]).decode().split(\"\\0\"); files=[p for p in paths if p and pathlib.Path(p).is_file()]; [py_compile.compile(p,doraise=True) for p in files]; print(\"Strict tracked Python source compilation:\",len(files),\"files\")"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 2.77,
+    "check": "preprocessing-reviewed-source-compile",
+    "source_snapshot": {
+      "head": "67c8680208c77d823f88e6ff36809d58de1d3b8b",
+      "tracked_source_diff_sha256": "412478faaa2e99c36eb5b4c55ac1139aab10245a7dfbcf4a1c985cad452b3d98",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-preprocessing-reviewed-source-compile.json",
+    "original_log": "machine-learning-for-trading-preprocessing-reviewed-source-compile.log",
+    "log_sha256": "86284dc28444c18d40bb7e7bd92fd73cfffacdadd658f123f14838688ffcbd95",
+    "log_bytes": 516,
+    "outcome_lines": []
   },
   {
     "command": [
