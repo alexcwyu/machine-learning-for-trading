@@ -3,6 +3,7 @@
 Publication roots contain physical parts. Only copied, owned runtime/staging trees
 are materialized. Canonical byte identity remains the original writer's identity.
 """
+
 from __future__ import annotations
 
 import hashlib
@@ -42,7 +43,12 @@ def _manifest(path: Path) -> dict:
     if path.is_symlink() or (path / MANIFEST_NAME).is_symlink():
         raise ValueError(f"Publication dataset/manifest must not be a symlink: {path}")
     record = json.loads((path / MANIFEST_NAME).read_text())
-    if not isinstance(record, dict) or record.get("format") != "ml4t-published-parquet" or type(record.get("version")) is not int or record["version"] != 1:
+    if (
+        not isinstance(record, dict)
+        or record.get("format") != "ml4t-published-parquet"
+        or type(record.get("version")) is not int
+        or record["version"] != 1
+    ):
         raise ValueError(f"Unsupported publication manifest: {path}")
     if record.get("logical_filename") != path.name:
         raise ValueError(f"Publication logical filename differs: {path}")
@@ -64,7 +70,11 @@ def _manifest(path: Path) -> dict:
         name = part["name"]
         names.append(name)
         candidate = path / name
-        if candidate.is_symlink() or not candidate.is_file() or candidate.resolve().parent != path.resolve():
+        if (
+            candidate.is_symlink()
+            or not candidate.is_file()
+            or candidate.resolve().parent != path.resolve()
+        ):
             raise ValueError(f"Part is not a confined regular file: {candidate}")
         for field in ("bytes", "rows"):
             if type(part.get(field)) is not int or part[field] < 0:
@@ -90,7 +100,9 @@ def _reconstruct(path: Path, destination: Path) -> dict:
     if frame.height != record["rows"] or _schema(frame) != record["schema"]:
         raise ValueError(f"Canonical row count/schema differs: {path}")
     frame.write_parquet(destination, **_PARQUET_WRITE_SETTINGS)
-    if destination.stat().st_size != record["canonical_bytes"] or file_sha256(destination) != record.get("canonical_sha256"):
+    if destination.stat().st_size != record["canonical_bytes"] or file_sha256(
+        destination
+    ) != record.get("canonical_sha256"):
         raise ValueError(f"Reconstructed canonical byte identity differs: {path}")
     return record
 
@@ -109,7 +121,9 @@ def publish_artifact(source: Path, destination: Path, max_bytes: int = MAX_BYTES
     if destination.exists() or destination.is_symlink():
         raise FileExistsError(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix=".parquet-publish-", dir=destination.parent) as temporary:
+    with tempfile.TemporaryDirectory(
+        prefix=".parquet-publish-", dir=destination.parent
+    ) as temporary:
         staging = Path(temporary) / destination.name
         if source.stat().st_size <= max_bytes:
             shutil.copy2(source, staging)
@@ -134,13 +148,27 @@ def publish_artifact(source: Path, destination: Path, max_bytes: int = MAX_BYTES
                     split(offset, left)
                     split(offset + left, length - left)
                 else:
-                    parts.append({"name": candidate.name, "bytes": size, "rows": length, "sha256": file_sha256(candidate)})
+                    parts.append(
+                        {
+                            "name": candidate.name,
+                            "bytes": size,
+                            "rows": length,
+                            "sha256": file_sha256(candidate),
+                        }
+                    )
 
             split(0, frame.height)
-            record = {"format": "ml4t-published-parquet", "version": 1,
-                      "logical_filename": destination.name, "canonical_sha256": file_sha256(source),
-                      "canonical_bytes": source.stat().st_size, "schema": _schema(frame),
-                      "rows": frame.height, "max_part_bytes": max_bytes, "parts": parts}
+            record = {
+                "format": "ml4t-published-parquet",
+                "version": 1,
+                "logical_filename": destination.name,
+                "canonical_sha256": file_sha256(source),
+                "canonical_bytes": source.stat().st_size,
+                "schema": _schema(frame),
+                "rows": frame.height,
+                "max_part_bytes": max_bytes,
+                "parts": parts,
+            }
             (staging / MANIFEST_NAME).write_text(json.dumps(record, indent=2) + "\n")
             # Prove this source is reconstructible before publishing any part.
             _reconstruct(staging, Path(temporary) / "canonical-check.parquet")
@@ -163,11 +191,12 @@ def materialize_artifact(path: Path) -> Path:
         canonical = temporary / path.name
         _reconstruct(path, canonical)
         backup = temporary / "dataset"
-        os.replace(path, backup)
         try:
+            os.replace(path, backup)
             os.replace(canonical, path)
         except BaseException:
-            os.replace(backup, path)
+            if backup.exists() and not path.exists():
+                os.replace(backup, path)
             raise
     return path
 
@@ -216,3 +245,56 @@ def logical_artifacts(root: Path) -> Iterator[Path]:
         for name in sorted(files):
             if name.endswith(".parquet"):
                 yield Path(parent) / name
+
+
+def publish_tree(source: Path, destination: Path) -> Path:
+    """Publish a new physical fixture tree from unchanged canonical inputs."""
+    source, destination = Path(source).resolve(), Path(destination).absolute()
+    if not source.is_dir():
+        raise ValueError(f"Publication source tree is absent: {source}")
+    if source == destination.resolve() or source in destination.resolve().parents:
+        raise ValueError("Publication destination must be outside its source tree")
+    if destination.exists() or destination.is_symlink():
+        raise FileExistsError(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(
+        prefix=".fixture-publish-", dir=destination.parent
+    ) as temporary:
+        staging = Path(temporary) / destination.name
+        staging.mkdir()
+        for parent, directories, files in os.walk(source, followlinks=False):
+            for name in directories:
+                if (Path(parent) / name).is_symlink():
+                    raise ValueError(
+                        f"Publication source contains a directory symlink: {Path(parent) / name}"
+                    )
+            (staging / Path(parent).relative_to(source)).mkdir(parents=True, exist_ok=True)
+            for name in sorted(files):
+                path = Path(parent) / name
+                publish_artifact(path, staging / path.relative_to(source))
+        os.replace(staging, destination)
+    return destination
+
+
+def main() -> None:
+    """Explicit fixture publication or owned-runtime materialization entry point."""
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="operation", required=True)
+    publish = commands.add_parser("publish", help="publish a new fixture tree; preserve source")
+    publish.add_argument("source", type=Path)
+    publish.add_argument("destination", type=Path)
+    materialize = commands.add_parser(
+        "materialize", help="reconstruct an owned copied runtime tree"
+    )
+    materialize.add_argument("root", type=Path)
+    args = parser.parse_args()
+    if args.operation == "publish":
+        publish_tree(args.source, args.destination)
+    else:
+        materialize_tree(args.root)
+
+
+if __name__ == "__main__":
+    main()

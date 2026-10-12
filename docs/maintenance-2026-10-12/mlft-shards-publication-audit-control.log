@@ -1,0 +1,18 @@
+{
+  "source_root": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/intermediates",
+  "publication_root": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/intermediates",
+  "every_published_physical_file_within_90MiB": true,
+  "physical_files": 1177,
+  "largest_physical_file_bytes": 93799859,
+  "ordinary_files_verified_byte_identical": 1174,
+  "logical_registry_hashes_identical": true,
+  "logical_artifact_count": 6,
+  "audit_scope": [
+    "    features/  -> /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/intermediates/nasdaq100_microstructure/features",
+    "    financial.parquet: canonical 120527027 bytes, physical publication 120599022 bytes",
+    "    labels/  -> /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/intermediates/nasdaq100_microstructure/labels"
+  ],
+  "runtime_canonical_regular_file": true,
+  "runtime_sha256": "ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679",
+  "publication_still_directory": true
+}

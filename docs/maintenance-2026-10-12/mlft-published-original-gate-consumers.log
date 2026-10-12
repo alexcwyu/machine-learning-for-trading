@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collected 49 items
+
+tests/test_fixture_file_size_ceiling.py ..                               [  4%]
+tests/test_artifact_specs.py .F...                                       [ 14%]
+tests/test_fixture_registry_identity.py ssss.sss                         [ 30%]
+tests/test_fixture_registry_prune.py .....................               [ 73%]
+tests/test_artifact_audit_names_its_scope.py .............               [100%]
+
+=================================== FAILURES ===================================
+___________ test_us_equities_pilot_helpers_preserve_current_outputs ____________
+tests/test_artifact_specs.py:78: in test_us_equities_pilot_helpers_preserve_current_outputs
+    prices = load_backtest_prices("us_equities_panel", max_symbols=2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+case_studies/utils/backtest_loaders.py:545: in load_backtest_prices
+    df = _load_via_canonical(
+case_studies/utils/backtest_loaders.py:466: in _load_via_canonical
+    return load_us_equities(
+data/equities/loader.py:153: in load_us_equities
+    raise DataNotFoundError(
+E   data.exceptions.DataNotFoundError: 
+E   ======================================================================
+E   DATA NOT FOUND: US Equities Dataset
+E   ======================================================================
+E   
+E   Expected location: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/data/equities/market/us_equities/us_equities.parquet
+E   
+E   Data root: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/data
+E     Set by the ML4T_DATA_PATH environment variable.
+E     If you already have this data elsewhere, point ML4T_DATA_PATH at
+E     that directory - export it, or set it in .env - rather than downloading
+E     it again.
+E   
+E   To download this dataset (from repo root):
+E     uv run python data/equities/market/us_equities/download.py
+E   
+E   Note: Requires QUANDL_API_KEY in .env file
+E   
+E   For complete instructions, see: data/README.md
+E   ======================================================================
+=============================== warnings summary ===============================
+tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs
+  /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review/tests/fixtures/seed_results.py:965: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+    .explode("timestamp")["timestamp"]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs
+============= 1 failed, 41 passed, 7 skipped, 4 warnings in 6.08s ==============

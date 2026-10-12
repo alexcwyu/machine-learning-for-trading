@@ -30,6 +30,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
+from case_studies.utils.published_artifacts import (  # noqa: E402
+    file_sha256,
+    is_published_artifact,
+    logical_artifacts,
+    verified_canonical_file,
+)
 from utils.paths import get_case_study_dir  # noqa: E402
 
 CASE_STUDIES = (
@@ -109,8 +115,15 @@ def walk(
                 f"tree they never read. Run from a checkout whose artifact directories link "
                 f"into the artifacts root, or pass --artifacts-root to name the tree you mean."
             )
-        for parquet in sorted(resolved.rglob("*.parquet")):
-            on_disk.setdefault(sha256_of(parquet), parquet)
+        for parquet in sorted(logical_artifacts(resolved)):
+            with verified_canonical_file(parquet) as canonical:
+                on_disk.setdefault(file_sha256(canonical), parquet)
+                if is_published_artifact(parquet):
+                    physical = sum(p.stat().st_size for p in parquet.iterdir() if p.is_file())
+                    scope.append(
+                        f"    {parquet.name}: canonical {canonical.stat().st_size} bytes, "
+                        f"physical publication {physical} bytes"
+                    )
     return on_disk, scope, absent
 
 

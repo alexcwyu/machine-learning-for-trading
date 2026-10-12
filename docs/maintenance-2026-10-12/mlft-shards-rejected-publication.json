@@ -1,0 +1,14 @@
+{
+  "noncanonical": {
+    "rejected": true,
+    "source_preserved": true,
+    "reason": "Reconstructed canonical byte identity differs: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/noncanonical-rejected/.parquet-publish-ma6b9z7m/financial.parquet",
+    "source_sha256": "e3c01fee4932d148b0f03c5d530de33395671167a0a45ea6dc1d1f2852bdd3eb"
+  },
+  "unsplittable_actual_row": {
+    "rejected": true,
+    "source_preserved": true,
+    "reason": "Unsplittable row exceeds physical ceiling: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/genuine-first-row.parquet",
+    "source_sha256": "631bff5dafffa1c83e3962e10490d7e7be0aee4e92544edef14efe31ff7345a0"
+  }
+}

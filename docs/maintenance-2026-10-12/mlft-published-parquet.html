@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lossless published Parquet</title><style>body{max-width:1000px;margin:40px auto;padding:0 24px;font:16px/1.6 system-ui;color:#202832}pre{overflow:auto;padding:16px;background:#f2f5f8}a{color:#1256a0}h1,h2{line-height:1.25}code{font-size:.9em}.mermaid{background:white}</style><main><h1>Lossless published Parquet</h1>
+<p>The reviewed storage branch keeps published CI files below the original 90 MiB ceiling while giving model consumers real canonical regular files. Input data, float precision, row order, model/CV identities, writer settings and original assertions remain unchanged. Main checkout, active kernels and source fixtures are untouched.</p>
+<h2>Source ownership and flow</h2>
+<p><a href="../../case_studies/utils/published_artifacts.py"><code>published_artifacts.py</code></a> owns publication, manifest validation and reconstruction. Oversized canonical Parquet is split into contiguous row ranges using the existing writer settings; measured oversized parts are split again. A source that cannot reproduce its original bytes fails instead of being silently re-encoded. Ordinary files copy byte for byte.</p>
+<pre class="mermaid">flowchart LR
+    A[Canonical producer runtime file] --&gt; P[publish_tree / publish_artifact]
+    P --&gt; B[Published logical path directory]
+    B --&gt; F[Ordered regular Parquet parts]
+    B --&gt; M[Versioned manifest]
+    B --&gt; G[Original physical-file size gate]
+    B --&gt; S[Copy to owned runtime staging]
+    S --&gt; V[Verify every part and canonical reconstruction]
+    V --&gt; R[Actual canonical regular file]
+    R --&gt; C[Unchanged model / CV / coverage / lineage consumers]
+</pre>
+<p>The version-one manifest records ordered filenames, actual part sizes and SHA256s, original canonical byte size/SHA256, ordered schema and row count. Validation rejects escaping paths, symlinks, duplicate or reordered names, unlisted entries, wrong size/checksum/schema/row count, and reconstructed canonical checksum drift. The manifest is a claim checked against real bytes, never an authority accepted without reconstruction.</p>
+<pre class="mermaid">sequenceDiagram
+    participant P as Published fixture
+    participant S as Runtime seeder
+    participant V as Materializer
+    participant C as Model consumer
+    S-&gt;&gt;P: Copy existing fixture tree
+    S-&gt;&gt;V: materialize_tree(destination)
+    V-&gt;&gt;V: Validate confined parts and hashes
+    V-&gt;&gt;V: Reconstruct with unchanged writer settings
+    V-&gt;&gt;V: Verify original canonical SHA and size
+    V-&gt;&gt;S: Replace copied dataset with regular file
+    C-&gt;&gt;S: Read/hash original relative filename
+</pre>
+<p><a href="../../tests/conftest.py"><code>seed_case_study_intermediates</code></a> materializes only its copied destination. <code>seeded_output_dir</code> already sets <code>ML4T_OUTPUT_DIR</code>, and <a href="../../utils/paths.py"><code>get_case_study_dir</code></a> routes consumers there. <a href="../../scripts/create_experiment.py"><code>create_experiment</code></a> performs the same operation in its private staging tree before publishing the workspace. CI's existing explicit copy steps invoke the same module afterward. The publication fixture root and its original size gate are unchanged.</p>
+<p>Publication-side <a href="../../tests/fixture_registry.py"><code>fixture_registry</code></a> and <a href="../../scripts/artifact_audit.py"><code>artifact_audit</code></a> reconstruct into a private temporary cache to hash actual canonical bytes. They retain single-file behavior and count a dataset as one logical artifact, rather than treating its physical parts as separate model inputs. Audit output separately names canonical bytes and total physical publication bytes.</p>
+<p>The independent model-registry suite still expects installed canonical <code>case_studies/&lt;id&gt;/features</code> inputs. Bootstrap those from the verified runtime view; this branch does not modify its tests or peer-owned fixture code. Installed artifact downloads currently cover <code>run_log</code> only, so that downloader is not repurposed as a feature installer.</p>
+<h2>Commands</h2>
+<p>Run from the project root using its existing environment:</p>
+<pre><code class="language-bash">python -m case_studies.utils.published_artifacts publish CANONICAL_INTERMEDIATES NEW_PUBLICATION_INTERMEDIATES
+python -m case_studies.utils.published_artifacts materialize OWNED_RUNTIME_COPY
+</code></pre>
+<p>Publication requires a new destination outside the source tree and preserves source data. Materialization is expressly a runtime/staging operation: do not invoke it on a published source tree. Ordinary files and repeated materialization remain unchanged. Portable replacement of a nonempty dataset directory uses verified staging, two same-filesystem renames and rollback on an operational error; a process crash between the renames can leave the owned backup in the temporary staging directory. It is not claimed to be a single atomic directory-to-file exchange.</p>
+<h2>Evidence and original-case coverage</h2>
+<p>The genuine financial artifact has 558,456 rows and 120,527,027 canonical bytes. Its two published parts contain 60,964,707 and 59,629,985 bytes. Reconstructed SHA256 is exactly <code>ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679</code>; order, schema, nulls and every Float32 bit are preserved. Eight corruption/escape controls were rejected without altering their copied datasets. <a href="mlft-shards-implementation-control.json">Implementation control</a>.</p>
+<p>The separate full publication contains 1,177 physical files, largest 93,799,859 bytes (below 94,371,840). All 1,174 ordinary files were independently checked byte-identical. The six NASDAQ logical feature/label hashes match the canonical source; the original source stays unchanged and the published financial path stays a directory. <a href="mlft-shards-publication-audit-control.json">Publication audit control</a>.</p>
+<p>The original ceiling was observed failing on the 114.9 MiB canonical file before implementation. <a href="mlft-size-gate-before.log">Baseline log</a>. The original five immutable guards, lineage source and writer settings remain byte-identical to branch base <code>a92c3f31</code>. <a href="mlft-immutable-files.json">File hashes</a>.</p>
+<p>Original routing/codec/lineage/audit/registry cases: <strong>129 passed</strong>. <a href="mlft-shards-existing-routing-tests.log">Log</a>. Additional base identity run: <strong>29 passed, 7 existing missing-data skips, 1 unchanged CAE failure</strong> (expected <code>82a8721e8c074459</code>, actual <code>22ba1b43276579c8</code>). This older isolated branch needs integration with peer fixes; no golden or version was changed. <a href="mlft-shards-existing-identity-tests.log">Identity log</a>.</p>
+<p>The broader published-fixture consumer run: <strong>41 passed, 7 existing missing-registry skips, 1 missing US-equities input failure</strong>. That source fixture does not contain <code>data/equities/market/us_equities/us_equities.parquet</code>; no data was fabricated. The NASDAQ original consumer and original physical budget cases passed. <a href="mlft-published-original-gate-consumers.log">Full scoped log</a>. Final focused run: <strong>132 passed, 0 failed, 0 skipped</strong>, including the unchanged physical ceiling and genuine NASDAQ model consumer. <a href="mlft-shards-final-existing-tests.log">Final existing-case log</a>.</p>
+<p>No additional pytest cases, assertion repins, gate filters or skips were introduced. One-off diagnostic scripts and their JSON evidence are retained alongside this document. Full multi-repository or complete MLFT suite success is not claimed by this storage branch.</p>
+<p>Both controlled rename-failure positions preserved the exact copied dataset. Noncanonical encoding and an unsplittable genuine input row were rejected with source checksums unchanged. <a href="mlft-shards-operational-rollback.json">Rollback proof</a>, <a href="mlft-shards-rejected-publication.json">rejected publication proof</a>. A genuine NASDAQ <code>create_experiment</code> staging control reconstructed the exact canonical SHA and preserved the published source; <a href="mlft-shards-genuine-experiment.json">experiment evidence</a>. The existing workspace cases were rerun after the standalone script import-path adjustment; <a href="mlft-shards-final-workspace-tests.log">workspace log</a>. Ruff and <code>git diff --check</code> pass.</p>
+<p>Independent root review and integration with the current main fixes remain pending. This worktree is based on <code>a92c3f31</code>; it does not overwrite peer-owned main changes or claim the unchanged CAE baseline failure is resolved.</p>
+</main><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict'});</script></html>

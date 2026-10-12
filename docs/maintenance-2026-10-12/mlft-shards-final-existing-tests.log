@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collected 132 items
+
+tests/test_fixture_file_size_ceiling.py ..                               [  1%]
+tests/test_artifact_specs.py .                                           [  2%]
+tests/test_seeded_output_dir.py .....                                    [  6%]
+tests/test_modeling_input_lineage.py .......                             [ 11%]
+tests/test_holdout_cv_derivation.py ................................     [ 35%]
+tests/test_create_experiment.py ....                                     [ 38%]
+tests/test_research_workspace.py ....................................... [ 68%]
+.                                                                        [ 68%]
+tests/test_artifact_audit_names_its_scope.py .............               [ 78%]
+tests/test_fixture_registry_prune.py .....................               [ 94%]
+tests/test_registry_lineage.py ..                                        [ 96%]
+tests/test_artifact_digest_encoding.py .....                             [100%]
+
+=============================== warnings summary ===============================
+tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs
+tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs
+  /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review/tests/fixtures/seed_results.py:965: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+    .explode("timestamp")["timestamp"]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 132 passed, 4 warnings in 8.29s ========================

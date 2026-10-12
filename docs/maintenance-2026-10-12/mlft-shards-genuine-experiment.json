@@ -1,0 +1,6 @@
+{
+  "canonical_regular_file": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/genuine-experiment-runtime/nasdaq100_microstructure/features/financial.parquet",
+  "sha256": "ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679",
+  "publication_source_preserved": true,
+  "config_source": "unchanged case_studies/nasdaq100_microstructure/config"
+}
