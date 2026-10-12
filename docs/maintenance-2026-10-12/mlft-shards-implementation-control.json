@@ -1,0 +1,349 @@
+{
+  "source_sha256": "ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679",
+  "runtime_sha256": "ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679",
+  "bytes_identical": true,
+  "source_preserved": true,
+  "rows": 558456,
+  "schema_equal": true,
+  "row_order_and_values_equal": true,
+  "float32_bits_equal": true,
+  "publication_manifest": {
+    "format": "ml4t-published-parquet",
+    "version": 1,
+    "logical_filename": "financial.parquet",
+    "canonical_sha256": "ffa3cd85815f998dfa30a0b05fd8175fbed36c8f8527e689a59e3650d8246679",
+    "canonical_bytes": 120527027,
+    "schema": [
+      [
+        "symbol",
+        "String"
+      ],
+      [
+        "timestamp",
+        "Datetime(time_unit='us', time_zone=None)"
+      ],
+      [
+        "cross_locked_share",
+        "Float32"
+      ],
+      [
+        "cross_locked_share_xs",
+        "Float32"
+      ],
+      [
+        "depth_imb",
+        "Float32"
+      ],
+      [
+        "depth_imb_xs",
+        "Float32"
+      ],
+      [
+        "dollar_vol",
+        "Float32"
+      ],
+      [
+        "dollar_vol_xs",
+        "Float32"
+      ],
+      [
+        "finra_share_60m",
+        "Float32"
+      ],
+      [
+        "finra_share_60m_xs",
+        "Float32"
+      ],
+      [
+        "illiq",
+        "Float32"
+      ],
+      [
+        "illiq_xs",
+        "Float32"
+      ],
+      [
+        "is_first_30m",
+        "Float32"
+      ],
+      [
+        "is_last_30m",
+        "Float32"
+      ],
+      [
+        "kyle_lambda",
+        "Float32"
+      ],
+      [
+        "kyle_lambda_xs",
+        "Float32"
+      ],
+      [
+        "microprice_dev",
+        "Float32"
+      ],
+      [
+        "microprice_dev_15m",
+        "Float32"
+      ],
+      [
+        "microprice_dev_15m_xs",
+        "Float32"
+      ],
+      [
+        "microprice_dev_5m",
+        "Float32"
+      ],
+      [
+        "microprice_dev_5m_xs",
+        "Float32"
+      ],
+      [
+        "microprice_dev_xs",
+        "Float32"
+      ],
+      [
+        "quote_range",
+        "Float32"
+      ],
+      [
+        "quote_range_xs",
+        "Float32"
+      ],
+      [
+        "quote_rate",
+        "Float32"
+      ],
+      [
+        "quote_rate_xs",
+        "Float32"
+      ],
+      [
+        "r1m",
+        "Float32"
+      ],
+      [
+        "r1m_xs",
+        "Float32"
+      ],
+      [
+        "rel_spread_15m",
+        "Float32"
+      ],
+      [
+        "rel_spread_15m_xs",
+        "Float32"
+      ],
+      [
+        "rel_spread_5m",
+        "Float32"
+      ],
+      [
+        "rel_spread_5m_xs",
+        "Float32"
+      ],
+      [
+        "rel_spread_60m",
+        "Float32"
+      ],
+      [
+        "rel_spread_60m_xs",
+        "Float32"
+      ],
+      [
+        "rel_spread_close",
+        "Float32"
+      ],
+      [
+        "rel_spread_close_xs",
+        "Float32"
+      ],
+      [
+        "rv_15m",
+        "Float32"
+      ],
+      [
+        "rv_15m_xs",
+        "Float32"
+      ],
+      [
+        "rv_30m",
+        "Float32"
+      ],
+      [
+        "rv_30m_xs",
+        "Float32"
+      ],
+      [
+        "rv_5m",
+        "Float32"
+      ],
+      [
+        "rv_5m_xs",
+        "Float32"
+      ],
+      [
+        "rv_ewma_30m",
+        "Float32"
+      ],
+      [
+        "rv_ewma_30m_xs",
+        "Float32"
+      ],
+      [
+        "signed_vol_share",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_15m",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_15m_xs",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_5m",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_5m_xs",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_60m",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_60m_xs",
+        "Float32"
+      ],
+      [
+        "signed_vol_share_xs",
+        "Float32"
+      ],
+      [
+        "tick_imb_share",
+        "Float32"
+      ],
+      [
+        "tick_imb_share_15m",
+        "Float32"
+      ],
+      [
+        "tick_imb_share_15m_xs",
+        "Float32"
+      ],
+      [
+        "tick_imb_share_5m",
+        "Float32"
+      ],
+      [
+        "tick_imb_share_5m_xs",
+        "Float32"
+      ],
+      [
+        "tick_imb_share_xs",
+        "Float32"
+      ],
+      [
+        "time_since_open",
+        "Float32"
+      ],
+      [
+        "time_to_close",
+        "Float32"
+      ],
+      [
+        "trade_range",
+        "Float32"
+      ],
+      [
+        "trade_range_xs",
+        "Float32"
+      ],
+      [
+        "trade_to_mid_5m",
+        "Float32"
+      ],
+      [
+        "trade_to_mid_5m_xs",
+        "Float32"
+      ],
+      [
+        "trade_to_mid_rel",
+        "Float32"
+      ],
+      [
+        "trade_to_mid_rel_xs",
+        "Float32"
+      ],
+      [
+        "trades_per_1k_shares",
+        "Float32"
+      ],
+      [
+        "trades_per_1k_shares_xs",
+        "Float32"
+      ]
+    ],
+    "rows": 558456,
+    "max_part_bytes": 94371840,
+    "parts": [
+      {
+        "name": "part-00000.parquet",
+        "bytes": 60964707,
+        "rows": 279228,
+        "sha256": "770de475e6ec827efeb8a3f717695ea873adccd77c0b013e8f1c1e4fe64435e8"
+      },
+      {
+        "name": "part-00001.parquet",
+        "bytes": 59629985,
+        "rows": 279228,
+        "sha256": "3d5b0277815f1f2e4ea0ef4cf832caf1ea9f8807a1558e6fa5e27a89f391f7db"
+      }
+    ]
+  },
+  "negative_controls": {
+    "checksum": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Part checksum differs: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/checksum/financial.parquet/part-00000.parquet"
+    },
+    "traversal": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Invalid/duplicate/unordered part filename: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/traversal/financial.parquet"
+    },
+    "duplicate": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Invalid/duplicate/unordered part filename: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/duplicate/financial.parquet"
+    },
+    "symlink": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Part is not a confined regular file: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/symlink/financial.parquet/part-00000.parquet"
+    },
+    "canonical_checksum": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Reconstructed canonical byte identity differs: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/canonical_checksum/financial.parquet"
+    },
+    "unlisted": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Unlisted publication entries: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/unlisted/financial.parquet"
+    },
+    "rows": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Canonical row count/schema differs: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/rows/financial.parquet"
+    },
+    "schema": {
+      "rejected": true,
+      "dataset_unchanged": true,
+      "reason": "Part row count/schema differs: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-controls/schema/financial.parquet/part-00000.parquet"
+    }
+  }
+}
