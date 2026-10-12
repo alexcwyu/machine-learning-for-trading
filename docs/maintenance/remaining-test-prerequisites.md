@@ -19,7 +19,7 @@ sequenceDiagram
     Registry-->>Notebook: Zero qualifying records
     Notebook-->>Notebook: Original iloc[0] raises IndexError
     Probe->>Registry: Execute exact source SQL in read-only mode
-    Registry-->>Probe: Zero records; unchanged database hash
+    Registry-->>Probe: Zero records and unchanged database hash
 ```
 
 ## SEC supply-chain workflow
