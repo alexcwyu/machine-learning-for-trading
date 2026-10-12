@@ -37,6 +37,8 @@ from pathlib import Path
 import polars as pl
 import yaml
 
+from utils import REPO_ROOT
+
 # %% [markdown]
 # ## 1. Configuration
 #
@@ -45,7 +47,7 @@ import yaml
 
 # %%
 # Load and display configuration
-config_path = Path("config.yaml")
+config_path = REPO_ROOT / "data" / "crypto" / "market" / "config.yaml"
 config = yaml.safe_load(config_path.read_text())
 crypto_config = config["crypto"]
 

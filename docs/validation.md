@@ -41,3 +41,25 @@ The original 90 MiB per-file Git publication gate remains failing for the 114.94
 The latest main `uv sync --frozen --all-groups --all-extras`, wheel, source distribution and source `compileall` pass. Focused source Ruff checks pass. Existing conditional skips retain their original blocker logic.
 
 Remaining original notebook nodes execute with their declared parameters and prerequisites. The original model registry fixture explicitly reads production case-study directories, so it must receive actual matching producer artifacts rather than merely an environment path. Missing paid CME/DataBento and US-equity/Quandl inputs, ALFRED API access, private test-data checkout access, model populations, specialized containers/services and native platform requirements are reported separately. A missing artifact is not called privately unobtainable without proving its genuine public producer prerequisites.
+
+
+## Subsequent genuine prerequisite recovery
+
+The unchanged original crypto downloaders complete all 19 configured symbols
+(866,868 hourly bars, 107,839 premium rows, 108,157 actual funding settlements).
+The original CI builder applies its prescribed 10-symbol fixture contract.
+Matching the financial stage's funding join key to the actual price timestamp
+schema preserves values and yields all five original producer stages passing
+in 86 seconds. Original affected test nodes continue separately.
+
+The actual ETF LSTM registry fixture now trains six epochs only for the original
+case whose assertion requires checkpoints 5 and 6; its copied shared presets are
+restored after the case. The existing linear/GBM/LSTM and checkpoint-parameter
+checks pass (four cases, 101.74 seconds). Original assertion literals and shared
+two-epoch producer defaults remain unchanged.
+
+The source-configured Neo4j Community 2026.02.2 service is provisioned as an owned
+isolated container on loopback ports 17474/17687, with separate owned volumes and
+the original authentication configuration. Existing ports/containers were
+checked before creation. Original graph cases are rerun against that real
+service; graph inputs and provider credentials remain independently required.

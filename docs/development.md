@@ -888,3 +888,30 @@ all rows, null counts and every nonnull floating-point bit: Zstd19 gives
 Zstd22 control gives 102.75 MiB. No row, symbol, date, precision, canonical writer
 or original ceiling assertion is changed. These controls do not establish that
 every possible lossless encoding has been exhausted.
+
+
+### Completed crypto/CFTC prerequisites and the original LSTM registry contract
+
+The unchanged configured Binance public downloader completes all 19 symbols:
+866,868 real hourly bars and 107,839 premium-index rows, with zero missing
+symbols. The unchanged official funding downloader adds 108,157 settlements
+from 1,192 monthly archives; 176 archive requests are genuine pre-listing 404s.
+The unchanged original CI builder writes its prescribed 10-symbol hourly,
+premium and funding panes. Crypto's financial stage explicitly matches the
+funding timestamp unit to its actual price schema before joining: official
+whole-hour UTC funding milliseconds become the loader's UTC microseconds,
+preserving every timestamp, row and rate. All five original crypto producer
+stages then pass in 86 seconds.
+
+The original COT downloader completes 35 observed product panels (13,603 rows)
+across its configured default products/years; one mapped product returns no
+observations. The unchanged CI builder copies all 35 panels verbatim. Both
+original COT chapter and Docker-notebook cases pass in 12.08 seconds.
+
+The model-registry ETF LSTM assertion requires actual checkpoint epochs 5 and 6,
+but its shared preset fixture trains only two epochs. A function-scoped fixture
+lets only that existing case's actual copied LSTM presets reach six epochs and
+restores their original bytes afterwards. Shared two-epoch producer defaults and
+the assertion remain unchanged. With the original linear/GBM prerequisite fits
+in the same session, all four original cases pass in 101.74 seconds, including
+the real checkpoint registration check. No checkpoint file or row is invented.

@@ -594,7 +594,9 @@ print(
 # claim that can fail - and it is the check that separates the two readings of the clamp.
 
 # %%
-realized_funding = load_funding_rates(symbols=[DEMO_SYMBOL]).select(
+realized_funding = load_funding_rates(symbols=[DEMO_SYMBOL]).with_columns(
+    pl.col("timestamp").cast(btc_funding.schema["settles_at"])
+).select(
     "timestamp", "symbol", pl.col("funding_rate").cast(pl.Float64).alias("realized")
 )
 

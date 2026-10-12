@@ -507,12 +507,42 @@ def _registry_summary(db_path: Path) -> dict:
 # ---------------------------------------------------------------------------
 
 
+@pytest.fixture
+def etf_lstm_checkpoint_budget(request, isolated_model_output):
+    """Train the existing ETF registry contract's real checkpoints 5 and 6.
+
+    Shared fixture presets retain their two-epoch defaults. This one original
+    case asserts later checkpoints, so its actual copied LSTM presets must
+    reach those epochs; restore the shared copies after the case finishes.
+    """
+    params = request.node.callspec.params
+    if params["case_study"] != "etfs" or params["notebook_path"].stem != "09_dl_lstm":
+        yield
+        return
+
+    import yaml
+
+    originals = {}
+    try:
+        for path in (isolated_model_output / "config" / "lstm").glob("*.yaml"):
+            originals[path] = path.read_bytes()
+            preset = yaml.safe_load(originals[path])
+            preset["n_epochs"] = max(int(preset["n_epochs"]), 6)
+            path.write_text(yaml.safe_dump(preset, sort_keys=False))
+        yield
+    finally:
+        for path, content in originals.items():
+            path.write_bytes(content)
+
+
 @pytest.mark.parametrize(
     "case_study,stage,notebook_path",
     MODEL_TESTS,
     ids=[f"{cs}::{stage}" for cs, stage, _ in MODEL_TESTS],
 )
-def test_model_notebook(case_study, stage, notebook_path, isolated_model_output):
+def test_model_notebook(
+    case_study, stage, notebook_path, isolated_model_output, etf_lstm_checkpoint_budget
+):
     """Run a model notebook in isolation and verify registry output.
 
     Steps:

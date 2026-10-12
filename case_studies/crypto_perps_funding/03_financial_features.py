@@ -215,7 +215,9 @@ prices = (
     .filter(pl.col("timestamp") < WINDOW_END)
     .sort(["symbol", "timestamp"])
 )
-funding = load_funding_rates(symbols=prices["symbol"].unique().to_list())
+funding = load_funding_rates(symbols=prices["symbol"].unique().to_list()).with_columns(
+    pl.col("timestamp").cast(prices.schema["timestamp"])
+)
 required = {"open", "high", "low", "close", "volume", "premium_index_close"}
 assert not required - set(prices.columns), (
     f"loader missing {sorted(required - set(prices.columns))}"
