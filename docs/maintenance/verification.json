@@ -549,6 +549,40 @@
   {
     "command": [
       "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "ML4T_OUTPUT_DIR=<workspace>/.runtime/maintenance-2026-10-12/mlft-dml-review/intermediates",
+      "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
+      "OMP_NUM_THREADS=1",
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::03_econml_dml.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::03_econml_dml.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 36.99,
+    "check": "dml-original-current-genuine-data",
+    "source_snapshot": {
+      "head": "e6c037ea9e0a2fef6fa0cc6d2c34418bd7300f43",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-dml-original-current-genuine-data.json",
+    "original_log": "machine-learning-for-trading-dml-original-current-genuine-data.log",
+    "log_sha256": "4a532627eec829ac7002ad2f48c1c896f36a283c5d80e7ae4c93cf30d9aafd8e",
+    "log_bytes": 2697,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 34.85s ========================"
+    ]
+  },
+  {
+    "command": [
+      "env",
       "ML4T_DATA_PATH=<workspace>/machine-learning-for-trading/data",
       "uv",
       "run",
@@ -1058,6 +1092,27 @@
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
     "exit_code": 1,
+    "elapsed_seconds": 282.39,
+    "step": "genuine-current-esig-roughpy-native315-autotools-install",
+    "started": 1791786420.142712,
+    "seconds": 282.39,
+    "evidence_record": "machine-learning-for-trading-genuine-current-esig-roughpy-native315-autotools-install.json",
+    "original_log": "machine-learning-for-trading-genuine-current-esig-roughpy-native315-autotools-install.log",
+    "log_sha256": "d42fc7f9c217aa63e6307c4e3b876dc12fc848a67dd764e13afe5e174cb0df54",
+    "log_bytes": 197112,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+      "esig"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
     "elapsed_seconds": 139.08,
     "step": "genuine-current-esig-roughpy-native315-install",
     "started": 1791786177.355201,
@@ -1066,6 +1121,27 @@
     "original_log": "machine-learning-for-trading-genuine-current-esig-roughpy-native315-install.log",
     "log_sha256": "d1c2deedfc8ff1fafff388955826f445859a63ad2666592530254182a1689afb",
     "log_bytes": 119598,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-frozen314/bin/python",
+      "esig==1.0.0"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 6.32,
+    "step": "genuine-current-esig-roughpy-official-native314-wheels",
+    "started": 1791786798.0010822,
+    "seconds": 6.32,
+    "evidence_record": "machine-learning-for-trading-genuine-current-esig-roughpy-official-native314-wheels.json",
+    "original_log": "machine-learning-for-trading-genuine-current-esig-roughpy-official-native314-wheels.log",
+    "log_sha256": "2144dd325c0b9aa135f3086503b5e7f1fe2c6db4de532e83966bef71727cf09e",
+    "log_bytes": 503,
     "outcome_lines": []
   },
   {
@@ -1368,6 +1444,48 @@
   },
   {
     "command": [
+      "brew",
+      "install",
+      "autoconf",
+      "automake",
+      "libtool"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 4.42,
+    "step": "genuine-roughpy-required-autotools",
+    "started": 1791786381.639528,
+    "seconds": 4.42,
+    "evidence_record": "machine-learning-for-trading-genuine-roughpy-required-autotools.json",
+    "original_log": "machine-learning-for-trading-genuine-roughpy-required-autotools.log",
+    "log_sha256": "ba3d6400e92b0241558e14c9ded0ad9b01d3b67875d0c839504c1ae8bd7592da",
+    "log_bytes": 1428,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "sync",
+      "--frozen",
+      "--all-groups",
+      "--all-extras",
+      "--python",
+      "/Users/alex/.local/share/uv/python/cpython-3.14-macos-aarch64-none/bin/python3.14"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 4.09,
+    "step": "genuine-signature-isolated-exact-frozen314-runtime",
+    "started": 1791786744.364309,
+    "seconds": 4.09,
+    "evidence_record": "machine-learning-for-trading-genuine-signature-isolated-exact-frozen314-runtime.json",
+    "original_log": "machine-learning-for-trading-genuine-signature-isolated-exact-frozen314-runtime.log",
+    "log_sha256": "bb41b148f77793d9ea85f2610df431649071f5b8b3cb93d6185ef333952ccac3",
+    "log_bytes": 11528,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "<workspace>/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py"
     ],
@@ -1624,6 +1742,23 @@
     "original_log": "machine-learning-for-trading-lock-accelerate-controller.log",
     "log_sha256": "6fb26de843442222663282a10154f79f750bdae710228b0cd5eaca1516a39a5d",
     "log_bytes": 73,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "lock"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 2.27,
+    "step": "lock-current-genuine-native-signature-dependencies",
+    "started": 1791787026.733542,
+    "seconds": 2.27,
+    "evidence_record": "machine-learning-for-trading-lock-current-genuine-native-signature-dependencies.json",
+    "original_log": "machine-learning-for-trading-lock-current-genuine-native-signature-dependencies.log",
+    "log_sha256": "8e71dd7cc6c997c42c5230af1d00492adbfe51330b82e92e2ea72d32ade9a312",
+    "log_bytes": 511,
     "outcome_lines": []
   },
   {
@@ -2679,6 +2814,36 @@
   {
     "command": [
       ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::06_path_signatures.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py]",
+      "tests/test_artifact_digest_encoding.py",
+      "tests/test_holdout_cv_derivation.py",
+      "tests/test_model_source_identity_versions.py",
+      "tests/test_registry_lineage.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 40.49,
+    "step": "original-main-current-native-signature-cases",
+    "started": 1791787168.614149,
+    "seconds": 40.49,
+    "evidence_record": "machine-learning-for-trading-original-main-current-native-signature-cases.json",
+    "original_log": "machine-learning-for-trading-original-main-current-native-signature-cases.log",
+    "log_sha256": "8b3322adc28a2b6136b191207f66cbccca33dc1866fcf90f190e9e76b4717f44",
+    "log_bytes": 8835,
+    "outcome_lines": [
+      "======================= 55 passed, 8 warnings in 38.37s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "tests/generate_intermediates.py",
       "--output",
       "<workspace>/.runtime/maintenance-2026-10-12/mlft-firm/intermediates",
@@ -2904,6 +3069,36 @@
     "log_sha256": "19c0abef040442b70d6ac4db38e15e15458bac5880c246e625e6fa9c101d76f6",
     "log_bytes": 895,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-frozen314/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::06_path_signatures.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py]",
+      "tests/test_artifact_digest_encoding.py",
+      "tests/test_holdout_cv_derivation.py",
+      "tests/test_model_source_identity_versions.py",
+      "tests/test_registry_lineage.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 43.79,
+    "step": "original-signature-official-native314-cases",
+    "started": 1791786878.7085052,
+    "seconds": 43.79,
+    "evidence_record": "machine-learning-for-trading-original-signature-official-native314-cases.json",
+    "original_log": "machine-learning-for-trading-original-signature-official-native314-cases.log",
+    "log_sha256": "f016093562a918541570073508f0b2b08a20428dafeba84822c1f2a6acdcd6b5",
+    "log_bytes": 8929,
+    "outcome_lines": [
+      "======================= 55 passed, 8 warnings in 40.20s ========================"
+    ]
   },
   {
     "command": [
@@ -3562,6 +3757,26 @@
   {
     "command": [
       "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.6,
+    "check": "signatures-native-final-build",
+    "source_snapshot": {
+      "head": "8005e65e9e9bb792e6567cf1515404e8f03985f5",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-signatures-native-final-build.json",
+    "original_log": "machine-learning-for-trading-signatures-native-final-build.log",
+    "log_sha256": "5f6bb5d8266504e879997698b9f66af28951cf4ed3a5779c1cf84c71628f6e5f",
+    "log_bytes": 41965,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
       "sync",
       "--all-groups",
       "--all-extras",
@@ -3579,6 +3794,26 @@
     "original_log": "machine-learning-for-trading-sync-accelerate-current-final.log",
     "log_sha256": "a40cc884516e056931d6f3c15cea1406b7fbf49a9a0d3617a7c3831977e75952",
     "log_bytes": 406,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "sync",
+      "--frozen",
+      "--all-groups",
+      "--all-extras"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 0.72,
+    "step": "sync-main-frozen-current-native-signatures",
+    "started": 1791787135.659308,
+    "seconds": 0.72,
+    "evidence_record": "machine-learning-for-trading-sync-main-frozen-current-native-signatures.json",
+    "original_log": "machine-learning-for-trading-sync-main-frozen-current-native-signatures.log",
+    "log_sha256": "357319e20bcf135953d0f4b55894a8dfc02dad7e98a73d65ba1195222ab80293",
+    "log_bytes": 446,
     "outcome_lines": []
   },
   {
@@ -3650,6 +3885,40 @@
     "log_sha256": "2a38278382311eb5c400fbf75a70927775fa7f2a220cbf5b6e8234bbb79586c3",
     "log_bytes": 11644,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "ML4T_OUTPUT_DIR=<workspace>/.runtime/maintenance-2026-10-12/mlft-synthesis-review/intermediates",
+      "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
+      "OMP_NUM_THREADS=1",
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 18.09,
+    "check": "synthesis-original-current-genuine-data",
+    "source_snapshot": {
+      "head": "e6c037ea9e0a2fef6fa0cc6d2c34418bd7300f43",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-synthesis-original-current-genuine-data.json",
+    "original_log": "machine-learning-for-trading-synthesis-original-current-genuine-data.log",
+    "log_sha256": "c554a12ae282e38d8ebce8f275f6906eac49c4147cabc402ab1460d0c96167a1",
+    "log_bytes": 7257,
+    "outcome_lines": [
+      "======================== 2 failed, 8 warnings in 16.31s ========================"
+    ]
   },
   {
     "command": [

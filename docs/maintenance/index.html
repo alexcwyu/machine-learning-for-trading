@@ -164,6 +164,12 @@
 <td><code>env POLARS_MAX_THREADS=2 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 MPLBACKEND=Agg .venv/bin/python -m pytest -p no:torchtyping -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-09_dl_lstm]</code></td>
 </tr>
 <tr>
+<td>dml-original-current-genuine-data</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">36.99s</td>
+<td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-fixture/data ML4T_OUTPUT_DIR=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-dml-review/intermediates DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::03_econml_dml.py] tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::03_econml_dml.py]</code></td>
+</tr>
+<tr>
 <td>etf-public-download</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">27.02s</td>
@@ -272,10 +278,22 @@
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-genuine-itch-pipeline.py</code></td>
 </tr>
 <tr>
+<td>genuine-current-esig-roughpy-native315-autotools-install</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">282.39s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python esig</code></td>
+</tr>
+<tr>
 <td>genuine-current-esig-roughpy-native315-install</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">139.08s</td>
 <td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python esig</code></td>
+</tr>
+<tr>
+<td>genuine-current-esig-roughpy-official-native314-wheels</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6.32s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-frozen314/bin/python esig==1.0.0</code></td>
 </tr>
 <tr>
 <td>genuine-current-homebrew-omp-image-inventory</td>
@@ -368,6 +386,18 @@
 <td><code>.venv/bin/python data/equities/market/microstructure/nasdaq_itch_download.py</code></td>
 </tr>
 <tr>
+<td>genuine-roughpy-required-autotools</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4.42s</td>
+<td><code>brew install autoconf automake libtool</code></td>
+</tr>
+<tr>
+<td>genuine-signature-isolated-exact-frozen314-runtime</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4.09s</td>
+<td><code>uv sync --frozen --all-groups --all-extras --python /Users/alex/.local/share/uv/python/cpython-3.14-macos-aarch64-none/bin/python3.14</code></td>
+</tr>
+<tr>
 <td>genuine-yahoo-producer-adapter-control</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.07s</td>
@@ -432,6 +462,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.6s</td>
 <td><code>uv lock --upgrade-package threadpoolctl</code></td>
+</tr>
+<tr>
+<td>lock-current-genuine-native-signature-dependencies</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.27s</td>
+<td><code>uv lock</code></td>
 </tr>
 <tr>
 <td>lock-genuine-current-gensim-complete-release-source</td>
@@ -704,6 +740,12 @@
 <td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py] tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]</code></td>
 </tr>
 <tr>
+<td>original-main-current-native-signature-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">40.49s</td>
+<td><code>.venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::06_path_signatures.py] tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py] tests/test_artifact_digest_encoding.py tests/test_holdout_cv_derivation.py tests/test_model_source_identity_versions.py tests/test_registry_lineage.py</code></td>
+</tr>
+<tr>
 <td>original-public-firm-canonical-stages1-6</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">42.87s</td>
@@ -756,6 +798,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.89s</td>
 <td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset institutional_holdings_13f</code></td>
+</tr>
+<tr>
+<td>original-signature-official-native314-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">43.79s</td>
+<td><code>&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-frozen314/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[09_model_based_features::06_path_signatures.py] tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py] tests/test_artifact_digest_encoding.py tests/test_holdout_cv_derivation.py tests/test_model_source_identity_versions.py tests/test_registry_lineage.py</code></td>
 </tr>
 <tr>
 <td>original-skipblocker-exact-failure-diagnosis</td>
@@ -932,10 +980,22 @@
 <td><code>uv pip install --python .venv/bin/python --target /tmp/trading-mlft-pthread-openblas --no-deps scipy-openblas32==0.3.34.237.0</code></td>
 </tr>
 <tr>
+<td>signatures-native-final-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.6s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
 <td>sync-accelerate-current-final</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.11s</td>
 <td><code>uv sync --all-groups --all-extras --frozen --python 3.14.8</code></td>
+</tr>
+<tr>
+<td>sync-main-frozen-current-native-signatures</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.72s</td>
+<td><code>uv sync --frozen --all-groups --all-extras</code></td>
 </tr>
 <tr>
 <td>sync-main-frozen-genuine-gensim-native314</td>
@@ -954,6 +1014,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">7.88s</td>
 <td><code>env UV_PROJECT_ENVIRONMENT=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-compatible uv sync --all-groups --all-extras --frozen --python 3.14.8</code></td>
+</tr>
+<tr>
+<td>synthesis-original-current-genuine-data</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18.09s</td>
+<td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-fixture/data ML4T_OUTPUT_DIR=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-synthesis-review/intermediates DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -m pytest -o addopts= -vv --tb=short tests/test_chapter_notebooks.py::test_chapter_notebook[20_strategy_synthesis::01_aggregate_synthesis.py] tests/test_docker_notebooks.py::test_docker_notebook[20_strategy_synthesis::01_aggregate_synthesis.py]</code></td>
 </tr>
 <tr>
 <td>test-data-upstream-access</td>
@@ -1472,5 +1538,4 @@
 <td><code>uv pip install --python .venv/bin/python --dry-run torch&lt;2.14.1</code></td>
 </tr>
 </tbody>
-</table></main>
-</body></html>
+</table></main></body></html>
