@@ -1,0 +1,7 @@
+{
+  "source_sha256": "dc06e00db04c3d56943417c4e5b71e93244ae17997c640425da76106ee1a0dc2",
+  "original_assertions_AST_unchanged": true,
+  "original_assertion_count": 4,
+  "strict_all_tracked_python_files_compiled": 1218,
+  "new_test_source_cases": 0
+}

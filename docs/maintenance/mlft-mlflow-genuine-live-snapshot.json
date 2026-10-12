@@ -1,0 +1,24 @@
+[
+  {
+    "lane": "green-snapshot",
+    "status": "passed",
+    "genuine_readonly_live_db_capture": {
+      "finished_runs": 50,
+      "snapshot": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/mlflow-genuine-50-finished-runs-snapshot.db"
+    },
+    "source": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-mlflow-reader-review/26_mlops_governance/06_mlflow_experiments.py",
+    "source_sha256": "dc06e00db04c3d56943417c4e5b71e93244ae17997c640425da76106ee1a0dc2",
+    "executed_notebook": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/mlflow-green-snapshot-executed.ipynb",
+    "output_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/direct-original-mlflow/green-snapshot",
+    "seconds": 3.73,
+    "original_parameters": {
+      "CASE_STUDY_ID": "us_equities_panel",
+      "PRIMARY_LABEL": "fwd_ret_1d",
+      "SECONDARY_LABEL": "fwd_ret_5d",
+      "MAX_MLFLOW_RUNS": 50,
+      "PARITY_TOLERANCE": 1e-08
+    },
+    "input_run_log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+    "no_seed_results_called": true
+  }
+]

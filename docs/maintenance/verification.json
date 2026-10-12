@@ -2824,6 +2824,95 @@
   },
   {
     "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-authored-ci-us-equity-validation-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-06_linear]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-07_gbm]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-08_tabular_dl]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-09_dl_nlinear]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-10_dl_lstm]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-11_dl_tsmixer]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-12_dl_weekly]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13a_pca]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13b_ipca]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13_latent_factors]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-14_causal_dml]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 133.31,
+    "check": "original-authored-ci-us-equity-existing-model-stages",
+    "started": 1791826356.242335,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.json",
+    "original_log": "machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
+    "log_sha256": "3ad7d57117aed1eda2617ff0c5b7b7083230753927f9446f884f21502c5d77ae",
+    "log_bytes": 4141,
+    "outcome_lines": [
+      "================== 11 passed, 8 warnings in 131.79s (0:02:11) =================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-authored-ci-us-equity-validation-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-01_feasibility_analysis]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-02_labels]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-03_financial_features]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-04_model_based_features]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-05_evaluation]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 136.74,
+    "check": "original-authored-ci-us-equity-pilot-and-five-stages",
+    "started": 1791826258.571508,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.json",
+    "original_log": "machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
+    "log_sha256": "f6b243b46d9645fde1bc49876b06710596dbd837a3a950e71fae587ef1cb8a1a",
+    "log_bytes": 3319,
+    "outcome_lines": [
+      "================== 6 passed, 8 warnings in 135.19s (0:02:15) ==================="
+    ]
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "<workspace>/docs/maintenance-2026-10-12/tools/run-mlft-original-bsts-native-profile-producer.py"
     ],
@@ -2997,6 +3086,52 @@
     "log_sha256": "ef8647bd281ed0a010dd905769e1bbdc885481203884e47e2eb00c424cf49a75",
     "log_bytes": 1584,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-official-v31-reader-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::02_online_drift_detection.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::06_mlflow_experiments.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::02_online_drift_detection.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::06_mlflow_experiments.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 133.14,
+    "check": "original-eight-verified-bundle-insights-mlflow-drift-consumers",
+    "started": 1791826431.096812,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.json",
+    "original_log": "machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
+    "log_sha256": "f5e66231b6326f7bc0dcae3a939fa51dc57475b8906a65f0da84b204f7ec2c67",
+    "log_bytes": 12772,
+    "outcome_lines": [
+      "============= 6 failed, 4 passed, 10 warnings in 131.92s (0:02:11) ============="
+    ]
   },
   {
     "command": [
@@ -3346,6 +3481,37 @@
   },
   {
     "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-full-us-equity-pilot-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "../docs/maintenance-2026-10-12/tools/trace_mlft_existing_pilot.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 11.2,
+    "check": "original-full-us-pilot-readonly-boundary-trace",
+    "started": 1791826183.3103192,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-full-us-pilot-readonly-boundary-trace.json",
+    "original_log": "machine-learning-for-trading-original-full-us-pilot-readonly-boundary-trace.log",
+    "log_sha256": "ee2755535cf5b277a49200c78e418dbf8de338f1a6a193c02fba9cf2121f10cf",
+    "log_bytes": 3506,
+    "outcome_lines": [
+      "======================== 1 failed, 8 warnings in 9.93s ========================="
+    ]
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "-m",
       "pytest",
@@ -3573,6 +3739,44 @@
     "log_bytes": 8835,
     "outcome_lines": [
       "======================= 55 passed, 8 warnings in 38.37s ========================"
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-official-v31-reader-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::06_mlflow_experiments.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::06_mlflow_experiments.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 261.92,
+    "check": "original-main-reviewed-mlflow-reader-cases",
+    "started": 1791827961.037062,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "457f0955694f721653957c9fb62997bd303f713ee3638ff2b337b332cc2d6272",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-main-reviewed-mlflow-reader-cases.json",
+    "original_log": "machine-learning-for-trading-original-main-reviewed-mlflow-reader-cases.log",
+    "log_sha256": "c0755da48c289b9ab173863140b3918484429804dde9e349e99fc90f357fdf34",
+    "log_bytes": 1919,
+    "outcome_lines": [
+      "================== 2 passed, 10 warnings in 259.63s (0:04:19) =================="
     ]
   },
   {
@@ -3878,6 +4082,80 @@
     "log_bytes": 2084,
     "outcome_lines": [
       "======================== 1 passed, 8 warnings in 4.13s ========================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-full-us-equity-pilot-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 11.48,
+    "check": "original-us-equities-pilot-full-genuine-producer-corrected-fixture",
+    "started": 1791826218.380206,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-us-equities-pilot-full-genuine-producer-corrected-fixture.json",
+    "original_log": "machine-learning-for-trading-original-us-equities-pilot-full-genuine-producer-corrected-fixture.log",
+    "log_sha256": "ec486b29e6d4a19ce1d96dd449cbd70ba705e66c1ad46ec084840005cc45d8a8",
+    "log_bytes": 2313,
+    "outcome_lines": [
+      "======================== 1 passed, 8 warnings in 10.02s ========================"
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-full-us-equity-pilot-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 11.01,
+    "check": "original-us-equities-pilot-full-genuine-producer-inputs",
+    "started": 1791826081.439799,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-us-equities-pilot-full-genuine-producer-inputs.json",
+    "original_log": "machine-learning-for-trading-original-us-equities-pilot-full-genuine-producer-inputs.log",
+    "log_sha256": "1435ab93356beb905e0754beac78fae054f0bd22bd6fb181413fb3a4b655ed0d",
+    "log_bytes": 3581,
+    "outcome_lines": [
+      "======================== 1 failed, 8 warnings in 9.57s ========================="
     ]
   },
   {
@@ -4495,6 +4773,27 @@
     "original_log": "machine-learning-for-trading-reviewed-finite-provider-guard-source-compile.log",
     "log_sha256": "28e7aaf921928b213aa154b63aff3a7913d9e0fdeba103974f5a23c8cea367c3",
     "log_bytes": 153,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 2.46,
+    "check": "reviewed-mlflow-current-source-wheel-sdist",
+    "started": 1791827961.0378811,
+    "source_snapshot": {
+      "head": "49c19661a21126bb720bfeca8749c56276a43d20",
+      "tracked_source_diff_sha256": "457f0955694f721653957c9fb62997bd303f713ee3638ff2b337b332cc2d6272",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-reviewed-mlflow-current-source-wheel-sdist.json",
+    "original_log": "machine-learning-for-trading-reviewed-mlflow-current-source-wheel-sdist.log",
+    "log_sha256": "7f4ccc7a54fb842b1b83c3810f6d32f227426b9fa9de5c166a0c68c5aaee2765",
+    "log_bytes": 41965,
     "outcome_lines": []
   },
   {

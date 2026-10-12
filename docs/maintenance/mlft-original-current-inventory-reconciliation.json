@@ -2,9 +2,9 @@
   "original_inventory": 8333,
   "current_inventory": 8327,
   "current_counts": {
-    "passed": 7672,
+    "passed": 7695,
     "skipped": 466,
-    "failed": 189
+    "failed": 166
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -93,5 +93,6 @@
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_options]"
   ],
   "new_test_source_cases": 0,
-  "reason": "Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire; genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical retired evidence remains separate and is not counted as a current pass."
+  "reason": "Ten obsolete skip-declaration guard parameter identities and one empty fold placeholder retire; genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical retired evidence remains separate and is not counted as a current pass.",
+  "acceptance_limit": "Four observed reader passes are rejected for genuine canonical acceptance because selected publisher files were absent and backfilled by the original test seeder."
 }

@@ -1,0 +1,1952 @@
+{
+  "runtime": "/var/folders/wy/_jh_cv811wndxb2wdyd_5dqm0000gn/T/pytest-of-alex/pytest-268/ml4t_output0",
+  "runtime_root_birthtime": 1791826431.9345686,
+  "check_started": 1791826431.096812,
+  "check_process_id": 74759,
+  "check_exit_code": 1,
+  "exact_association": "pytest268 root birthtime is0.838seconds after reader check start; parent confirmed association",
+  "prediction_files": [
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "0172512dacae",
+      "runtime_sha256": "4fd9ec88ad2d3b49439465303187d4b668e0871575536c736f8bf0a2e723bf46",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "13f7491bcda3",
+      "runtime_sha256": "796c8841ca178ed028a73440c7d4d6c2a27f36af865c01c4d74c6ff03a4d8254",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "1da3df2428eb",
+      "runtime_sha256": "7fea609e6c1429c05d1e398490fd641446bcbd53ff773e33f8ff29df3c39c6f5",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "29b3e1576947",
+      "runtime_sha256": "4ecd2cb3609798f51a256e2cd5e7cfecf211a8ee9bbb2b97c437bde17b7a5528",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "3066a6d71da2",
+      "runtime_sha256": "e90b52be0fedf8530b536a583ef67509fd7b89dd8c9c6728b145259f7024d87c",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "53c5c2cdb44b",
+      "runtime_sha256": "8f0f3bb760b432cc0cabb006f6a0c480f8e91a129ca1fdf774dc8ca09c145a08",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "7d842dca3b65",
+      "runtime_sha256": "3c7b22374ced676351ebb9136028ad3f11f8bff0f5c21d22500aebc80499157c",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "8ca7dd2abeff",
+      "runtime_sha256": "b70d25e4ef49da634ce224afcba5b5e6decf0f96eff025c48d015685911daa84",
+      "fixture_sha256": "b70d25e4ef49da634ce224afcba5b5e6decf0f96eff025c48d015685911daa84",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": "b70d25e4ef49da634ce224afcba5b5e6decf0f96eff025c48d015685911daa84",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "b2a084181aed",
+      "runtime_sha256": "4dfc285c0ae1a6767c9e206ab6e0f459b5acc13b41b2282ef7e1994fec161689",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "c8342f74c3ec",
+      "runtime_sha256": "23c498ec9db0c21e446a913122a8fdc7b7ffd27e50f820f84745d9f30f634d13",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "cf5aa72705e3",
+      "runtime_sha256": "cb066a37d79fd24406bd563faf73f8591d323454338cd7e6bf2a912d8019dba0",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "e09aaf9f0a65",
+      "runtime_sha256": "2b6deb3f98b7ad6dea7321ffc913a0a692be448a8c288fe73c887a0ddb9d1acb",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "e6e44ea380fd",
+      "runtime_sha256": "e3159f1aee7ac4783ab4145f9459196e534263fa86e1b89491f28d4dcc32ca9f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "f063da070dad",
+      "runtime_sha256": "d8c3bc5e7fd02064e06dbf9f97fac32c088d39207176feb9959b235bbc2dc98d",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "f271e7cad8b5",
+      "runtime_sha256": "a01739ba7391eaacf80efe2bf3a5defadac13b3c8bb8f7b666e691ae3ed16061",
+      "fixture_sha256": "a01739ba7391eaacf80efe2bf3a5defadac13b3c8bb8f7b666e691ae3ed16061",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": "a01739ba7391eaacf80efe2bf3a5defadac13b3c8bb8f7b666e691ae3ed16061",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "f87c2aabce2f",
+      "runtime_sha256": "27e4d07e7b522d022b2744c201cb9d2e4e671a12f32aae1d27e2d72477314a36",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "cme_futures",
+      "prediction_hash": "fa47190d1364",
+      "runtime_sha256": "9c9835546fa8c68a973a01080b4ff190bd2f96aa7c609a36382a515e47edfebc",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/cme_futures/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "04e7278c5730",
+      "runtime_sha256": "9302c87e090b9b4cc9e44629b5d78e90b69acf7d62160440e2b94d87ef3a0f0f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "168babb71bf3",
+      "runtime_sha256": "f08c9c3f5ccaead4f644f7b332bb7c57918eed77d2e9966fb434d9d63fffb62a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "2739583d0ad3",
+      "runtime_sha256": "8c65b46fe3aee301fd5d16740f1d14f925d97c33423003d4830e1b45bfeb88b2",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "4356d57187ce",
+      "runtime_sha256": "7e47fb36e39dc2f307d46371cd29b306e73642b7dd15bedae7e998e6a89796ec",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "438e5fb9ca49",
+      "runtime_sha256": "c1a755217dde588c73fcf8e3df2af327579d35c12d10a010ced5b118d9e5a60f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "562714b41b99",
+      "runtime_sha256": "cfa3d46ef3ad385d814b6b4d673af99050740452dcdea4f0d4489a231d2a1c69",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "5a21f683d2f2",
+      "runtime_sha256": "42bdee3584214194afdfca53f5d6cea9f160658dec7bd019df2fa6e067ddb0eb",
+      "fixture_sha256": "42bdee3584214194afdfca53f5d6cea9f160658dec7bd019df2fa6e067ddb0eb",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": "42bdee3584214194afdfca53f5d6cea9f160658dec7bd019df2fa6e067ddb0eb",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "5bc8a7e83fcc",
+      "runtime_sha256": "5082bc365493ffea0f8e7bdc5476289c20da4713164cee101bf18d3bd778f5b4",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "76095d38b86e",
+      "runtime_sha256": "51a162f9270813880c6a0b08a759e8143d77b38035a36dc6f5db950a7c62653a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "81a211f13380",
+      "runtime_sha256": "8c284a33a941b51239fc7be30c35955cfb106e13de9d4a59bb87a9f55ffa7879",
+      "fixture_sha256": "8c284a33a941b51239fc7be30c35955cfb106e13de9d4a59bb87a9f55ffa7879",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": "8c284a33a941b51239fc7be30c35955cfb106e13de9d4a59bb87a9f55ffa7879",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "91bf212f0b61",
+      "runtime_sha256": "89c44d434d65e10c36782d0c2ecf27aa60f19060e78c278baa8d5537e3da2b44",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "91d40ee95647",
+      "runtime_sha256": "0af4bcad39b5964cca7ef3741d1d5c9fa1aebbf7efd7ae4490658f9d9f96b68b",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "bf73bf8c2f9c",
+      "runtime_sha256": "9dd19f668d496bdabd46b8494b3e4504cd0e5487e6dbdc3c661adab72a6c3fee",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "c826ff52e5ba",
+      "runtime_sha256": "e4707aaa0aae88980c1ee82e5bd33f649b2305dcd5fa8943ad2c5228aea418d2",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "prediction_hash": "e4436950046f",
+      "runtime_sha256": "0ec3c792693faa137da9a71310e45fb303220f8e195dc84cf901e27107ddf29c",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/crypto_perps_funding/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "etfs",
+      "prediction_hash": "17186bbb4a88",
+      "runtime_sha256": "04d271c56c66cad74d46284892380d865268c7660b661a7df37dd7a74c39df9f",
+      "fixture_sha256": "04d271c56c66cad74d46284892380d865268c7660b661a7df37dd7a74c39df9f",
+      "official_root": null,
+      "official_sha256": null,
+      "classification": "nonofficial-fixture-or-unknown"
+    },
+    {
+      "case_study": "etfs",
+      "prediction_hash": "1c7cf0b55733",
+      "runtime_sha256": "1f3314ceb3038d2edd82651308688cfdd3e726050b2105a9e9370d68ff82fd49",
+      "fixture_sha256": "1f3314ceb3038d2edd82651308688cfdd3e726050b2105a9e9370d68ff82fd49",
+      "official_root": null,
+      "official_sha256": null,
+      "classification": "nonofficial-fixture-or-unknown"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "001742474fa3",
+      "runtime_sha256": "45b779fcf5d7eb52ab82b2bf3a2e0b55df73e47887177b423b31dbe1d93521fd",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "0ef424a4059a",
+      "runtime_sha256": "3dff390f44a96fb9712f77196d990e4cfb1b6b0a5d5ba989829e6e7d55e6cec5",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "11686b932fce",
+      "runtime_sha256": "234baf6c6b870bed707c52c513b87017078a6248423c67056153bc76c3142e34",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "2c24fd9b89db",
+      "runtime_sha256": "867e1c762646881cd5e886229469b5d775179bb1001e4c86dd54bf5a771f7b0b",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "2d1fcbc41418",
+      "runtime_sha256": "cdc36f4e4b1ed08169f4062d417d37714830bc6ef75af04e634ec1e7baf29c6b",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "35b70016f4d5",
+      "runtime_sha256": "364fcc25b70d19024bd6458617305bcf276bef2d7ed5c5b5464deff66fb28427",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "4cc18acf7775",
+      "runtime_sha256": "3b8b649aeb3efc34779cd909018f63d71cbc4875deca6af91c73d2e106a54069",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "54626bec011c",
+      "runtime_sha256": "2508db650aebe3ff6475ec9f47420400e0520f4fa7e01ed3c7df745f018cd809",
+      "fixture_sha256": "2508db650aebe3ff6475ec9f47420400e0520f4fa7e01ed3c7df745f018cd809",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": "2508db650aebe3ff6475ec9f47420400e0520f4fa7e01ed3c7df745f018cd809",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "859fc562ae6e",
+      "runtime_sha256": "c105ef434e5eb9e82ed31d9f61081ce87343cea6d1b046c8fcc729c17a1d1875",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "8fa790688245",
+      "runtime_sha256": "e61427a279a2df0212e98cce4dec97ab004312d0a78a75cde35c43a88244e7d3",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "9231dcbdfa51",
+      "runtime_sha256": "2248f32c963fbdcd1aaff7225571582360d815deb52d71e548887f7db0fc3200",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "97bdf8d4f7c3",
+      "runtime_sha256": "3f6ae34e9f8702c0a1c7736ac615cc12bad07ae29376eb3d70e0d553f4b5dc63",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "9929ef9d0e82",
+      "runtime_sha256": "5a371b096e0e2c651c4090279263a5286a358b56d64e4325197e0d30feea70d1",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "c5fb2d51d86b",
+      "runtime_sha256": "cfa5ed55ac2f27e81605d7c56d5e071eb9ee6f3a9e1cac1051f7ab8382007765",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "ed617072521f",
+      "runtime_sha256": "798bf743cf7cc72a17c6392f7b393909aa6589e22033e509e21b09823b77463d",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "fx_pairs",
+      "prediction_hash": "ef029c72418e",
+      "runtime_sha256": "3549b48b45c0a5b50a25447a828abb863c27811770da06d26bb5cefbcb48120e",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-artifact-recovery/case_studies/fx_pairs/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "1f83f2554dc5",
+      "runtime_sha256": "cf612703ef1f358fa5b345f9d1bdbb64a6366dbfdfa8e6bde084f2bc7c9684dd",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "2fb4a1b7744c",
+      "runtime_sha256": "d1a76abb132b02b5c2f5cefc2b082fe1aa10f5c06c7536e284d5f45006c4441b",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "40274be10137",
+      "runtime_sha256": "628b83ee6cc4d770d87c03f2f655a6094fe021779453ffe561468dcd38955a02",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "4b1c8e901a33",
+      "runtime_sha256": "d5d4481742d5d7071a3cb5864143da60f7ab8f800b6a3035b83a1abef75197e6",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "59f5aec47e76",
+      "runtime_sha256": "fbebe8b76d3334b299293e484192f38c4d4ee87cf651fe96a30396b721c6aabc",
+      "fixture_sha256": "fbebe8b76d3334b299293e484192f38c4d4ee87cf651fe96a30396b721c6aabc",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": "fbebe8b76d3334b299293e484192f38c4d4ee87cf651fe96a30396b721c6aabc",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "5b3704d14174",
+      "runtime_sha256": "24bba02f6bb24d0197230c2ab7a8327634a98a65eeb9b0b1904c71ce25c377e3",
+      "fixture_sha256": "24bba02f6bb24d0197230c2ab7a8327634a98a65eeb9b0b1904c71ce25c377e3",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": "24bba02f6bb24d0197230c2ab7a8327634a98a65eeb9b0b1904c71ce25c377e3",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "941f59ba9a0f",
+      "runtime_sha256": "25db03f4155cca139e452eab5a2610884f9b5e966ab538aaf4deffbb50018884",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "9804b44bbabd",
+      "runtime_sha256": "edb9e478e3b942b41a7374ef2a601887637328c61225dbec686b31567059d250",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "9e21ea5571d7",
+      "runtime_sha256": "4ff18792c8d2b0bbb7493ea0996e2aebc9e47637bf540144622b2bacf2ac05ad",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "a94c73c2996e",
+      "runtime_sha256": "9cf6df00f5532a69776cc9952ca7d008f9909d4959df4f3df5eec9d79b697d21",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "ae02c4b1d051",
+      "runtime_sha256": "36be3706652f72241484f6991075d5de8172b7dcd9a2f20e145d75cdef1cfef9",
+      "fixture_sha256": "36be3706652f72241484f6991075d5de8172b7dcd9a2f20e145d75cdef1cfef9",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": "36be3706652f72241484f6991075d5de8172b7dcd9a2f20e145d75cdef1cfef9",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "bacbcb1110ff",
+      "runtime_sha256": "58faf2d3257914f9011bf495eae21da2df282e364e3ebdb09bcdea7e223067f2",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "d4918169352b",
+      "runtime_sha256": "f6f92927bdc7dc713d8086618a516fe3a13f28e18a6a094ea2c0a36581a44d86",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "prediction_hash": "e482fa74a657",
+      "runtime_sha256": "a0c891b88823be3eb7b156059e13e9a5dae07e370240e6fc5c421be540f3372d",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/nasdaq100_microstructure/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "17e1cfbbcf71",
+      "runtime_sha256": "9479296eb2d69a18ccc2cadfcbecaf084e524e71773c993712ba92a6b2d394c3",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "29241736f82f",
+      "runtime_sha256": "10daceb2742c07144e75cb2e66e37925b6e0fd745cf5a6c6448c01934ab008d1",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "3d76f1567bb7",
+      "runtime_sha256": "b496080757b2a36dc22adce532fb6273137e8f2f8f15fd786fc6a7749c9f340e",
+      "fixture_sha256": "b496080757b2a36dc22adce532fb6273137e8f2f8f15fd786fc6a7749c9f340e",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": "b496080757b2a36dc22adce532fb6273137e8f2f8f15fd786fc6a7749c9f340e",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "44730e1b3f10",
+      "runtime_sha256": "f3d246a4afc3154c3b2e3bb02153e9f064fe4af08fb08f1e1c4a6949fe9b7bc9",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "447fa99cac8e",
+      "runtime_sha256": "94077b3384dae3fb4c2cc8422784a3fc8af58f4aa0899b3d96fdf4a803b560a8",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "49fb0d6859e2",
+      "runtime_sha256": "a56901ef3d871cb2012a4c51f6269c3c37f2621b2e8f821eaa4238c9607da125",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "55134b8fef85",
+      "runtime_sha256": "a5c418c017e27e91413294805051b5733e1faba77d9700090aa59825fa020ebe",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "60fe50827c56",
+      "runtime_sha256": "1b843043ce39103925ff5eae5577c6ae5db58ee773f85c3c08d6f03dd4dbea5e",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "7aaa07001937",
+      "runtime_sha256": "805de1600e6df8938209b370937774c00fda4fe47234bf57f5025ab083728c8a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "7d7b75c85e3d",
+      "runtime_sha256": "675e2400a064a43171eb790e262a8597c53a30df4c9eeb31559ab56eb5741fad",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "8a6b2cf1a4c7",
+      "runtime_sha256": "d458e314e11f3af5b143611a340fa12a352ff643862f37396ac7e88cf7777951",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "9e30c9276426",
+      "runtime_sha256": "ab0eb901854fa309c1ec323e37e9fcae04fb0adb7c118083b7a709a6f6f685dc",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "ae15e9afd9fc",
+      "runtime_sha256": "bb00fbb6feca911d58efbef21714fced566f45c5de6d2e28f171a37f31f0b02a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "ebbe60507b05",
+      "runtime_sha256": "91dd18cc3004cc95ca087be81e25097cd8fcd93767869576861443e065968239",
+      "fixture_sha256": "91dd18cc3004cc95ca087be81e25097cd8fcd93767869576861443e065968239",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": "91dd18cc3004cc95ca087be81e25097cd8fcd93767869576861443e065968239",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "ed6e6b9d1db6",
+      "runtime_sha256": "93715acd4c877b97e8b18edd42d3ea8c4ad77dc8845c5cd6d69fa197a0aac340",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "f2151406f550",
+      "runtime_sha256": "c8821bb332def8e3525f59b7e2cb979a4e4ef742d3999f3cd85d182f296e9007",
+      "fixture_sha256": "c8821bb332def8e3525f59b7e2cb979a4e4ef742d3999f3cd85d182f296e9007",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": "c8821bb332def8e3525f59b7e2cb979a4e4ef742d3999f3cd85d182f296e9007",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "prediction_hash": "f9454142f0d2",
+      "runtime_sha256": "4cfd9ed56bd9d249a4eb98938094bf9ac32d6da7a9a9d25421212d57f0afd8bf",
+      "fixture_sha256": "4cfd9ed56bd9d249a4eb98938094bf9ac32d6da7a9a9d25421212d57f0afd8bf",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_equity_option_analytics/run_log",
+      "official_sha256": "4cfd9ed56bd9d249a4eb98938094bf9ac32d6da7a9a9d25421212d57f0afd8bf",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "01ad1de74e26",
+      "runtime_sha256": "7cf8af0e53aaf5a14046eff6be2022abc4b5040690efcbdc0c3ab11d8dd53da3",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "39193fb5618f",
+      "runtime_sha256": "430bb55fec1355487975ce35210f34171e99c595bb87ee4a30b7e54cef5044e9",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "4289546550b7",
+      "runtime_sha256": "e992bdd9a7af88b75513bca0188860eacff949de83958aedf8fbd8f7e5511b28",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "5c2358036214",
+      "runtime_sha256": "90ff4fdac1d15d41a414649d5ce3dab57c00dae0be17098f0a061f0aa88656ff",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "7f91ef28e5b3",
+      "runtime_sha256": "40ee2975bec5e7f04226de08ec11bc17eb27d88a81658e60060545aaa0b4d259",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "885f31e01de0",
+      "runtime_sha256": "32427e004879336e3d2c04e49ae32a91bf95527d3fefec832adc791e0b2a1f9a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "91d2c64e15bd",
+      "runtime_sha256": "64d691a17d7829c873db4660519c89d08f149f496954920c27410a8419cd44d4",
+      "fixture_sha256": "64d691a17d7829c873db4660519c89d08f149f496954920c27410a8419cd44d4",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": "64d691a17d7829c873db4660519c89d08f149f496954920c27410a8419cd44d4",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "992754f1ab9b",
+      "runtime_sha256": "e57600f0641b565684302d5bfa92f4682c3a4ea78d2249af2057c337e8f031f8",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "9e71c67bf465",
+      "runtime_sha256": "d092b440ba3b1b8d6304a23d683a7e7ccc41afceca3d16985e422c58e1678dce",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "a41dc3e34baf",
+      "runtime_sha256": "48525f5dd0558eba750a16ced4068cc143d42615eabea5f3894ad47c62c4697f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "b34234632eff",
+      "runtime_sha256": "b77959747d1336743a735515df42a12d975b8310322b4fc7b01346cdd4d214a3",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "dc59f8f4fe7a",
+      "runtime_sha256": "ccc54f02afb4dbe31628edc3179b9555440f5a254b96494c3148e86167d6da4d",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "ec2b2aeace3a",
+      "runtime_sha256": "8cc03b92dfc8f6e47f6879de23db7c221eebd5cb1d9d8540c034a6fc6aa4bd0f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "sp500_options",
+      "prediction_hash": "f7cb84fd435f",
+      "runtime_sha256": "8d450456ee443ad888bcfa90df54a089a769b167f8f02e89b401f2440c5025c6",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/sp500_options/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "330962442374",
+      "runtime_sha256": "0e99a94c0f3bbc0711e1accd172d32895ab666853aed00ff20f260c92311201e",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "338098623169",
+      "runtime_sha256": "47f05380de2ce42435d04fdf1b12664de1c0b5f216e1097e68d2df1f18c8070a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "39493152c26d",
+      "runtime_sha256": "3f533f9a9e73ddbb156443f6d00ca86b05fc68aabde56aa2a48ac93fbf844ba6",
+      "fixture_sha256": "3f533f9a9e73ddbb156443f6d00ca86b05fc68aabde56aa2a48ac93fbf844ba6",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": "3f533f9a9e73ddbb156443f6d00ca86b05fc68aabde56aa2a48ac93fbf844ba6",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "483a2d6f8228",
+      "runtime_sha256": "93a6042a81d1cf87391eb3838cbf2d5a9352af194593ae0a7353776d7e860ac4",
+      "fixture_sha256": "93a6042a81d1cf87391eb3838cbf2d5a9352af194593ae0a7353776d7e860ac4",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": "93a6042a81d1cf87391eb3838cbf2d5a9352af194593ae0a7353776d7e860ac4",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "602bc6643b20",
+      "runtime_sha256": "6eb5fbc855a64e2f7a865cfbbeeea4d70c7b93d911e2e2116e0ba70c5c4f8b2f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "6f6a2e75a9bf",
+      "runtime_sha256": "e933d09e78b3d317b21e820a6c26aaa9b2a76ab86b6305fba530b4d5845e260c",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "7f3a0141defa",
+      "runtime_sha256": "43cb87c5e31cb961d090de899de660fc20678c29f48ea8e7d915d496757c3c4c",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "a9c9e0910be5",
+      "runtime_sha256": "50b8c04df771674579332c241bef520d35a4e69a5d590a75892da53aa153cec6",
+      "fixture_sha256": "50b8c04df771674579332c241bef520d35a4e69a5d590a75892da53aa153cec6",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": "50b8c04df771674579332c241bef520d35a4e69a5d590a75892da53aa153cec6",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "bf98e24b51a7",
+      "runtime_sha256": "4c579125c2f95499b262b112fc13858d19b8443d4f3472d02f20f4bff20ca605",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "c1b06348c5bb",
+      "runtime_sha256": "f354f3b0bbcbee85a976432dff991430ff13a6086dcc8c7b52df4ef9027140f8",
+      "fixture_sha256": "f354f3b0bbcbee85a976432dff991430ff13a6086dcc8c7b52df4ef9027140f8",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": "f354f3b0bbcbee85a976432dff991430ff13a6086dcc8c7b52df4ef9027140f8",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "c1c4f1e2e322",
+      "runtime_sha256": "6f07869f6aefb563920023e76611a3dd877807960faa9021eb342c9a4c436d77",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "df081818e2a4",
+      "runtime_sha256": "3a18c60fd502c4f275ae12b96eaacbfad7f58eaa1e96c008e9d2d05e57c876ff",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "e8bef60ce65c",
+      "runtime_sha256": "4daa8255c5770420f645ad531210478c521e4aeea9db57112c1374d9cedc4be4",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "f2fa0a7e243b",
+      "runtime_sha256": "61be871b554f103afb22b8f15ee6b5b40f5ebb74613ecedfdf21ace882b95469",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "f7d7d3739ce4",
+      "runtime_sha256": "553d1643e7074ea6866f222faa893962504a1f2d423fb2c8c5bd0a40e17f68a9",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_equities_panel",
+      "prediction_hash": "ffa52037c87d",
+      "runtime_sha256": "3fe3fda727b09ca8b15932d376ba941a6b03a7bb3d76537dc1d452d2d73467b5",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "1d884521b3a8",
+      "runtime_sha256": "0b40b9bd98e902924db604ca207f09467a10c1c0dd768b9e0939e7852ba00d34",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "2b37a9d12eae",
+      "runtime_sha256": "bf7c8e6af17975be6e63d371866a2aa8efb3eacd4804dd3ba5ee4089a3e84157",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "31e794ae0de9",
+      "runtime_sha256": "629c0d8e01dd5c0581f6388acb4bd0aa1174dd162938725245d4f141131c0547",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "34be2fc8d49f",
+      "runtime_sha256": "44f56e8e47386532e377c3819183401c7e59a477a5da0373dc84edbf48714621",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "41b27cda954a",
+      "runtime_sha256": "dd5912f377a8fb6ea5dec35e34e4c1758522de09f556fbfecae2d4bf5af4fc72",
+      "fixture_sha256": "dd5912f377a8fb6ea5dec35e34e4c1758522de09f556fbfecae2d4bf5af4fc72",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": "dd5912f377a8fb6ea5dec35e34e4c1758522de09f556fbfecae2d4bf5af4fc72",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "4e07361ca6f0",
+      "runtime_sha256": "79bae68ccb7456c5401d17eaf6f03d5d828801e8d897eaf0f331616197bc63b4",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "57a11e4524ad",
+      "runtime_sha256": "ea9207644a6bb55a0954517da0e67fe2b1914273599177ef92603d56376b1d98",
+      "fixture_sha256": "ea9207644a6bb55a0954517da0e67fe2b1914273599177ef92603d56376b1d98",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": "ea9207644a6bb55a0954517da0e67fe2b1914273599177ef92603d56376b1d98",
+      "classification": "verified-official-bytes"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "68a3a52e61fb",
+      "runtime_sha256": "dea9cd3e434c40d4cfa27fea11778207a04213b9ff316f8d843093440d09c61f",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "71b679ccf95a",
+      "runtime_sha256": "b98bce8784ddb352119afa7e1ce19bc80a15a8fc1dbf4284abf8de5c361f35e0",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "9a79014e5dce",
+      "runtime_sha256": "cf8178b1055aae67840b90143a32f9bcacbd58a9c64c02b0eaae477dea10d162",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "9c0ffd2af6cb",
+      "runtime_sha256": "4b5d05d6c228fb7079c667d579fa094996206ff6eafa4572cd3ce750bd077198",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "a6c88638592e",
+      "runtime_sha256": "7beae7ed771e028e5a04d81fe96993773a7a1afb2f8fe0ca2cae160e8d3c62b2",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "c1dc70a45c91",
+      "runtime_sha256": "272289611fa1203ba27f1f4db0ab668f917e9d4b29a1a3e97f6504fa28dfb017",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "cea55fdabe07",
+      "runtime_sha256": "aae97c3387f27272c94acaf849881a8f807f770f820b1d914fc64706ee79283a",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "d76d47445b9c",
+      "runtime_sha256": "822d1e117f64e021b4f114ab48b620b901e0b0c765bc671cbc88dd03d9c425c0",
+      "fixture_sha256": null,
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": null,
+      "classification": "runtime-backfill-absent-official"
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "prediction_hash": "f30b20eeadca",
+      "runtime_sha256": "22f152ccfbbb719c0069e75c13a8714f6d75724d2959b58bf619e1c48aa0caed",
+      "fixture_sha256": "22f152ccfbbb719c0069e75c13a8714f6d75724d2959b58bf619e1c48aa0caed",
+      "official_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_firm_characteristics/run_log",
+      "official_sha256": "22f152ccfbbb719c0069e75c13a8714f6d75724d2959b58bf619e1c48aa0caed",
+      "classification": "verified-official-bytes"
+    }
+  ],
+  "models": [
+    {
+      "case_study": "cme_futures",
+      "relative_path": "training/4dbc079f84da/models/fold_2.joblib",
+      "runtime_sha256": "d946824e0e7a6a7d028c0c503404457e6950db070cb0a24007cac503f346cd5b",
+      "official_sha256": "d946824e0e7a6a7d028c0c503404457e6950db070cb0a24007cac503f346cd5b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "cme_futures",
+      "relative_path": "training/4dbc079f84da/models/fold_0.joblib",
+      "runtime_sha256": "85eff814a9bffc8cfdb61f5122d88df5fd6cd9330bf977bdae2dd5935be6cf3b",
+      "official_sha256": "85eff814a9bffc8cfdb61f5122d88df5fd6cd9330bf977bdae2dd5935be6cf3b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "cme_futures",
+      "relative_path": "training/4dbc079f84da/models/fold_4.joblib",
+      "runtime_sha256": "b878a41a099ab7e3f10e1e13e59b2804566ab4509bdbdfdec8e5212bfb02519f",
+      "official_sha256": "b878a41a099ab7e3f10e1e13e59b2804566ab4509bdbdfdec8e5212bfb02519f",
+      "byte_equal": true
+    },
+    {
+      "case_study": "cme_futures",
+      "relative_path": "training/4dbc079f84da/models/fold_3.joblib",
+      "runtime_sha256": "79bf88035c62201aeff06684013aecdcf88511735cda5da3745ef96c2aed5d0b",
+      "official_sha256": "79bf88035c62201aeff06684013aecdcf88511735cda5da3745ef96c2aed5d0b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "cme_futures",
+      "relative_path": "training/4dbc079f84da/models/fold_1.joblib",
+      "runtime_sha256": "65348a9314397e683776217cccec4fc4c537977828624a557ace94175dee1fb6",
+      "official_sha256": "65348a9314397e683776217cccec4fc4c537977828624a557ace94175dee1fb6",
+      "byte_equal": true
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "relative_path": "training/7b5cb46b603d/models/fold_0.joblib",
+      "runtime_sha256": "13cd491ab35ebdbe4b2bb3b661b11b970dfd90d2070f5690399951d2deda9b52",
+      "official_sha256": "13cd491ab35ebdbe4b2bb3b661b11b970dfd90d2070f5690399951d2deda9b52",
+      "byte_equal": true
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "relative_path": "training/7b5cb46b603d/models/fold_1.joblib",
+      "runtime_sha256": "020522f504b53cc833411ff3406e563dc29dc5c7a41d153fc39907477e132676",
+      "official_sha256": "020522f504b53cc833411ff3406e563dc29dc5c7a41d153fc39907477e132676",
+      "byte_equal": true
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "relative_path": "training/f1c020d32721/models/fold_0.joblib",
+      "runtime_sha256": "9a18c43e9728033c40b45c4af9918dc1f3cce0c398c2c31c240ec0cc48894c2c",
+      "official_sha256": "9a18c43e9728033c40b45c4af9918dc1f3cce0c398c2c31c240ec0cc48894c2c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "crypto_perps_funding",
+      "relative_path": "training/f1c020d32721/models/fold_1.joblib",
+      "runtime_sha256": "6b4618b3eff7e3c5a19ad2972711a8b71f73bd193ce2ec367dd9f08153d21abb",
+      "official_sha256": "6b4618b3eff7e3c5a19ad2972711a8b71f73bd193ce2ec367dd9f08153d21abb",
+      "byte_equal": true
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_2.joblib",
+      "runtime_sha256": "2ee4d5d36964d6db080353da0941e52872a8e26f8b8f7c77191bd37108d70356",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_0.joblib",
+      "runtime_sha256": "dfe1e8a3c66432a308ebd75e3d994533bb37b4f60594e1f0a98f032ece843adb",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_4.joblib",
+      "runtime_sha256": "3b7af70a3f3c6a26f6a23649ba82dba60b59037f0aecad568dd4c2ae69ec16df",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_6.joblib",
+      "runtime_sha256": "6f9fe6c2d6bd4b16dbc21b603098e51c7e3b8048684f8e2ba442926ef1e9e7f7",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_3.joblib",
+      "runtime_sha256": "77bf1ef90601a45d62504057f5ae76cb913535cc68377b39de53752c2d15292b",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_1.joblib",
+      "runtime_sha256": "d16122b0989ed43e7b8f9fb1678f11fbc3de47dab2e28d6cbf51992c967e1f03",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_5.joblib",
+      "runtime_sha256": "4b0f42df1584a44cc7695dba1ea01a39970216ee38a23471ba152c34d21317ce",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/393e7560599a/models/fold_7.joblib",
+      "runtime_sha256": "34ca3aff5f89597cf0f4ddf7856ec39b12ff3c56675e28dde4a7d10e9736e1d9",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_2.joblib",
+      "runtime_sha256": "ab74deb9ab43c6ea2495f5fd81c0e25a0df76f10e759cc35a2db52be395df18b",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_0.joblib",
+      "runtime_sha256": "851ca352c10b8d5585f708b916288940386e0e12a9a7bbdf9374535eeac7f315",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_4.joblib",
+      "runtime_sha256": "fd59b326a58bf51c23e7067f077ba66eca9c3ea62705b9b38fdaf59b4a39750e",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_6.joblib",
+      "runtime_sha256": "d753aac6ec02328ea64f764bad93fc66c1fca1a9c8ae670e76cad7ef5850023f",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_3.joblib",
+      "runtime_sha256": "33deda24a8a01d5594256bb8d96892b1e4f20bf8f28e7a87e9a811409cfc6518",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_1.joblib",
+      "runtime_sha256": "e518f560e039007c09a7c94f20da87fa438a357f8656ed3db827bc6ff0c6f287",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_5.joblib",
+      "runtime_sha256": "2942bf99c4ec0a912cdf10180f3f791a7275d405276e2b63f695c9d41fe0ae36",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "etfs",
+      "relative_path": "training/cf13f75d82f7/models/fold_7.joblib",
+      "runtime_sha256": "bc14e367d3f6a928bbafc74643b1fb78421fdd8aaa070da35f69e4be93ce8045",
+      "official_sha256": null,
+      "byte_equal": false
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_2.joblib",
+      "runtime_sha256": "1203c75aae1d67b6f5588d2648178908fce8ce02477bbb3e820f2e507f556772",
+      "official_sha256": "1203c75aae1d67b6f5588d2648178908fce8ce02477bbb3e820f2e507f556772",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_0.joblib",
+      "runtime_sha256": "810c8a9d9faea282eb74f0c67229051377330326fb848299dc1928359e97c7f1",
+      "official_sha256": "810c8a9d9faea282eb74f0c67229051377330326fb848299dc1928359e97c7f1",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_4.joblib",
+      "runtime_sha256": "926f4ac5c2045810cdfd7e23e720454a29f0e45b0c7a2ffc0355c74a75efd0b9",
+      "official_sha256": "926f4ac5c2045810cdfd7e23e720454a29f0e45b0c7a2ffc0355c74a75efd0b9",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_6.joblib",
+      "runtime_sha256": "8ceb90a73a63a2ea64cfbe05b319172a19ea509a1d2c424c8a26e46f744a43bd",
+      "official_sha256": "8ceb90a73a63a2ea64cfbe05b319172a19ea509a1d2c424c8a26e46f744a43bd",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_3.joblib",
+      "runtime_sha256": "00ac1c5b426ba18685d8aab98b1fd957506da9543712ac8dcd3162e37c9924fc",
+      "official_sha256": "00ac1c5b426ba18685d8aab98b1fd957506da9543712ac8dcd3162e37c9924fc",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_1.joblib",
+      "runtime_sha256": "901ddc52ea6f22bad1b385e046d0bc0f94b6e7b42d06ed57151cbd39d4f1cabc",
+      "official_sha256": "901ddc52ea6f22bad1b385e046d0bc0f94b6e7b42d06ed57151cbd39d4f1cabc",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_5.joblib",
+      "runtime_sha256": "2eddc44e355c0b7aa622e3e235d0a842a0c287f51b69759ff4abe18495f00438",
+      "official_sha256": "2eddc44e355c0b7aa622e3e235d0a842a0c287f51b69759ff4abe18495f00438",
+      "byte_equal": true
+    },
+    {
+      "case_study": "fx_pairs",
+      "relative_path": "training/e8a05ca2c6db/models/fold_7.joblib",
+      "runtime_sha256": "af71f58dcec3ad720302e452e3b8dda82c7600a8f114708933862cc1ba234ec8",
+      "official_sha256": "af71f58dcec3ad720302e452e3b8dda82c7600a8f114708933862cc1ba234ec8",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/000b6216ca1c/models/fold_0.joblib",
+      "runtime_sha256": "9594c73861d36b68ca7832ea45f34305b135e282746440ead628321ed1489eb2",
+      "official_sha256": "9594c73861d36b68ca7832ea45f34305b135e282746440ead628321ed1489eb2",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/000b6216ca1c/models/fold_1.joblib",
+      "runtime_sha256": "73cd2ba57da75bfa4615b0a281359707ce83800c108035072b4e7f6a2228d38a",
+      "official_sha256": "73cd2ba57da75bfa4615b0a281359707ce83800c108035072b4e7f6a2228d38a",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/016e33d5a542/models/fold_0.joblib",
+      "runtime_sha256": "ab75821f3087dfae0271f762bea0fb4d5d181263c0913539b254807c5eb8887b",
+      "official_sha256": "ab75821f3087dfae0271f762bea0fb4d5d181263c0913539b254807c5eb8887b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/016e33d5a542/models/fold_1.joblib",
+      "runtime_sha256": "691db3eca09fbeb67bcd423d9f3733e3775a99d5bcde14ba98065365b8b5c800",
+      "official_sha256": "691db3eca09fbeb67bcd423d9f3733e3775a99d5bcde14ba98065365b8b5c800",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/9902fc4a5658/models/fold_0.joblib",
+      "runtime_sha256": "37b04364b9bc6a7aca871e650513038afdca11d5bea93cb7057746db0175e761",
+      "official_sha256": "37b04364b9bc6a7aca871e650513038afdca11d5bea93cb7057746db0175e761",
+      "byte_equal": true
+    },
+    {
+      "case_study": "nasdaq100_microstructure",
+      "relative_path": "training/9902fc4a5658/models/fold_1.joblib",
+      "runtime_sha256": "665afcd144aae34a6cbfee5b86064c8f20274066e508a94f0e697253aa3a7cde",
+      "official_sha256": "665afcd144aae34a6cbfee5b86064c8f20274066e508a94f0e697253aa3a7cde",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "relative_path": "training/0f6fa6e438a3/models/fold_0.joblib",
+      "runtime_sha256": "876145f05738b0ef828b756c3e185688802cd2db9b3de76af324321321937951",
+      "official_sha256": "876145f05738b0ef828b756c3e185688802cd2db9b3de76af324321321937951",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "relative_path": "training/0f6fa6e438a3/models/fold_1.joblib",
+      "runtime_sha256": "c2d961bee36cb9c0cb95bf79eb58fcf02889712ea5251f25a07005be1be2a385",
+      "official_sha256": "c2d961bee36cb9c0cb95bf79eb58fcf02889712ea5251f25a07005be1be2a385",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "relative_path": "training/7c3b7101baff/models/fold_0.joblib",
+      "runtime_sha256": "cfa8703c70d08e2ea9b2c53a0eabead0e072ec111fa0deb8aabb88e7e68e4a94",
+      "official_sha256": "cfa8703c70d08e2ea9b2c53a0eabead0e072ec111fa0deb8aabb88e7e68e4a94",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "relative_path": "training/7c3b7101baff/models/fold_1.joblib",
+      "runtime_sha256": "f44a59e5f26b155760c0bbe73ddabeec07d22adc28381210632d8d51e6c3ce2e",
+      "official_sha256": "f44a59e5f26b155760c0bbe73ddabeec07d22adc28381210632d8d51e6c3ce2e",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_options",
+      "relative_path": "training/4b5ad58f30ce/models/fold_0.joblib",
+      "runtime_sha256": "635cdcaf2c611ce0936bf6064b1fc1f8c0923d368d2a6144817a05a6612982d8",
+      "official_sha256": "635cdcaf2c611ce0936bf6064b1fc1f8c0923d368d2a6144817a05a6612982d8",
+      "byte_equal": true
+    },
+    {
+      "case_study": "sp500_options",
+      "relative_path": "training/4b5ad58f30ce/models/fold_1.joblib",
+      "runtime_sha256": "532ae65a7ff6296a454816f499d1ecb796c498e4b1c5e75ccd932dc9f3832168",
+      "official_sha256": "532ae65a7ff6296a454816f499d1ecb796c498e4b1c5e75ccd932dc9f3832168",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_15.joblib",
+      "runtime_sha256": "14eb86e6d3785584a32d3d167b4347ba620dd1affd9ab79c531c735fd16b8828",
+      "official_sha256": "14eb86e6d3785584a32d3d167b4347ba620dd1affd9ab79c531c735fd16b8828",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_2.joblib",
+      "runtime_sha256": "1ddb2b41f74ff8d85262899ed2e042f574c20350c969449e6e61e68143ff67ee",
+      "official_sha256": "1ddb2b41f74ff8d85262899ed2e042f574c20350c969449e6e61e68143ff67ee",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_0.joblib",
+      "runtime_sha256": "40d99bc147ce3b0494102f2c0f8b5850433f1b12fa5bc63688e1990aa935b249",
+      "official_sha256": "40d99bc147ce3b0494102f2c0f8b5850433f1b12fa5bc63688e1990aa935b249",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_8.joblib",
+      "runtime_sha256": "78334eceb71ed63f81ad124fd097eadb677c40ef3d11fab7e0649de6526db9d6",
+      "official_sha256": "78334eceb71ed63f81ad124fd097eadb677c40ef3d11fab7e0649de6526db9d6",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_4.joblib",
+      "runtime_sha256": "5b464264baee7a8ac31304af410327211ed6e55e01093a3e5d948c9ab991cb03",
+      "official_sha256": "5b464264baee7a8ac31304af410327211ed6e55e01093a3e5d948c9ab991cb03",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_13.joblib",
+      "runtime_sha256": "666aae65af891f7f02e19d61049334f83d3be0cf999ad099f7e032cf017a635c",
+      "official_sha256": "666aae65af891f7f02e19d61049334f83d3be0cf999ad099f7e032cf017a635c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_11.joblib",
+      "runtime_sha256": "902b8300bf3485994de1378d70194ad56bb2857d26a8c441dd602d1e09f3a9e8",
+      "official_sha256": "902b8300bf3485994de1378d70194ad56bb2857d26a8c441dd602d1e09f3a9e8",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_6.joblib",
+      "runtime_sha256": "b1af25f18349a8501786f2a0342ee7f95643b06ac4f5d0e73e5eac4b6e96df37",
+      "official_sha256": "b1af25f18349a8501786f2a0342ee7f95643b06ac4f5d0e73e5eac4b6e96df37",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_3.joblib",
+      "runtime_sha256": "664bcd9a2a3f880702685a8f9e47bf701a16eb3b87b2d3539dd53a5526d6c859",
+      "official_sha256": "664bcd9a2a3f880702685a8f9e47bf701a16eb3b87b2d3539dd53a5526d6c859",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_14.joblib",
+      "runtime_sha256": "a4e70a788b7f3c2fff3d3f432fa3217cd3217281a0301988b1a2f50dd3ed6d2b",
+      "official_sha256": "a4e70a788b7f3c2fff3d3f432fa3217cd3217281a0301988b1a2f50dd3ed6d2b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_1.joblib",
+      "runtime_sha256": "74b48d625df8283ca32537042b49e06880981073f259f16f9e540a05f20a2a2e",
+      "official_sha256": "74b48d625df8283ca32537042b49e06880981073f259f16f9e540a05f20a2a2e",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_12.joblib",
+      "runtime_sha256": "47ff791bbf6fc52ff422b93482d7d2a45c765826508db5badb6c5b556534889d",
+      "official_sha256": "47ff791bbf6fc52ff422b93482d7d2a45c765826508db5badb6c5b556534889d",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_9.joblib",
+      "runtime_sha256": "6202f2fc67d427d7a10ac7538a8d350dbf15fd933d24c9f932fdefb8eb07cadf",
+      "official_sha256": "6202f2fc67d427d7a10ac7538a8d350dbf15fd933d24c9f932fdefb8eb07cadf",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_5.joblib",
+      "runtime_sha256": "9798bcac72fffc52686b7624b53e715d6ac5154cfe384a39cbe02adb8f8f3e8d",
+      "official_sha256": "9798bcac72fffc52686b7624b53e715d6ac5154cfe384a39cbe02adb8f8f3e8d",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_7.joblib",
+      "runtime_sha256": "49ef3503fb9915960a2b7095e096dd85bc6358a1e206ebdb372d7dbcd0f9fc38",
+      "official_sha256": "49ef3503fb9915960a2b7095e096dd85bc6358a1e206ebdb372d7dbcd0f9fc38",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/45d8ccc760ce/models/fold_10.joblib",
+      "runtime_sha256": "3f8074f4ce5e333257f5cb6f0e08230b88751dc02d14a8fcd56ed47578d89e29",
+      "official_sha256": "3f8074f4ce5e333257f5cb6f0e08230b88751dc02d14a8fcd56ed47578d89e29",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_15.joblib",
+      "runtime_sha256": "463164f05ad298412f14135fd5f604637d44412aae53a20612f7b9a9a15f54fb",
+      "official_sha256": "463164f05ad298412f14135fd5f604637d44412aae53a20612f7b9a9a15f54fb",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_2.joblib",
+      "runtime_sha256": "e1c15c639c8c44fd1f8a75a5d2453ae6d18a9fca61f2e15f3b0c2b3c08f0fb10",
+      "official_sha256": "e1c15c639c8c44fd1f8a75a5d2453ae6d18a9fca61f2e15f3b0c2b3c08f0fb10",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_0.joblib",
+      "runtime_sha256": "61b32026d7eb2a5d6cdda1d5310222de3262a85947d4d2df122bbd9a2a2d76d1",
+      "official_sha256": "61b32026d7eb2a5d6cdda1d5310222de3262a85947d4d2df122bbd9a2a2d76d1",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_8.joblib",
+      "runtime_sha256": "9b681f4464951270b925ba4c3ec1ec9b7766c033f230641b27f09b3eeb5f31d1",
+      "official_sha256": "9b681f4464951270b925ba4c3ec1ec9b7766c033f230641b27f09b3eeb5f31d1",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_4.joblib",
+      "runtime_sha256": "89155e281cd567f74bb0331b8dbac04e56572ec39e03f719d1f68b7eb923036c",
+      "official_sha256": "89155e281cd567f74bb0331b8dbac04e56572ec39e03f719d1f68b7eb923036c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_13.joblib",
+      "runtime_sha256": "5a3826848a3a0e675bb998ae29d3a00005d2cc8b7d04f17cfc0ce81c5180d62b",
+      "official_sha256": "5a3826848a3a0e675bb998ae29d3a00005d2cc8b7d04f17cfc0ce81c5180d62b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_11.joblib",
+      "runtime_sha256": "689c4832156b676e2b3cf87e82ba2478a9dcd447b37d7da7cd1a9f7dfb38221f",
+      "official_sha256": "689c4832156b676e2b3cf87e82ba2478a9dcd447b37d7da7cd1a9f7dfb38221f",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_6.joblib",
+      "runtime_sha256": "8280207319a106d5cb1d0db193234f59a854e8e32390b77513fde461980fbb30",
+      "official_sha256": "8280207319a106d5cb1d0db193234f59a854e8e32390b77513fde461980fbb30",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_3.joblib",
+      "runtime_sha256": "de2785a1157a03dae43a950133b05b36b86887fe742eca31ba8d68666a6cf9fb",
+      "official_sha256": "de2785a1157a03dae43a950133b05b36b86887fe742eca31ba8d68666a6cf9fb",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_14.joblib",
+      "runtime_sha256": "9a31a032057ae83971fc5c1c79c09a9da28079caeaf0eb825ee3c50414301596",
+      "official_sha256": "9a31a032057ae83971fc5c1c79c09a9da28079caeaf0eb825ee3c50414301596",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_1.joblib",
+      "runtime_sha256": "063c232e246657a09210872c6ac2196c40d1736d5a727048cd8c8f4e70c48acf",
+      "official_sha256": "063c232e246657a09210872c6ac2196c40d1736d5a727048cd8c8f4e70c48acf",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_12.joblib",
+      "runtime_sha256": "7d1a4488579a7a7b4f8a48dd6c07d09cb3839b6f899844e629cfd7f6e9214617",
+      "official_sha256": "7d1a4488579a7a7b4f8a48dd6c07d09cb3839b6f899844e629cfd7f6e9214617",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_9.joblib",
+      "runtime_sha256": "cafaff6ef2e90da960be3b8688b9e5ac7e4a7e91338b5522e917099f82a79f17",
+      "official_sha256": "cafaff6ef2e90da960be3b8688b9e5ac7e4a7e91338b5522e917099f82a79f17",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_5.joblib",
+      "runtime_sha256": "68255aa2ef8d968a216165b2068b0e4ba928802605aaed4cfe2f0034bfc10b8b",
+      "official_sha256": "68255aa2ef8d968a216165b2068b0e4ba928802605aaed4cfe2f0034bfc10b8b",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_7.joblib",
+      "runtime_sha256": "e5470c7cc7e6aa3bc13647157f8480a21f4acdd9b8944d3933462d9f84e14daf",
+      "official_sha256": "e5470c7cc7e6aa3bc13647157f8480a21f4acdd9b8944d3933462d9f84e14daf",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/8c09a0c3cc0b/models/fold_10.joblib",
+      "runtime_sha256": "0ae537acc698e5b7c44b09c7ae1a0260e4d06bd363c4356a45331a2a768c89ef",
+      "official_sha256": "0ae537acc698e5b7c44b09c7ae1a0260e4d06bd363c4356a45331a2a768c89ef",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_15.joblib",
+      "runtime_sha256": "b781485b7673bfedca7bf2a0537488c1236406d312393c5ccc74696a3feacc7c",
+      "official_sha256": "b781485b7673bfedca7bf2a0537488c1236406d312393c5ccc74696a3feacc7c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_2.joblib",
+      "runtime_sha256": "63e7599a53e51459a5f16c07a5f15ae7febd462571eea8326bcd8be6e0e0fb9d",
+      "official_sha256": "63e7599a53e51459a5f16c07a5f15ae7febd462571eea8326bcd8be6e0e0fb9d",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_0.joblib",
+      "runtime_sha256": "919dbe66d569771206e0ca91ad743e2427029fe987f5e03ee8fcd66654dd2a78",
+      "official_sha256": "919dbe66d569771206e0ca91ad743e2427029fe987f5e03ee8fcd66654dd2a78",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_8.joblib",
+      "runtime_sha256": "5cfc987a38b6f70276b53f90ee5eae207f593834448a41db6be7da87d2c8d90c",
+      "official_sha256": "5cfc987a38b6f70276b53f90ee5eae207f593834448a41db6be7da87d2c8d90c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_4.joblib",
+      "runtime_sha256": "1e6deadea3f569960c815ccfe18d62f8f03fe689cb3d0bab121b300c6203174d",
+      "official_sha256": "1e6deadea3f569960c815ccfe18d62f8f03fe689cb3d0bab121b300c6203174d",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_13.joblib",
+      "runtime_sha256": "2654de117e7c68362a6441ac3db3b41cf758de5c90a4a73898b5ed39fbda33fc",
+      "official_sha256": "2654de117e7c68362a6441ac3db3b41cf758de5c90a4a73898b5ed39fbda33fc",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_11.joblib",
+      "runtime_sha256": "accf3f6dfcacd62a6611a08063be9ac9c837f36c5eb4f2eb49ab6e04479e8443",
+      "official_sha256": "accf3f6dfcacd62a6611a08063be9ac9c837f36c5eb4f2eb49ab6e04479e8443",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_6.joblib",
+      "runtime_sha256": "dd3d5093e535e9f633c5df4436cc20696affe0105373daae4caee7cc8ac1da94",
+      "official_sha256": "dd3d5093e535e9f633c5df4436cc20696affe0105373daae4caee7cc8ac1da94",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_3.joblib",
+      "runtime_sha256": "2964ed7651ddd73dc3b992a0fa192e1bde39b86eb6246f1f2238efc46401bc64",
+      "official_sha256": "2964ed7651ddd73dc3b992a0fa192e1bde39b86eb6246f1f2238efc46401bc64",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_14.joblib",
+      "runtime_sha256": "82cbf619dd69add2c095997d2a8cd97a13e95b8eaa92d9f53436a2a6942ab74c",
+      "official_sha256": "82cbf619dd69add2c095997d2a8cd97a13e95b8eaa92d9f53436a2a6942ab74c",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_1.joblib",
+      "runtime_sha256": "a79fcbe6ea9ce98371ba88fc584dc72c316f653b150e49fbd526c241600faa2e",
+      "official_sha256": "a79fcbe6ea9ce98371ba88fc584dc72c316f653b150e49fbd526c241600faa2e",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_12.joblib",
+      "runtime_sha256": "99fd82046db7a02cf73bc40eae702302c6ed6ee73875f9dc238e1bac104817bb",
+      "official_sha256": "99fd82046db7a02cf73bc40eae702302c6ed6ee73875f9dc238e1bac104817bb",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_9.joblib",
+      "runtime_sha256": "2e735d45f60dec809c1a512bd980cc8e4bdfe220536e32a1a2790f4686ec84c5",
+      "official_sha256": "2e735d45f60dec809c1a512bd980cc8e4bdfe220536e32a1a2790f4686ec84c5",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_5.joblib",
+      "runtime_sha256": "654f597a5c032c65dd29a034051192fe1af69fd5cb2b9b0e2cb22fec4732b548",
+      "official_sha256": "654f597a5c032c65dd29a034051192fe1af69fd5cb2b9b0e2cb22fec4732b548",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_7.joblib",
+      "runtime_sha256": "71c401720eea91233deeb613ff057bc4f7663309bd5ce274d1d52e852b177a44",
+      "official_sha256": "71c401720eea91233deeb613ff057bc4f7663309bd5ce274d1d52e852b177a44",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_equities_panel",
+      "relative_path": "training/f975e91f3062/models/fold_10.joblib",
+      "runtime_sha256": "44c7a54721a68602a023262748705ee4e8ef08aef0a7ba1c447086161216ab44",
+      "official_sha256": "44c7a54721a68602a023262748705ee4e8ef08aef0a7ba1c447086161216ab44",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_2.joblib",
+      "runtime_sha256": "e50a1cb8d104e1375412d188ae1e10b6d41570e1d6591a550e30f8bf34c48e9a",
+      "official_sha256": "e50a1cb8d104e1375412d188ae1e10b6d41570e1d6591a550e30f8bf34c48e9a",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_0.joblib",
+      "runtime_sha256": "20b72f8ae188012cefd21b7f8f72e84ad86f499e8ea16dc0034add82b7edfc3a",
+      "official_sha256": "20b72f8ae188012cefd21b7f8f72e84ad86f499e8ea16dc0034add82b7edfc3a",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_8.joblib",
+      "runtime_sha256": "d5f72323ad31e33fa6123aff1edb029b9022c59f1e14ac6337b28b8b8e102c5f",
+      "official_sha256": "d5f72323ad31e33fa6123aff1edb029b9022c59f1e14ac6337b28b8b8e102c5f",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_4.joblib",
+      "runtime_sha256": "4a0d9b59465ceb19f0d8451727716d0b3572eb710beeb04dc06e85846f1418de",
+      "official_sha256": "4a0d9b59465ceb19f0d8451727716d0b3572eb710beeb04dc06e85846f1418de",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_6.joblib",
+      "runtime_sha256": "6550f86d2f825f6a26b5ce50290393d29ac124d9c8cab4766839b210de676b52",
+      "official_sha256": "6550f86d2f825f6a26b5ce50290393d29ac124d9c8cab4766839b210de676b52",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_3.joblib",
+      "runtime_sha256": "b38a1eee8a1f78af613051ba7d988c30a0fa7f9b0b20c93546a5597b2e9a4eef",
+      "official_sha256": "b38a1eee8a1f78af613051ba7d988c30a0fa7f9b0b20c93546a5597b2e9a4eef",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_1.joblib",
+      "runtime_sha256": "f42ad6c8497316fd87c4839c78ad725e803d071faae4c2edf6fc4bdb8e0e8f2e",
+      "official_sha256": "f42ad6c8497316fd87c4839c78ad725e803d071faae4c2edf6fc4bdb8e0e8f2e",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_9.joblib",
+      "runtime_sha256": "912e60783f10b1a2d207da93886ee6a3bf80a46d66b7214f7ff9a3c33f13195a",
+      "official_sha256": "912e60783f10b1a2d207da93886ee6a3bf80a46d66b7214f7ff9a3c33f13195a",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_5.joblib",
+      "runtime_sha256": "c023fb44b3aae48060da9185c3701450c88e6b9e7625b8cadaf43ea9bfed32fa",
+      "official_sha256": "c023fb44b3aae48060da9185c3701450c88e6b9e7625b8cadaf43ea9bfed32fa",
+      "byte_equal": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "relative_path": "training/cd7a7dc52573/models/fold_7.joblib",
+      "runtime_sha256": "f87e325ef893e9224d30123c68d075d3b78be6e54698eb6c6573b5d76f44cfa6",
+      "official_sha256": "f87e325ef893e9224d30123c68d075d3b78be6e54698eb6c6573b5d76f44cfa6",
+      "byte_equal": true
+    }
+  ],
+  "binary_label_pairs": {
+    "crypto_perps_funding": [
+      [
+        "fwd_ret_8h",
+        "fwd_dir_8h"
+      ]
+    ],
+    "sp500_equity_option_analytics": [
+      [
+        "fwd_ret_10d",
+        "fwd_dir_10d"
+      ],
+      [
+        "fwd_ret_5d",
+        "fwd_dir_5d"
+      ]
+    ],
+    "us_firm_characteristics": [
+      [
+        "fwd_ret_1m",
+        "fwd_class_1m"
+      ]
+    ]
+  },
+  "binary_label_files": [
+    {
+      "case_study": "crypto_perps_funding",
+      "regression": "fwd_ret_8h",
+      "direction": "fwd_dir_8h",
+      "runtime_sha256": "70e32ae8605a3bf546aafe88f91b0ed21fd5a74543b6e0933150c2616df71719",
+      "reader_fixture_sha256": "70e32ae8605a3bf546aafe88f91b0ed21fd5a74543b6e0933150c2616df71719",
+      "prior_fixture_sha256": "70e32ae8605a3bf546aafe88f91b0ed21fd5a74543b6e0933150c2616df71719",
+      "runtime_byte_equal_reader_fixture": true,
+      "runtime_byte_equal_prior_fixture": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "regression": "fwd_ret_10d",
+      "direction": "fwd_dir_10d",
+      "runtime_sha256": "be92921939b4810c61ecb3021f4c383e5c86765133bb8ff874e81bb8dd07537c",
+      "reader_fixture_sha256": "be92921939b4810c61ecb3021f4c383e5c86765133bb8ff874e81bb8dd07537c",
+      "prior_fixture_sha256": "be92921939b4810c61ecb3021f4c383e5c86765133bb8ff874e81bb8dd07537c",
+      "runtime_byte_equal_reader_fixture": true,
+      "runtime_byte_equal_prior_fixture": true
+    },
+    {
+      "case_study": "sp500_equity_option_analytics",
+      "regression": "fwd_ret_5d",
+      "direction": "fwd_dir_5d",
+      "runtime_sha256": "345e682ed23b03058c8e0ac6cda990f4f9dfed88e5626270554a69e5d0ac9948",
+      "reader_fixture_sha256": "345e682ed23b03058c8e0ac6cda990f4f9dfed88e5626270554a69e5d0ac9948",
+      "prior_fixture_sha256": "345e682ed23b03058c8e0ac6cda990f4f9dfed88e5626270554a69e5d0ac9948",
+      "runtime_byte_equal_reader_fixture": true,
+      "runtime_byte_equal_prior_fixture": true
+    },
+    {
+      "case_study": "us_firm_characteristics",
+      "regression": "fwd_ret_1m",
+      "direction": "fwd_class_1m",
+      "runtime_sha256": "0a193eea1e975c370b0f86a10196107662a34bf537f544208be4e34805d638b2",
+      "reader_fixture_sha256": "0a193eea1e975c370b0f86a10196107662a34bf537f544208be4e34805d638b2",
+      "prior_fixture_sha256": "0a193eea1e975c370b0f86a10196107662a34bf537f544208be4e34805d638b2",
+      "runtime_byte_equal_reader_fixture": true,
+      "runtime_byte_equal_prior_fixture": true
+    }
+  ],
+  "binary_label_skips": [
+    "crypto_perps_funding/fwd_dir_8h_3c: domain [-1, 0, 1] is not binary, a multi-class AUC is out of scope here",
+    "nasdaq100_microstructure/fwd_dir_15m: domain [-1, 0, 1] is not binary, a multi-class AUC is out of scope here"
+  ],
+  "limits": [
+    "Selections reconstructed from unchanged original notebook AST and helper queries, not retained serialized notebook outputs (original helper deletes those).",
+    "Linear audit covers primary, regularization-best, ridge-path and regression-horizon selections; does not exhaust every classification/model selection.",
+    "Existing publisher bytes are compared directly; byte identity does not prove current producer training compatibility.",
+    "ETF is prior fixture, not accepted official ETF bundle."
+  ]
+}

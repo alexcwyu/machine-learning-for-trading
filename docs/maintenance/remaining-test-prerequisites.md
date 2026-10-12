@@ -1,12 +1,12 @@
 # Remaining existing-test prerequisites
 
-The maintained inventory has 189 failed nodes in the last reconciled terminal inventory. These diagnostics explain causes; they do not turn failed tests into passes. The [node coverage](mlft-original-case-coverage.json) and [original failure trace summaries](mlft-original-failure-explanations.json) preserve their original outcomes.
+The maintained inventory has 166 mechanically failed nodes plus four rejected genuine-reader acceptance gates in the last reconciled terminal inventory. These diagnostics explain causes; they do not turn failed tests into passes. The [node coverage](mlft-original-case-coverage.json) and [original failure trace summaries](mlft-original-failure-explanations.json) preserve their original outcomes.
 
 ## MLflow experiment catalog
 
 Both unchanged Chapter and Docker [MLflow notebook](../../26_mlops_governance/06_mlflow_experiments.py) nodes were rerun on current source `b208ca666d77`: both fail at `best_validation.iloc[0]`. A separate read-only query executes the exact SQL extracted from that source against the registry created by the existing pytest fixtures. It returns **zero qualifying validation records**, despite 21 training rows, 21 prediction rows, 21 metric rows and four backtest rows. The registry SHA is identical before and after the read.
 
-The original selector requires the original two labels, a validation split, non-null IC and positive IC day coverage. Existing fixture rows do not satisfy that contract. Changing the labels, admitting incomplete metrics, selecting a different study, or fabricating a prediction would change what the notebook claims to demonstrate. Genuine US-equity producer output is needed. The [SQL and registry proof](mlft-current-mlflow-empty-validation-diagnosis.json) records the exact query, source hash and counts. This proves the missing catalog prerequisite; it does not establish a Pandas indexing regression or certify any unseen prediction set.
+The original selector requires the original two labels, a validation split, non-null IC and positive IC day coverage. Existing fixture rows do not satisfy that contract. Changing the labels, admitting incomplete metrics, selecting a different study, or fabricating a prediction would change what the notebook claims to demonstrate. Genuine US-equity producer output was subsequently recovered, and all seventeen original pilot/case-study cases pass. An eight-bundle reader attempt now reaches an independent MLflow leader-sampling assertion; the reviewed minimal correction now passes both original cases and direct genuine-registry execution. The older empty-catalog diagnosis below remains scoped to its recorded fixture. The [SQL and registry proof](mlft-current-mlflow-empty-validation-diagnosis.json) records the exact query, source hash and counts. This proves the missing catalog prerequisite; it does not establish a Pandas indexing regression or certify any unseen prediction set.
 
 ```mermaid
 sequenceDiagram
@@ -33,6 +33,10 @@ The owned Neo4j service is available; a healthy empty service alone does not est
 ## Full WIKI/PRICES recovery
 
 The complete frozen source is recovered and validated: 15,389,314 rows, 3,199 tickers and fourteen columns, with all values and nulls preserved by the author provider conversion. Eight original data-chapter cases and both network-portfolio cases pass. The original point-in-time pair now reaches its real missing FRED key. See [source provenance, artifact recovery and current validation](genuine-input-artifact-recovery.md).
+
+## Canonical reader acceptance
+
+Eight author bundles pass every installer gate, but source identities do not establish complete physical artifact coverage. Independent review proves selected files in four mechanically passing reader tests were synthesized by the original fixture seeder; their genuine acceptance is rejected. See [reader fidelity](canonical-reader-fidelity.md) and [current versus archived producer generations](us-equity-producer-recovery.md). No expected hashes, assertions or model generations were changed.
 
 ## Other outstanding scopes
 

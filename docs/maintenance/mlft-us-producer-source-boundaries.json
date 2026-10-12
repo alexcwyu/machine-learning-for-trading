@@ -1,0 +1,68 @@
+{
+  "source_fields": [
+    {
+      "file": "tests/generate_intermediates.py",
+      "expected": "33a748db49f6ecb5f5d68d4e4120037ec54a4ad7ebf77598379cc2584158f2b3",
+      "scratch_source": "33a748db49f6ecb5f5d68d4e4120037ec54a4ad7ebf77598379cc2584158f2b3",
+      "main_source": "33a748db49f6ecb5f5d68d4e4120037ec54a4ad7ebf77598379cc2584158f2b3",
+      "unchanged": true
+    },
+    {
+      "file": "tests/overrides.yaml",
+      "expected": "898b6edfe3a14d20fa30c654bc9f4e4ceaf319ca1bd6007a73b101abe4055d64",
+      "scratch_source": "898b6edfe3a14d20fa30c654bc9f4e4ceaf319ca1bd6007a73b101abe4055d64",
+      "main_source": "898b6edfe3a14d20fa30c654bc9f4e4ceaf319ca1bd6007a73b101abe4055d64",
+      "unchanged": true
+    },
+    {
+      "file": "tests/pm_helpers.py",
+      "expected": "3baf2aa72644287b9d9137bce7a43fca6558ffb5e1a45b214eb38faa7dcf59a2",
+      "scratch_source": "3baf2aa72644287b9d9137bce7a43fca6558ffb5e1a45b214eb38faa7dcf59a2",
+      "main_source": "3baf2aa72644287b9d9137bce7a43fca6558ffb5e1a45b214eb38faa7dcf59a2",
+      "unchanged": true
+    },
+    {
+      "file": "case_studies/us_equities_panel/05_evaluation.py",
+      "expected": "5ea9c34e3448371f17edc906d04842be40696b4762777d40a6bf062a1f20a378",
+      "scratch_source": "5ea9c34e3448371f17edc906d04842be40696b4762777d40a6bf062a1f20a378",
+      "main_source": "5ea9c34e3448371f17edc906d04842be40696b4762777d40a6bf062a1f20a378",
+      "unchanged": true
+    },
+    {
+      "file": "case_studies/us_equities_panel/04_model_based_features.py",
+      "expected": "94d2cda78862ce884db25e14efd46badc273c095cdf640eba84a4c2049f24e8e",
+      "scratch_source": "94d2cda78862ce884db25e14efd46badc273c095cdf640eba84a4c2049f24e8e",
+      "main_source": "94d2cda78862ce884db25e14efd46badc273c095cdf640eba84a4c2049f24e8e",
+      "unchanged": true
+    },
+    {
+      "file": "case_studies/us_equities_panel/01_feasibility_analysis.py",
+      "expected": "a83ad71a85bc9456fdc8a6dad2d71f536526d617f13b93185911838201e884e7",
+      "scratch_source": "a83ad71a85bc9456fdc8a6dad2d71f536526d617f13b93185911838201e884e7",
+      "main_source": "a83ad71a85bc9456fdc8a6dad2d71f536526d617f13b93185911838201e884e7",
+      "unchanged": true
+    },
+    {
+      "file": "case_studies/us_equities_panel/03_financial_features.py",
+      "expected": "c02c2d09317b7dcefc57ce3cf6818384216fd082010156dbc6847e1d15554884",
+      "scratch_source": "c02c2d09317b7dcefc57ce3cf6818384216fd082010156dbc6847e1d15554884",
+      "main_source": "c02c2d09317b7dcefc57ce3cf6818384216fd082010156dbc6847e1d15554884",
+      "unchanged": true
+    },
+    {
+      "file": "case_studies/us_equities_panel/02_labels.py",
+      "expected": "9138a366fec221f76cc08f44b188fa9079e4da3e377ab01272d6bf3dd73a57bc",
+      "scratch_source": "9138a366fec221f76cc08f44b188fa9079e4da3e377ab01272d6bf3dd73a57bc",
+      "main_source": "9138a366fec221f76cc08f44b188fa9079e4da3e377ab01272d6bf3dd73a57bc",
+      "unchanged": true
+    }
+  ],
+  "all_recorded_original_producer_and_override_sources_unchanged": true,
+  "main_mutations_by_task": false,
+  "owned_artifact_roots": [
+    "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/intermediates",
+    "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/ci-fixture"
+  ],
+  "original_existing_pytest_cases_added_or_modified": false,
+  "stages06_plus_run": false
+}

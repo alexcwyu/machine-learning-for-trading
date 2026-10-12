@@ -1,0 +1,47 @@
+[
+  {
+    "lane": "red-original",
+    "status": "failed",
+    "cell_index": 39,
+    "error_type": "AssertionError",
+    "error_value": "",
+    "traceback": [
+      "\u001b[31m---------------------------------------------------------------------------\u001b[39m",
+      "\u001b[31mAssertionError\u001b[39m                            Traceback (most recent call last)",
+      "\u001b[36mCell\u001b[39m\u001b[36m \u001b[39m\u001b[32mIn[21]\u001b[39m\u001b[32m, line 38\u001b[39m\n\u001b[32m     34\u001b[39m remaining = run_catalog[~run_catalog[\"training_hash\"].isin(leader_hashes)].sort_values(\n\u001b[32m     35\u001b[39m     \u001b[33m\"ic_mean\"\u001b[39m, ascending=\u001b[38;5;28;01mFalse\u001b[39;00m\n\u001b[32m     36\u001b[39m )\n\u001b[32m     37\u001b[39m catalog_sample = pd.concat([leaders, remaining], ignore_index=\u001b[38;5;28;01mTrue\u001b[39;00m).head(MAX_MLFLOW_RUNS)\n\u001b[32m---> \u001b[39m\u001b[32m38\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m leader_hashes.issubset(set(catalog_sample[\u001b[33m\"training_hash\"\u001b[39m]))\n\u001b[32m     39\u001b[39m n_logged = log_catalog_to_mlflow(catalog_sample, max_runs=len(catalog_sample))\n\u001b[32m     40\u001b[39m \u001b[38;5;28;01massert\u001b[39;00m n_logged == len(catalog_sample)\n\u001b[32m     41\u001b[39m print(f\"Logged {n_logged} runs into MLflow experiment '{CASE_STUDY_ID}'\")\n",
+      "\u001b[31mAssertionError\u001b[39m: "
+    ],
+    "source": "$WORKSPACE/machine-learning-for-trading/26_mlops_governance/06_mlflow_experiments.py",
+    "source_sha256": "69fc63447bf0e59b05a2642fdb48e0faa8f601d5c019b4f19f60b516f0675d92",
+    "executed_notebook": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/mlflow-red-original-executed.ipynb",
+    "output_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/direct-original-mlflow/red-original",
+    "seconds": 6.3,
+    "original_parameters": {
+      "CASE_STUDY_ID": "us_equities_panel",
+      "PRIMARY_LABEL": "fwd_ret_1d",
+      "SECONDARY_LABEL": "fwd_ret_5d",
+      "MAX_MLFLOW_RUNS": 50,
+      "PARITY_TOLERANCE": 1e-08
+    },
+    "input_run_log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+    "no_seed_results_called": true
+  },
+  {
+    "lane": "green-candidate",
+    "status": "passed",
+    "source": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-mlflow-reader-review/26_mlops_governance/06_mlflow_experiments.py",
+    "source_sha256": "dc06e00db04c3d56943417c4e5b71e93244ae17997c640425da76106ee1a0dc2",
+    "executed_notebook": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/mlflow-green-candidate-executed.ipynb",
+    "output_root": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-eight-bundle-reader-diagnosis/direct-original-mlflow/green-candidate",
+    "seconds": 7.69,
+    "original_parameters": {
+      "CASE_STUDY_ID": "us_equities_panel",
+      "PRIMARY_LABEL": "fwd_ret_1d",
+      "SECONDARY_LABEL": "fwd_ret_5d",
+      "MAX_MLFLOW_RUNS": 50,
+      "PARITY_TOLERANCE": 1e-08
+    },
+    "input_run_log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-official-v31-readonly-diagnostic/installed/case_studies/us_equities_panel/run_log",
+    "no_seed_results_called": true
+  }
+]

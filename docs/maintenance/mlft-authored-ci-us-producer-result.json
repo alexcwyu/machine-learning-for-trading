@@ -1,0 +1,38 @@
+[
+  {
+    "label": "raw-fixture",
+    "command": [
+      "$WORKSPACE/machine-learning-for-trading/.venv/bin/python",
+      "-u",
+      "tests/create_test_data.py",
+      "--source",
+      "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "--output",
+      "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/ci-fixture/data",
+      "--dataset",
+      "us_equities"
+    ],
+    "cwd": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/source",
+    "exit_code": 0,
+    "seconds": 0.23,
+    "log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/ci-raw-fixture.log"
+  },
+  {
+    "label": "intermediates",
+    "command": [
+      "$WORKSPACE/machine-learning-for-trading/.venv/bin/python",
+      "-u",
+      "tests/generate_intermediates.py",
+      "--output",
+      "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/ci-fixture/intermediates",
+      "--case-studies",
+      "us_equities_panel",
+      "--through-stage",
+      "5"
+    ],
+    "cwd": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/source",
+    "exit_code": 0,
+    "seconds": 228.56,
+    "log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/ci-intermediates.log"
+  }
+]

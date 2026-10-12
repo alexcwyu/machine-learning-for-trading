@@ -1,0 +1,17 @@
+{
+  "command": [
+    "$WORKSPACE/machine-learning-for-trading/.venv/bin/python",
+    "-u",
+    "tests/generate_intermediates.py",
+    "--output",
+    "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/intermediates",
+    "--case-studies",
+    "us_equities_panel",
+    "--through-stage",
+    "5"
+  ],
+  "cwd": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/source",
+  "exit_code": 0,
+  "seconds": 588.78,
+  "log": "$WORKSPACE/.runtime/maintenance-2026-10-12/mlft-us-equity-intermediate-recovery/original-builder.log"
+}

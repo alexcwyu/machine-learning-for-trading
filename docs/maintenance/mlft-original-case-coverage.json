@@ -3,14 +3,14 @@
   "original_nodes": 8333,
   "current_nodes": 8327,
   "counts": {
-    "passed": 7672,
+    "passed": 7695,
     "skipped": 466,
-    "failed": 189
+    "failed": 166
   },
   "retained_original_evidence_counts": {
-    "passed": 7678,
+    "passed": 7701,
     "skipped": 462,
-    "failed": 193
+    "failed": 170
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
@@ -1238,8 +1238,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_specs.py::test_us_equities_pilot_helpers_preserve_current_outputs": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-public-fixture-contracts-compatible-runtime.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs": {
@@ -4583,83 +4583,83 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-01_feasibility_analysis]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-02_labels]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-03_financial_features]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-04_model_based_features]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-05_evaluation]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-pilot-and-five-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-06_linear]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-07_gbm]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-08_tabular_dl]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-09_dl_nlinear]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-10_dl_lstm]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-11_dl_tsmixer]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-12_dl_weekly]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13a_pca]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13b_ipca]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-13_latent_factors]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-14_causal_dml]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-unfinished-existing-case-study-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-authored-ci-us-equity-existing-model-stages.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_equities_panel-15_model_analysis]": {
@@ -7193,8 +7193,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::08_ml_backtest_intro.py]": {
@@ -7259,7 +7259,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[13_dl_time_series::01_core_architectures.py]": {
@@ -7363,8 +7363,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[15_causal_estimation::01_library_overview.py]": {
@@ -7979,7 +7979,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::02_online_drift_detection.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-full-wiki-original-latent-cost-execution-drift-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::03_safe_model_rollout.py]": {
@@ -8003,8 +8003,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::06_mlflow_experiments.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-reviewed-mlflow-reader-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::crypto::market::dataset_card.py]": {
@@ -12298,8 +12298,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::08_ml_backtest_intro.py]": {
@@ -12364,7 +12364,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[13_dl_time_series::01_core_architectures.py]": {
@@ -12468,8 +12468,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::01_library_overview.py]": {
@@ -13084,7 +13084,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::02_online_drift_detection.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-genuine-full-wiki-original-latent-cost-execution-drift-consumers.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-eight-verified-bundle-insights-mlflow-drift-consumers.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::03_safe_model_rollout.py]": {
@@ -13108,8 +13108,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::06_mlflow_experiments.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-current-mlflow-original-prerequisite-diagnostic.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-main-reviewed-mlflow-reader-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::crypto::market::dataset_card.py]": {

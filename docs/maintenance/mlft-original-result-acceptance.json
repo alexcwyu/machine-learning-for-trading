@@ -1,0 +1,44 @@
+{
+  "observed_original_test_counts": {
+    "passed": 7695,
+    "skipped": 466,
+    "failed": 166
+  },
+  "rejected_genuine_canonical_reader_acceptance": {
+    "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]": {
+      "observed_test_status": "passed",
+      "genuine_canonical_artifact_acceptance": "rejected",
+      "reason": "Original fixture seeder generated scores for selected prediction hashes absent from verified publisher artifacts",
+      "audit_source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-reader-fidelity-audit/findings.md"
+    },
+    "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]": {
+      "observed_test_status": "passed",
+      "genuine_canonical_artifact_acceptance": "rejected",
+      "reason": "Original fixture seeder generated scores for selected prediction hashes absent from verified publisher artifacts",
+      "audit_source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-reader-fidelity-audit/findings.md"
+    },
+    "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]": {
+      "observed_test_status": "passed",
+      "genuine_canonical_artifact_acceptance": "rejected",
+      "reason": "Original fixture seeder generated scores for selected prediction hashes absent from verified publisher artifacts",
+      "audit_source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-reader-fidelity-audit/findings.md"
+    },
+    "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]": {
+      "observed_test_status": "passed",
+      "genuine_canonical_artifact_acceptance": "rejected",
+      "reason": "Original fixture seeder generated scores for selected prediction hashes absent from verified publisher artifacts",
+      "audit_source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-reader-fidelity-audit/findings.md"
+    }
+  },
+  "remaining_original_test_failures": 166,
+  "additional_reader_fidelity_gates": 4,
+  "new_test_source_cases": 0,
+  "audited_four_reader_attempt_used_original_source_and_assertions": true,
+  "subsequent_reviewed_mlflow_source_change": {
+    "commit": "dad03fa9",
+    "one_line": "leaders = best_validation.copy()",
+    "all_four_original_assertions_unchanged": true,
+    "original_two_cases_passed_on_main": true,
+    "separate_direct_genuine_registry_passed_without_seed_results": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "snapshot_sha256": "c6cbabf03a26045f930f1ae4f24ee6a5a265b92239f4dd95bbad063b8b3ec473",
+  "status_counts": [
+    [
+      "FINISHED",
+      50
+    ]
+  ],
+  "sqlite_integrity": "ok",
+  "foreign_key_violations": 0,
+  "canonical_source_registry_and_direct_original_notebook_used": true
+}
