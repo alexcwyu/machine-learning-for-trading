@@ -2417,21 +2417,11 @@ case_studies/etfs/18_holdout_predictions:
   # Refits the selected configuration over the holdout fold - one training run, no sweep. The
   # budget is a single GBM fit over the full history before the window, on 24 funds.
   timeout: 900
-  skip: true
-  skip_reason: "`resolve_canonical_rank1_lineage` refuses against the fixture registry: cell 6 raises NoSelectableCandidates because every one of the 134 ranked validation backtests for etfs belongs to a superseded generation or to none the case study publishes, so there is no configuration to refit on the holdout fold. Measured 2026-09-11 by un-skipping and running it. The earlier reason named a missing `computation` block in the seeded training specs; 136 of the 140 seeded etfs specs carry one, so that is no longer what stops it. Remove this skip when the fixture registry carries a selectable candidate, not before."
-  skip_blocker:
-    no_canonical_selection:
-      of: etfs
 case_studies/etfs/19_holdout_backtest:
   research_preview: false
   # One backtest over the holdout window, on the engine path this case study's trailing-stop
   # carrier requires.
   timeout: 600
-  skip: true
-  skip_reason: "Reads the holdout prediction set 18_holdout_predictions registers and derives which one through the same canonical resolution, so it refuses one step earlier than 18 does, on the same fixture-registry condition. Remove this skip together with 18's."
-  skip_blocker:
-    no_canonical_selection:
-      of: etfs
 case_studies/etfs/20_strategy_analysis:
   research_preview: false
   timeout: 900
@@ -4487,25 +4477,15 @@ case_studies/us_firm_characteristics/13_risk_management:
         MAX_SYMBOLS: 41
         TOP_N_COMBOS: 1
   timeout: 600
+# Holdout refits and their read-only analysis require the actual canonical registry.
+# The genuine original CI builder supplies 200 firms per split and the validation
+# producer now supplies selectable canonical candidates; the old skips expired.
 case_studies/us_firm_characteristics/15_holdout_predictions:
-  skip: true
-  skip_reason: "Refits the canonical validation rank-1 on the holdout fold, and `resolve_canonical_rank1_lineage` refuses against the fixture registry: every one of the 75 ranked validation backtests for us_firm_characteristics belongs to a superseded generation or to none the case study publishes. Measured 2026-09-11 against the seeded registry. The earlier reason said the registry holds no validation backtests; it holds 75, and what disqualifies them is their generation. No parameter reduces it: there is nothing to refit until a selectable one exists."
-  skip_blocker:
-    no_canonical_selection:
-      of: us_firm_characteristics
+  research_preview: false
 case_studies/us_firm_characteristics/16_holdout_backtest:
-  skip: true
-  skip_reason: "Trades 15_holdout_predictions' prediction set, so it inherits that notebook's prerequisite - a registry carrying the validation sweep and the holdout refit, neither of which the test data builds."
-  skip_blocker:
-    no_canonical_selection:
-      of: us_firm_characteristics
+  research_preview: false
 case_studies/us_firm_characteristics/17_strategy_analysis:
-  skip: true
-  skip_reason: "Test-data load_firm_characteristics() returns 80 firms/day; the NB's liquidity-profile section requires >=100 firms/day. The notebook reads the registry and the feature panel, not the price panel, so no parameter reduces it - it needs an expanded test-data fixture (>=100 firms)."
-  skip_blocker:
-    fixture_shortfall:
-      note: "Test-data load_firm_characteristics() returns 80 firms per day and the liquidity-profile section requires at least 100. The notebook reads the registry and the feature panel, not the price panel, so no parameter reduces it: it needs a wider fixture."
-      verified: 2026-09-11
+  research_preview: false
 data/equities/market/microstructure/dataset_card:
   timeout: 120
 data/equities/market/us_equities/dataset_card:
