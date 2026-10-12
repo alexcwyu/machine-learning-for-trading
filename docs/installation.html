@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Installation Guide</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="installation-guide">Installation Guide</h1>
+<p>This guide walks you through setting up Docker to run the ML4T notebooks. Pre-built images on Docker Hub mean you can be running notebooks in minutes.</p>
+<hr>
+<h2 id="before-you-begin">Before You Begin</h2>
+<p>Every command in this guide is typed into a <strong>terminal</strong> on your own computer, not into the
+GitHub website. GitHub stores the code; your terminal is where you tell your machine to fetch
+and run it.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>How to open a terminal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Windows</strong></td>
+<td>Start menu → type <code>PowerShell</code> → open <em>Windows PowerShell</em>. Some steps below need <em>Run as administrator</em> (right-click → Run as administrator). You use PowerShell only to <strong>set up WSL2</strong>; once WSL2 is running, every other command in this guide is typed into the <strong>Ubuntu</strong> terminal it gives you, not into PowerShell.</td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td>Applications → Utilities → <em>Terminal</em></td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td><code>Ctrl+Alt+T</code>, or search for <em>Terminal</em></td>
+</tr>
+</tbody>
+</table>
+<p>Commands shown in a block like this are typed at the terminal prompt, one line at a time,
+then Enter:</p>
+<pre><code class="language-bash">git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+</code></pre>
+<p>Type flags exactly as written. <code>--install</code> is two dashes attached to the word with no space
+before it. <code>wsl -- install</code> is a different command and will not do what you want.</p>
+<p>If a command is not found, the tool it belongs to is not installed yet. <code>git</code> ships with
+<a href="https://git-scm.com/download/win">Git for Windows</a> and with the Xcode command-line tools on
+macOS (<code>xcode-select --install</code>).</p>
+<h3 id="what-you-need-before-either-path">What you need before either path</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Docker path</th>
+<th>Local <code>uv</code> path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git</code></td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Docker Desktop or Docker Engine</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>C/C++ compiler and Python headers</strong></td>
+<td>no, the image carries both</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td>Disk</td>
+<td>~13 GB image + ~4 GB data</td>
+<td>~11 GB environment + ~4 GB data + ~1 GB git history</td>
+</tr>
+</tbody>
+</table>
+<p>The compiler is not optional on the local path and it is the most common way a first install
+fails. Twelve locked packages publish no wheel for Python 3.14, so <code>uv</code> builds them from
+source; six of those are C or C++ (<code>scikit-learn</code>, <code>shap</code>, <code>hmmlearn</code>, <code>ruptures</code>, <code>econml</code>,
+<code>causalml</code>). Without a compiler <code>uv sync</code> stops with:</p>
+<pre><code>error: command 'c++' failed: No such file or directory
+</code></pre>
+<p>Install one first:</p>
+<pre><code class="language-bash">sudo apt install build-essential python3-dev   # Ubuntu, Debian, and inside WSL2
+xcode-select --install                         # macOS
+</code></pre>
+<p><strong>macOS also needs the OpenMP runtime, and this one fails later rather than at <code>uv sync</code>.</strong> The
+LightGBM wheel links against <code>libomp</code>, which macOS does not ship and the compiler tools do not
+install. Without it the environment builds cleanly and then Chapter 12 stops at its first import:</p>
+<pre><code>OSError: dlopen(.../lightgbm/lib/lib_lightgbm.dylib): Library not loaded: @rpath/libomp.dylib
+</code></pre>
+<p>The supported way to get it is <a href="https://brew.sh">Homebrew</a>, which a fresh macOS does not have
+either. Install it first if <code>brew</code> is not already on your <code>PATH</code>. Its installer prints PATH
+instructions rather than applying them, so the <code>eval</code> below is what it asks you to run, given
+here for Apple Silicon (<code>/usr/local/bin/brew</code> on Intel):</p>
+<pre><code class="language-bash">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"      # puts brew on PATH in this shell
+brew install libomp                            # macOS, both chips
+</code></pre>
+<p><code>python3-dev</code> is the second half of the requirement on any distribution whose own <code>python3</code> is
+already 3.14 or newer, Ubuntu 26.04 being the first. <code>uv</code> downloads a managed CPython only when
+no installed interpreter satisfies the project's floor; when the system one does, <code>uv</code> builds
+against it, and Debian and Ubuntu ship that interpreter without its headers. Every source build
+then stops with:</p>
+<pre><code>fatal error: Python.h: No such file or directory
+</code></pre>
+<p>On a distribution whose Python is older, such as Ubuntu 24.04, the package changes nothing:
+<code>uv</code> fetches its own CPython, which carries its headers with it. Installing both is correct in
+either case.</p>
+<p><strong>Docker is the one path that avoids this</strong>, because the image ships its own toolchain. WSL2
+does not avoid it: a local <code>uv</code> environment inside WSL2 is the Linux path, so it needs the same
+two packages that native Linux does. What WSL2 avoids is the <em>Windows</em> build, which
+does not work at all — see the note under <a href="#platform-support">Platform Support</a>.</p>
+<hr>
+<h2 id="platform-support">Platform Support</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th style="text-align: center;">ml4t</th>
+<th style="text-align: center;">py312</th>
+<th style="text-align: center;">Benchmark</th>
+<th style="text-align: center;">GPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linux x86_64</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅*</td>
+</tr>
+<tr>
+<td><strong>Windows 11 (WSL2)</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅*</td>
+</tr>
+<tr>
+<td><strong>macOS Intel</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td><strong>macOS Apple Silicon</strong></td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">†</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<p>* Requires NVIDIA GPU + nvidia-container-toolkit
+† <code>ml4t-py312</code> is amd64 only. It has no native build on Apple Silicon and runs under Rosetta
+emulation, which <a href="#py312-image-specific-notebooks">Py312 Image</a> covers.</p>
+<p>The table is about the <strong>Docker images</strong>, which work on all four rows. The local <code>uv</code> path is
+narrower: it works on Linux, on Apple Silicon, and inside WSL2 (which is the Linux path), and it
+does not work on Intel Macs or in native Windows Python.</p>
+<blockquote>
+<p><strong>Windows: use WSL2, not PowerShell.</strong> Everything on Windows runs inside WSL2, whether you
+pick Docker or the local <code>uv</code> environment. Installing directly into Windows Python is not
+supported and does not work: the dependency set resolves <code>scikit-learn 1.6.1</code>, which has no
+Python 3.14 wheel for Windows, and building it from source fails partway through even on a
+machine that already has the Visual Studio Build Tools. Inside WSL2 you are on the Linux path
+above, which is the one that is tested.</p>
+<p><strong>macOS: which path depends on the chip.</strong> On <strong>Apple Silicon</strong>, use the local <code>uv</code>
+environment: it builds natively against the Xcode command-line tools. Docker is worth adding
+there only for the twelve <code>ml4t-py312</code> notebooks, which have no arm64 build, and for Chapter
+2's containerized database benchmarks. On
+an <strong>Intel Mac</strong>, Docker is the only option, because PyTorch stopped publishing macOS x86_64
+wheels and <code>uv sync</code> stops immediately with <code>Distribution torch==2.10.0 ... doesn't have a
+source distribution or wheel for the current platform</code>. There is nothing to configure around
+it. See <a href="#macos">macOS</a>.</p>
+</blockquote>
+<h3 id="which-image-do-i-need">Which image do I need?</h3>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>What it covers</th>
+<th>Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ml4t</strong></td>
+<td>All chapters (Ch01-Ch27) + all 9 case studies</td>
+<td>amd64 + arm64</td>
+</tr>
+<tr>
+<td><strong>ml4t-py312</strong></td>
+<td>Ch05 NB01/03/07, Ch09 NB06/12, Ch10 NB01-03, Ch12 NB10, Ch14 NB06, Ch15 NB06 (signatory, esig, tfcausalimpact)</td>
+<td>amd64 only</td>
+</tr>
+<tr>
+<td><strong>benchmark</strong></td>
+<td>Ch02 storage benchmarks (DuckDB, HDF5, database clients)</td>
+<td>amd64 + arm64</td>
+</tr>
+<tr>
+<td><strong>rapids</strong></td>
+<td>Ch12 GBM GPU benchmark (RAPIDS cuML, LightGBM CUDA)</td>
+<td>amd64 + NVIDIA GPU</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Most readers need only <code>ml4t</code>.</strong> The other images are for specific notebooks.</p>
+<p><strong>Apple Silicon users</strong>: <code>signatory</code> and <code>esig</code> have no ARM64 builds, so the <code>ml4t-py312</code>
+notebooks do not run natively. They all ship pre-executed, and
+<a href="#py312-image-specific-notebooks">Py312 Image</a> covers both reading them and running them under
+Rosetta. Nothing else in the book needs this.</p>
+<hr>
+<h2 id="quick-start-all-platforms">Quick Start (All Platforms)</h2>
+<pre><code class="language-bash"># 1. Clone the repository
+git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+cd machine-learning-for-trading
+
+# 2. Copy the environment template. The defaults work as they are — nothing in
+#    it needs editing to start.
+cp .env.example .env
+
+# 3. Pull the pre-built image from Docker Hub
+docker compose pull ml4t
+
+# 4. Confirm the install: one PASS/FAIL line per component, exit 0 if ready
+docker compose run --rm ml4t python scripts/verify_installation.py
+
+# 5. Start Jupyter Lab. It keeps running in this terminal; leave it running.
+docker compose up ml4t
+</code></pre>
+<p>Then open <strong>http://localhost:8888</strong> in your web browser. That is a browser
+address, not a command to type — and on Windows, open it in your normal Windows
+browser even though step 5 ran inside Ubuntu.</p>
+<p><strong>That's it.</strong> No build step needed — Docker pulls the pre-built image (~12 GB on x86, ~3 GB on ARM64).</p>
+<p>To run a single notebook instead of opening Jupyter, name its <code>.py</code> — this one
+downloads the factor data it needs and takes a few minutes:</p>
+<pre><code class="language-bash">docker compose run --rm ml4t python 01_process_is_edge/factor_regimes.py
+</code></pre>
+<p>To build locally instead (if you prefer or need to modify the environment):</p>
+<pre><code class="language-bash">docker compose build ml4t    # ~45 min on x86, ~15 min on ARM64
+</code></pre>
+<hr>
+<h2 id="verify-your-installation">Verify Your Installation</h2>
+<p>This is step 4 of the Quick Start above, and the same command on either path. It
+is the one thing to run before opening a notebook: it confirms that every
+required library imports and that the runtime is wired up correctly.</p>
+<pre><code class="language-bash"># Docker (recommended)
+docker compose run --rm ml4t python scripts/verify_installation.py
+
+# Local uv
+uv run python scripts/verify_installation.py
+</code></pre>
+<p>It prints a <code>PASS</code>/<code>FAIL</code> line for each component — core libraries, PyTorch and
+CUDA, repo-root imports, plotting, and your data path — followed by a summary.
+<strong>If every line says PASS, you are ready.</strong> If a line says FAIL, it names the
+missing piece; see <a href="#troubleshooting">Troubleshooting</a> below.</p>
+<hr>
+<h2 id="platform-specific-setup">Platform-Specific Setup</h2>
+<h3 id="ubuntu-linux">Ubuntu / Linux</h3>
+<p>Three steps, and the middle one is not a command. Do them in order.</p>
+<ol>
+<li>
+<p><strong>Install Docker Engine and add yourself to the <code>docker</code> group.</strong> Both lines
+   need <code>sudo</code>, so you will be asked for your password:
+   <code>bash
+   curl -fsSL https://get.docker.com | sudo sh
+   sudo usermod -aG docker $USER</code></p>
+</li>
+<li>
+<p><strong>Log out of your desktop session and log back in.</strong> This is a required step,
+   not a suggestion, and nothing prompts you for it. Group membership is read
+   when a session starts, so the shell you just typed in still does not have it;
+   <code>newgrp docker</code> fixes only that one shell. Skipping this is the most common
+   Linux install failure, and it does not read like one — every later <code>docker</code>
+   command fails with <code>permission denied while trying to connect to the docker
+   API</code>, which names the socket rather than the group you have not picked up yet.</p>
+</li>
+<li>
+<p><strong>Verify, in a terminal opened after logging back in:</strong>
+   <code>bash
+   docker run --rm hello-world
+   docker compose version</code>
+   <code>hello-world</code> must print "Hello from Docker!" and <code>docker compose version</code>
+   must print a version rather than an error before you continue. If
+   <code>docker compose</code> is not found at all, install the plugin:
+   <code>sudo apt install docker-compose-plugin</code>.</p>
+</li>
+</ol>
+<p><strong>Docker Desktop for Linux is a different product</strong> and you do not need it. The
+<code>get.docker.com</code> script above installs Docker Engine, which is what the compose
+file uses. If you already run Docker Desktop, keep it — the commands are the
+same.</p>
+<h3 id="windows-11-wsl2">Windows 11 (WSL2)</h3>
+<p>Docker Desktop on Windows runs its engine inside WSL2. WSL2 must be working before Docker
+Desktop can start, so complete steps 1-3 in order and do not skip the restart.</p>
+<ol start="0">
+<li><strong>Check that hardware virtualization is on.</strong> WSL2 cannot run without it, and it is disabled
+   by default on some machines. Press <code>Ctrl+Shift+Esc</code> → <em>Performance</em> tab → <em>CPU</em>, and look for
+   <strong>Virtualization</strong>.</li>
+</ol>
+<ul>
+<li><strong>Enabled</strong>: continue to step 1.</li>
+<li><strong>Disabled</strong>: turn it on in your BIOS/UEFI setup screen, where it is called <em>Intel VT-x</em>,
+     <em>AMD-V</em>, or <em>Virtualization Technology</em>. The key to enter setup varies by manufacturer
+     (commonly <code>F2</code>, <code>F10</code>, or <code>Del</code> during boot). Nothing below will work until this reads Enabled.</li>
+</ul>
+<ol>
+<li><strong>Install WSL2 and a Linux distribution.</strong> Open PowerShell <strong>as Administrator</strong>:
+   <code>powershell
+   wsl --install -d Ubuntu</code></li>
+</ol>
+<p>Two dashes, no space: <code>--install</code>, not <code>-- install</code>. Keep the <code>-d Ubuntu</code>: without it, some
+   Windows builds install the WSL runtime and no Linux distribution at all.</p>
+<p>On a machine that has never had WSL, expect this run to enable the Windows features and
+   install the WSL runtime <strong>without</strong> installing Ubuntu. It prints <code>Changes will not be
+   effective until the system is rebooted</code> and says nothing about a distribution. That is the
+   normal path, and step 3 completes it.</p>
+<ol start="2">
+<li><strong>Restart your computer.</strong> This is a required step, not a conditional one. <code>wsl --install</code>
+   enables a Windows feature that does not take effect until you reboot, and Windows does not
+   always prompt you. If the command printed <code>The operation completed successfully</code>, restart now.</li>
+</ol>
+<p>Nothing opens by itself after the restart.</p>
+<ol start="3">
+<li><strong>Run the same command again</strong>, in an Administrator PowerShell:
+   <code>powershell
+   wsl --install -d Ubuntu</code>
+   This is the run that prints <code>Downloading: Ubuntu</code>, <code>Installing: Ubuntu</code> and <code>Distribution
+   successfully installed</code>. If the first run already installed Ubuntu, this one reports that it
+   is already installed and changes nothing.</li>
+</ol>
+<p>Then open <strong>Ubuntu</strong> from the Start menu. Its first launch asks you to create a username and
+   password; the password is not echoed as you type, which is expected.</p>
+<ol start="4">
+<li>
+<p><strong>Verify WSL2 before installing Docker.</strong> In PowerShell:
+   <code>powershell
+   wsl --list --verbose</code>
+   You should see <code>Ubuntu</code> with <code>STATE  Running</code> (or <code>Stopped</code>) and <code>VERSION  2</code>. If you get
+   <code>Windows Subsystem for Linux has no installed distributions</code>, step 3 did not complete, so run
+   it again. If <code>VERSION</code> reads <code>1</code>, run <code>wsl --set-version Ubuntu 2</code>.</p>
+</li>
+<li>
+<p><strong>Increase WSL2 memory limit</strong> <em>(optional — skip unless a notebook runs out of memory; most
+   chapters are fine on the default)</em>: WSL2 defaults to 50% of host RAM, which may not be enough for
+   data-heavy notebooks. The <code>%USERPROFILE%\.wslconfig</code> file lives in your <strong>Windows</strong> home folder, so
+   create it from <strong>Windows</strong> PowerShell (a regular window, not admin), not from inside Ubuntu. Paste
+   this one line to create it with the recommended settings:
+   <code>powershell
+   Set-Content -Path "$env:USERPROFILE\.wslconfig" -Value "[wsl2]`nmemory=12GB`nswap=4GB"</code>
+   That writes:
+   <code>ini
+   [wsl2]
+   memory=12GB
+   swap=4GB</code>
+   Then apply it by restarting WSL: <code>wsl --shutdown</code> from PowerShell, then reopen your terminal.</p>
+</li>
+<li>
+<p><strong>Install Docker Desktop.</strong> This is a <strong>Windows program you download in your web browser</strong> — not
+   a command you type into a terminal. Open <a href="https://www.docker.com/products/docker-desktop/">docker.com/products/docker-desktop</a>
+   in Edge or Chrome, click <strong>Download for Windows</strong>, and run the downloaded <code>Docker Desktop
+   Installer.exe</code>. Do <strong>not</strong> type <code>docker.com/...</code> into PowerShell or the Ubuntu terminal — that
+   address is a web link, not a command.</p>
+</li>
+</ol>
+<p>Install it only after <code>wsl --list --verbose</code> shows a <code>VERSION 2</code> distribution. Docker Desktop
+   started against a non-working WSL2 backend hangs on "Starting the Docker Engine…" indefinitely.</p>
+<ul>
+<li>Ensure "Use WSL 2 based engine" is checked in Settings → General</li>
+<li>In Settings → Resources → WSL Integration, enable your Ubuntu distribution</li>
+<li>In Settings → Resources, allocate at least 8 GB memory and 60 GB disk</li>
+</ul>
+<ol start="7">
+<li>
+<p><strong>Verify Docker Desktop integration</strong>: Open your WSL Ubuntu terminal and run:
+   <code>bash
+   docker version</code>
+   If this fails with "Cannot connect to the Docker daemon", Docker Desktop's WSL integration is not enabled for your distribution. Check step 6 above.</p>
+</li>
+<li>
+<p><strong>Clone in WSL</strong> (not on Windows drives — much faster):
+   <code>bash
+   cd ~
+   git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+   cd machine-learning-for-trading
+   cp .env.example .env
+   docker compose pull ml4t</code></p>
+</li>
+</ol>
+<p><strong>Important</strong>: Always run <code>docker</code> commands from inside a WSL terminal (Ubuntu), not from Windows PowerShell or Command Prompt. Docker Desktop exposes the Docker socket to WSL distributions, but the Docker CLI in Windows may behave differently.</p>
+<p><strong>Tip</strong>: Keep the repo at <code>~/machine-learning-for-trading</code> in WSL, not under <code>/mnt/c/...</code>. Windows drives reach WSL through the 9P protocol bridge, which costs roughly 8x on a 512 MB sequential write, 240x on creating two thousand small files, and 470x on reading their metadata. <code>git clone</code> and <code>uv sync</code> are almost entirely small-file and metadata work, so those last two ratios are the ones a reader pays. Access WSL files from Windows Explorer via <code>\\wsl$\Ubuntu\home\&lt;username&gt;\machine-learning-for-trading</code>.</p>
+<h3 id="macos">macOS</h3>
+<p><strong>Apple Silicon: use the local <code>uv</code> path, not Docker.</strong> Everything in the main environment either
+has an arm64 wheel or builds from source against the Xcode command-line tools, the same way it
+does on Linux, so Docker would add an image you have no use for. Go to
+<a href="#local-setup-with-uv-alternative-to-docker">Local Setup with uv</a>; this is the path walked on
+real hardware before every release. Two things still want Docker on that machine: the twelve
+<code>ml4t-py312</code> notebooks, which have no arm64 build at all and are covered under
+<a href="#py312-image-specific-notebooks">Py312 Image</a>, and Chapter 2's storage benchmarks, which compare
+databases that run as containers. Everything else is <code>uv</code>.</p>
+<p>Everything below is typed into <strong>Terminal</strong> (Applications → Utilities →
+Terminal). Two of the steps are not commands that finish when the prompt comes
+back, so run them in order rather than pasting the block at once.</p>
+<ol>
+<li>
+<p><strong>Install the Xcode command-line tools</strong>, if <code>xcode-select -p</code> does not
+   already print a path:
+   <code>bash
+   xcode-select --install</code>
+   This <strong>opens a dialog window</strong> and returns to the prompt immediately, while
+   the download continues in the background. Click <em>Install</em>, accept the
+   licence, and <strong>wait for the dialog to say it is done</strong> — several minutes.
+   Running the next steps before it finishes leaves you with no compiler and a
+   <code>uv sync</code> that stops on <code>error: command 'c++' failed</code>. When
+   <code>xcode-select -p</code> prints <code>/Library/Developer/CommandLineTools</code>, continue.</p>
+</li>
+<li>
+<p><strong>Install Homebrew</strong>, if <code>brew --version</code> does not already print one. A fresh
+   macOS does not ship it, and <code>brew install</code> below needs it:
+   <code>bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   eval "$(/opt/homebrew/bin/brew shellenv)"   # /usr/local/bin/brew on Intel</code>
+   The installer asks for your password and then <strong>prints PATH instructions
+   rather than applying them</strong>; the <code>eval</code> line is what it asks you to run, and
+   it puts <code>brew</code> on <code>PATH</code> in this shell only.</p>
+</li>
+<li>
+<p><strong>Install the OpenMP runtime.</strong> macOS does not ship it and the Xcode tools do
+   not install it, so without it the environment builds cleanly and Chapter 12
+   stops at its first import with
+   <code>Library not loaded: @rpath/libomp.dylib</code>:
+   <code>bash
+   brew install libomp</code></p>
+</li>
+<li>
+<p><strong>Install <code>uv</code>, clone, and build the environment:</strong>
+   <code>bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   source $HOME/.local/bin/env    # the installer's own line; puts uv on PATH here and now
+   git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+   cd machine-learning-for-trading
+   cp .env.example .env           # defaults work as-is; nothing in it needs editing to start
+   uv sync                        # ~300 packages, about 11 GB; twelve compile from source</code></p>
+</li>
+<li>
+<p><strong>Verify</strong>, with the one command that gives a PASS or a FAIL:
+   <code>bash
+   uv run python scripts/verify_installation.py</code></p>
+</li>
+</ol>
+<p><strong>Intel Macs: Docker is the only local option.</strong> PyTorch publishes no macOS x86_64 wheel, so the
+<code>uv</code> path cannot be made to work on that hardware. The <code>ml4t</code> image is amd64 and runs, so:</p>
+<ol>
+<li><strong>Download and install Docker Desktop.</strong> This is a Mac application you
+   download in your web browser — not a command. Open
+   <a href="https://www.docker.com/products/docker-desktop/">docker.com/products/docker-desktop</a>,
+   choose the <strong>Intel chip</strong> download, and run the installer. Give it 4+ CPUs,
+   8+ GB memory and 64+ GB disk in Settings → Resources; the image plus data
+   wants about 17 GB of that disk.</li>
+<li><strong>Start Docker Desktop and wait for it</strong>, then check in Terminal that the
+   engine is up before going on. <code>docker version</code> must print a <strong>Server</strong>
+   section, not just a Client one:
+   <code>bash
+   docker version</code></li>
+<li><strong>Clone and pull:</strong>
+   <code>bash
+   git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+   cd machine-learning-for-trading
+   cp .env.example .env           # defaults work as-is; nothing in it needs editing to start
+   docker compose pull ml4t</code></li>
+<li><strong>Verify:</strong>
+   <code>bash
+   docker compose run --rm ml4t python scripts/verify_installation.py</code></li>
+</ol>
+<p>If that machine is tight on memory or disk, a Linux box or a cloud instance is the more
+comfortable route, and it is the same Linux path documented above.</p>
+<hr>
+<h2 id="gpu-support-nvidia">GPU Support (NVIDIA)</h2>
+<p>GPU acceleration benefits deep learning chapters (Ch05, Ch10, Ch13, Ch14, Ch21). Requires NVIDIA GPU with CUDA support.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>NVIDIA GPU (GTX 1060 or better)</li>
+<li>NVIDIA Driver 525+ (for CUDA 12.x)</li>
+<li>Linux (native) or Windows 11 (WSL2)</li>
+<li>Not available on macOS</li>
+</ul>
+<h3 id="ubuntu-install-nvidia-container-toolkit">Ubuntu: Install nvidia-container-toolkit</h3>
+<pre><code class="language-bash">curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
+  sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo apt update &amp;&amp; sudo apt install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+</code></pre>
+<h3 id="windows-wsl2">Windows WSL2</h3>
+<p>GPU passthrough works automatically with NVIDIA Driver 525+ installed on Windows and Docker Desktop with WSL2 backend.</p>
+<h3 id="verify-and-run">Verify and Run</h3>
+<pre><code class="language-bash"># Verify GPU is visible
+docker compose --profile gpu run --rm ml4t-gpu python -c \
+  "import torch; print(f'CUDA: {torch.cuda.is_available()}')"
+# Should print: CUDA: True
+
+# Run with GPU
+docker compose --profile gpu run --rm ml4t-gpu python 13_dl_time_series/01_core_architectures.py
+</code></pre>
+<hr>
+<h2 id="storage-benchmarks-chapter-2">Storage Benchmarks (Chapter 2)</h2>
+<p>Chapter 2 includes storage benchmarks comparing file formats and databases.</p>
+<pre><code class="language-bash"># Pull benchmark image
+docker compose pull benchmark
+
+# Start database services
+docker compose --profile benchmark up -d timescaledb clickhouse questdb influxdb
+
+# Wait for databases to be healthy
+docker compose --profile benchmark ps
+
+# Run benchmark
+docker compose --profile benchmark run --rm benchmark \
+  python 02_financial_data_universe/21_storage_benchmark_database.py
+
+# Stop databases when done
+docker compose --profile benchmark down
+</code></pre>
+<hr>
+<h2 id="py312-image-specific-notebooks">Py312 Image (Specific Notebooks)</h2>
+<p>A small number of notebooks require Python 3.12 libraries not available on Python 3.14:</p>
+<table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>Library</th>
+<th>Chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>01_timegan</code>, <code>03_sigcwgan_signatures</code>, <code>07_dp_gan</code></td>
+<td>signatory, torch CUDA bug on 3.14</td>
+<td>Ch05</td>
+</tr>
+<tr>
+<td><code>06_path_signatures</code></td>
+<td>signatory, esig</td>
+<td>Ch09</td>
+</tr>
+<tr>
+<td><code>10_shap_nlp_sentiment</code></td>
+<td>torch CUDA bug + shap</td>
+<td>Ch12</td>
+</tr>
+<tr>
+<td><code>06_conditional_autoencoder</code></td>
+<td>torch CUDA bug + shap</td>
+<td>Ch14</td>
+</tr>
+<tr>
+<td><code>06_fed_announcement_bsts</code></td>
+<td>tfcausalimpact (TFP BSTS)</td>
+<td>Ch15</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># On x86 (Linux, Windows WSL2, Intel Mac) run these as they stand. On Apple Silicon
+# prefix each with DOCKER_DEFAULT_PLATFORM=linux/amd64, see below.
+docker compose --profile py312 pull py312
+docker compose --profile py312 run --rm py312 python 09_model_based_features/06_path_signatures.py
+docker compose --profile py312 run --rm py312 \
+  /opt/bsts/bin/python 15_causal_estimation/06_fed_announcement_bsts.py
+
+# The six GPU-tagged notebooks, on a machine with an NVIDIA GPU:
+docker compose --profile py312-gpu run --rm py312-gpu \
+  python 05_synthetic_data/03_sigcwgan_signatures.py
+</code></pre>
+<p>Chapter 15 notebook 06 uses the isolated <code>/opt/bsts</code> interpreter so its NumPy 1 and
+pandas 2.2 constraints do not replace dependencies required by the other py312 notebooks.</p>
+<p>The <code>py312</code> service reserves no GPU, so it runs anywhere the amd64 image does. Six of the
+eleven are GPU-tagged and run faster with one, whether they train or only do inference: Ch05
+<code>01_timegan</code>, <code>03_sigcwgan_signatures</code> and <code>07_dp_gan</code>, Ch10 <code>03_sentiment_evolution</code>, Ch12
+<code>10_shap_nlp_sentiment</code> and Ch14 <code>06_conditional_autoencoder</code>. The <code>py312-gpu</code> service is the
+same image with an NVIDIA GPU attached, for those.</p>
+<p><strong>Apple Silicon</strong>: these notebooks have no arm64 build and all of them ship pre-executed, so
+reading the <code>.ipynb</code> in Jupyter or on GitHub is the intended route, and the local <code>uv</code> path
+covers everything else in the book. To execute them anyway you need Docker, which the Apple
+Silicon setup above does not install:</p>
+<ol>
+<li>Install Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/">docker.com/products/docker-desktop</a>,
+   choosing the <strong>Apple chip</strong> download.</li>
+<li>Enable Settings → General → <strong>Use Rosetta for x86_64/amd64 emulation</strong>.</li>
+<li>Prefix the <strong><code>py312</code></strong> commands above with <code>DOCKER_DEFAULT_PLATFORM=linux/amd64</code>, for example
+   <code>DOCKER_DEFAULT_PLATFORM=linux/amd64 docker compose --profile py312 pull py312</code>. Skip the
+   <code>py312-gpu</code> one: it reserves an NVIDIA device, which no Mac has, so all twelve notebooks go
+   through the CPU-only service here.</li>
+</ol>
+<p>It runs at emulation speed. Apart from Chapter 2's database benchmarks, this is the only thing
+on an Apple Silicon Mac that Docker is needed for.</p>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="docker-desktop-hangs-on-starting-the-docker-engine-windows">Docker Desktop hangs on "Starting the Docker Engine…" (Windows)</h3>
+<p>Check the status bar at the bottom of the Docker Desktop window. If it reads <code>RAM 0.00 GB</code>
+and <code>CPU 0.00%</code>, the engine's virtual machine never started, and the cause is the WSL2
+backend rather than Docker itself. Work through it in this order:</p>
+<ol>
+<li><strong>Virtualization off in firmware.</strong> Task Manager → Performance → CPU → <em>Virtualization</em>.
+   If it says Disabled, enable Intel VT-x / AMD-V in BIOS/UEFI. See step 0 of the
+   <a href="#windows-11-wsl2">Windows setup</a> above.</li>
+<li><strong>Pending reboot.</strong> If you ran <code>wsl --install</code> and did not restart, restart now.</li>
+<li><strong>No Linux distribution.</strong> Run <code>wsl --list --verbose</code> in PowerShell. If it prints
+   <code>has no installed distributions</code>, run <code>wsl --install -d Ubuntu</code> again. On a machine that has
+   already rebooted, this second run is what downloads and installs Ubuntu.</li>
+<li><strong>WSL2 backend not selected.</strong> Docker Desktop → Settings → General → "Use the WSL 2
+   based engine".</li>
+</ol>
+<p>Then quit Docker Desktop fully (right-click the tray icon → Quit) and start it again.</p>
+<h3 id="cannot-connect-to-docker-daemon">"Cannot connect to Docker daemon"</h3>
+<ul>
+<li><strong>Linux</strong>: <code>sudo systemctl start docker &amp;&amp; sudo systemctl enable docker</code></li>
+<li><strong>Windows/macOS</strong>: Ensure Docker Desktop is running (system tray / menu bar)</li>
+<li><strong>Windows WSL2</strong>: Make sure you are running from a WSL terminal, not PowerShell. Verify integration: Docker Desktop → Settings → Resources → WSL Integration → enable your distribution</li>
+</ul>
+<h3 id="out-of-memory-or-container-killed-wsl2">Out of memory or container killed (WSL2)</h3>
+<p>WSL2 defaults to 50% of host RAM. Large notebooks (Ch13 deep learning, case study pipelines) may exceed this. Edit <code>%USERPROFILE%\.wslconfig</code>:</p>
+<pre><code class="language-ini">[wsl2]
+memory=12GB
+swap=4GB
+</code></pre>
+<p>Then restart: <code>wsl --shutdown</code> from PowerShell and reopen your terminal.</p>
+<h3 id="permission-denied-on-linux">"Permission denied" on Linux</h3>
+<pre><code class="language-bash">sudo usermod -aG docker $USER
+# Log out and back in
+</code></pre>
+<h3 id="slow-on-apple-silicon">Slow on Apple Silicon</h3>
+<p>If a container is slow, check if it's running under x86 emulation:</p>
+<pre><code class="language-bash">docker compose run --rm ml4t uname -m
+# Should print: aarch64 (native) not x86_64 (emulated)
+</code></pre>
+<p>If you see <code>x86_64</code>, the image may not have an arm64 variant. The <code>ml4t</code> and <code>benchmark</code> images both have native arm64 builds.</p>
+<h3 id="no-space-left-on-device">"No space left on device"</h3>
+<pre><code class="language-bash">docker system prune -a    # Remove unused images/containers
+docker system df           # Check space usage
+</code></pre>
+<h3 id="build-fails-with-network-errors">Build fails with network errors</h3>
+<pre><code class="language-bash"># Behind a proxy:
+export HTTP_PROXY=http://proxy:port
+export HTTPS_PROXY=http://proxy:port
+docker compose pull ml4t
+</code></pre>
+<h3 id="kaleido-requires-google-chrome-to-be-installed">"Kaleido requires Google Chrome to be installed"</h3>
+<p>Notebooks pick their Plotly renderer automatically and no longer ask for static
+PNGs where Chrome is missing, so this should not appear. If you are on an older
+image, either pull the current one or set the renderer explicitly:</p>
+<pre><code class="language-bash">docker compose pull ml4t
+docker compose run --rm -e PLOTLY_RENDERER=json ml4t python case_studies/etfs/05_evaluation.py
+</code></pre>
+<p>Chrome installed on your <em>host</em> has no bearing on this: the notebook runs inside
+the container, which ships without one.</p>
+<p>Only static image export (<code>fig.write_image</code>, <code>fig.to_image</code>) genuinely needs
+Chrome. Install it into a <em>running</em> container, since <code>docker compose run --rm</code>
+discards the download when the container exits:</p>
+<pre><code class="language-bash">docker compose up -d ml4t
+docker compose exec ml4t plotly_get_chrome -y
+</code></pre>
+<hr>
+<h2 id="local-setup-with-uv-alternative-to-docker">Local Setup with uv (Alternative to Docker)</h2>
+<p>Docker is recommended because it guarantees a consistent environment. But if you prefer a local Python setup — for faster iteration, IDE integration, or GPU access without container overhead — <a href="https://docs.astral.sh/uv/">uv</a> handles everything from Python installation through dependency resolution.</p>
+<p><strong>On Windows this section is the Ubuntu terminal, not PowerShell.</strong> WSL2 <em>is</em> the
+Linux path, so every command below is typed there. Installing <code>uv</code> into Windows
+Python is unsupported and the dependency set does not resolve on it — see
+<a href="#platform-support">Platform Support</a>.</p>
+<h3 id="what-uv-does">What uv Does</h3>
+<p><code>uv</code> is a fast Python package manager written in Rust. It replaces <code>pip</code>, <code>venv</code>, <code>pip-tools</code>, and <code>pyenv</code> in a single tool. When you run <code>uv sync</code>, it:</p>
+<ol>
+<li>Reads <code>pyproject.toml</code> for dependency specifications</li>
+<li>Reads <code>uv.lock</code> for exact pinned versions (reproducible across machines)</li>
+<li>Creates a virtual environment in <code>.venv/</code></li>
+<li>Installs all packages including PyTorch with CUDA support</li>
+</ol>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-bash"># Install uv — use this installer, not `pip install uv`. Most current systems either
+# ship no `pip` at all or refuse the install with `externally-managed-environment`.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# The installer puts uv in ~/.local/bin, which your current shell does not know about
+# yet. Load it now rather than opening a new terminal:
+source $HOME/.local/bin/env        # sh, bash, zsh;  env.fish for fish
+
+# Clone and enter the repository (about 0.9 GB of history)
+git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+cd machine-learning-for-trading
+
+# Install all dependencies (creates .venv/, installs ~300 packages, about 11 GB).
+# Twelve of them compile from source, so a C/C++ compiler must already be installed —
+# see "What you need before either path" above.
+uv sync
+
+# Copy environment template (defaults work as-is; no editing needed to start)
+cp .env.example .env
+# API keys are optional and only needed for specific datasets later —
+# see data/README.md when a chapter asks for one.
+
+# Verify — the one PASS/FAIL gate, same script on both paths
+uv run python scripts/verify_installation.py
+
+# Start Jupyter Lab, from the repo root, and open the URL it prints
+ML4T_DATA_PATH="${ML4T_DATA_PATH:-$PWD/data}" uv run jupyter lab
+</code></pre>
+<p><code>uv sync</code> installs Jupyter Lab along with everything else. The <code>ML4T_DATA_PATH</code> prefix gives the data
+loaders an absolute path: Jupyter runs each notebook with its own chapter folder as the working
+directory, so they would otherwise search inside that folder and report the datasets as missing. The
+form above keeps a value you have already exported and falls back to this repository's <code>data/</code>.</p>
+<p>Jupyter prints its address with a freshly generated access token attached
+(<code>http://localhost:8888/lab?token=…</code>). Open that whole line; a bare <code>http://localhost:8888</code> only
+shows a token prompt. On Windows, run the command in your WSL2 Ubuntu terminal and paste the URL into
+your normal Windows browser - no browser opens by itself there, and WSL2 forwards <code>localhost</code> for
+you.</p>
+<h3 id="how-pyprojecttoml-works">How pyproject.toml Works</h3>
+<p>The <code>pyproject.toml</code> at the repository root defines all Python dependencies:</p>
+<ul>
+<li><strong>Core data science</strong>: NumPy, SciPy, Pandas, Polars, PyArrow</li>
+<li><strong>Visualization</strong>: Plotly, Matplotlib, Seaborn</li>
+<li><strong>Machine learning</strong>: scikit-learn, XGBoost, LightGBM, CatBoost, Optuna, SHAP</li>
+<li><strong>Deep learning</strong>: PyTorch 2.x (with CUDA 12.8 on Linux/Windows)</li>
+<li><strong>NLP</strong>: Hugging Face Transformers, sentence-transformers, FinBERT</li>
+<li><strong>ML4T libraries</strong>: ml4t-data, ml4t-engineer, ml4t-models, ml4t-diagnostic, ml4t-backtest, ml4t-live (installed from PyPI)</li>
+</ul>
+<p>The lockfile <code>uv.lock</code> pins every transitive dependency to exact versions, so <code>uv sync</code> produces the same environment regardless of when you install.</p>
+<h3 id="what-local-setup-cannot-run">What Local Setup Cannot Run</h3>
+<p>A few notebooks require Docker because their dependencies have no Python 3.14 wheel or need external services:</p>
+<table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>Reason</th>
+<th>Docker Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ch05 <code>03_sigcwgan_signatures</code></td>
+<td>signatory requires Python 3.12</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch09 <code>06_path_signatures</code></td>
+<td>esig requires Python 3.12</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch12 <code>10_shap_nlp_sentiment</code></td>
+<td>torch CUDA bug on 3.14 + shap</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch14 <code>06_conditional_autoencoder</code></td>
+<td>torch CUDA bug on 3.14 + shap</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch15 <code>06_fed_announcement_bsts</code></td>
+<td>tfcausalimpact requires Python 3.12</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch02 <code>21_storage_benchmark_database</code></td>
+<td>requires database services</td>
+<td>benchmark</td>
+</tr>
+</tbody>
+</table>
+<p>For these, use <code>docker compose</code> with the appropriate profile even if your main workflow is local.</p>
+<h3 id="gpu-with-local-setup">GPU with Local Setup</h3>
+<p>PyTorch auto-detects NVIDIA GPUs when CUDA drivers are installed. No special configuration needed:</p>
+<pre><code class="language-bash">uv run python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}, Device: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
+</code></pre>
+<p>GPU-intensive notebooks (Ch05 GANs, Ch13 deep learning, Ch14 autoencoders, Ch21 RL) benefit from GPU but all include CPU fallback with reduced parameters.</p>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><a href="running-notebooks.md">Running Notebooks</a> — How to execute notebooks, Papermill test mode, case study pipelines</li>
+<li><a href="../data/README.md">Data Guide</a> — Download required datasets</li>
+</ul>
+<h3 id="locally-verified-gensim-440-native-build">Locally verified Gensim 4.4.0 native build</h3>
+<p>The frozen uv environment uses the complete official Gensim 4.4.0 release commit
+<code>ee2642b4fa26e689ba4595067504668bc7a89016</code>. Its supported Cython regeneration builds
+native Python 3.14 extensions locally; the official PyPI source archive's stale
+generated C and missing regeneration source do not establish a Python 3.12-only
+requirement. This is local compatibility evidence, not upstream official support.
+Use the repository's uv source configuration and frozen lock: plain pip installation
+of this project's wheel does not carry the Git source selection. The dependency's
+PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
+The original word2vec and asset-embedding cases pass with genuine Phrasebank and
+SEC holdings inputs. Other notebooks still need their own documented prerequisites.</p></main>
+</body></html>

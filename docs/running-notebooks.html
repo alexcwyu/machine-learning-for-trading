@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Running Notebooks</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="running-notebooks">Running Notebooks</h1>
+<p>This guide explains how to execute notebooks, work with case studies, and experiment with your own strategies.</p>
+<hr>
+<h2 id="two-ways-to-run">Two Ways to Run</h2>
+<p>Every command in this guide is typed at a terminal prompt <strong>from the repository
+root</strong> — the folder <code>git clone</code> created — on macOS or Linux in Terminal, on
+Windows in the WSL2 Ubuntu terminal, never in PowerShell. The one exception is
+marked: opening a Jupyter address is something you do in a web browser.
+<a href="installation.md#before-you-begin">Before You Begin</a> covers opening a terminal
+on each platform.</p>
+<h3 id="option-a-docker-recommended">Option A: Docker (Recommended)</h3>
+<p>Docker provides a consistent environment across all platforms with pre-built images on Docker Hub. After <a href="installation.md">installation</a>:</p>
+<pre><code class="language-bash"># Pull the image (one time, ~12 GB on x86, ~3 GB on ARM64)
+docker compose pull ml4t
+
+# Start Jupyter Lab. It keeps running and prints its log here; leave it running.
+docker compose up ml4t
+
+# Run a notebook directly, without Jupyter
+docker compose run --rm ml4t python 11_ml_pipeline/01_ols_inference.py
+
+# Run with GPU (deep learning chapters)
+docker compose --profile gpu run --rm ml4t-gpu python 13_dl_time_series/01_core_architectures.py
+</code></pre>
+<p>With <code>docker compose up ml4t</code> running, open <strong>http://localhost:8888</strong> in your web
+browser — that is a browser address, not something to type at the terminal. On
+Windows, open it in your normal Windows browser even though the command ran
+inside Ubuntu; WSL2 forwards <code>localhost</code> for you.</p>
+<p>Docker covers <strong>all</strong> notebooks across all 27 chapters and 9 case studies, though a small
+subset requires a non-default profile such as <code>py312</code>, <code>benchmark</code>, or <code>rapids</code>.</p>
+<h3 id="option-b-local-with-uv-advanced">Option B: Local with uv (Advanced)</h3>
+<p><a href="https://docs.astral.sh/uv/">uv</a> is a fast Python package manager that handles virtual environments automatically. A local setup covers ~90% of notebooks; a few require Docker:</p>
+<table>
+<thead>
+<tr>
+<th>Docker-Only Notebooks</th>
+<th>Reason</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ch05 <code>03_sigcwgan_signatures</code></td>
+<td>signatory (no Python 3.14 wheel)</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch09 <code>06_path_signatures</code></td>
+<td>signatory, esig (no Python 3.14 wheel)</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch12 <code>10_shap_nlp_sentiment</code></td>
+<td>torch CUDA bug on 3.14 + shap</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch14 <code>06_conditional_autoencoder</code></td>
+<td>torch CUDA bug on 3.14 + shap</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch15 <code>06_fed_announcement_bsts</code></td>
+<td>tfcausalimpact (TFP BSTS, isolated <code>/opt/bsts/bin/python</code>)</td>
+<td>py312</td>
+</tr>
+<tr>
+<td>Ch02 <code>21_storage_benchmark_database</code></td>
+<td>requires benchmark image + database services</td>
+<td>benchmark</td>
+</tr>
+<tr>
+<td>Ch12 <code>02_gbm_comparison</code> (GPU section)</td>
+<td>RAPIDS cuML, LightGBM CUDA</td>
+<td>rapids</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash"># Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# The installer puts uv in ~/.local/bin, which this shell does not know about
+# yet. Load it now, or `uv sync` below fails with "uv: command not found":
+source $HOME/.local/bin/env        # sh, bash, zsh;  env.fish for fish
+
+# Clone the repository
+git clone https://github.com/stefan-jansen/machine-learning-for-trading.git
+cd machine-learning-for-trading
+
+# Copy the environment template. The defaults work as they are — nothing in it
+# needs editing to start. Come back to it when a chapter asks for an API key.
+cp .env.example .env
+
+# Install all dependencies. Twelve of them compile from source, so a C/C++
+# compiler and the Python headers must already be installed — see
+# docs/installation.md, "What you need before either path".
+uv sync
+
+# Run a notebook
+uv run python 11_ml_pipeline/01_ols_inference.py
+
+# Or start Jupyter Lab, from the repo root, and open the URL it prints
+ML4T_DATA_PATH="${ML4T_DATA_PATH:-$PWD/data}" uv run jupyter lab
+</code></pre>
+<p>A local Jupyter Lab generates an access token on each start and prints the address with the token
+attached:</p>
+<pre><code>http://localhost:8888/lab?token=ef2600091d6010aa5e7f044172907ebf893f16f5d1aaa851
+</code></pre>
+<p>Open that whole line, not a bare <code>http://localhost:8888</code>, which only shows a token prompt. On
+Windows the server runs inside WSL2 and no browser opens by itself, so copy the URL into your normal
+Windows browser; WSL2 forwards <code>localhost</code> for you.</p>
+<p><code>uv sync</code> installs Jupyter Lab, so no separate install is needed. The <code>ML4T_DATA_PATH</code> prefix gives
+the data loaders an absolute path: Jupyter runs each notebook with its own chapter folder as the
+working directory, and without it they look for <code>01_process_is_edge/data/…</code> and report the data as
+missing. The form above keeps a value you already exported and falls back to the repository's own
+<code>data/</code> only when you have not set one. If you keep the datasets elsewhere, export that path in your
+shell profile - setting it in <code>.env</code> alone is not enough, because <code>uv run</code> does not read <code>.env</code>.</p>
+<p><strong>Platform notes for local setup:</strong>
+- <strong>Python 3.14+</strong> required
+- <strong>GPU</strong>: PyTorch auto-detects CUDA if NVIDIA drivers are installed
+- <strong>Apple Silicon</strong>: Most packages have native ARM64 wheels; the py312 notebooks above cannot run on ARM64 — view their pre-executed <code>.ipynb</code> files instead</p>
+<hr>
+<h2 id="your-first-notebook">Your First Notebook</h2>
+<p>Once Jupyter Lab is running - <code>docker compose up ml4t</code> on the Docker path, or
+<code>ML4T_DATA_PATH="${ML4T_DATA_PATH:-$PWD/data}" uv run jupyter lab</code> from the repo
+root on the local path - open it in your web browser: <strong>http://localhost:8888</strong>
+for Docker, and for the local path the tokenized URL the server printed. The
+repository's file tree appears on the left. On Windows, start it inside your WSL2
+Ubuntu terminal and open the address in your normal Windows browser.</p>
+<ol>
+<li>In the file browser (left panel), open a chapter folder — e.g.
+   <code>01_process_is_edge</code> — and <strong>double-click</strong> a <code>.ipynb</code> file to open it.</li>
+<li>Run the selected cell with <strong>Shift+Enter</strong> (it runs, then moves to the next
+   cell), or run the whole notebook from the menu: <strong>Run → Run All Cells</strong>.</li>
+<li>When a step asks you to run a shell command (for example, downloading data),
+   open a terminal <em>inside</em> Jupyter Lab: <strong>File → New → Terminal</strong>. That terminal
+   is already inside the container, at the repo root, with everything installed.
+   It is where Docker readers run the <code>python …</code> commands shown in this guide —
+   type <code>python …</code> directly (drop the <code>uv run</code> prefix; there is no <code>uv</code> in the
+   container).</li>
+</ol>
+<p>You do <strong>not</strong> need a separate terminal window for the Docker workflow — the
+Jupyter Lab terminal tile is where the commands below run.</p>
+<p><strong>Most notebooks need downloaded data, and opening one does not download it.</strong> A
+notebook whose dataset is missing stops with a <code>DataNotFoundError</code> naming the
+download command for that dataset. Get the free datasets out of the way first —
+the bulk command is in <a href="#data-requirements">Data Requirements</a> below, and it is
+the same command whether you run it in the Jupyter Lab terminal or in your own.</p>
+<hr>
+<h2 id="notebook-format">Notebook Format</h2>
+<p>Notebooks use <strong>Jupytext percent format</strong>: the source of truth is the <code>.py</code> file, and <code>.ipynb</code> is generated from it.</p>
+<pre><code>11_ml_pipeline/
+  01_ols_inference.py      # Source (edit this)
+  01_ols_inference.ipynb   # Generated (view in Jupyter)
+</code></pre>
+<p><strong>Viewing</strong>: Open <code>.ipynb</code> files in Jupyter Lab, VS Code, or on GitHub (rendered with outputs).</p>
+<p><strong>Running</strong>: Execute the <code>.py</code> file from the repo root:</p>
+<pre><code class="language-bash">uv run python 11_ml_pipeline/01_ols_inference.py
+# or
+docker compose run --rm ml4t python 11_ml_pipeline/01_ols_inference.py
+</code></pre>
+<p><strong>Important</strong>: Run <code>.py</code> notebooks from the repository root. The data loaders resolve <code>data/</code> relative
+to the working directory, so running from a chapter folder reports the datasets as missing even when
+they are downloaded. Setting <code>ML4T_DATA_PATH</code> to an absolute path removes the constraint, which is
+why the Jupyter Lab command above sets it.</p>
+<p><strong>A <code>.py</code> run on a desktop opens figure windows and waits for you to close them.</strong>
+Matplotlib picks an interactive backend whenever a display is available, and
+<code>plt.show()</code> then blocks until the window is closed — so the command appears to
+hang, with no message, part-way through. Close each window to continue, or run it
+the way <a href="#headless-execution">Headless Execution</a> below does and get no windows
+at all:</p>
+<pre><code class="language-bash">MPLBACKEND=Agg PLOTLY_RENDERER=json uv run python 01_process_is_edge/factor_regimes.py
+</code></pre>
+<p>This does not affect Jupyter Lab, where figures render in the notebook, or the
+Docker path, which has no display and picks the non-interactive backend by
+itself.</p>
+<hr>
+<h2 id="chapter-notebooks">Chapter Notebooks</h2>
+<p>Each chapter directory contains teaching notebooks that demonstrate concepts from the book:</p>
+<pre><code>07_defining_the_learning_task/
+  01_data_preprocessing.py       # Notebook (Jupytext source)
+  01_data_preprocessing.ipynb    # Notebook (Jupyter, with outputs)
+  02_label_methods.py
+  ...
+  README.md                      # Chapter overview and notebook guide
+</code></pre>
+<p>These notebooks are self-contained. Run them in order within a chapter, or jump to any notebook that interests you — most chapter notebooks only depend on downloaded data, not on other notebooks.</p>
+<hr>
+<h2 id="case-study-notebooks">Case Study Notebooks</h2>
+<p>Each case study applies the <strong>same end-to-end research workflow</strong> to a different market — ETFs, crypto perpetuals, intraday equities, options, FX, futures, and equity factor panels. Each is a <strong>pipeline</strong>: every stage writes artifacts (labels, features, predictions, backtests) that later stages consume. The stages are already programmed and extensible, but they read like a research process — run one straight through, or open any stage, change it, and re-run from there.</p>
+<h3 id="the-workflow">The Workflow</h3>
+<p>Every case study follows the same sequence of phases, and <strong>each phase maps to a book chapter</strong>. The stage <em>numbers</em> differ from one case study to the next — each market gets a different set of model-family stages (more or fewer deep-learning architectures, latent-factor models where they apply) — but the phase order is identical everywhere:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Chapter</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feasibility</td>
+<td>Ch6</td>
+<td>Universe breadth, point-in-time eligibility, horizon-cost feasibility, walk-forward setup</td>
+</tr>
+<tr>
+<td>Labels</td>
+<td>Ch7</td>
+<td>Forward returns and classification labels with walk-forward splits</td>
+</tr>
+<tr>
+<td>Financial features</td>
+<td>Ch8</td>
+<td>Momentum, volatility, carry, and cross-sectional ranking features</td>
+</tr>
+<tr>
+<td>Model-based features</td>
+<td>Ch9</td>
+<td>ARIMA, GARCH, HMM, and spectral features from walk-forward fits</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>Ch7–9</td>
+<td>Feature–label IC diagnostics across all engineered features</td>
+</tr>
+<tr>
+<td>Linear</td>
+<td>Ch11</td>
+<td>Ridge / LASSO / ElasticNet baseline every later model must beat</td>
+</tr>
+<tr>
+<td>Gradient boosting</td>
+<td>Ch12</td>
+<td>LightGBM with Optuna tuning</td>
+</tr>
+<tr>
+<td>Tabular DL</td>
+<td>Ch12</td>
+<td>TabM / TabPFN tabular deep learning</td>
+</tr>
+<tr>
+<td>Sequence DL</td>
+<td>Ch13</td>
+<td>LSTM, TCN, TSMixer, PatchTST (architectures vary by market)</td>
+</tr>
+<tr>
+<td>Latent factors</td>
+<td>Ch14</td>
+<td>PCA, IPCA, autoencoders, SDF (where applicable)</td>
+</tr>
+<tr>
+<td>Causal DML</td>
+<td>Ch15</td>
+<td>Double ML — does the signal cause returns or reflect confounders?</td>
+</tr>
+<tr>
+<td>Model analysis</td>
+<td>Ch11–15</td>
+<td>Cross-family IC comparison, fold stability, checkpoint sensitivity</td>
+</tr>
+<tr>
+<td>Backtest</td>
+<td>Ch16</td>
+<td>Strategy simulation, falsified against an equal-weight benchmark</td>
+</tr>
+<tr>
+<td>Portfolio</td>
+<td>Ch17</td>
+<td>Score-weighted, risk-parity, inverse-vol, MVO, HRP, conformal allocation</td>
+</tr>
+<tr>
+<td>Costs</td>
+<td>Ch18</td>
+<td>Transaction-cost impact on the edge</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>Ch19</td>
+<td>Position-level stops, trailing stops, time exits</td>
+</tr>
+<tr>
+<td>Strategy analysis</td>
+<td>Ch20</td>
+<td>End-to-end assessment — IC, Sharpe, cost survival, holdout</td>
+</tr>
+</tbody>
+</table>
+<p>Each case study's own <code>README.md</code> lists its exact stage files with this mapping. To see a given case study's stages, list them:</p>
+<pre><code class="language-bash">ls case_studies/etfs/        # 01_feasibility_analysis.py … 20_strategy_analysis.py
+</code></pre>
+<h3 id="running-a-case-study-end-to-end">Running a Case Study End to End</h3>
+<p>Run the stages in order from the repo root. Using the ETF case study (stages <code>01</code>–<code>18</code>):</p>
+<pre><code class="language-bash"># Define, label, engineer, evaluate (Ch6–9)
+uv run python case_studies/etfs/01_feasibility_analysis.py
+uv run python case_studies/etfs/02_labels.py
+uv run python case_studies/etfs/03_financial_features.py
+uv run python case_studies/etfs/04_model_based_features.py
+uv run python case_studies/etfs/05_evaluation.py
+
+# Train model families — run any or all (Ch11–15)
+uv run python case_studies/etfs/06_linear.py
+uv run python case_studies/etfs/07_gbm.py
+# … 08_tabular_dl, 09_dl_lstm, 10_dl_tsmixer, 11_latent_factors, 12_causal_dml
+uv run python case_studies/etfs/13_model_analysis.py
+
+# Build the strategy — backtest, portfolio, costs, risk, synthesis (Ch16–20)
+uv run python case_studies/etfs/14_backtest.py
+uv run python case_studies/etfs/15_portfolio_management.py
+uv run python case_studies/etfs/16_risk_management.py
+uv run python case_studies/etfs/17_costs.py
+uv run python case_studies/etfs/18_holdout_predictions.py
+uv run python case_studies/etfs/19_holdout_backtest.py
+uv run python case_studies/etfs/20_strategy_analysis.py
+</code></pre>
+<p>Each stage checks for the artifacts it needs and tells you which earlier stage to run if anything is missing, so you can always pick up partway through.</p>
+<h3 id="how-a-case-study-is-configured">How a Case Study Is Configured</h3>
+<p>Hyperparameter grids and strategy constants are not written into the stage files. Each stage reads
+them at runtime from three layers of configuration:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Declares</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>case_studies/{cs}/config/setup.yaml</code></td>
+<td>The trading problem - universe, decision cadence, execution defaults, costs, labels, walk-forward splits, and the Ch16-19 sweep grid</td>
+</tr>
+<tr>
+<td><code>case_studies/{cs}/config/training/{label}.yaml</code></td>
+<td>The training menu - which named model configs run for that label, by family</td>
+</tr>
+<tr>
+<td><code>case_studies/config/{model_type}/{name}.yaml</code></td>
+<td>The preset - the hyperparameters behind one config name, shared across case studies</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../case_studies/RUN_LOG.md#configuration-flow"><code>case_studies/RUN_LOG.md</code></a> documents the layers and
+how a configuration becomes a content-addressed hash.
+<a href="#experimenting-without-changing-the-release-baseline">Experimenting</a> below is the practical
+counterpart: which file to edit for a given change, and how to run it without touching the release
+baseline.</p>
+<h3 id="the-run-log">The Run Log</h3>
+<p>Every model training run, prediction set, causal-effect estimate, and backtest is recorded in a per-case-study <strong>run log</strong> (<code>run_log/</code>). The SQLite catalog <code>run_log/registry.db</code> is the single source of truth for all metrics discussed in the book — IC scores, Sharpe ratios, drawdowns, etc.</p>
+<p>See <a href="../case_studies/RUN_LOG.md"><code>case_studies/RUN_LOG.md</code></a> for the schema and querying API.</p>
+<h3 id="pre-computed-results-download-artifacts">Pre-Computed Results (Download Artifacts)</h3>
+<p>Running a case study end to end can take hours or days. The artifact release provides the complete
+registered run logs for all nine case studies. Each is a separate download, so you can take only the
+ones you want - start with <code>etfs</code> (33 MB), the case study the book follows most closely.</p>
+<table>
+<thead>
+<tr>
+<th>Case study</th>
+<th style="text-align: right;">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>etfs</code></td>
+<td style="text-align: right;">33 MB</td>
+</tr>
+<tr>
+<td><code>cme_futures</code></td>
+<td style="text-align: right;">37 MB</td>
+</tr>
+<tr>
+<td><code>fx_pairs</code></td>
+<td style="text-align: right;">41 MB</td>
+</tr>
+<tr>
+<td><code>sp500_options</code></td>
+<td style="text-align: right;">42 MB</td>
+</tr>
+<tr>
+<td><code>crypto_perps_funding</code></td>
+<td style="text-align: right;">43 MB</td>
+</tr>
+<tr>
+<td><code>sp500_equity_option_analytics</code></td>
+<td style="text-align: right;">44 MB</td>
+</tr>
+<tr>
+<td><code>us_firm_characteristics</code></td>
+<td style="text-align: right;">56 MB</td>
+</tr>
+<tr>
+<td><code>nasdaq100_microstructure</code></td>
+<td style="text-align: right;">1.1 GB</td>
+</tr>
+<tr>
+<td><code>us_equities_panel</code></td>
+<td style="text-align: right;">1.6 GB</td>
+</tr>
+</tbody>
+</table>
+<p>The last two are large because they are wide, high-frequency panels - a single NASDAQ minute-bar
+prediction set is about 80 MB on its own. Their artifact counts are in line with the rest.</p>
+<pre><code class="language-bash"># Download all nine case study artifacts (about 3.1 GB total)
+uv run python scripts/download_artifacts.py
+
+# Download a single case study
+uv run python scripts/download_artifacts.py --cs etfs
+
+# Check what's installed
+uv run python scripts/download_artifacts.py --list
+</code></pre>
+<p>The downloader verifies the archive and every file inside it before atomically installing
+<code>case_studies/{cs}/run_log/</code>. An interrupted or corrupt download leaves any existing run log
+unchanged. The installed baseline is read-only and contains:</p>
+<ul>
+<li><strong><code>registry.db</code></strong> - the accepted metrics and provenance database</li>
+<li><strong>Training artifacts</strong> - registered specifications, coefficients, boosters, checkpoints, and curves</li>
+<li><strong>Predictions</strong> - every stored validation and holdout prediction referenced by the registry</li>
+<li><strong>Backtests</strong> - every registered return, trade, weight, and configuration file that the run produced</li>
+<li><strong>Release metadata</strong> - source identity, scope records, and per-file checksums</li>
+</ul>
+<p>With these artifacts, you can:</p>
+<ol>
+<li><strong>Browse results immediately</strong> - analysis notebooks load metrics and stored artifacts directly.</li>
+<li><strong>Trace results</strong> - registry hashes resolve to the exact prediction and backtest files used downstream.</li>
+<li><strong>Reproduce selectively</strong> - rerun a chosen model in an isolated experiment instead of retraining the sweep.</li>
+<li><strong>Compare safely</strong> - start from the released run log without modifying the downloaded baseline.</li>
+</ol>
+<p>The separate maintainer archive also preserves historical registry backups and obsolete caches. Those
+files are not reader inputs and are therefore excluded from the release bundles.</p>
+<h3 id="why-a-fresh-run-may-not-match-the-published-numbers-exactly">Why a Fresh Run May Not Match the Published Numbers Exactly</h3>
+<p>The released artifacts are a snapshot: they record what the pipeline produced at the time the book
+went to press. If you rerun a stage yourself, expect small differences from the stored values.</p>
+<ul>
+<li><strong>The code keeps improving.</strong> This repository is maintained after publication. Bug fixes and
+  refinements land in the notebooks continuously, and a fix made after the snapshot was taken will
+  move the numbers a fresh run produces. The released registry is not regenerated every time.</li>
+<li><strong>Hardware and libraries differ.</strong> GPU training is not bitwise reproducible, and library versions,
+  BLAS backends, and CPU-versus-GPU execution all shift results at the margin.</li>
+<li><strong>Market data is revised.</strong> Vendors restate history. A download today may not be byte-identical to
+  the one behind the release.</li>
+</ul>
+<p>Differences of this kind are normally small enough to leave the conclusions intact. The book's
+arguments rest on the <em>shape</em> of the results - which model families work, how much the selection
+funnel deflates apparent performance, where costs bite - not on a specific Sharpe ratio to three
+decimals. Treat the published numbers as the reference run, not as values a rerun must match.</p>
+<p>If a rerun produces a difference large enough to change a conclusion rather than a decimal, that is
+worth reporting as an issue.</p>
+<hr>
+<h2 id="experimenting-without-changing-the-release-baseline">Experimenting Without Changing the Release Baseline</h2>
+<p>Create a writable copy of the installed artifacts before changing a configuration or running a
+training or backtest stage. The artifact bundle installs the registry (<code>run_log/</code>) only, so first
+produce the modeling dataset (<code>features/</code>, <code>labels/</code>) that the model stages consume, then create the
+experiment and run your edited stage against it:</p>
+<pre><code class="language-bash"># 1. Produce the modeling dataset the model notebooks need (writes features/ and
+#    labels/ into the case study directory; skip any that already exist).
+uv run python case_studies/etfs/02_labels.py
+uv run python case_studies/etfs/03_financial_features.py
+uv run python case_studies/etfs/04_model_based_features.py
+
+# 2. Snapshot the installed artifacts + config into a writable experiment.
+uv run python scripts/create_experiment.py \
+  --cs etfs \
+  --output /tmp/ml4t-etf-experiment
+
+# 3. Edit config in the experiment (see below), then run the stage against it.
+ML4T_OUTPUT_DIR=/tmp/ml4t-etf-experiment \
+  uv run python case_studies/etfs/07_gbm.py
+</code></pre>
+<p>The setup command copies every available generated prerequisite <strong>and the case study's <code>config/</code>
+tree</strong> into the experiment, changes the release marker to a baseline marker, and makes only the copy
+writable. <code>ML4T_OUTPUT_DIR</code> routes both config reads and new registry rows into
+<code>/tmp/ml4t-etf-experiment/</code>, so you change a configuration <strong>inside the experiment</strong> and the
+downloaded release stays untouched. You edit config there, not in the model notebook - the notebooks
+have no hyperparameter grids inline; they read the config system described below.</p>
+<h3 id="try-different-model-hyperparameters">Try Different Model Hyperparameters</h3>
+<p>The GBM grid is not a <code>PARAM_GRID</code> inside <code>07_gbm.py</code>. It is the list of preset names in
+<code>config/training/{label}.yaml</code> under the <code>gbm:</code> key; each name resolves to a preset file in
+<code>case_studies/config/lgb/{name}.yaml</code> that holds the actual LightGBM parameters. To change the grid,
+edit these files <strong>in the experiment</strong>:</p>
+<pre><code class="language-bash"># Add or remove configs from the grid (one preset name per line under `gbm:`):
+$EDITOR /tmp/ml4t-etf-experiment/etfs/config/training/fwd_ret_21d.yaml
+
+# Change the hyperparameters of a preset, or add a new preset file:
+$EDITOR /tmp/ml4t-etf-experiment/config/lgb/leaves_63_mse.yaml
+
+# Run on CPU if you do not have a CUDA-enabled LightGBM build
+# (set modeling.gbm.device: cpu in the experiment's setup.yaml):
+$EDITOR /tmp/ml4t-etf-experiment/etfs/config/setup.yaml
+
+ML4T_OUTPUT_DIR=/tmp/ml4t-etf-experiment \
+  uv run python case_studies/etfs/07_gbm.py
+</code></pre>
+<p>Each config that is not already in the copied registry trains and receives a unique hash there; the
+analysis notebooks pick up every registry hash automatically.</p>
+<p>The same two files drive <strong>every</strong> model family, not just GBM. A stage reads the list under its own
+family key and resolves each name against the shared preset directory. Which listed presets actually
+run is not uniform, so check the last column before adding one:</p>
+<table>
+<thead>
+<tr>
+<th>Family key in <code>config/training/{label}.yaml</code></th>
+<th>Presets live in</th>
+<th>ETF stage that reads it</th>
+<th>Which presets it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>linear</code></td>
+<td><code>config/{ols,ridge,lasso,elastic_net,logistic}/</code></td>
+<td><code>06_linear.py</code></td>
+<td>All of them</td>
+</tr>
+<tr>
+<td><code>gbm</code></td>
+<td><code>config/lgb/</code></td>
+<td><code>07_gbm.py</code></td>
+<td>All of them</td>
+</tr>
+<tr>
+<td><code>tabular_dl</code></td>
+<td><code>config/tabm/</code></td>
+<td><code>08_tabular_dl.py</code></td>
+<td>All of them</td>
+</tr>
+<tr>
+<td><code>deep_learning</code></td>
+<td><code>config/{lstm,tcn,tsmixer,nlinear,patchtst,nbeats}/</code></td>
+<td><code>09_dl_lstm.py</code>, <code>10_dl_tsmixer.py</code></td>
+<td>Only those whose <code>params.architecture</code> matches the stage's own (<code>lstm</code>, <code>tsmixer</code>); the rest are dropped, so the ETF case study runs nothing for <code>tcn</code>, <code>nlinear</code>, <code>patchtst</code> or <code>nbeats</code></td>
+</tr>
+<tr>
+<td><code>latent_factors</code></td>
+<td><code>config/{pca,ipca,cae,sae,sdf}/</code></td>
+<td><code>11a_pca.py</code> … <code>11e_supervised_autoencoder.py</code></td>
+<td>One per notebook, each asking for a fixed model name. <code>11_latent_factors.py</code> is an index that reports registered results, not a training stage</td>
+</tr>
+<tr>
+<td><code>causal_dml</code></td>
+<td><code>config/dml/</code></td>
+<td><code>12_causal_dml.py</code></td>
+<td>Only the first listed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Some stages override the preset they load.</strong> Where a notebook constant wins, edit that constant
+rather than the preset:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Ignores the preset's</th>
+<th>In favor of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>09_dl_lstm.py</code>, <code>10_dl_tsmixer.py</code></td>
+<td><code>n_epochs</code>, <code>batch_size</code>, <code>params.lookback</code></td>
+<td><code>N_EPOCHS</code>, <code>BATCH_SIZE</code>, <code>LOOKBACK</code> in the stage</td>
+</tr>
+<tr>
+<td><code>08_tabular_dl.py</code></td>
+<td><code>n_epochs</code>, <code>batch_size</code></td>
+<td><code>N_EPOCHS</code>, <code>BATCH_SIZE</code> in the stage</td>
+</tr>
+<tr>
+<td><code>11c_conditional_autoencoder.py</code>, <code>11e_supervised_autoencoder.py</code></td>
+<td><code>n_epochs</code></td>
+<td><code>N_EPOCHS = 50</code> in the stage</td>
+</tr>
+<tr>
+<td><code>12_causal_dml.py</code></td>
+<td><code>n_folds</code>, <code>n_placebo</code>, <code>max_samples</code>, <code>seed</code></td>
+<td>the stage's parameter cell</td>
+</tr>
+<tr>
+<td><code>07_gbm.py</code> on CPU</td>
+<td><code>params.seed</code></td>
+<td>the runtime seed, applied in <code>case_studies/utils/gbm.py</code></td>
+</tr>
+</tbody>
+</table>
+<p>The other latent-factor stages are unaffected: PCA and IPCA have no epoch setting, and the SDF preset
+declares <code>n_epochs_unc</code>, <code>n_epochs_moment</code> and <code>n_epochs_cond</code>, which the stage passes through.</p>
+<p>That last one is applied one layer below the stage file, so reading <code>07_gbm.py</code> alone will not reveal
+it. The list is what we have found rather than a guarantee of completeness - this precedence is a
+known wart, not a design, and it is tracked for a future release. If an edit appears to do nothing,
+check the stage for a reassignment of your key after <code>load_configs</code>.</p>
+<p><strong>Adding a new preset.</strong> Drop a YAML file into the directory for its model type and list its filename
+stem in the menu. Nothing else is needed: <code>family</code> and <code>library</code> come from the directory name, so a
+file in <code>config/lgb/</code> is a LightGBM run by construction.</p>
+<pre><code class="language-bash">cp /tmp/ml4t-etf-experiment/config/lgb/leaves_63_mse.yaml \
+   /tmp/ml4t-etf-experiment/config/lgb/leaves_127_mse.yaml
+$EDITOR /tmp/ml4t-etf-experiment/config/lgb/leaves_127_mse.yaml   # num_leaves: 127
+$EDITOR /tmp/ml4t-etf-experiment/etfs/config/training/fwd_ret_21d.yaml   # add: - leaves_127_mse
+</code></pre>
+<p><strong>What earns a new hash.</strong> A run is identified by the hash of its resolved specification, so a config
+the registry has not seen trains and registers under a new hash, and re-running an unchanged one
+reuses the stored result. That is what lets an experiment accumulate your variants alongside the
+released ones and stay comparable. Two caveats: a preset the stage never dispatches produces no hash
+at all because nothing runs, and the hash is a cache key rather than a record of what trained, so do
+not use "a new hash appeared" to confirm that an override reached the model. The exact hash inputs are
+in <a href="../case_studies/RUN_LOG.md#configuration-flow"><code>case_studies/RUN_LOG.md</code></a>.</p>
+<h3 id="try-a-different-backtest-configuration">Try a Different Backtest Configuration</h3>
+<p>Transaction costs and selection breadth live in the experiment's <code>etfs/config/setup.yaml</code>, not as
+variables in <code>14_backtest.py</code>, and both are safe to vary against an existing set of predictions:</p>
+<ul>
+<li><code>costs.*</code> - the transaction-cost model (per-share fees, spreads).</li>
+<li><code>backtest.sweep.top_n_predictions</code> - how many model configs advance at each stage.</li>
+</ul>
+<p><code>decision.cadence</code> lives there too and takes one extra step. No retraining is needed - the backtest
+applies the cadence to your existing predictions and registers the result under a new hash. But
+<code>labels.rebalance_step</code>, which thins decision dates so holding periods do not overlap, depends on the
+cadence and is one of the repository-pinned declarations
+<a href="#declarations-that-always-come-from-the-repository">below</a>. Set a compatible value there at the same
+time, or it will be wrong for your new cadence.</p>
+<p>The <code>14_backtest.py</code> parameter cell exposes run-scoping knobs - <code>TOP_K</code>, <code>MAX_SYMBOLS</code>,
+<code>TOP_N_PREDICTIONS</code>, <code>FORCE_REBACKTEST</code> - which scope what to backtest, not the strategy economics.
+This notebook always backtests on the <strong>validation</strong> split (the split the sweep selects on); the
+held-out test set is evaluated once on the selected winner in the analysis stage, not from here, so
+do not repurpose the <code>SPLIT</code> variable to backtest holdout.</p>
+<pre><code class="language-bash">$EDITOR /tmp/ml4t-etf-experiment/etfs/config/setup.yaml   # edit costs / backtest.sweep
+
+ML4T_OUTPUT_DIR=/tmp/ml4t-etf-experiment \
+  uv run python case_studies/etfs/14_backtest.py
+</code></pre>
+<h3 id="compare-your-experiments">Compare Your Experiments</h3>
+<p>Run the analysis notebook with the same output root so it reads the copied registry:</p>
+<pre><code class="language-bash">ML4T_OUTPUT_DIR=/tmp/ml4t-etf-experiment \
+  uv run python case_studies/etfs/20_strategy_analysis.py
+</code></pre>
+<h3 id="declarations-that-always-come-from-the-repository">Declarations That Always Come From the Repository</h3>
+<p>The four <code>setup.yaml</code> entries below are methodology declarations rather than knobs. They are read from
+the repository copy even when <code>ML4T_OUTPUT_DIR</code> points at an experiment, so editing them in the
+experiment does nothing. Leave them alone - that is the intended use. If you do change one in the
+repository, start from an empty <code>run_log/</code>: none of the four reaches <code>backtest_hash</code>, so rows computed
+under the old value keep their hash and get reused, quietly mixing two methodologies in one registry.
+<code>config/backtest/base.yaml</code>, listed last, does not work like them.</p>
+<ul>
+<li><code>labels.rebalance_step</code> - how many schedule slots a trade advances so holding periods do not
+  overlap. It follows from the cadence and the label horizon, so it is declared per label rather than
+  inferred at runtime.</li>
+<li><code>labels.classification_eval_label</code> - the continuous return substituted for a classification target
+  when a backtest needs economic P&amp;L (classification case studies only).</li>
+<li><code>universe.cost_feasible</code> - the frozen, per-split symbol list used by the <code>cost_feasible</code> universe
+  filter. It is a committed <em>result</em> of
+  <code>case_studies/nasdaq100_microstructure/_build_cost_feasible_universe.py</code>, profiled strictly before
+  each window so it carries no look-ahead.</li>
+<li><code>backtest.sweep.htm_cost_cascade.liquid_quantile</code> - the quantile defining the tightest-spread subset
+  for the <code>liquid</code> universe filter. <strong>Treat this as fixed at 0.20.</strong> Its readers do not agree: the
+  shared runtime filter takes the repository value, the Ch18 cascade notebook reads the
+  experiment-aware one so an experiment edit changes only what it <em>reports</em>, and two <code>sp500_options</code>
+  stages prefilter at a hardcoded 0.20 first, so no larger configured value can widen the cohort.
+  Making it a real knob means routing every reader through one hash-covered value.</li>
+<li><code>config/backtest/base.yaml</code> - the engine-level backtest preset, and the exception to everything
+  above. Treat it as read-only. Its engine fields <em>are</em> hashed into <code>backtest_config</code>, so a repository
+  edit produces new hashes rather than silently reusing old rows. And it is only partly pinned: the
+  engine uses the repository copy, but the price loader consults the experiment copy to decide whether
+  to pull bid/ask columns, so an experiment edit can change which data loads, or fail the load,
+  without changing what the engine runs.</li>
+</ul>
+<hr>
+<h2 id="data-requirements">Data Requirements</h2>
+<p>Notebooks require downloaded datasets. See <a href="../data/README.md"><code>data/README.md</code></a> for the complete data guide.</p>
+<p><strong>Quick start with free data:</strong></p>
+<pre><code class="language-bash"># Local uv setup:
+uv run python data/etfs/market/download.py       # ETF data (Yahoo Finance, no API key)
+uv run python data/download_all.py --free-only   # all free datasets
+</code></pre>
+<p><strong>Docker readers:</strong> run the <em>same</em> commands in the Jupyter Lab terminal
+(<strong>File → New → Terminal</strong>), without the <code>uv run</code> prefix — there is no host
+Python on the Docker path:</p>
+<pre><code class="language-bash">python data/etfs/market/download.py
+python data/download_all.py --free-only
+</code></pre>
+<h3 id="two-env-lines-you-will-meet-before-any-api-key">Two <code>.env</code> lines you will meet before any API key</h3>
+<p>Neither is a key and neither costs anything, but both stop a notebook dead when
+they are empty, and neither is mentioned anywhere in the install path.</p>
+<ul>
+<li><strong><code>EDGAR_IDENTITY</code></strong> — your own name and email, e.g.
+  <code>EDGAR_IDENTITY=Jane Doe jane@example.org</code>. The SEC mandates a real
+  <code>User-Agent</code> on every EDGAR request and blocks placeholder addresses, so there
+  is nothing to register for. Three notebooks call EDGAR live and refuse to run
+  without it — Ch04 <code>02_sec_filing_explorer</code> and <code>14_text_data_extraction</code>, and
+  Ch22 <code>01_sec_filing_pipeline</code> — as do the <code>form4_download.py</code> and
+  <code>filings_download.py</code> scripts. Every other SEC-derived notebook reads a
+  committed snapshot and needs nothing.</li>
+<li><strong><code>ML4T_DATA_PATH</code></strong> — leave it commented out. The default is this
+  repository's own <code>data/</code> folder and it is correct for every chapter. Set it
+  only if you keep the datasets on a separate drive.</li>
+</ul>
+<p>A <code>.env</code> edit reaches a notebook at the next kernel restart on the local path
+(<strong>Kernel → Restart Kernel</strong>, because <code>.env</code> is read once when the kernel
+starts). On the Docker path Compose reads <code>.env</code> when it creates the container,
+so stop Jupyter Lab (<code>Ctrl-C</code> in the terminal running it) and run
+<code>docker compose up ml4t</code> again. <strong><code>docker compose restart</code> is not enough</strong> —
+verified: it restarts the existing container with the environment it was created
+with, and the old value is still there.</p>
+<p>Some datasets do require an API key (also set in <code>.env</code>):
+- <strong>OANDA</strong> (FX pairs): Free API key from <a href="https://www.oanda.com/">oanda.com</a>
+- <strong>NASDAQ Data Link</strong> (US equities): Free API key from <a href="https://data.nasdaq.com/">data.nasdaq.com</a>
+- <strong>Databento</strong> (CME futures): $125 free signup credit from <a href="https://databento.com/">databento.com</a></p>
+<p><strong>AlgoSeek</strong> (NASDAQ-100 minute bars, S&amp;P 500 option chains, NASDAQ-100 TAQ ticks) needs no key and
+no account. Download the archives from
+<a href="https://algoseek.com/ml-for-trading/">algoseek.com/ml-for-trading</a>; the two large ones convert once
+and the ticks only need unzipping — see <a href="../data/README.md#algoseek-datasets">AlgoSeek datasets</a>.
+The fourth AlgoSeek dataset the book uses, the S&amp;P 500 daily bars, ships with this repository, so
+there is nothing to download or configure for it.</p>
+<hr>
+<h2 id="accelerated-execution-with-papermill">Accelerated Execution with Papermill</h2>
+<p>Every notebook has a <strong>parameters cell</strong> (<code># %% tags=["parameters"]</code>) with production defaults — the values readers see in the book. <a href="https://papermill.readthedocs.io/">Papermill</a> can inject override values that reduce data scope, training epochs, or universe size so notebooks complete in minutes instead of hours.</p>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li>
+<p>The parameters cell defines production values:
+   <code>python
+   # %% tags=["parameters"]
+   MAX_SYMBOLS = 0      # 0 = all symbols (production)
+   N_EPOCHS = 500
+   START_DATE = "2006-01-01"</code></p>
+</li>
+<li>
+<p>Papermill creates an <em>injected</em> cell after the tagged cell that overrides selected values:
+   <code>python
+   # Injected by Papermill
+   MAX_SYMBOLS = 15     # Reduced for fast execution
+   N_EPOCHS = 2</code></p>
+</li>
+<li>
+<p>The notebook code sees only the final (overridden) values. <strong>Same code path always runs</strong> — there are no <code>if TEST:</code> branches.</p>
+</li>
+</ol>
+<h3 id="running-a-single-notebook-with-overrides">Running a Single Notebook with Overrides</h3>
+<pre><code class="language-bash"># Run with reduced parameters (output goes to /dev/null)
+uv run papermill 11_ml_pipeline/01_ols_inference.ipynb /dev/null \
+    --cwd . -k python3 \
+    -p MAX_SYMBOLS 15 \
+    -p N_EPOCHS 2
+
+# Or save the executed notebook
+uv run papermill 11_ml_pipeline/01_ols_inference.ipynb /tmp/executed.ipynb \
+    --cwd . -k python3 \
+    -p MAX_SYMBOLS 15
+</code></pre>
+<p><code>--cwd .</code> sets the directory the notebook executes in. Keep it, and run the
+command from the repository root: the data loaders resolve <code>data/</code> against the
+working directory, so anywhere else reports the datasets as missing.</p>
+<h3 id="running-via-pytest-recommended">Running via pytest (Recommended)</h3>
+<p>The test suite reads per-notebook overrides from <code>tests/overrides.yaml</code> and runs each notebook through Papermill with appropriate parameter reductions:</p>
+<pre><code class="language-bash"># Run all notebooks in a chapter
+uv run pytest tests/test_chapter_notebooks.py -v -k "11_ml_pipeline"
+
+# Run a specific notebook
+uv run pytest tests/test_chapter_notebooks.py -v -k "01_ols_inference"
+
+# Run all case study notebooks for ETFs
+uv run pytest tests/test_chapter_notebooks.py -v -k "etfs"
+
+# Run everything (takes ~2 hours with reduced parameters)
+uv run pytest tests/test_chapter_notebooks.py -v
+</code></pre>
+<h3 id="override-configuration">Override Configuration</h3>
+<p>Test parameter overrides are defined in <code>tests/overrides.yaml</code>, keyed by notebook path:</p>
+<pre><code class="language-yaml"># Example entries
+11_ml_pipeline/01_ols_inference:
+  timeout: 300
+  parameters:
+    MAX_SYMBOLS: 10
+    MAX_TRAIN_ROWS: 5000
+
+case_studies/etfs/07_gbm:
+  timeout: 180
+  parameters:
+    MAX_FOLDS: 2
+    MAX_SYMBOLS: 5
+</code></pre>
+<p>Papermill injects these values in a cell placed right after the notebook's
+<code># %% tags=["parameters"]</code> cell, so each name has to be one the notebook reads
+below that point and does not overwrite before reading. Anything else is either
+an unused variable or is discarded before it is used.
+<code>tests/test_pm_helpers.py</code> rejects names that fail either condition, so a
+mistyped or renamed parameter turns the build red instead of quietly running the
+notebook at full scale.</p>
+<p><strong>To customize for your machine</strong>: copy <code>tests/overrides.yaml</code> to <code>tests/overrides.local.yaml</code> (gitignored) and adjust timeouts or parameter values. The test runner checks for the local file first.</p>
+<h3 id="output-isolation">Output Isolation</h3>
+<p>When the environment variable <code>ML4T_OUTPUT_DIR</code> is set (which <code>pytest</code> does automatically), notebook outputs <strong>and the model/sweep config reads</strong> are redirected to that directory. This prevents test runs from overwriting production artifacts like trained models or backtest results. Because that config is redirected too, the target must contain the case study's config: <code>pytest</code> seeds it automatically, and for a manual run <code>create_experiment.py</code> builds the isolated copy. To actually run a stage against the isolated directory - including generating the <code>features/</code>/<code>labels/</code> a model stage needs first - follow the runnable sequence in <a href="#experimenting-without-changing-the-release-baseline">Experimenting Without Changing the Release Baseline</a> above; setting <code>ML4T_OUTPUT_DIR</code> by hand at an empty path will fail because the redirected config (and modeling dataset) are absent.</p>
+<hr>
+<h2 id="headless-execution">Headless Execution</h2>
+<p>For running notebooks without a display (e.g., on a server or in CI), set both
+renderer variables and run the <code>.py</code> from the repository root:</p>
+<pre><code class="language-bash">MPLBACKEND=Agg PLOTLY_RENDERER=json uv run python 11_ml_pipeline/01_ols_inference.py
+</code></pre>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="no-module-named-utils">"No module named 'utils'"</h3>
+<p>You're running from a subdirectory. Always run from the repository root:</p>
+<pre><code class="language-bash"># Wrong
+cd 11_ml_pipeline &amp;&amp; python 01_ols_inference.py
+
+# Right
+uv run python 11_ml_pipeline/01_ols_inference.py
+</code></pre>
+<h3 id="edgar_identity-environment-variable-is-not-set">"EDGAR_IDENTITY environment variable is not set"</h3>
+<p>Put your own name and email on the <code>EDGAR_IDENTITY=</code> line of <code>.env</code> in the
+repository root. It is not an API key and there is nothing to sign up for — the
+SEC just requires a real <code>User-Agent</code> and blocks placeholder addresses. See
+<a href="#two-env-lines-you-will-meet-before-any-api-key">Two <code>.env</code> lines you will meet before any API key</a>
+for which notebooks need it and when the change takes effect.</p>
+<h3 id="datanotfounderror-naming-a-dataset">"DataNotFoundError" naming a dataset</h3>
+<p>The dataset has not been downloaded. The exception carries the exact download
+command; run it from the repository root, in the Jupyter Lab terminal on the
+Docker path (<strong>File → New → Terminal</strong>, no <code>uv run</code> prefix) or in your own shell
+on the local path. <a href="#data-requirements">Data Requirements</a> above has the bulk
+command for the free datasets.</p>
+<h3 id="missing-prerequisite-files">Missing prerequisite files</h3>
+<p>Case study notebooks check for upstream artifacts. If a file is missing, the notebook tells you which notebook to run first.</p>
+<h3 id="slow-notebooks">Slow notebooks</h3>
+<p>Some model training notebooks take several minutes. Notebooks with long runtimes print progress during execution. For faster iteration, reduce the data scope in the parameters cell at the top of each notebook.</p>
+<h3 id="locally-verified-gensim-440-native-build">Locally verified Gensim 4.4.0 native build</h3>
+<p>The frozen uv environment uses the complete official Gensim 4.4.0 release commit
+<code>ee2642b4fa26e689ba4595067504668bc7a89016</code>. Its supported Cython regeneration builds
+native Python 3.14 extensions locally; the official PyPI source archive's stale
+generated C and missing regeneration source do not establish a Python 3.12-only
+requirement. This is local compatibility evidence, not upstream official support.
+Use the repository's uv source configuration and frozen lock: plain pip installation
+of this project's wheel does not carry the Git source selection. The dependency's
+PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
+The original word2vec and asset-embedding cases pass with genuine Phrasebank and
+SEC holdings inputs. Other notebooks still need their own documented prerequisites.</p></main>
+</body></html>
