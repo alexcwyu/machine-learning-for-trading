@@ -881,13 +881,16 @@ substituted with current observations.
 
 The NASDAQ financial fixture holds 558,456 rows and 66 financial features; the
 original temporal producer adds 22 features to satisfy the original 88-feature
-pilot contract. Its canonical financial file remains 114.94 MiB, above the
-original 90 MiB publication ceiling. Separate lossless controls preserve schema,
-all rows, null counts and every nonnull floating-point bit: Zstd19 gives
-112.64 MiB, Arrow byte-stream-split/Zstd9 gives 105.92 MiB, and the stronger
-Zstd22 control gives 102.75 MiB. No row, symbol, date, precision, canonical writer
-or original ceiling assertion is changed. These controls do not establish that
-every possible lossless encoding has been exhausted.
+pilot contract. Its canonical financial file is 114.94 MiB. Genuine publication
+uses physical Parquet parts below the unchanged 90 MiB ceiling and a verified
+manifest; [runtime materialization](../case_studies/utils/published_artifacts.py)
+reconstructs the original regular file when seeding the separate execution tree.
+All 1,177 published physical files pass the original ceiling, and all six logical
+NASDAQ hashes remain exact. Original canonical encoding, source-pinned lineage,
+numeric data and seven original guard/writer files are unchanged. The freshly
+integrated 132-case original storage scope passes in 9.34 seconds. Earlier
+single-file compression controls remain diagnostics, rather than a current
+publication failure.
 
 
 ### Completed crypto/CFTC prerequisites and the original LSTM registry contract
@@ -915,3 +918,31 @@ restores their original bytes afterwards. Shared two-epoch producer defaults and
 the assertion remain unchanged. With the original linear/GBM prerequisite fits
 in the same session, all four original cases pass in 101.74 seconds, including
 the real checkpoint registration check. No checkpoint file or row is invented.
+
+
+### Exact Yahoo adjustment at the download boundary
+
+The [ETF producer](../data/etfs/market/download.py) temporarily wraps the actual
+yfinance conversion during its synchronous download. When a raw OHLC field
+exactly equals raw Close, its adjusted result uses the provider's exact AdjClose.
+Every unequal value retains the original upstream multiplication. This prevents
+one-ULP inequality caused by dividing then multiplying an equal raw low while
+Close is assigned directly. The provider callable is restored in `finally`.
+
+A genuine full-config refresh retains 100 symbols and 470,662 rows in a separate
+snapshot, with earlier production inputs preserved. Both existing commission
+notebooks and all eight original baseline contracts pass; numerical pins,
+strict OHLC validation and strategy parameters remain unchanged.
+
+
+### Current publication evidence and continuing work
+
+The [original per-node snapshot](maintenance/mlft-original-case-coverage.json)
+records 7,583 passes, 481 existing conditional skips and 269 failures across
+8,333 original nodes, with no unknown identities. This combines real retained
+terminal runs and platform-scoped controls; no single complete green invocation
+is claimed. [Failure details](maintenance/mlft-original-failure-explanations.json)
+preserve unresolved original cases. Genuine ETF and equity-option validation,
+allocation, risk and cost producers continue with their original parameters.
+Their locally producible artifacts remain work in progress, independently of
+paid input, ALFRED credential and image-specific runtime prerequisites.

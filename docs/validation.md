@@ -1,6 +1,6 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. Validation combines retained terminal module results and exact original-node recovery runs. It is not a claim that one full-suite invocation passed. The authoritative per-node record is [original case coverage](../../docs/maintenance-2026-10-12/mlft-original-case-coverage.json); unresolved identities and genuine prerequisites are recorded in [failure explanations](../../docs/maintenance-2026-10-12/mlft-original-failure-explanations.json). The final inventory reconciliation is still in progress while the remaining original notebook cases execute.
+The original inventory contains **8,333 existing test nodes in 430 modules**. Validation combines retained terminal module results and exact original-node recovery runs. It is not a claim that one full-suite invocation passed. The authoritative per-node record is [original case coverage](maintenance/mlft-original-case-coverage.json); unresolved identities and genuine prerequisites are recorded in [failure explanations](maintenance/mlft-original-failure-explanations.json). The current source publication snapshot reconciles all original identities: **7,583 pass, 481 original conditional skips and 269 fail, with zero unverified nodes**. These are composite results across actual input/platform scopes. The unresolved failures remain visible; genuine ETF and equity-option validation/backtest/allocation/risk/cost producers are currently running with unchanged original parameters. Locally producible artifacts are not classified as externally unavailable.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -10,7 +10,7 @@ Python 3.14.8 runs the complete managed environment. The attempted Python 3.15 f
 
 The original strict main scope passes **151 cases and fails one CAE identity case** in 20.17 seconds. On macOS arm64 the seeded CAE prediction digest is `22ba1b43276579c8`, against the original `82a8721e8c074459`. Genuine Python 3.13 and Torch 2.10 controls reproduce the same host mismatch and do not justify a host downgrade.
 
-The unchanged CAE case passes with its original version 1 and `82a8721e8c074459` on actual canonical Linux/amd64 CPU using both official Torch 2.10.0 (6.45 seconds) and latest 2.11.0 (7.08 seconds). NumPy 2.3.5, Pandas 2.3.3, SciPy 1.17.1, current identical model source and the unchanged float64 workload were retained. This is platform-scoped identity evidence, not an alteration of the host model backend or golden.
+The unchanged CAE case passes with its original version 1 and `82a8721e8c074459` on actual canonical Linux/amd64 CPU using both official Torch 2.10.0 (6.45 seconds) and latest 2.11.0 (7.08 seconds). A subsequent actual Python 3.14.8/latest Torch 2.11.0 Linux control also passes in 5.97 seconds. NumPy 2.3.5, Pandas 2.3.3, SciPy 1.17.1, current identical model source and the unchanged float64 workload were retained. This is platform-scoped identity evidence, not an alteration of the host model backend or golden.
 
 ## Existing case fixes
 
@@ -34,7 +34,9 @@ The unchanged original CI builders produce their declared ETF/NASDAQ/options fix
 
 Earlier full-input artifacts are retained separately when genuine CI outputs are routed into the original model fixture's read directories. No production input is removed. Fresh producer sidecars are verified against the actual compatible-codec value digest.
 
-The original 90 MiB per-file Git publication gate remains failing for the 114.94 MiB NASDAQ financial fixture. Separate genuine lossless encoding controls yield 112.64, 105.92 and 102.75 MiB, preserving the complete schema, rows, values, null counts and every nonnull float bit. Neither the canonical writer nor the original gate is changed. The controls do not prove all possible lossless storage approaches have been exhausted.
+The original 90 MiB per-file Git publication gate now passes using genuine published Parquet parts and a verified manifest. All 1,177 physical fixture files fit the unchanged ceiling. Seeding reconstructs canonical regular files in the separate runtime destination through [the publication materializer](../case_studies/utils/published_artifacts.py), preserving all six logical NASDAQ hashes and existing regular-file consumers. The canonical writer, numerical data, source-pinned lineage and seven original guard/writer files remain unchanged. The fresh integrated original storage scope passes all 132 cases in 9.34 seconds on merge `d3e1ce336`.
+
+The earlier 114.94 MiB single-file failure and lossless encoding controls (112.64, 105.92 and 102.75 MiB) remain historical diagnostics. Published physical parts and reconstructed runtime files serve their respective original publication and execution contracts.
 
 ## Build and remaining scope
 
@@ -63,3 +65,32 @@ isolated container on loopback ports 17474/17687, with separate owned volumes an
 the original authentication configuration. Existing ports/containers were
 checked before creation. Original graph cases are rerun against that real
 service; graph inputs and provider credentials remain independently required.
+
+
+## Exact provider adjustment and downstream consumer recovery
+
+The actual Yahoo raw IWM bar has Low exactly equal to Close. Upstream yfinance
+multiplies OHLC by AdjClose/Close but assigns AdjClose directly to Close; this
+can round an equal raw low one ULP above adjusted close. The owned ETF producer
+wraps that actual conversion only while downloading, preserves provider AdjClose
+exactly for raw OHLC fields exactly equal to raw Close, and retains every other
+upstream formula. It restores the upstream callable afterwards. No quote clipping,
+comparison tolerance or assertion changes are used.
+
+The unchanged full ETF configuration downloads all 100 symbols and 470,662 rows
+into a separate genuine snapshot in 26.53 seconds; the prior inputs remain
+retained. Both original commission/slippage notebook cases pass. All eight
+original baseline guards pass against the refreshed snapshot in 3.27 seconds,
+including the original published Sharpe 0.743 and return 1.9675 literals.
+
+The original crypto linear and GBM canonical producers complete with their
+unchanged invocation parameters, copied presets and non-preview execution.
+Their genuine artifacts are seeded for downstream original consumer checks;
+the previous seed view is retained separately.
+
+The original Chapter 16 signal-method comparison and its Docker notebook case
+now both pass after genuine crypto canonical producers complete. The repeated
+Chapter 11/12 consumers advance to absent US firm-characteristic model populations.
+Other latent-factor/DL/causal and downstream allocation/cost populations still
+require their actual producers; the current failed-node record distinguishes
+these from credentialed inputs and image-specific native prerequisites.
