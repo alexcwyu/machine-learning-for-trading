@@ -134,7 +134,9 @@ def test_aqr_reachable(tmp_path):
 
 def test_cot_cftc_reachable(tmp_path, monkeypatch):
     """CFTC Commitment-of-Traders source — one product-year panel."""
-    from ml4t.data.cot import COTConfig, COTFetcher
+    from ml4t.data.cot import COTConfig
+
+    from data.futures.positioning.cot_download import COTFetcher
 
     # cot_reports writes a scratch .txt into the CWD; keep it out of the repo.
     monkeypatch.chdir(tmp_path)

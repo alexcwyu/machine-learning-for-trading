@@ -33,6 +33,7 @@ from case_studies.utils.latent_factors.pca import run_pca_fold
 from case_studies.utils.latent_factors.sae import run_sae_fold
 from case_studies.utils.latent_factors.sdf import run_sdf_fold
 from case_studies.utils.latent_factors.versions import latent_model_version
+from case_studies.utils.native_threads import register_accelerate_controller
 from case_studies.utils.persistent_panel import PERSISTENT_PANEL_MODELS
 from utils.modeling import RANDOM_SEED, seed_everything
 
@@ -876,12 +877,20 @@ def run_latent_factor_cv(
         worker_count = min(fold_workers, len(prepared_folds))
         log(f"    IPCA parallel execution: {worker_count} workers, BLAS threads=1")
         completed: dict[int, tuple[dict[int, np.ndarray], dict[str, Any], float]] = {}
+        register_accelerate_controller()
+
+        def fit_parallel_ipca_fold(model_input, fold_id):
+            # Accelerate's setting is thread-local. The outer limit keeps
+            # process-wide BLAS implementations bounded for the complete pool.
+            with threadpool_limits(limits=1, user_api="blas"):
+                return fit_fold("ipca", model_input, fold_id)
+
         with (
             threadpool_limits(limits=1, user_api="blas"),
             ThreadPoolExecutor(max_workers=worker_count, thread_name_prefix="ipca-fold") as pool,
         ):
             futures = {
-                pool.submit(fit_fold, "ipca", model_input, int(split["fold"])): int(split["fold"])
+                pool.submit(fit_parallel_ipca_fold, model_input, int(split["fold"])): int(split["fold"])
                 for split, model_input in prepared_folds
             }
             for future in as_completed(futures):

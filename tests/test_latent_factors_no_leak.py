@@ -13,6 +13,27 @@ import pytest
 from case_studies.utils.latent_factors.panel import align_macro_to_dates, compute_managed_portfolios
 
 
+@pytest.fixture(scope="module", autouse=True)
+def restore_latent_torch_runtime():
+    """Release the global runtime settings owned by this module's CV fixtures."""
+    import torch
+
+    threads = torch.get_num_threads()
+    deterministic = torch.are_deterministic_algorithms_enabled()
+    warn_only = torch.is_deterministic_algorithms_warn_only_enabled()
+    cudnn_deterministic = torch.backends.cudnn.deterministic
+    cudnn_benchmark = torch.backends.cudnn.benchmark
+    rng = torch.get_rng_state()
+    try:
+        yield
+    finally:
+        torch.set_num_threads(threads)
+        torch.use_deterministic_algorithms(deterministic, warn_only=warn_only)
+        torch.backends.cudnn.deterministic = cudnn_deterministic
+        torch.backends.cudnn.benchmark = cudnn_benchmark
+        torch.set_rng_state(rng)
+
+
 def _install_latent_registry_cache(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path,

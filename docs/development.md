@@ -7,31 +7,32 @@
 
 ### Prerequisites
 
-- Python 3.13+ (per `pyproject.toml`)
-- Conda or pip for dependency management
-- Jupyter Notebook or JupyterLab
-- TA-Lib C library (required for technical indicator computation)
-
-### Installation Methods
-
-**Option 1: Conda (Recommended)**
+Use uv 0.13.0 and the repository's `.python-version` (CPython 3.14.8). The complete
+539-package lock includes direct, development, notebook, and optional dependencies.
+The unchanged third-edition layout keeps chapter scripts, notebooks, `data/`,
+`utils/`, and `case_studies/` beside their relative resource paths.
 
 ```bash
-cd machine-learning-for-trading/
-conda env create -f installation/ml4t-base.yml
-conda activate ml4t
+uv python install 3.14.8
+uv sync --frozen --all-groups --all-extras
+uv run --no-sync pytest
+uv build
 ```
 
-**Option 2: pip**
+The platform Conda specifications below remain reference environments for the
+book's separately provisioned GPU and vendor-data workflows. For this maintained
+checkout, `pyproject.toml` and `uv.lock` define installation and dependency updates:
 
 ```bash
-pip install -r installation/ml4t-base.txt
+uv lock --upgrade
+uv sync --frozen --all-groups --all-extras
 ```
 
-**Option 3: Per-chapter installation**
-
-Install dependencies incrementally as you work through chapters to avoid version conflicts.
-Each chapter README lists its specific requirements.
+CPython 3.15 cannot resolve the current complete extras: Feast requires Pandas below
+3, while the available Python 3.15 backtesting stack requires Pandas 3. Python 3.13
+was also installed and fully resolved as a native-crash control; it did not make the
+full test suite pass. Python 3.14.8 remains the highest buildable complete environment.
+See [validation](validation.md) for all failed and successful commands.
 
 ### Platform-Specific Configs
 
@@ -644,3 +645,246 @@ pip install alphalens-reloaded pyfolio-reloaded empyrical-reloaded
 - [Architecture](architecture.md) — System design and components
 - [Workflow](workflow.md) — Event flows and processing pipelines
 - [State Management](state-management.md) — State lifecycle and data models
+
+## Maintained uv environment (2026-10-12)
+
+The tested interpreter selection is Python 3.14.8. uv 0.13.0 resolves runtime dependencies, optional extras, development groups, and build isolation. `uv.lock` records exact versions; `--upgrade` refreshes them within the project and compatibility constraints. Review [validation evidence](validation.md) before treating a build or test command as successful on this host.
+
+Python 3.15 full resolution fails because the current Feast Pandas constraint conflicts with the Python 3.15 ml4t-backtest wheel requirements. Python 3.14.8 resolves the full upstream environment. Native thread settings alone did not make the monolithic suite stable. The complete existing test inventory is therefore also exercised with a fresh process for each original module, preserving every case and assertion.
+
+### Layout and build ownership
+
+The upstream chapter, utils/, data/, case_studies/, and scripts/ layout is preserved because chapter imports and notebook-relative paths are part of the curriculum. The upstream setuptools build and managed uv environment are retained.
+
+Apple Command Line Tools and compiler headers are required when a dependency or extension builds from source.
+
+### Commands from the repository root
+
+```sh
+uv python install 3.14.8
+uv lock --upgrade --python 3.14.8
+uv sync --all-groups --all-extras --python 3.14.8
+uv build
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run --no-sync pytest
+```
+
+### External inputs and test scope
+
+Large production datasets, notebook execution, provider credentials, database servers, Chrome for Kaleido, and specialized machine-learning wheels are separate requirements. Optional environments cover packages with narrower interpreter support. A package build does not execute every notebook or provision every dataset, and test evidence records those limits explicitly.
+
+Existing upstream skips and xfails remain unchanged. Full suite failures, incomplete runs, and supplemental scoped checks are listed separately in validation. No new test cases were added. The architecture document links existing implementation files and explains the component contracts.
+
+## Dependency identities after the 2026-10-12 migration
+
+Polars 2 removes string-to-Date casting. GBM and TabM now parse ISO fold boundaries
+explicitly using the materialized Date/Datetime schema, including its time unit and
+zone. The unchanged fold intervals still define exactly the same training rows.
+
+Polars 2 changes `hash_rows` and serialized Parquet bytes and fails the original
+immutable digest contracts. The latest compatible Polars 1.44.2 preserves the
+original canonical SHA-256 and holdout identity; the lock therefore constrains
+Polars below 2. All original numeric and byte digest literals remain unchanged.
+Torch 2.11.0 remains selected: controlled 2.10.0 and Python 3.13 runs produce the
+same CAE mismatch, so neither downgrade is a justified fix. CAE model version 1
+and its original `82a8721e8c074459` prediction guard remain intact; the current
+macOS result `22ba1b43276579c8` fails that guard. The unchanged original case
+passes on genuine canonical Linux/amd64 CPU with both Torch 2.10.0 and the latest
+2.11.0; this is recorded as a platform-scoped identity contract, without altering
+the host backend, model version, or original expected digest.
+
+Feast constrains Pandas to 2.3.3, and the compatible public Vectorbt 1.0 requires
+Plotly below 7 because Plotly 7 removes its Scattermapbox template. The lock selects
+Plotly 6.9.0. Ruff 0.15.14 remains aligned with the existing notebook-render and
+pre-commit gate. These constraints are recorded against actual original contracts.
+
+The notebook path sanitizer now recognizes `/Users/<name>/` as well as Linux home
+paths while preserving source cells and binary payloads. Provenance scanning prunes
+existing ignored environment directories before recursion and retains every existing
+project-notebook inclusion and exclusion rule.
+
+The existing tiny LightGBM importance fixtures explicitly own one native worker
+(`n_jobs=1`): their 12 unchanged cases and exact feature-importance assertions pass.
+The same fixture crashed with its implicit all-core pool on both LightGBM 4.7 and a
+4.6 control. Standalone model fitting passes with either default or one worker, so
+this is a process-level interaction exposed by the full research import graph;
+the production model's declared thread counts remain part of its identity.
+
+
+Provenance library digests use one `git hash-object --stdin-paths` process for the
+complete transitive source list. Git's own path/filter semantics and the existing
+path-plus-content digest remain unchanged. All 25 existing digest cases pass;
+this avoids spawning one Git process for every imported helper in each notebook.
+
+The local validation fetched real public Yahoo ETF data: all 100 configured funds
+and 470,662 rows, including the separate traded-price panel. AlgoSeek's public
+NASDAQ and options archives are downloaded into ignored
+`data/.maintenance-downloads/` and converted by the existing repository commands.
+These assets are local prerequisites and are excluded from commits. The FRED API
+downloader and NASDAQ Data Link downloader still require their configured keys;
+the separate official FRED public CSV control below supplies the observed-series
+panel without claiming to supply ALFRED vintages or licensed equities data.
+
+
+The CFTC control demonstrated an HTTP403 HTML payload with Python requests at
+both public hostnames, while curl retrieves the genuine public ZIP. The book's
+COT downloader extends the same current `ml4t-data` fetcher with a bounded curl
+fallback only when archive parsing fails, validates the ZIP, reads its named CSV
+without extracting arbitrary files, and retains the provider's cache and schema.
+The existing live drift case calls this same downloader provider. All 34 existing
+live-data/coverage/registry cases pass with two unchanged key-dependent skips.
+Curl is therefore a runtime requirement for this fallback on affected hosts;
+unrelated download errors still propagate.
+
+### Public FRED control
+
+The configured API downloader correctly refuses without `FRED_API_KEY`. Official graph CSV downloads provide the real observed public series without that key. The reproducible workspace helper `docs/maintenance-2026-10-12/mlft-fred-public-csv.py` downloads all 23 configured series into ignored `data/.maintenance-downloads/fred`, validates each schema, filters the original 2000–2025 date range, and calls the book’s existing alignment, derived-series, metadata, atomic-write, and profile functions. It refuses to overwrite an existing panel. The result contains 9,497 daily rows and 79,842 native-frequency observations; provenance records every URL and series interval. All 8 existing ETF baseline cases pass, including the original published Sharpe 0.743 and total return 1.9675 assertions. This observed-series panel does not supply ALFRED initial-release vintages. FRED describes its public CSV downloads in [the official download guide](https://fred.stlouisfed.org/help/data/downloading/using-the-download-data-link/).
+
+
+### Complete public market-data preparation
+
+The unchanged AlgoSeek converter wrote all 48,880,176 NASDAQ one-minute rows
+across 505 sessions and all 366,242,819 S&P500 option-chain rows across 1,259
+sessions. The original NASDAQ label and financial-feature scripts completed
+without reducing symbols, dates, or calculations. The current financial stage
+wrote 66 features over 16,871,167 rows after its documented warmup/null policy.
+The original options materializer wrote 530,711 surface rows and 362,199 straddle
+rows; all 50 existing options research cases now pass on these genuine inputs.
+The original lifecycle builder also completed all five years, retaining
+58,423,379 observed rows for 716,591 candidate contracts in 1,378.4 MB.
+
+The two pilot helper cases request `seeded_output_dir`. The upstream fixture
+checkout requires `TEST_DATA_DEPLOY_KEY`; a noninteractive Git read failed with
+exit 128 on this host. Genuine producer outputs can also seed that fixture:
+the original NASDAQ overrides prescribe 12 symbols and a 2000-01-01 start,
+and all five original producer stages now pass in 984 seconds. Stage four
+supplies the temporal features alongside the 66 financial features; the exact
+original pilot helper passes its unchanged 88-feature and two-fold assertions.
+The recorded output contains real observations and real fitted temporal features. Full public source data and these declared test
+outputs have separate purposes; no numerical expectations are changed to make
+them interchangeable. CME continuous futures still require the configured
+DataBento source and its key.
+
+### Native BLAS ownership
+
+The selected NumPy/SciPy wheels use Apple Accelerate. Its macOS 15 API exposes
+automatic and single-thread modes through `BLASGetThreading` and
+`BLASSetThreading`; this setting belongs to the calling thread. The native
+controller in [native_threads.py](../case_studies/utils/native_threads.py)
+uses `threadpoolctl`'s public registration API to inspect and control that real
+loaded library. Automatic mode reports an unknown worker count; a positive
+requested cap selects the API's supported one-worker mode. It restores the
+previous native mode when leaving the context.
+
+Parallel IPCA gives each actual pool worker its own bounded BLAS context,
+alongside the original outer context for process-wide BLAS implementations.
+All 38 existing no-leak cases and all 15 numerical identity cases pass. A
+combined diagnostic exposed CV fixtures leaving Torch at eight threads with
+deterministic mode enabled. Their module fixture now restores the actual owned
+thread, determinism, cuDNN and RNG settings; the same diagnostic confirms the
+original state before and after. All 140 combined concurrency, identity and
+temporal cases pass with the same pinned predictions. The complete canonical
+inventory uses the documented module process isolation that avoids the
+separately observed native Darts/Torch crashes.
+
+Earlier controls built the same NumPy 2.3.5 against genuine pthread OpenBLAS.
+That backend passes the no-leak cases but changes seeded numerical identity;
+it remains separate from the locked environment. Homebrew's OpenMP OpenBLAS
+control aborts because of duplicate Torch/OpenMP runtimes. Both rejected
+controls remain in the validation evidence.
+
+### Current public-data compatibility checks
+
+Polars 2 rejects casting a string expression directly to Date. The ETF model
+feature notebook now constructs the same holdout boundary as a Python date
+before passing it to Polars. Its paired notebook retains the original outputs
+and execution time through the repository's documented `sync-inert` provenance
+workflow, with the exact equivalence reason recorded. The original model-feature,
+evaluation and factor-regime notebook cases all pass; the first five ETF
+producer stages also complete on actual downloaded data in 149 seconds.
+
+The public AlgoSeek options extract uses `BRKB` and `BFB` for the class-B shares
+that its bundled stock bars identify as `BRK.B` and `BF.B`. All five options
+loaders normalize those two published aliases before filtering or joining.
+Prices, observations and the roster size are unchanged. All 75 existing option
+research and equity-option roster cases pass, including the unchanged check
+that every option underlying has real share bars.
+
+The original broader inventory collects 8,333 cases in 430 modules. Its initial
+runner was interrupted; completed module outcomes and per-node notebook
+progress are retained, and only unfinished or failed work is resumed. A current
+full-inventory terminal success has not yet been recorded. Private fixture
+catalogs and file-size contracts remain asserted, alongside original credential
+requirements; full public data is never fabricated or hidden to restore skips.
+
+### One OpenMP runtime for the native notebook stack
+
+Current macOS wheels can load separate OpenMP libraries from Torch and sklearn
+alongside Homebrew's LightGBM runtime. A real ETF Darts notebook crashed with
+SIGSEGV inside an OpenMP barrier that crossed two of those libraries. Select one
+actual loader runtime when starting the notebook or its parent test command:
+
+```sh
+DYLD_LIBRARY_PATH="$(brew --prefix libomp)/lib" uv run --no-sync pytest
+```
+
+The selected library on this host is Homebrew libomp 23.1.3. A physical
+`threadpoolctl` inventory confirms one OpenMP image after importing real
+LightGBM, sklearn and Torch together. The latest main strict check passes 151
+existing identity, thread-state and research-config cases; its CAE identity fails
+on macOS and passes unchanged on canonical Linux/amd64 as described above.
+Earlier runs with a changed CAE pin do not validate the original contract. Kernel children
+inherit the loader environment; no duplicate-library bypass or binary patch is
+used. ETF NLinear also executes successfully. The LSTM and TSMixer comparison
+cells additionally need actual Ridge and GBM results from their earlier pipeline
+stages, so their validation executes those original fits in the same workspace.
+
+
+### Native PyTensor compilation and positional ARIMA input
+
+PyTensor 2.38.2 adds `-ld64` on macOS versions above 15. Current Apple clang
+interprets that argument as a request for a nonexistent library; the installed
+Apple linker also reports that the old `-ld_classic` selector is unsupported.
+The optional [compiler adapter](../envs/ml4t/pytensor-clang++.py) invokes the real
+`/usr/bin/clang++`, removes only `-ld64`, and forwards every other argument. Its
+compiler name retains PyTensor's native optimization detection. Use it for the
+original PyMC workflows on this host:
+
+```sh
+DYLD_LIBRARY_PATH="$(brew --prefix libomp)/lib" \
+PYTENSOR_FLAGS="cxx=$PWD/envs/ml4t/pytensor-clang++.py" \
+uv run --no-sync pytest
+```
+
+The original S&P500 options CI producer completes stages 01–05 with its original
+SV sampler counts and diagnostic thresholds; the native compiler, C/JIT path and
+default graph optimizer remain enabled. The original ARIMA teaching notebook
+passes after giving statsmodels an explicit positional RangeIndex for its
+irregular-session Series. Every return, order, fitting option and chronological
+position is unchanged. Its paired source provenance preserves the existing
+executed outputs and records this indexing compatibility fix.
+
+The fallback release digest excludes only transient `_executed_*.ipynb` files
+and bytecode caches, so concurrent notebook cleanup cannot remove a file between
+the canonical source listing and read. The original 48 research-config cases
+and the 74-case source/provenance/config scope pass.
+
+### Original public CI fixture contracts
+
+The unchanged `tests/create_test_data.py` builders prepare their originally
+declared ETF, NASDAQ and options CI budgets from the complete retained public
+production inputs. The original `tests/generate_intermediates.py` then completes
+all five stages for ETFs, NASDAQ, equity-option analytics and options. Additional
+genuine AQR, Fama–French and options EDA fixture files come from their unchanged
+builders. Available observed FRED files are copied verbatim with SHA provenance;
+ALFRED initial-release vintages still require `FRED_API_KEY` and are never
+substituted with current observations.
+
+The NASDAQ financial fixture holds 558,456 rows and 66 financial features; the
+original temporal producer adds 22 features to satisfy the original 88-feature
+pilot contract. Its canonical financial file remains 114.94 MiB, above the
+original 90 MiB publication ceiling. Separate lossless controls preserve schema,
+all rows, null counts and every nonnull floating-point bit: Zstd19 gives
+112.64 MiB, Arrow byte-stream-split/Zstd9 gives 105.92 MiB, and the stronger
+Zstd22 control gives 102.75 MiB. No row, symbol, date, precision, canonical writer
+or original ceiling assertion is changed. These controls do not establish that
+every possible lossless encoding has been exhausted.

@@ -389,12 +389,14 @@ def _non_literal_value(node: ast.expr) -> object:
 
 def iter_notebooks() -> list[Path]:
     out = []
-    for p in REPO_ROOT.rglob("*.ipynb"):
-        if SKIP_PARTS & set(p.parts):
-            continue
-        if p.name.startswith("_executed_") or p.name.startswith("_lock_"):
-            continue
-        out.append(p)
+    for directory, subdirectories, filenames in REPO_ROOT.walk():
+        subdirectories[:] = [name for name in subdirectories if name not in SKIP_PARTS]
+        for filename in filenames:
+            if not filename.endswith(".ipynb"):
+                continue
+            if filename.startswith("_executed_") or filename.startswith("_lock_"):
+                continue
+            out.append(directory / filename)
     return sorted(out)
 
 
@@ -666,7 +668,23 @@ def library_digest(py: Path) -> str:
     import graph still has a digest, which keeps "no repo-local imports" distinct
     from "not recorded".
     """
-    lines = [f"{p.relative_to(REPO_ROOT).as_posix()}:{git_blob(p)}" for p in repo_local_sources(py)]
+    paths = repo_local_sources(py)
+    blobs = []
+    if paths:
+        # Git accepts C-quoted paths on stdin: keep its attribute/filter semantics,
+        # while avoiding one child process for every imported source file.
+        quoted_paths = "".join(json.dumps(str(path), ensure_ascii=False) + "\n" for path in paths)
+        blobs = subprocess.run(
+            ["git", "hash-object", "--stdin-paths"],
+            input=quoted_paths,
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.splitlines()
+        if len(blobs) != len(paths):
+            raise RuntimeError("Git returned an incomplete set of source blob hashes")
+    lines = [f"{path.relative_to(REPO_ROOT).as_posix()}:{blob}" for path, blob in zip(paths, blobs)]
     return hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
 
 

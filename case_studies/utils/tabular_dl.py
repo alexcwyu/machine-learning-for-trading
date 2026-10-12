@@ -235,8 +235,8 @@ def _tabm_class_weights_by_fold(
         labels = (
             mds.dataset.filter(
                 pl.col(mds.date_col).is_between(
-                    pl.lit(split["train_start"]).cast(date_dtype, strict=False),
-                    pl.lit(split["train_end"]).cast(date_dtype, strict=False),
+                    _temporal_boundary(split["train_start"], date_dtype),
+                    _temporal_boundary(split["train_end"], date_dtype),
                     closed="both",
                 )
             )
@@ -252,6 +252,19 @@ def _tabm_class_weights_by_fold(
     return weights
 
 
+def _temporal_boundary(value: Any, dtype: pl.DataType) -> pl.Expr:
+    """Parse ISO fold boundaries explicitly for Polars' temporal schema."""
+    expression = pl.lit(value)
+    if isinstance(value, str):
+        if dtype == pl.Date:
+            return expression.str.to_date("%Y-%m-%d", strict=False)
+        if isinstance(dtype, pl.Datetime):
+            return expression.str.to_datetime(
+                time_unit=dtype.time_unit, time_zone=dtype.time_zone, strict=False
+            )
+    return expression.cast(dtype, strict=False)
+
+
 def _tabm_expected_keys(mds, splits: list[dict[str, Any]]) -> pl.DataFrame:
     entity_col = mds.entity_cols[0]
     frames = []
@@ -259,8 +272,8 @@ def _tabm_expected_keys(mds, splits: list[dict[str, Any]]) -> pl.DataFrame:
         date_dtype = mds.dataset.schema[mds.date_col]
         frame = mds.dataset.filter(
             pl.col(mds.date_col).is_between(
-                pl.lit(split["val_start"]).cast(date_dtype, strict=False),
-                pl.lit(split["val_end"]).cast(date_dtype, strict=False),
+                _temporal_boundary(split["val_start"], date_dtype),
+                _temporal_boundary(split["val_end"], date_dtype),
                 closed="both",
             )
         ).drop_nulls([mds.label_col, *([mds.eval_label_col] if mds.eval_label_col else [])])

@@ -297,7 +297,7 @@ def _write_booster(booster_dir, *, fold: int) -> None:
     rng = np.random.default_rng(fold)
     x = rng.normal(size=(200, 2))
     y = 3.0 * x[:, 0] + 0.6 * x[:, 1] + rng.normal(scale=0.01, size=200)
-    model = lgb.LGBMRegressor(n_estimators=30, num_leaves=4, min_child_samples=5, verbose=-1)
+    model = lgb.LGBMRegressor(n_estimators=30, num_leaves=4, min_child_samples=5, n_jobs=1, verbose=-1)
     model.fit(x, y, feature_name=["strong", "weak"])
     model.booster_.save_model(str(booster_dir / f"fold_{fold}.txt"))
 
@@ -359,7 +359,7 @@ def test_gbm_feature_importance_measures_only_the_selected_checkpoint(
     # first rounds have fitted it, so it enters the booster late.
     y = 5.0 * early + 0.05 * late
     model = lgb.LGBMRegressor(
-        n_estimators=200, learning_rate=0.5, num_leaves=4, min_child_samples=5, verbose=-1
+        n_estimators=200, learning_rate=0.5, num_leaves=4, min_child_samples=5, n_jobs=1, verbose=-1
     )
     model.fit(np.column_stack([early, late]), y, feature_name=["early", "late"])
     booster_dir = tmp_path / "case_studies" / "probe" / "run_log" / "training" / "h" / "models"

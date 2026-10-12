@@ -3,7 +3,7 @@ name = "ml4t"
 version = "3.0.0"
 description = "Machine Learning for Algorithmic Trading — 3rd Edition"
 readme = "README.md"
-requires-python = ">=3.14,<3.16"
+requires-python = ">=3.13,<3.15"
 license = "MIT"
 authors = [{ name = "Stefan Jansen" }]
 
@@ -17,12 +17,14 @@ dependencies = [
     # (Ch17 08_library_comparison). Lift once pypfopt ships a scipy>=1.18 fix.
     "scipy>=1.12,<1.18",
     "pandas>=2.2",
-    "polars>=1.0",
+    # Immutable artifact bytes and CV value identities require the Polars 1 writer/hash contract.
+    "polars>=1.0,<2",
     "pyarrow>=15.0",
     # ===================
     # Visualization
     # ===================
-    "plotly>=5.20",
+    # Plotly 7 removes scattermapbox used by the Feast-compatible vectorbt 1.0 templates.
+    "plotly>=5.20,<7",
     "matplotlib>=3.8",
     "seaborn>=0.13",
     # kaleido>=1.0: 0.2.1 bundled its own Chromium but drives the deprecated
@@ -40,7 +42,7 @@ dependencies = [
     "scikit-learn>=1.4",
     # Imported directly by case_studies/utils/temporal.py to pin the BLAS thread count
     # around HMM fits, so it is declared rather than relied on through scikit-learn.
-    "threadpoolctl>=3.1",
+    "threadpoolctl>=3.2",
     "xgboost>=3.1",
     "lightgbm>=4.6",
     "catboost>=1.2.8",

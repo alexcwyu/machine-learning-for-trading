@@ -499,7 +499,7 @@ MARKET_X = market.select(MARKET_COLS).to_numpy()
 # The index past which no parameter may be re-estimated: the count of pre-holdout observations,
 # so the last fit sees rows 0 .. HMM_FREEZE_AFTER-1 and every one of them predates the holdout.
 HMM_FREEZE_AFTER = int(
-    market.filter(pl.col("timestamp") < pl.lit(HOLDOUT_START).cast(pl.Date)).height
+    market.filter(pl.col("timestamp") < pl.lit(pd.Timestamp(HOLDOUT_START).date())).height
 )
 
 print(
@@ -885,7 +885,7 @@ for symbol, (d, _) in REFERENCE_ETFS.items():
     raw = (
         prices.filter(
             (pl.col("symbol") == symbol)
-            & (pl.col("timestamp") < pl.lit(HOLDOUT_START).cast(pl.Date))
+            & (pl.col("timestamp") < pl.lit(pd.Timestamp(HOLDOUT_START).date()))
         )
         .sort("timestamp")["close"]
         .log()
@@ -894,7 +894,7 @@ for symbol, (d, _) in REFERENCE_ETFS.items():
     if not len(raw):
         continue
     differenced = (
-        ffd_features.filter(pl.col("timestamp") < pl.lit(HOLDOUT_START).cast(pl.Date))[
+        ffd_features.filter(pl.col("timestamp") < pl.lit(pd.Timestamp(HOLDOUT_START).date()))[
             f"ffd_{symbol.lower()}"
         ]
         .drop_nulls()
@@ -1032,7 +1032,7 @@ for symbol in all_symbols:
         too_short.append((symbol, series.height))
         continue
     freeze_after = int(
-        series.filter(pl.col("timestamp") < pl.lit(HOLDOUT_START).cast(pl.Date)).height
+        series.filter(pl.col("timestamp") < pl.lit(pd.Timestamp(HOLDOUT_START).date())).height
     )
     payloads.append(
         (symbol, series["ret"].to_numpy(), series["timestamp"].to_numpy(), freeze_after)
@@ -1444,7 +1444,7 @@ print(
 
 # %%
 skeleton = (
-    prices.filter(pl.col("timestamp") <= pl.lit(HOLDOUT_END).cast(pl.Date))
+    prices.filter(pl.col("timestamp") <= pl.lit(pd.Timestamp(HOLDOUT_END).date()))
     .select(["timestamp", "symbol"])
     .unique()
 )
@@ -1491,7 +1491,7 @@ print(
 print(
     f"Panel runs {model_based['timestamp'].min()} to {model_based['timestamp'].max()}; the price "
     f"history ends {prices['timestamp'].max()} and the holdout {HOLDOUT_END}, so "
-    f"{prices.filter(pl.col('timestamp') > pl.lit(HOLDOUT_END).cast(pl.Date)).height:,} rows were "
+    f"{prices.filter(pl.col('timestamp') > pl.lit(pd.Timestamp(HOLDOUT_END).date())).height:,} rows were "
     "cut for falling past it."
 )
 
@@ -1510,7 +1510,7 @@ print(
 # not something to form expectations from while the holdout is still held back.
 
 # %%
-_dev = model_based.filter(pl.col("timestamp") < pl.lit(HOLDOUT_START).cast(pl.Date))
+_dev = model_based.filter(pl.col("timestamp") < pl.lit(pd.Timestamp(HOLDOUT_START).date()))
 display(
     pl.DataFrame(
         [

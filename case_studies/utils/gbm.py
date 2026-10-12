@@ -1496,6 +1496,19 @@ def _load_gbm_request_config(
     return config, request_fields
 
 
+def _fold_boundary(value: Any, dtype: pl.DataType) -> pl.Expr:
+    """Parse ISO fold boundaries explicitly for the materialized temporal schema."""
+    expression = pl.lit(value)
+    if isinstance(value, str):
+        if dtype == pl.Date:
+            return expression.str.to_date("%Y-%m-%d", strict=False)
+        if isinstance(dtype, pl.Datetime):
+            return expression.str.to_datetime(
+                time_unit=dtype.time_unit, time_zone=dtype.time_zone, strict=False
+            )
+    return expression.cast(dtype, strict=False)
+
+
 def _gbm_expected_keys_from_dataset(mds, splits: list[dict[str, Any]]) -> pl.DataFrame:
     date_dtype = mds.dataset.schema[mds.date_col]
     label_valid = pl.col(mds.label_col).is_not_null()
@@ -1508,8 +1521,8 @@ def _gbm_expected_keys_from_dataset(mds, splits: list[dict[str, Any]]) -> pl.Dat
         frame = (
             mds.dataset.filter(
                 pl.col(mds.date_col).is_between(
-                    pl.lit(val_start).cast(date_dtype, strict=False),
-                    pl.lit(val_end).cast(date_dtype, strict=False),
+                    _fold_boundary(val_start, date_dtype),
+                    _fold_boundary(val_end, date_dtype),
                     closed="both",
                 )
                 & label_valid

@@ -6,7 +6,7 @@ futures positioning broken down by trader type (dealers, asset managers,
 leveraged money for financial futures; commercials, managed money for
 commodities). The data is free and useful for sentiment/positioning features.
 
-This downloader uses ``ml4t.data.cot.COTFetcher`` — which wraps the
+This downloader extends ``ml4t.data.cot.COTFetcher`` — which wraps the
 ``cot_reports`` library — to fetch per-product panels and writes one parquet
 per product to ``$ML4T_DATA_PATH/futures/positioning/cot/{product}.parquet``. The
 ``load_cot()`` loader in ``data/futures/loader.py`` consumes these files.
@@ -45,9 +45,63 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from ml4t.data.cot import PRODUCT_MAPPINGS, COTConfig, COTFetcher
+from ml4t.data.cot import PRODUCT_MAPPINGS, COTConfig
+from ml4t.data.cot import COTFetcher as BaseCOTFetcher
 
 from utils.downloading import resolve_data_dir
+
+
+class COTFetcher(BaseCOTFetcher):
+    """Retain COT parsing while supporting CFTC's current public archive transport."""
+
+    def _get_report(self, report_type: str, year: int):
+        import subprocess
+        import tempfile
+        import zipfile
+
+        import pandas as pd
+        from ml4t.data.utils.conversion import pandas_to_polars
+
+        try:
+            return super()._get_report(report_type, year)
+        except zipfile.BadZipFile:
+            # The current requests transport receives an HTTP403 HTML response on
+            # this host; curl retrieves the actual public CFTC ZIP. Validate and
+            # parse that archive rather than accepting the non-archive payload.
+            archive_names = {
+                "legacy_fut": ("deacot", "annual.txt"),
+                "legacy_futopt": ("deahistfo", "annualof.txt"),
+                "supplemental_futopt": ("dea_cit_txt_", "annualci.txt"),
+                "disaggregated_fut": ("fut_disagg_txt_", "f_year.txt"),
+                "disaggregated_futopt": ("com_disagg_txt_", "c_year.txt"),
+                "traders_in_financial_futures_fut": ("fut_fin_txt_", "FinFutYY.txt"),
+                "traders_in_financial_futures_futopt": ("com_fin_txt_", "FinComYY.txt"),
+            }
+            prefix, member = archive_names[report_type]
+            url = f"https://www.cftc.gov/files/dea/history/{prefix}{year}.zip"
+            with tempfile.TemporaryDirectory() as directory:
+                archive_path = Path(directory) / "report.zip"
+                subprocess.run(
+                    [
+                        "curl",
+                        "--fail",
+                        "--location",
+                        "--connect-timeout",
+                        "15",
+                        "--max-time",
+                        "60",
+                        "--output",
+                        str(archive_path),
+                        url,
+                    ],
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+                with zipfile.ZipFile(archive_path) as archive, archive.open(member) as report:
+                    frame = pandas_to_polars(pd.read_csv(report, low_memory=False))
+            self._cache[(report_type, year)] = frame
+            return frame
 
 
 def main() -> int:

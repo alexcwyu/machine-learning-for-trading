@@ -73,8 +73,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # prefix is matched generically (not just one username) so any contributor's
 # or CI runner's path (e.g. /home/runner/...) is sanitized and CI-guarded.
 REPLACEMENTS: list[tuple[re.Pattern[str], str]] = [
-    (re.compile(r"/home/[^/]+/ml4t/third_edition/code/"), ""),
-    (re.compile(r"/home/[^/]+/ml4t/code/"), ""),
+    (re.compile(r"/(?:home|Users)/[^/]+/ml4t/third_edition/code/"), ""),
+    (re.compile(r"/(?:home|Users)/[^/]+/ml4t/code/"), ""),
     # A worktree is a repo root too. `~/ml4t/public` is the main checkout and
     # `~/ml4t/public-<lane>` a per-lane worktree, so both map to "" like the two
     # repo roots above rather than falling through to the generic `~/ml4t/` rule,
@@ -89,13 +89,13 @@ REPLACEMENTS: list[tuple[re.Pattern[str], str]] = [
     #
     # `(?=/)` after the optional lane suffix is what keeps a hypothetical
     # `~/ml4t/publications/` out; a bare `public[^/]*` would eat it.
-    (re.compile(r"/home/[^/]+/ml4t/public(?:-[A-Za-z0-9._-]+)?/"), ""),
+    (re.compile(r"/(?:home|Users)/[^/]+/ml4t/public(?:-[A-Za-z0-9._-]+)?/"), ""),
     (re.compile(r"~/ml4t/public(?:-[A-Za-z0-9._-]+)?/"), ""),
     # Docker container repo root: GPU notebooks (e.g. Ch12 02_gbm_comparison run
     # in the ml4t-gpu image) bake the container working dir /app into outputs.
     (re.compile(r"/app/"), ""),
-    (re.compile(r"/home/[^/]+/ml4t/"), "~/ml4t/"),
-    (re.compile(r"/home/[^/]+/"), "~/"),
+    (re.compile(r"/(?:home|Users)/[^/]+/ml4t/"), "~/ml4t/"),
+    (re.compile(r"/(?:home|Users)/[^/]+/"), "~/"),
     # Scratch roots under /tmp. Two of the four shapes found under /tmp are leaks
     # and two are not, so the rules below are anchored and the two exemptions are
     # excluded by name rather than left to ordering:

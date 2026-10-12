@@ -97,7 +97,12 @@ def _release_manifest_digest(case_dir: Path) -> str:
     if release_manifest.exists():
         return hashlib.sha256(release_manifest.read_bytes()).hexdigest()
     digest = hashlib.sha256()
-    for path in sorted(p for p in case_dir.rglob("*") if p.is_file()):
+    # Executed notebook copies and bytecode are transient runtime outputs, not release sources.
+    for path in sorted(
+        p for p in case_dir.rglob("*")
+        if p.is_file() and "__pycache__" not in p.parts
+        and not (p.name.startswith("_executed_") and p.suffix == ".ipynb")
+    ):
         digest.update(str(path.relative_to(case_dir)).encode())
         digest.update(path.read_bytes())
     return digest.hexdigest()

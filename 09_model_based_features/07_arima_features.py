@@ -235,7 +235,7 @@ print(f"Order suggested from the correlogram: {suggestion.suggested_arima_order}
 # supplies over the block is decided by those.
 
 # %%
-static_fit = ARIMA(train["returns"], order=(1, 0, 0)).fit()
+static_fit = ARIMA(train["returns"].reset_index(drop=True), order=(1, 0, 0)).fit()
 static_forecast = static_fit.forecast(steps=len(test)).to_numpy()
 
 print(f"First five forecasts: {np.round(static_forecast[:5] * 100, 4)} percent")
@@ -349,7 +349,7 @@ def fit_recording_convergence(series: pd.Series, order: tuple[int, int, int]):
     """Fit, and report whether the optimiser said it converged rather than printing it."""
     with warnings.catch_warnings(record=True) as raised:
         warnings.simplefilter("always", ConvergenceWarning)
-        fitted = ARIMA(series, order=order).fit()
+        fitted = ARIMA(series.reset_index(drop=True), order=order).fit()
     converged = not any(issubclass(entry.category, ConvergenceWarning) for entry in raised)
     return fitted, converged
 

@@ -526,6 +526,16 @@ def load_sp500_daily_bars(
     return apply_max_symbols(data, max_symbols)
 
 
+def _canonical_sp500_option_symbols(frame: pl.DataFrame | pl.LazyFrame) -> pl.DataFrame | pl.LazyFrame:
+    """Align AlgoSeek option class-share aliases with the bundled share-bar symbols.
+
+    The option extract names Berkshire Hathaway class B and Brown-Forman class B
+    BRKB and BFB; the matching share bars use BRK.B and BF.B. Normalize only those
+    published aliases so joins and symbol filters refer to the same instruments.
+    """
+    return frame.with_columns(pl.col("symbol").replace({"BRKB": "BRK.B", "BFB": "BF.B"}))
+
+
 def load_sp500_options(
     symbols: list[str] | None = None,
     option_type: Literal["C", "P", "all"] = "all",
@@ -587,6 +597,8 @@ def load_sp500_options(
         base_path / "**/*.parquet",
         hive_partitioning=True,
     )
+
+    lf = _canonical_sp500_option_symbols(lf)
 
     # Normalize: rename date→timestamp for canonical schema, cast to Date
     if "date" in lf.collect_schema().names():
@@ -662,7 +674,9 @@ def load_sp500_options_eda(
             ),
         )
 
-    lf = pl.scan_parquet(base_path / "year=*.parquet", hive_partitioning=True)
+    lf = _canonical_sp500_option_symbols(
+        pl.scan_parquet(base_path / "year=*.parquet", hive_partitioning=True)
+    )
 
     if "date" in lf.collect_schema().names():
         lf = lf.with_columns(pl.col("date").cast(pl.Date).alias("timestamp")).drop("date")
@@ -725,7 +739,9 @@ def load_sp500_options_straddles_raw(
             ),
         )
 
-    lf = pl.scan_parquet(base_path / "year=*.parquet", hive_partitioning=True)
+    lf = _canonical_sp500_option_symbols(
+        pl.scan_parquet(base_path / "year=*.parquet", hive_partitioning=True)
+    )
 
     if "date" in lf.collect_schema().names():
         lf = lf.with_columns(pl.col("date").cast(pl.Date).alias("timestamp")).drop("date")
@@ -785,7 +801,7 @@ def load_sp500_options_surface(
                 "case_studies/sp500_equity_option_analytics/03_financial_features.py"
             ),
         )
-    df = pl.read_parquet(path)
+    df = _canonical_sp500_option_symbols(pl.read_parquet(path))
     if "date" in df.columns and "timestamp" not in df.columns:
         df = df.rename({"date": "timestamp"})
     if start_date:
@@ -872,7 +888,7 @@ def load_sp500_options_straddles(
             ),
             derivation_notebook="data/equities/market/sp500/materialize_options.py",
         )
-    lf = pl.scan_parquet(path)
+    lf = _canonical_sp500_option_symbols(pl.scan_parquet(path))
     schema_names = lf.collect_schema().names()
     time_col = "date" if "date" in schema_names else "timestamp"
     time_type = lf.collect_schema()[time_col]
