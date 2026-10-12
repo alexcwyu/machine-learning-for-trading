@@ -1,0 +1,47 @@
+{
+  "scope": "Officialcurrentrelease sourcepyproject constraints, genuinearchivesSHAverified; compiler/artifactfeasibility separate",
+  "packages": [
+    {
+      "name": "feast",
+      "version": "0.66.0",
+      "archive": "https://files.pythonhosted.org/packages/c4/f8/a66ed159b3422ece6bdad9d1ab97d24b58f2e50cc20ab21ff648cc340890/feast-0.66.0.tar.gz",
+      "sha256": "4d059be34bc2f30e4dff976ce0d2a014fc364fe4d1354c3c44ccf74d78f24567",
+      "source_pyproject": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-current315-source-metadata/feast-pyproject.toml",
+      "pandas_source_requirements": [
+        [
+          25,
+          "    \"pandas>=1.4.3,<3\","
+        ],
+        [
+          75,
+          "    \"google-cloud-bigquery[pandas]>=2,<4\","
+        ],
+        [
+          142,
+          "    \"snowflake-connector-python[pandas]>=3.7,<5\","
+        ]
+      ]
+    },
+    {
+      "name": "ml4t-backtest",
+      "version": "0.1.12",
+      "archive": "https://files.pythonhosted.org/packages/10/9f/21195e6abe97e812e149af10c1d6ec46ae34bf74615f9f9d80a6f2553a0e/ml4t_backtest-0.1.12.tar.gz",
+      "sha256": "4a5ce7f4f9c10e0fb56cc9ca61b763c897a694a8d94e0f054abbbe2cdc5cff36",
+      "source_pyproject": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-current315-source-metadata/ml4t-backtest-pyproject.toml",
+      "pandas_source_requirements": [
+        [
+          84,
+          "    \"pandas>=2.3.3; python_version < '3.15'\","
+        ],
+        [
+          85,
+          "    \"pandas>=3.0.5; python_version >= '3.15'\","
+        ],
+        [
+          88,
+          "    \"pandas-market-calendars>=5.4.0\","
+        ]
+      ]
+    }
+  ]
+}

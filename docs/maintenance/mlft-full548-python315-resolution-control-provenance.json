@@ -1,0 +1,17 @@
+{
+  "scope": "Current548fullgraph unchangeddependencies,caps,extras,devgroups,Gensim officialsource; separatecontrolmetadataonly; no main source/lock/envchange",
+  "original_project_sha256": "9b36741e185d82a26024192c94970de56b6865b4fecbf989efe4ce321a74de46",
+  "original_lock_sha256": "f132ca7328cda22fd1ae4f1fac0c770bdcad7c7135b8e141823db28021212438",
+  "controls": {
+    "universal": {
+      "project": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/universal",
+      "changed_metadata": "Only control requires-python >=3.15,<3.16; actualhostscope additionallyrestrictssupportedresolutionenvironments to actualdarwinarm64",
+      "sha256": "16d055a2810d906ef4bf47cf1167fe6facc67a8dc70199b74e631e86d16f7e47"
+    },
+    "actual-darwin-arm64": {
+      "project": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/actual-darwin-arm64",
+      "changed_metadata": "Only control requires-python >=3.15,<3.16; actualhostscope additionallyrestrictssupportedresolutionenvironments to actualdarwinarm64",
+      "sha256": "f415c152cb2e7dd2ddd0acad50bf461b516d690c159f1a49de917e344e523bd7"
+    }
+  }
+}

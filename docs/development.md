@@ -1054,3 +1054,12 @@ incomplete backtest coverage, now at the actual GBM one-day candidate; that
 coverage bar remains unchanged. The equity-option holdout registry case requires
 the genuine original stage-18 canonical CUDA holdout population, not an empty
 replacement database.
+
+
+The [fresh complete Python 3.15 dependency probe](maintenance/python315-full-graph.md)
+fails before builds in both universal and actual macOS arm64 scopes. Verified
+current official source metadata requires Pandas below 3 for Feast 0.66.0 and
+Pandas at least 3.0.5 for ml4t-backtest 0.1.12 on Python 3.15. This declared
+version contradiction is distinct from native artifact feasibility. The main
+Python range, frozen lock and runtime remain unchanged; current MLFT inventory
+and composite case counts are unaffected.

@@ -8,7 +8,7 @@ No cases were added. All original numeric/hash literals and CAE model version 1 
 
 ## Runtime and immutable identities
 
-Python 3.14.8 runs the complete managed environment. The attempted Python 3.15 full resolution conflicts with Feast's Pandas constraint and the available ml4t-backtest wheel requirements. The frozen lock selects the latest compatible Polars 1.44.2, preserving the original canonical Parquet SHA and holdout hash; Polars 2 fails those immutable contracts. Torch remains the latest 2.11.0.
+Python 3.14.8 runs the complete managed environment. The attempted Python 3.15 full resolution conflicts with Feast's Pandas constraint and ml4t-backtest's Python-version-specific Pandas requirement. The frozen lock selects the latest compatible Polars 1.44.2, preserving the original canonical Parquet SHA and holdout hash; Polars 2 fails those immutable contracts. Torch remains the latest 2.11.0.
 
 The original strict main scope passes **151 cases and fails one CAE identity case** in 20.17 seconds. On macOS arm64 the seeded CAE prediction digest is `22ba1b43276579c8`, against the original `82a8721e8c074459`. Genuine Python 3.13 and Torch 2.10 controls reproduce the same host mismatch and do not justify a host downgrade.
 
@@ -202,3 +202,12 @@ incomplete backtest coverage, now at the actual GBM one-day candidate; that
 coverage bar remains unchanged. The equity-option holdout registry case requires
 the genuine original stage-18 canonical CUDA holdout population, not an empty
 replacement database.
+
+
+The [fresh complete Python 3.15 dependency probe](maintenance/python315-full-graph.md)
+fails before builds in both universal and actual macOS arm64 scopes. Verified
+current official source metadata requires Pandas below 3 for Feast 0.66.0 and
+Pandas at least 3.0.5 for ml4t-backtest 0.1.12 on Python 3.15. This declared
+version contradiction is distinct from native artifact feasibility. The main
+Python range, frozen lock and runtime remain unchanged; current MLFT inventory
+and composite case counts are unaffected.
