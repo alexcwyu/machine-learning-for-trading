@@ -2,9 +2,9 @@
   "original_inventory": 8333,
   "current_inventory": 8327,
   "current_counts": {
-    "passed": 7646,
+    "passed": 7672,
     "skipped": 466,
-    "failed": 215
+    "failed": 189
   },
   "retired_original_identities": {
     "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {

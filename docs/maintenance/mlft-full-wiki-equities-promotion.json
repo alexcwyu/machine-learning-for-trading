@@ -1,0 +1,31 @@
+{
+  "destination": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/data/equities/market/us_equities/us_equities.parquet",
+  "sha256": "0f4fd66ac3e5c2ecb04fc6a5c7de711cfd639becf7a20cf0a3252dc5c3b3b005",
+  "bytes": 521996483,
+  "source_report": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-us-equities-source-recovery/recovery-report.md",
+  "full_conversion_proof": {
+    "exit_code": 0,
+    "seconds": 2.45,
+    "python": "3.14.8",
+    "polars": "1.44.2",
+    "provider_source": "/Users/alex/workspaces/trading/machine-learning-for-trading/.venv/lib/python3.14/site-packages/ml4t/data/providers/wiki_prices.py",
+    "provider_source_sha256": "396c5f21c22dfcdbd0b2f41d4c6e87fda68a749aae07526f1b85d58d641d66e8",
+    "conversion_steps": [
+      "pl.read_csv(exact extracted CSV)",
+      "lowercase and replace column spaces with underscores",
+      "date.str.to_datetime()",
+      "sort ticker,date",
+      "write_parquet"
+    ],
+    "row_count": 15389314,
+    "column_count": 14,
+    "parquet_bytes": 521996483,
+    "parquet_sha256": "0f4fd66ac3e5c2ecb04fc6a5c7de711cfd639becf7a20cf0a3252dc5c3b3b005",
+    "all_14_columns_all_15389314_rows_exact_roundtrip_equal_including_nulls": true,
+    "no_filter_or_numeric_adjustment": true,
+    "output": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-us-equities-source-recovery/us_equities.parquet",
+    "official_binary_identity": "Not established: official export requires absent API key. Recovery lineage is immutable mirror attribution and official provider-maintainer endorsement; complete declared coverage independently verified."
+  },
+  "official_export_binary_identity_verified": false,
+  "original_source_tests_unchanged": true
+}

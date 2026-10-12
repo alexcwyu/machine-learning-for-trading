@@ -1436,6 +1436,141 @@
   },
   {
     "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[02_financial_data_universe::01_us_equities_eda.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[02_financial_data_universe::02_corporate_actions.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[02_financial_data_universe::13_data_quality_framework.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[02_financial_data_universe::14_point_in_time_validation.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[02_financial_data_universe::15_survivorship_bias_detection.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[02_financial_data_universe::01_us_equities_eda.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[02_financial_data_universe::02_corporate_actions.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[02_financial_data_universe::13_data_quality_framework.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[02_financial_data_universe::14_point_in_time_validation.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[02_financial_data_universe::15_survivorship_bias_detection.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 47.49,
+    "check": "genuine-full-wiki-original-data-chapter",
+    "started": 1791825254.150353,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-full-wiki-original-data-chapter.json",
+    "original_log": "machine-learning-for-trading-genuine-full-wiki-original-data-chapter.log",
+    "log_sha256": "be1870cf480bd43dc9d59f7377e80da452ce84ac02caefb61b6c4002163b7ea0",
+    "log_bytes": 7886,
+    "outcome_lines": [
+      "=================== 2 failed, 8 passed, 8 warnings in 46.27s ==================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::02_eigenportfolios.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::07_stochastic_discount_factor.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::08_supervised_autoencoder.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[18_transaction_costs::01_cost_taxonomy.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[21_rl_execution_hedging::07_backtest_with_impact.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[26_mlops_governance::02_online_drift_detection.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::02_eigenportfolios.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::07_stochastic_discount_factor.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::08_supervised_autoencoder.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[18_transaction_costs::01_cost_taxonomy.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[21_rl_execution_hedging::07_backtest_with_impact.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[26_mlops_governance::02_online_drift_detection.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 92.39,
+    "check": "genuine-full-wiki-original-latent-cost-execution-drift-consumers",
+    "started": 1791825498.118054,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-full-wiki-original-latent-cost-execution-drift-consumers.json",
+    "original_log": "machine-learning-for-trading-genuine-full-wiki-original-latent-cost-execution-drift-consumers.log",
+    "log_sha256": "fd67cc54832a344e58c5319f4951695753a66850d84ff23504cee3c81640017f",
+    "log_bytes": 15239,
+    "outcome_lines": [
+      "============== 4 failed, 8 passed, 8 warnings in 90.59s (0:01:30) =============="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "NEO4J_URI=bolt://127.0.0.1:17687",
+      "NEO4J_USER=neo4j",
+      "NEO4J_PASSWORD=password",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::10_network_portfolio_construction.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 16.69,
+    "check": "genuine-full-wiki-original-network-portfolio",
+    "started": 1791825202.5976372,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-genuine-full-wiki-original-network-portfolio.json",
+    "original_log": "machine-learning-for-trading-genuine-full-wiki-original-network-portfolio.log",
+    "log_sha256": "dd946391c6a1d65da7261b63926660d46ee3e75da2c203aadcb62c4a08ce44e2",
+    "log_bytes": 2897,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 15.37s ========================"
+    ]
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "<workspace>/docs/maintenance-2026-10-12/tools/mlft-gensim-supported-regeneration.py"
     ],
@@ -3442,6 +3577,30 @@
   },
   {
     "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "../docs/maintenance-2026-10-12/tools/recover_mlft_official_artifact_bundles.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 71.46,
+    "check": "original-official-v31-artifact-bundle-recovery",
+    "started": 1791824870.3489761,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-official-v31-artifact-bundle-recovery.json",
+    "original_log": "machine-learning-for-trading-original-official-v31-artifact-bundle-recovery.log",
+    "log_sha256": "1a0f60dae10f2ff19c53a861431a80f4906ffb6b4513f112574f98afb8b6a5aa",
+    "log_bytes": 15036,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "tests/generate_intermediates.py",
       "--output",
@@ -3742,6 +3901,88 @@
     "outcome_lines": [
       "=================== 8 failed, 2 passed, 8 warnings in 46.32s ==================="
     ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-official-v31-reader-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 62.16,
+    "check": "original-verified-v31-three-bundle-insight-consumers-writable-owned-copy",
+    "started": 1791825387.661772,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.json",
+    "original_log": "machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers-writable-owned-copy.log",
+    "log_sha256": "2ec15ebad43406b5e9cf20c23be546a0b070ca5c557e5085377bcad3a4eee474",
+    "log_bytes": 12274,
+    "outcome_lines": [
+      "=================== 6 failed, 9 warnings in 60.86s (0:01:00) ==================="
+    ]
+  },
+  {
+    "command": [
+      "env",
+      "-u",
+      "ML4T_DATA_PATH_IS_DEFAULT",
+      "ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-official-v31-reader-fixture/data",
+      "OMP_NUM_THREADS=1",
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-vv",
+      "--tb=short",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[14_latent_factors::09_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[11_ml_pipeline::07_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[12_gradient_boosting::12_case_study_insights.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[14_latent_factors::09_case_study_insights.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "seconds": 6.05,
+    "check": "original-verified-v31-three-bundle-insight-consumers",
+    "started": 1791825345.181631,
+    "source_snapshot": {
+      "head": "09b23466fceaeb5b23fcfaa9c0657e83f57d945e",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers.json",
+    "original_log": "machine-learning-for-trading-original-verified-v31-three-bundle-insight-consumers.log",
+    "log_sha256": "3927be97fa7da360b38c890eda05bd0079d766e3c96767d4b08eb47f68d7d120",
+    "log_bytes": 11181,
+    "outcome_lines": []
   },
   {
     "command": [

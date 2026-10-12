@@ -1,6 +1,6 @@
 # Remaining existing-test prerequisites
 
-The maintained inventory still has 215 failed nodes. These diagnostics explain causes; they do not turn failed tests into passes. The [node coverage](mlft-original-case-coverage.json) and [original failure trace summaries](mlft-original-failure-explanations.json) preserve their original outcomes.
+The maintained inventory has 189 failed nodes in the last reconciled terminal inventory. These diagnostics explain causes; they do not turn failed tests into passes. The [node coverage](mlft-original-case-coverage.json) and [original failure trace summaries](mlft-original-failure-explanations.json) preserve their original outcomes.
 
 ## MLflow experiment catalog
 
@@ -29,6 +29,10 @@ The [original supply-chain producer](../../23_knowledge_graphs/02_supply_chain_k
 The default route still reads genuine full SEC filing records before loading and analysing the cached graph. The missing 10-K records are now recovered: 601 genuine filings across 101 symbols, with matching text lengths. Six original construction/RAG/graph-feature cases pass and the owned snapshot holds 817 entities and 995 edges. The [unchanged canonical downloader](../../data/equities/fundamentals/filings_download.py) fetched its declared 101-company, 2020–2025 10-K corpus using the repository's configured real EDGAR identity. The separate uncapped 8-K recovery exposed an accession-prefix cache collision. Two original preview cases passed on its genuine but incomplete rows; complete corrected coverage is still being rebuilt. See [cache repair and precise recovery scope](sec-filing-cache-identity.md).
 
 The owned Neo4j service is available; a healthy empty service alone does not establish the named supply-chain snapshot. The cache, corpus and snapshot are different prerequisites.
+
+## Full WIKI/PRICES recovery
+
+The complete frozen source is recovered and validated: 15,389,314 rows, 3,199 tickers and fourteen columns, with all values and nulls preserved by the author provider conversion. Eight original data-chapter cases and both network-portfolio cases pass. The original point-in-time pair now reaches its real missing FRED key. See [source provenance, artifact recovery and current validation](genuine-input-artifact-recovery.md).
 
 ## Other outstanding scopes
 
