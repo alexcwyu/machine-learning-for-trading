@@ -30,6 +30,8 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | compileall-cftc-final | 0 | 1.61s | `uv run --no-sync python -m compileall -q case_studies data scripts utils .github/scripts tests` |
 | compileall-current | 0 | 1.42s | `uv run --no-sync python -m compileall -q case_studies utils data scripts` |
 | compileall-native-thread-final | 0 | 0.42s | `uv run --no-sync python -m compileall -q case_studies data utils` |
+| current-full548-python315-actual-arm64-metadata-resolution | 1 | 1.75s | `uv lock --project <workspace>/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/actual-darwin-arm64 --upgrade --python /Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15` |
+| current-full548-python315-universal-metadata-resolution | 1 | 2.53s | `uv lock --project <workspace>/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/universal --upgrade --python /Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15` |
 | current-original-node-collection-after-expired-declarations | 0 | 11.22s | `.venv/bin/python -m pytest --collect-only -q` |
 | darts-single-thread | 0 | 40.17s | `env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run --no-sync pytest tests/test_darts_state.py::test_darts_checkpoint_reconstructs_identical_predictions -x` |
 | diagnose-existing-etf-lstm-public | 1 | 27.78s | `env POLARS_MAX_THREADS=2 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 MPLBACKEND=Agg .venv/bin/python -m pytest -p no:torchtyping -o addopts= -vv --tb=short tests/test_case_studies.py::test_case_study_pipeline[etfs-09_dl_lstm]` |
@@ -70,6 +72,7 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | genuine-original-sec13f-curated-all-default | 0 | 23.46s | `.venv/bin/python data/equities/positioning/13f_download.py` |
 | genuine-public-firm-characteristics-original-downloader | 0 | 115.66s | `.venv/bin/python data/equities/firm_characteristics/download.py` |
 | genuine-public-nasdaq-itch-original-downloader | 0 | 1783.61s | `.venv/bin/python data/equities/market/microstructure/nasdaq_itch_download.py` |
+| genuine-roughpy-native315-supported-upstream-port | 0 | 169.55s | `uv pip install --python <workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python <workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0 esig==1.0.0` |
 | genuine-roughpy-required-autotools | 0 | 4.42s | `brew install autoconf automake libtool` |
 | genuine-signature-isolated-exact-frozen314-runtime | 0 | 4.09s | `uv sync --frozen --all-groups --all-extras --python /Users/alex/.local/share/uv/python/cpython-3.14-macos-aarch64-none/bin/python3.14` |
 | genuine-yahoo-producer-adapter-control | 0 | 1.07s | `.venv/bin/python <workspace>/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py` |
@@ -165,6 +168,7 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | reviewed-finite-provider-guard-build | 0 | 1.5s | `uv build` |
 | reviewed-finite-provider-guard-source-compile | 0 | 0.05s | `.venv/bin/python -m compileall -q data/etfs/market/download.py` |
 | root-independent-published-storage-existing-cases | 0 | unknowns | `<workspace>/machine-learning-for-trading/.venv/bin/python -m pytest tests/test_fixture_file_size_ceiling.py tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs tests/test_seeded_output_dir.py tests/test_modeling_input_lineage.py tests/test_holdout_cv_derivation.py tests/test_create_experiment.py tests/test_research_workspace.py tests/test_artifact_audit_names_its_scope.py tests/test_fixture_registry_prune.py tests/test_registry_lineage.py tests/test_artifact_digest_encoding.py --tb=short` |
+| roughpy-upstream-existing-python315-binding-cases | 0 | 2.08s | `<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python -m pytest -c <workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/pyproject.toml -q --tb=short <workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/tests` |
 | ruff-date-symbol-literals | 0 | 0.12s | `.venv/bin/python -m ruff check data/equities/loader.py case_studies/etfs/04_model_based_features.py` |
 | ruff-genuine-date-symbol-source | 0 | 0.13s | `.venv/bin/python -m ruff check data/equities/loader.py case_studies/etfs/04_model_based_features.py` |
 | ruff-native-runtime-fixture-final | 0 | 0.15s | `uv run --no-sync ruff check case_studies/utils/native_threads.py case_studies/utils/latent_factors/cv.py tests/test_latent_factors_no_leak.py` |

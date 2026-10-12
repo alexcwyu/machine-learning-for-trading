@@ -146,6 +146,18 @@
 <td><code>uv run --no-sync python -m compileall -q case_studies data utils</code></td>
 </tr>
 <tr>
+<td>current-full548-python315-actual-arm64-metadata-resolution</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.75s</td>
+<td><code>uv lock --project &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/actual-darwin-arm64 --upgrade --python /Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15</code></td>
+</tr>
+<tr>
+<td>current-full548-python315-universal-metadata-resolution</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.53s</td>
+<td><code>uv lock --project &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/universal --upgrade --python /Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15</code></td>
+</tr>
+<tr>
 <td>current-original-node-collection-after-expired-declarations</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">11.22s</td>
@@ -384,6 +396,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1783.61s</td>
 <td><code>.venv/bin/python data/equities/market/microstructure/nasdaq_itch_download.py</code></td>
+</tr>
+<tr>
+<td>genuine-roughpy-native315-supported-upstream-port</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">169.55s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0 esig==1.0.0</code></td>
 </tr>
 <tr>
 <td>genuine-roughpy-required-autotools</td>
@@ -954,6 +972,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">unknowns</td>
 <td><code>&lt;workspace&gt;/machine-learning-for-trading/.venv/bin/python -m pytest tests/test_fixture_file_size_ceiling.py tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs tests/test_seeded_output_dir.py tests/test_modeling_input_lineage.py tests/test_holdout_cv_derivation.py tests/test_create_experiment.py tests/test_research_workspace.py tests/test_artifact_audit_names_its_scope.py tests/test_fixture_registry_prune.py tests/test_registry_lineage.py tests/test_artifact_digest_encoding.py --tb=short</code></td>
+</tr>
+<tr>
+<td>roughpy-upstream-existing-python315-binding-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.08s</td>
+<td><code>&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python -m pytest -c &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/pyproject.toml -q --tb=short &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/tests</code></td>
 </tr>
 <tr>
 <td>ruff-date-symbol-literals</td>
@@ -1538,4 +1562,5 @@
 <td><code>uv pip install --python .venv/bin/python --dry-run torch&lt;2.14.1</code></td>
 </tr>
 </tbody>
-</table></main></body></html>
+</table></main>
+</body></html>

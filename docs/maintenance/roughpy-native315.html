@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Native RoughPy and esig — Python 3.15 source control</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="native-roughpy-and-esig-python-315-source-control">Native RoughPy and esig — Python 3.15 source control</h1>
+<p>The isolated native Python 3.15.0 build passes in <strong>169.55 seconds</strong>. Genuine
+RoughPy 0.3.0, esig 1.0.0 and pyrecombine 1.0.1 import and calculate the original
+public signature example correctly with current NumPy 2.5.4. The unchanged
+upstream RoughPy Python suite records <strong>1,495 passes and 35 existing skips in
+1.60 seconds</strong>. These upstream cases are supplementary dependency evidence;
+they are not included in MLFT's original 8,333-node inventory or its current
+8,327-node collection. The main project remains on Python 3.14.</p>
+<h2 id="exact-compiler-repair-and-preserved-source">Exact compiler repair and preserved source</h2>
+<p>The first unchanged source attempt stops at missing Autoconf tools. Genuine
+Homebrew Autoconf 2.73, Automake 1.19 and Libtool 2.6.2 cure that prerequisite.
+The next attempt reaches native compilation, then fails on range-v3/meta's
+standard-library forward declarations against host libc++ 220106. It does not
+reach a demonstrated Python 3.15 binding incompatibility.</p>
+<p>The <a href="https://github.com/ericniebler/range-v3/commit/bef4198ccababd6d130e1f56aa015faaaddd1f1d">official upstream fix</a>
+changes only the visibility-version guard for libc++ 22. The isolated control
+copies the original vcpkg range-v3 0.12.0#4 port into RoughPy's already declared
+<code>tools/ports</code> overlay and applies that exact <a href="roughpy-range-v3-upstream-bef4198.patch">licensed patch</a>.
+The <a href="roughpy-range-v3-upstream-LICENSE.txt">upstream license</a> and original port
+copyright installation are retained. No numerical source, compiler flag,
+header alias, Python ABI substitution or backend change is used. The original
+<code>pybind11&lt;3.0.0</code> build requirement remains intact. CMake and vcpkg use two build
+jobs to bound resource use.</p>
+<p>All <strong>814 original core, configuration, Python and C++ source files</strong> retain
+exact official release-archive bytes after the successful build. Only the
+licensed external dependency-overlay files are added. The original archive SHA
+is <code>db5d5ee5319c504603061687756c7f88cdd28a3103b58ecc01a411e98dfa0119</code>.</p>
+<h2 id="retained-terminal-evidence">Retained terminal evidence</h2>
+<ul>
+<li><a href="mlft-roughpy-native315-upstream-port-provenance.json">Exact upstream port and license provenance</a></li>
+<li><a href="mlft-roughpy-native315-success-original-core-identity.json">Post-build original-source identity</a></li>
+<li><a href="mlft-genuine-native315-roughpy-esig-binding-control.json">Actual Python 3.15 native binding and signature control</a></li>
+<li><a href="machine-learning-for-trading-genuine-roughpy-native315-supported-upstream-port.json">Successful source build command/result</a> and <a href="machine-learning-for-trading-genuine-roughpy-native315-supported-upstream-port.log">build log</a></li>
+<li><a href="machine-learning-for-trading-roughpy-upstream-existing-python315-binding-cases.json">Unchanged upstream test command/result</a> and <a href="machine-learning-for-trading-roughpy-upstream-existing-python315-binding-cases.log">test log</a></li>
+</ul>
+<p>The original compiler failures remain in the workspace campaign records. This
+control establishes source and binding feasibility for this dependency. It
+does not establish that the complete MLFT dependency graph resolves or that all
+MLFT notebooks execute on Python 3.15. The complete-project Feast/Pandas/backtest
+constraints require their own current source-backed resolution probe.</p></main>
+</body></html>

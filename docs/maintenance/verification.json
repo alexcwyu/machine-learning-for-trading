@@ -468,6 +468,50 @@
   },
   {
     "command": [
+      "uv",
+      "lock",
+      "--project",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/actual-darwin-arm64",
+      "--upgrade",
+      "--python",
+      "/Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 1.75,
+    "step": "current-full548-python315-actual-arm64-metadata-resolution",
+    "started": 1791788509.5501199,
+    "seconds": 1.75,
+    "evidence_record": "machine-learning-for-trading-current-full548-python315-actual-arm64-metadata-resolution.json",
+    "original_log": "machine-learning-for-trading-current-full548-python315-actual-arm64-metadata-resolution.log",
+    "log_sha256": "990637f7e700401d0814e96c848b767f35b2602dd4b3aef60dd08028eaf01dd9",
+    "log_bytes": 987,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--project",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-full548-python315-resolution/universal",
+      "--upgrade",
+      "--python",
+      "/Users/alex/.local/share/uv/python/cpython-3.15-macos-aarch64-none/bin/python3.15"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 2.53,
+    "step": "current-full548-python315-universal-metadata-resolution",
+    "started": 1791788489.646681,
+    "seconds": 2.53,
+    "evidence_record": "machine-learning-for-trading-current-full548-python315-universal-metadata-resolution.json",
+    "original_log": "machine-learning-for-trading-current-full548-python315-universal-metadata-resolution.log",
+    "log_sha256": "80b36f4ea072b65a3202748f4f3540a8388cc9a5a4b430b6f411a08a158c8834",
+    "log_bytes": 1119,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       ".venv/bin/python",
       "-m",
       "pytest",
@@ -1440,6 +1484,28 @@
     "original_log": "machine-learning-for-trading-genuine-public-nasdaq-itch-original-downloader.log",
     "log_sha256": "acc3d149d268061d7b282ec968d6868dbf7038c3eb5af40f1152797f6cfd78de",
     "log_bytes": 3031,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0",
+      "esig==1.0.0"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 169.55,
+    "step": "genuine-roughpy-native315-supported-upstream-port",
+    "started": 1791787647.5459032,
+    "seconds": 169.55,
+    "evidence_record": "machine-learning-for-trading-genuine-roughpy-native315-supported-upstream-port.json",
+    "original_log": "machine-learning-for-trading-genuine-roughpy-native315-supported-upstream-port.log",
+    "log_sha256": "9b7092a1e17a9c8256dc093ef639dee7683967781fc10d50397d656eb082f24e",
+    "log_bytes": 937,
     "outcome_lines": []
   },
   {
@@ -3664,6 +3730,31 @@
     "evidence_record": "machine-learning-for-trading-root-independent-storage-existing-cases.json",
     "original_log": "machine-learning-for-trading-root-independent-storage-existing-cases.log",
     "log_available": false
+  },
+  {
+    "command": [
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-esig-native315/bin/python",
+      "-m",
+      "pytest",
+      "-c",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/pyproject.toml",
+      "-q",
+      "--tb=short",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-roughpy-native315-upstream-port/roughpy-0.3.0/tests"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 2.08,
+    "step": "roughpy-upstream-existing-python315-binding-cases",
+    "started": 1791787940.9875891,
+    "seconds": 2.08,
+    "evidence_record": "machine-learning-for-trading-roughpy-upstream-existing-python315-binding-cases.json",
+    "original_log": "machine-learning-for-trading-roughpy-upstream-existing-python315-binding-cases.log",
+    "log_sha256": "a4fa9bea94f6213511bb8376979ca7049c7f3507bb160d48a24b312ea49734c4",
+    "log_bytes": 2165,
+    "outcome_lines": [
+      "1495 passed, 35 skipped in 1.60s"
+    ]
   },
   {
     "command": [
