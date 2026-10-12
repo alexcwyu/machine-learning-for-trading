@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collected 37 items
+
+tests/test_fixture_registry_identity.py ssss.sss                         [ 21%]
+tests/test_latent_factors_identity.py ........F......                    [ 62%]
+tests/test_model_source_identity_versions.py ..............              [100%]
+
+=================================== FAILURES ===================================
+______ TestTheDeclaredVersions.test_cae_reproduces_its_pinned_predictions ______
+tests/test_latent_factors_identity.py:211: in test_cae_reproduces_its_pinned_predictions
+    assert _digest(stacked) == PINNED_CAE_PREDICTIONS, (
+E   AssertionError: the CAE runner now fits a different result; bump LATENT_MODEL_VERSIONS['cae'] in case_studies/utils/latent_factors/cae.py and update this pin in the same commit
+E   assert '22ba1b43276579c8' == '82a8721e8c074459'
+E     
+E     - 82a8721e8c074459
+E     + 22ba1b43276579c8
+=========================== short test summary info ============================
+FAILED tests/test_latent_factors_identity.py::TestTheDeclaredVersions::test_cae_reproduces_its_pinned_predictions
+=================== 1 failed, 29 passed, 7 skipped in 3.60s ====================

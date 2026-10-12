@@ -304,6 +304,12 @@ def seed_case_study_intermediates(src: Path, dst: Path) -> None:
             dst.mkdir(parents=True, exist_ok=True)
             shutil.copy2(item, dst / item.name)
 
+    # The publication source stays sharded. Only this owned runtime copy becomes
+    # genuine canonical regular files for the unchanged model/lineage consumers.
+    from case_studies.utils.published_artifacts import materialize_tree
+
+    materialize_tree(dst)
+
 
 GENERATED_CASE_DIRS = ("features", "labels", "run_log")
 
@@ -451,6 +457,9 @@ def seeded_output_dir(tmp_path_factory):
             if dst.exists():
                 shutil.rmtree(dst)
             shutil.copytree(src, dst)
+            from case_studies.utils.published_artifacts import materialize_tree
+
+            materialize_tree(dst)
 
     # Seed minimal results fixtures so downstream notebooks (latent factors, DL,
     # backtest) can find baseline results without depending on upstream execution.

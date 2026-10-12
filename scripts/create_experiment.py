@@ -7,10 +7,12 @@ import argparse
 import json
 import shutil
 import stat
+import sys
 import uuid
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 GENERATED_DIRS = ("run_log", "labels", "features", "evaluation", "benchmark")
 
 
@@ -62,6 +64,11 @@ def create_experiment(
             candidate = source / name
             if candidate.is_dir():
                 shutil.copytree(candidate, staging / name)
+
+        # Reconstruct only copied inputs; never mutate the installed publication.
+        from case_studies.utils.published_artifacts import materialize_tree
+
+        materialize_tree(staging)
 
         # config/ is a version-controlled input, not a generated artifact, but the
         # reader edits it to define the experiment and get_case_study_dir() redirects

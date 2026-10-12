@@ -50,8 +50,10 @@ _CASCADE: tuple[tuple[str, str, str], ...] = (
 
 
 def sha256_file(path: Path) -> str:
+    from case_studies.utils.published_artifacts import verified_canonical_file
+
     digest = hashlib.sha256()
-    with open(path, "rb") as handle:
+    with verified_canonical_file(path) as canonical, open(canonical, "rb") as handle:
         for block in iter(lambda: handle.read(1 << 20), b""):
             digest.update(block)
     return digest.hexdigest()

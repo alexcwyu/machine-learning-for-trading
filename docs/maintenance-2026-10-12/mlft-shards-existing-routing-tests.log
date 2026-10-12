@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collected 129 items
+
+tests/test_seeded_output_dir.py .....                                    [  3%]
+tests/test_modeling_input_lineage.py .......                             [  9%]
+tests/test_holdout_cv_derivation.py ................................     [ 34%]
+tests/test_create_experiment.py ....                                     [ 37%]
+tests/test_research_workspace.py ....................................... [ 67%]
+.                                                                        [ 68%]
+tests/test_artifact_audit_names_its_scope.py .............               [ 78%]
+tests/test_fixture_registry_prune.py .....................               [ 94%]
+tests/test_registry_lineage.py ..                                        [ 96%]
+tests/test_artifact_digest_encoding.py .....                             [100%]
+
+============================= 129 passed in 5.62s ==============================

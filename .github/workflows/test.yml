@@ -1617,6 +1617,7 @@ jobs:
           mkdir -p "$ML4T_OUTPUT_DIR"
           if [ -d test-data/intermediates ]; then
             cp -r test-data/intermediates/* "$ML4T_OUTPUT_DIR"/
+            python -m case_studies.utils.published_artifacts materialize "$ML4T_OUTPUT_DIR"
             echo "Seeded $(du -sh "$ML4T_OUTPUT_DIR" | cut -f1) of intermediates"
           fi
           # Ch20 outputs go to repo dir (get_chapter_dir doesn't redirect)
@@ -1793,6 +1794,7 @@ jobs:
           mkdir -p "$ML4T_OUTPUT_DIR"
           if [ -d test-data/intermediates ]; then
             cp -r test-data/intermediates/* "$ML4T_OUTPUT_DIR"/
+            python -m case_studies.utils.published_artifacts materialize "$ML4T_OUTPUT_DIR"
             echo "Seeded $(du -sh "$ML4T_OUTPUT_DIR" | cut -f1) of intermediates"
           fi
 

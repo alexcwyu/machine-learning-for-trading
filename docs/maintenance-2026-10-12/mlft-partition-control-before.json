@@ -1,0 +1,50 @@
+{
+  "source": "/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/intermediates/nasdaq100_microstructure/features/financial.parquet",
+  "source_bytes": 120527027,
+  "rows": 558456,
+  "parts": [
+    {
+      "path": "/tmp/mlft-readonly-partition-control/financial.parquet/part-00000.parquet",
+      "bytes": 60964707
+    },
+    {
+      "path": "/tmp/mlft-readonly-partition-control/financial.parquet/part-00001.parquet",
+      "bytes": 59629985
+    }
+  ],
+  "apis": {
+    "read_parquet": {
+      "ok": true,
+      "rows": 558456,
+      "schema_equal": true,
+      "frame_equal_including_order": true,
+      "all_float_bits_equal": true,
+      "null_masks_equal": true
+    },
+    "scan_parquet": {
+      "ok": true,
+      "rows": 558456,
+      "schema_equal": true,
+      "frame_equal_including_order": true,
+      "all_float_bits_equal": true,
+      "null_masks_equal": true
+    },
+    "read_parquet_schema": {
+      "ok": true,
+      "schema_equal": true
+    },
+    "sorted_scan": {
+      "ok": true,
+      "rows": 558456,
+      "schema_equal": true,
+      "frame_equal_including_order": true,
+      "all_float_bits_equal": true,
+      "null_masks_equal": true
+    }
+  },
+  "current_file_identity_api": {
+    "ok": false,
+    "exception": "IsADirectoryError",
+    "message": "[Errno 21] Is a directory: '/tmp/mlft-readonly-partition-control/financial.parquet'"
+  }
+}

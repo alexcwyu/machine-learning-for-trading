@@ -1,0 +1,4 @@
+{
+  "first_rename_failure_preserves_dataset": true,
+  "second_rename_failure_restores_exact_dataset": true
+}

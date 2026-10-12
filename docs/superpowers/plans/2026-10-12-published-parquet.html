@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Published Parquet Implementation Plan</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="published-parquet-implementation-plan">Published Parquet Implementation Plan</h1>
+<blockquote>
+<p><strong>For agentic workers:</strong> REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (<code>- [ ]</code>) syntax for tracking.</p>
+</blockquote>
+<p><strong>Goal:</strong> Pass the original physical-file ceiling with lossless published parts and exact canonical regular runtime files.</p>
+<p><strong>Architecture:</strong> One publication/materialization module owns checksums and reconstruction; existing destination-copy boundaries invoke it. Pinned lineage and ordinary-file behavior remain unchanged.</p>
+<p><strong>Tech Stack:</strong> Python 3.14.8, highest compatible Polars 1.44.2, hashlib/JSON/pathlib/tempfile, existing uv environment and original pytest cases.</p>
+<p><strong>Spec:</strong> <code>docs/superpowers/specs/2026-10-12-published-parquet-design.md</code></p>
+<h2 id="global-constraints">Global Constraints</h2>
+<ul>
+<li>Physical parts &lt;= 90 * 1024 * 1024 bytes; unchanged original gate.</li>
+<li>Existing <code>_PARQUET_WRITE_SETTINGS</code>, source/data/rows/order/nulls/Float32 bits, canonical SHA and model identities remain exact.</li>
+<li>No additional tests, assertion/golden/source-SHA repins, model versions, skips or synthetic inputs.</li>
+<li>Work only in this isolated branch; source data and main runtime remain untouched until coordinated integration.</li>
+</ul>
+<h2 id="review-focus">Review Focus</h2>
+<ul>
+<li>Tampered or escaping manifest parts must fail without modifying source/destination data.</li>
+<li>Ordinary single-file artifacts and all original encoding/lineage pins remain identical.</li>
+<li>Stale destination contents and repeated seeds retain original replacement/idempotence behavior.</li>
+<li>Canonical reconstruction must be verified from real parts, not accepted from metadata alone.</li>
+<li>Publication audit counts logical artifacts separately from physical parts; no directory-stat gate trick.</li>
+</ul>
+<h3 id="task-1-owned-artifact-publication-and-materialization">Task 1: Owned artifact publication and materialization</h3>
+<p><strong>Files:</strong> Create <code>case_studies/utils/published_artifacts.py</code>; reference unchanged <code>case_studies/utils/artifact_digest.py</code> settings.
+<strong>Interfaces:</strong> Implement exactly the three signatures and version-one manifest in the spec.</p>
+<ul>
+<li>[ ] Record current original ceiling failure and retain the provided temporary exact-byte controls.</li>
+<li>[ ] Implement measured contiguous splitting, confined checksums, source preservation and verified atomic destination materialization.</li>
+<li>[ ] Exercise one-off controls for actual NASDAQ parts/reconstruction and tampered manifests; record evidence without adding pytest cases.</li>
+<li>[ ] Run original <code>tests/test_artifact_digest_encoding.py</code> and <code>tests/test_registry_lineage.py</code>; require unchanged pins and passing cases.</li>
+<li>[ ] Commit only owned module/docs.</li>
+</ul>
+<h3 id="task-2-seeding-and-research-workspace-boundaries">Task 2: Seeding and research workspace boundaries</h3>
+<p><strong>Files:</strong> Modify <code>tests/conftest.py</code> destination <code>seed_case_study_intermediates</code>; <code>scripts/create_experiment.py</code> staging copy; inspect actual CI copy steps and registry bootstrap helpers before making narrowly needed routing changes.
+<strong>Interfaces:</strong> Call <code>materialize_tree(root)</code> only in owned copied runtime/staging directories. Publication sources stay sharded; consumers receive genuine regular files.</p>
+<ul>
+<li>[ ] Implement destination-only hooks, preserving ordinary files, stale removal and independent worker roots.</li>
+<li>[ ] Run existing <code>tests/test_seeded_output_dir.py</code>, <code>tests/test_fixture_registry_identity.py</code>, <code>tests/test_modeling_input_lineage.py</code>, <code>tests/test_holdout_cv_derivation.py</code> and relevant actual research-workspace cases.</li>
+<li>[ ] Verify pinned lineage and all five restored guard files remain byte-identical to the original branch.</li>
+<li>[ ] Commit owned routing changes.</li>
+</ul>
+<h3 id="task-3-publication-helpers-and-original-budget-proof">Task 3: Publication helpers and original budget proof</h3>
+<p><strong>Files:</strong> Existing <code>tests/fixture_registry.py</code>, <code>scripts/artifact_audit.py</code>, and explicit fixture-publishing entry point adjacent to the original fixture generation workflow as needed. Do not modify the original producer math or original gate.
+<strong>Interfaces:</strong> Logical identity comes from an actual verified canonical cache file; physical footprint includes every real part.</p>
+<ul>
+<li>[ ] Adapt publication-side inspection only where direct directory consumption would fail; maintain original ordinary-file semantics.</li>
+<li>[ ] Produce a separate genuine published CI fixture control, preserving the current original main fixture.</li>
+<li>[ ] Run unchanged <code>tests/test_fixture_file_size_ceiling.py</code>, original audit/fixture identity cases and affected original consumers against the control.</li>
+<li>[ ] Record logical original byte SHA, physical part sizes/checksums, original data equality and all command outcomes.</li>
+<li>[ ] Update source-linked Markdown/HTML-ready documentation with class/sequence/workflow diagrams; commit owned changes and report exact branch commits for later main integration.</li>
+</ul></main>
+</body></html>
