@@ -63,6 +63,11 @@ def create_experiment(
             if candidate.is_dir():
                 shutil.copytree(candidate, staging / name)
 
+        # Reconstruct only copied inputs; never mutate the installed publication.
+        from case_studies.utils.published_artifacts import materialize_tree
+
+        materialize_tree(staging)
+
         # config/ is a version-controlled input, not a generated artifact, but the
         # reader edits it to define the experiment and get_case_study_dir() redirects
         # config reads to ML4T_OUTPUT_DIR, so the experiment must carry its own copy

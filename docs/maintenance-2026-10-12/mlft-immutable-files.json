@@ -1,0 +1,30 @@
+{
+  "tests/test_artifact_digest_encoding.py": {
+    "sha256": "d9bb6ce10f3ff429ad20205fe762d4e393704f64e2544bd2c9fecc6ee0eb1531",
+    "byte_identical_to_base": true
+  },
+  "tests/test_latent_factors_identity.py": {
+    "sha256": "334bdf5cd43f9191542e1720928dc243ef9e887082183788b872fc4da18a6bda",
+    "byte_identical_to_base": true
+  },
+  "case_studies/utils/latent_factors/versions.py": {
+    "sha256": "f1f5d9d1367e0eab7d2fbfdccd01c2e9b0eb1f46bf1baf88e4b05524b0c63fcd",
+    "byte_identical_to_base": true
+  },
+  "tests/test_model_source_identity_versions.py": {
+    "sha256": "995500f460b7c68e42e3b69e0f8c65ca883f87957f202d04c465473d0e7ab424",
+    "byte_identical_to_base": true
+  },
+  "tests/test_holdout_cv_derivation.py": {
+    "sha256": "a6cc1002d4728f69495c8026969b27b9d7eb03e6ebaa115a169b47ab47099be2",
+    "byte_identical_to_base": true
+  },
+  "case_studies/utils/registry/lineage.py": {
+    "sha256": "7b9a8626f2d337d00ad33d992a35f6dca176ad375ed484b75d60737e22f44e0d",
+    "byte_identical_to_base": true
+  },
+  "case_studies/utils/artifact_digest.py": {
+    "sha256": "4885d66a8f71798a4cea2177d9a009d16358bcf65a0e3b60e41f7a1dbe14bab3",
+    "byte_identical_to_base": true
+  }
+}

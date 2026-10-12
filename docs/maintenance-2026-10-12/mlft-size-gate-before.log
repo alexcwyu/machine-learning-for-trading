@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
+Fugue tests will be initialized with options:
+rootdir: /Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-shards-review
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, timeout-2.4.0, langsmith-0.14.7, typeguard-4.6.0, fugue-0.9.7, rerunfailures-16.7, anyio-4.15.1
+collected 2 items
+
+tests/test_fixture_file_size_ceiling.py F.                               [100%]
+
+=================================== FAILURES ===================================
+_________ test_no_fixture_file_is_within_the_margin_of_the_push_limit __________
+tests/test_fixture_file_size_ceiling.py:50: in test_no_fixture_file_is_within_the_margin_of_the_push_limit
+    assert not oversized, (
+E   AssertionError: fixture file(s) within 10 MiB of GitHub's 100 MiB per-file limit, so the next regeneration's push is rejected:
+E       nasdaq100_microstructure/features/financial.parquet 114.9 MiB
+E     Three ways out, and they are not equivalent: put `intermediates/**/*.parquet` behind Git LFS (fixes the ceiling and stops history growth, and every consumer - CI checkout, both workstations - then needs LFS); narrow this case study's fixture window (cheapest, and `evaluation.n_splits` has to still resolve to the same fold count); or cut its symbol count (cheapest of all, and it starves every reader the fixture feeds). ml4t/agent-workspace#1019.
+E   assert not [(120527027, PosixPath('/Users/alex/workspaces/trading/.runtime/maintenance-2026-10-12/mlft-fixture/intermediates/nasdaq100_microstructure/features/financial.parquet'))]
+=========================== short test summary info ============================
+FAILED tests/test_fixture_file_size_ceiling.py::test_no_fixture_file_is_within_the_margin_of_the_push_limit
+========================= 1 failed, 1 passed in 0.16s ==========================

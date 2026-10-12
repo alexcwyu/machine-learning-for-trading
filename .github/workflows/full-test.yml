@@ -75,6 +75,7 @@ jobs:
           mkdir -p "$ML4T_OUTPUT_DIR"
           if [ -d test-data/intermediates ]; then
             cp -r test-data/intermediates/* "$ML4T_OUTPUT_DIR"/
+            python -m case_studies.utils.published_artifacts materialize "$ML4T_OUTPUT_DIR"
           fi
 
       # No --timeout. A per-test wall clock here contradicts the per-cell budgets in
