@@ -545,6 +545,7 @@ class SplitAwarePreprocessor:
 
 # %%
 us_equities = None
+us_equities_cleaned = None
 try:
     us_equities = ensure_symbol_alias(load_us_equities())
     us_equities = filter_from_start(us_equities, "timestamp", US_EQUITIES_START_DATE)
@@ -727,6 +728,7 @@ if us_equities is not None:
 
 # %%
 etfs = None
+etfs_cleaned = None
 try:
     etfs = ensure_symbol_alias(load_etfs())
     if "timestamp" in etfs.columns:
@@ -1204,9 +1206,9 @@ for name, df in [("US Equities", us_equities_cleaned), ("ETFs", etfs_cleaned)]:
         )
 
 # %% [markdown]
-# Both cleaned datasets pass basic quality checks: no null or negative
-# prices remain. This notebook demonstrates the cleaning techniques -
-# downstream case study notebooks apply their own cleaning via loaders.
+# The check reports null and negative prices for each available cleaned dataset.
+# Missing datasets remain unavailable; this notebook does not create data for them.
+# Downstream case study notebooks apply their own cleaning via loaders.
 
 
 # %% [markdown]
