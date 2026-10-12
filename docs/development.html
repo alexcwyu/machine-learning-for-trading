@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Development Guide</title><style>html{color-scheme:light dark}body{margin:0;background:#f5f7fa;color:#172333;font:16px/1.7 system-ui,sans-serif}main{max-width:1120px;margin:28px auto;background:white;padding:40px;border:1px solid #dbe2ea;border-radius:10px}h1,h2,h3{line-height:1.25}h2{margin-top:2em;border-bottom:1px solid #dbe2ea;padding-bottom:.4em}a{color:#1769aa}pre{overflow:auto;padding:16px;background:#f5f7fa;border:1px solid #dbe2ea;border-radius:6px}code{font:14px/1.6 ui-monospace,monospace}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #dbe2ea;padding:8px 12px;text-align:left;vertical-align:top}blockquote{margin-left:0;border-left:4px solid #1769aa;padding-left:18px}@media(max-width:700px){main{margin:8px;padding:18px}body{font-size:15px}}@media(prefers-color-scheme:dark){body{background:#111820;color:#e7edf5}main{background:#192330;border-color:#344354}pre{background:#111820}a{color:#78b9ef}th,td,h2,pre{border-color:#344354}}@media print{main{margin:0;border:0;padding:0}a{color:inherit}pre,table{overflow:visible}}</style></head><body><main><h1 id="development-guide">Development Guide</h1>
+<blockquote>
+<p>Development standards, adding new strategies and models, ML best practices for trading,
+and contribution guidelines for Machine Learning for Trading.</p>
+</blockquote>
+<h2 id="environment-setup">Environment Setup</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Use uv 0.13.0 and the repository's <code>.python-version</code> (CPython 3.14.8). The complete
+539-package lock includes direct, development, notebook, and optional dependencies.
+The unchanged third-edition layout keeps chapter scripts, notebooks, <code>data/</code>,
+<code>utils/</code>, and <code>case_studies/</code> beside their relative resource paths.</p>
+<pre><code class="language-bash">uv python install 3.14.8
+uv sync --frozen --all-groups --all-extras
+uv run --no-sync pytest
+uv build
+</code></pre>
+<p>The platform Conda specifications below remain reference environments for the
+book's separately provisioned GPU and vendor-data workflows. For this maintained
+checkout, <code>pyproject.toml</code> and <code>uv.lock</code> define installation and dependency updates:</p>
+<pre><code class="language-bash">uv lock --upgrade
+uv sync --frozen --all-groups --all-extras
+</code></pre>
+<p>CPython 3.15 cannot resolve the current complete extras: Feast requires Pandas below
+3, while the available Python 3.15 backtesting stack requires Pandas 3. Python 3.13
+was also installed and fully resolved as a native-crash control; it did not make the
+full test suite pass. Python 3.14.8 remains the highest buildable complete environment.
+See <a href="validation.md">validation</a> for all failed and successful commands.</p>
+<h3 id="platform-specific-configs">Platform-Specific Configs</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>installation/linux/</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>installation/macosx/</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>installation/windows/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-quality-standards">Code Quality Standards</h2>
+<h3 id="tooling">Tooling</h3>
+<p>The project uses modern Python tooling configured in <code>pyproject.toml</code>:</p>
+<div class="diagram"><svg id="mermaid-1791780773711" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 100%; height: auto;" viewBox="4 4 456 496" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-1791780773711{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1791780773711 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1791780773711 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1791780773711 .error-icon{fill:#552222;}#mermaid-1791780773711 .error-text{fill:#552222;stroke:#552222;}#mermaid-1791780773711 .edge-thickness-normal{stroke-width:1px;}#mermaid-1791780773711 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1791780773711 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1791780773711 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1791780773711 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1791780773711 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1791780773711 .marker{fill:#333333;stroke:#333333;}#mermaid-1791780773711 .marker.cross{stroke:#333333;}#mermaid-1791780773711 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1791780773711 p{margin:0;}#mermaid-1791780773711 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1791780773711 .cluster-label text{fill:#333;}#mermaid-1791780773711 .cluster-label span{color:#333;}#mermaid-1791780773711 .cluster-label span p{background-color:transparent;}#mermaid-1791780773711 .label text,#mermaid-1791780773711 span{fill:#333;color:#333;}#mermaid-1791780773711 .node rect,#mermaid-1791780773711 .node circle,#mermaid-1791780773711 .node ellipse,#mermaid-1791780773711 .node polygon,#mermaid-1791780773711 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773711 .rough-node .label text,#mermaid-1791780773711 .node .label text,#mermaid-1791780773711 .image-shape .label,#mermaid-1791780773711 .icon-shape .label{text-anchor:middle;}#mermaid-1791780773711 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1791780773711 .rough-node .label,#mermaid-1791780773711 .node .label,#mermaid-1791780773711 .image-shape .label,#mermaid-1791780773711 .icon-shape .label{text-align:center;}#mermaid-1791780773711 .node.clickable{cursor:pointer;}#mermaid-1791780773711 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1791780773711 .arrowheadPath{fill:#333333;}#mermaid-1791780773711 .edgePaths .path{stroke:#333333;stroke-width:1px;}#mermaid-1791780773711 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1791780773711 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773711 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1791780773711 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773711 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1791780773711 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1791780773711 .cluster text{fill:#333;}#mermaid-1791780773711 .cluster span{color:#333;}#mermaid-1791780773711 .node .collapsed-indicator{fill:#aaaa33;stroke:none;opacity:0.6;}#mermaid-1791780773711 .node .collapsed-separator{stroke:#aaaa33;stroke-width:0.75px;}#mermaid-1791780773711 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1791780773711 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1791780773711 rect.text{fill:none;stroke-width:0;}#mermaid-1791780773711 .icon-shape,#mermaid-1791780773711 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773711 .icon-shape p,#mermaid-1791780773711 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1791780773711 .icon-shape .label rect,#mermaid-1791780773711 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773711 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1791780773711 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1791780773711 .node .neo-node{stroke:#9370DB;}#mermaid-1791780773711 [data-look="neo"].node rect,#mermaid-1791780773711 [data-look="neo"].cluster rect,#mermaid-1791780773711 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773711 [data-look="neo"].swimlane.cluster rect{filter:none;}#mermaid-1791780773711 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773711 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773711 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#mermaid-1791780773711 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773711 [data-look="neo"].node circle .state-start{fill:#000000;}#mermaid-1791780773711 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773711 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773711 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1791780773711_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><marker id="mermaid-1791780773711_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773711_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773711_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773711_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773711_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"></path></marker><marker id="mermaid-1791780773711_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="mermaid-1791780773711-Config" data-look="neo"><rect style="" x="12" y="215" width="200" height="146.99999999999997"></rect><g class="cluster-label" transform="translate(63.4921875, 215)"><foreignObject width="97.015625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Configuration</p></span></div></foreignObject></g></g><g class="cluster" id="mermaid-1791780773711-Testing" data-look="neo"><rect style="" x="252" y="345" width="200" height="147"></rect><g class="cluster-label" transform="translate(326.90625, 345)"><foreignObject width="50.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Testing</p></span></div></foreignObject></g></g><g class="cluster" id="mermaid-1791780773711-Linting" data-look="neo"><rect style="" x="252" y="12" width="200" height="293"></rect><g class="cluster-label" transform="translate(305.953125, 12)"><foreignObject width="92.09375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Code Quality</p></span></div></foreignObject></g></g></g><g class="edges edgePaths"><path d="M212,267.33333333333337L224.92893218813452,267.33333333333337Q232,267.33333333333337 232,260.2622655214679L232,165.57106781186548Q232,158.5 239.07106781186548,158.5L248,158.5" id="mermaid-1791780773711-L_Config_Linting_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 135.5050506591797 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Config_Linting_0" data-points="W3sieCI6MjEyLCJ5IjoyNjcuMzMzMzMzMzMzMzMzMzd9LHsieCI6MjMyLCJ5IjoyNjcuMzMzMzMzMzMzMzMzMzd9LHsieCI6MjMyLCJ5IjoxNTguNX0seyJ4IjoyNTIsInkiOjE1OC41fV0=" data-look="neo" marker-end="url(#mermaid-1791780773711_flowchart-v2-pointEnd-margin)"></path><path d="M212,309.6666666666667L224.92893218813452,309.6666666666667Q232,309.6666666666667 232,316.73773447853216L232,411.4289321881345Q232,418.5 239.07106781186548,418.5L248,418.5" id="mermaid-1791780773711-L_Config_Testing_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 135.5050506591797 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Config_Testing_0" data-points="W3sieCI6MjEyLCJ5IjozMDkuNjY2NjY2NjY2NjY2N30seyJ4IjoyMzIsInkiOjMwOS42NjY2NjY2NjY2NjY3fSx7IngiOjIzMiwieSI6NDE4LjV9LHsieCI6MjUyLCJ5Ijo0MTguNX1d" data-look="neo" marker-end="url(#mermaid-1791780773711_flowchart-v2-pointEnd-margin)"></path></g><g class="edgeLabels"></g><g class="nodes"><g class="node default" id="mermaid-1791780773711-flowchart-RUFF-0" data-look="neo" transform="translate(352, 111)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"></rect><g class="label" style="" transform="translate(-60, -36)"><rect></rect><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Ruff<br>Linting + Formatting</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773711-flowchart-PYRIGHT-1" data-look="neo" transform="translate(352, 245)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Pyright<br>Type Checking</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773711-flowchart-PYTEST-2" data-look="neo" transform="translate(352, 432)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>pytest 9+<br>Test runner</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773711-flowchart-TOML-3" data-look="neo" transform="translate(112, 302)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>pyproject.toml<br>Unified config</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mermaid-1791780773711-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="mermaid-1791780773711-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs></svg></div><details><summary>Diagram source</summary><pre><code>flowchart LR
+    subgraph Linting["Code Quality"]
+        RUFF[Ruff&lt;br/&gt;Linting + Formatting]
+        PYRIGHT[Pyright&lt;br/&gt;Type Checking]
+    end
+
+    subgraph Testing["Testing"]
+        PYTEST[pytest 9+&lt;br/&gt;Test runner]
+    end
+
+    subgraph Config["Configuration"]
+        TOML[pyproject.toml&lt;br/&gt;Unified config]
+    end
+
+    Config --&gt; Linting
+    Config --&gt; Testing</code></pre></details>
+<h3 id="ruff-configuration">Ruff Configuration</h3>
+<pre><code class="language-toml">[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "C4", "RUF", "PERF", "TC", "PTH"]
+ignore = ["E501"]
+</code></pre>
+<p>Key rule categories enabled:
+- <strong>E/W</strong>: pycodestyle errors and warnings
+- <strong>F</strong>: pyflakes (unused imports, undefined names)
+- <strong>I</strong>: isort-compatible import sorting
+- <strong>UP</strong>: pyupgrade (modern Python syntax)
+- <strong>B</strong>: flake8-bugbear (common pitfalls)
+- <strong>SIM</strong>: flake8-simplify (code simplification)
+- <strong>PERF</strong>: performance anti-patterns
+- <strong>PTH</strong>: pathlib preference over os.path</p>
+<h3 id="running-quality-checks">Running Quality Checks</h3>
+<pre><code class="language-bash"># Lint all Python files
+ruff check .
+
+# Auto-fix issues
+ruff check --fix .
+
+# Format code
+ruff format .
+
+# Type checking
+pyright
+
+# Run tests
+pytest
+</code></pre>
+<h2 id="project-conventions">Project Conventions</h2>
+<h3 id="directory-structure-for-chapters">Directory Structure for Chapters</h3>
+<p>Each chapter follows a consistent structure:</p>
+<pre><code>NN_chapter_name/
+├── README.md                              # Chapter overview, content, resources
+├── __init__.py                            # Package marker (where applicable)
+├── 00_data_prep.ipynb                     # Data preparation (if needed)
+├── 01_first_topic.ipynb                   # Sequential topic coverage
+├── 02_second_topic.ipynb
+├── ...
+├── NN_backtesting_with_zipline.ipynb      # Backtesting (if applicable)
+└── results/                               # Persisted model artifacts (optional)
+</code></pre>
+<h3 id="notebook-naming">Notebook Naming</h3>
+<ul>
+<li>Prefix with two-digit sequential number: <code>01_</code>, <code>02_</code>, etc.</li>
+<li>Use lowercase with underscores</li>
+<li>Names should describe the content clearly</li>
+<li><code>00_</code> prefix for setup/data preparation notebooks</li>
+<li>Final notebooks in a chapter often cover backtesting</li>
+</ul>
+<h3 id="python-script-conventions">Python Script Conventions</h3>
+<p>Standalone scripts (<code>.py</code> files) follow these patterns:</p>
+<ul>
+<li>Author attribution: <code>__author__ = 'Stefan Jansen'</code></li>
+<li>Random seed: <code>np.random.seed(42)</code> for reproducibility</li>
+<li>Relative paths using <code>pathlib.Path</code></li>
+<li>Type hints for function signatures</li>
+</ul>
+<h2 id="adding-a-new-strategy">Adding a New Strategy</h2>
+<h3 id="step-1-choose-a-chapter-context">Step 1: Choose a Chapter Context</h3>
+<p>Determine which part of the project your strategy relates to:</p>
+<div class="diagram"><svg id="mermaid-1791780773820" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 100%; height: auto;" viewBox="4 4 1512 598" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-1791780773820{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1791780773820 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1791780773820 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1791780773820 .error-icon{fill:#552222;}#mermaid-1791780773820 .error-text{fill:#552222;stroke:#552222;}#mermaid-1791780773820 .edge-thickness-normal{stroke-width:1px;}#mermaid-1791780773820 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1791780773820 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1791780773820 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1791780773820 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1791780773820 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1791780773820 .marker{fill:#333333;stroke:#333333;}#mermaid-1791780773820 .marker.cross{stroke:#333333;}#mermaid-1791780773820 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1791780773820 p{margin:0;}#mermaid-1791780773820 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1791780773820 .cluster-label text{fill:#333;}#mermaid-1791780773820 .cluster-label span{color:#333;}#mermaid-1791780773820 .cluster-label span p{background-color:transparent;}#mermaid-1791780773820 .label text,#mermaid-1791780773820 span{fill:#333;color:#333;}#mermaid-1791780773820 .node rect,#mermaid-1791780773820 .node circle,#mermaid-1791780773820 .node ellipse,#mermaid-1791780773820 .node polygon,#mermaid-1791780773820 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773820 .rough-node .label text,#mermaid-1791780773820 .node .label text,#mermaid-1791780773820 .image-shape .label,#mermaid-1791780773820 .icon-shape .label{text-anchor:middle;}#mermaid-1791780773820 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1791780773820 .rough-node .label,#mermaid-1791780773820 .node .label,#mermaid-1791780773820 .image-shape .label,#mermaid-1791780773820 .icon-shape .label{text-align:center;}#mermaid-1791780773820 .node.clickable{cursor:pointer;}#mermaid-1791780773820 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1791780773820 .arrowheadPath{fill:#333333;}#mermaid-1791780773820 .edgePaths .path{stroke:#333333;stroke-width:1px;}#mermaid-1791780773820 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1791780773820 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773820 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1791780773820 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773820 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1791780773820 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1791780773820 .cluster text{fill:#333;}#mermaid-1791780773820 .cluster span{color:#333;}#mermaid-1791780773820 .node .collapsed-indicator{fill:#aaaa33;stroke:none;opacity:0.6;}#mermaid-1791780773820 .node .collapsed-separator{stroke:#aaaa33;stroke-width:0.75px;}#mermaid-1791780773820 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1791780773820 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1791780773820 rect.text{fill:none;stroke-width:0;}#mermaid-1791780773820 .icon-shape,#mermaid-1791780773820 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773820 .icon-shape p,#mermaid-1791780773820 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1791780773820 .icon-shape .label rect,#mermaid-1791780773820 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773820 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1791780773820 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1791780773820 .node .neo-node{stroke:#9370DB;}#mermaid-1791780773820 [data-look="neo"].node rect,#mermaid-1791780773820 [data-look="neo"].cluster rect,#mermaid-1791780773820 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773820 [data-look="neo"].swimlane.cluster rect{filter:none;}#mermaid-1791780773820 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773820 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773820 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#mermaid-1791780773820 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773820 [data-look="neo"].node circle .state-start{fill:#000000;}#mermaid-1791780773820 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773820 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773820 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1791780773820_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><marker id="mermaid-1791780773820_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773820_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773820_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773820_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773820_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"></path></marker><marker id="mermaid-1791780773820_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edges edgePaths"><path d="M700.1111111111111,126.11108493804932L700.1111111111111,186L700.1111111111111,198.92893218813452Q700.1111111111111,206 693.0400432992456,206L95.07106781186548,206Q88,206 88,213.07106781186548L88,346" id="mermaid-1791780773820-L_Q1_C07_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 822.6717529296875 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C07_0" data-points="W3sieCI6NzAwLjExMTExMTExMTExMTEsInkiOjEyNi4xMTEwODQ5MzgwNDkzMn0seyJ4Ijo3MDAuMTExMTExMTExMTExMSwieSI6MTg2fSx7IngiOjcwMC4xMTExMTExMTExMTExLCJ5IjoyMDZ9LHsieCI6ODgsInkiOjIwNn0seyJ4Ijo4OCwieSI6MzUwfV0=" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M717.2222222222222,143.22216796875L717.2222222222222,186L717.2222222222222,218.92893218813452Q717.2222222222222,226 710.1511544103566,226L287.0710678118655,226Q280,226 280,233.07106781186548L280,346" id="mermaid-1791780773820-L_Q1_C11_12_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 630.671875 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C11_12_0" data-points="W3sieCI6NzE3LjIyMjIyMjIyMjIyMjIsInkiOjE0My4yMjIxNjc5Njg3NX0seyJ4Ijo3MTcuMjIyMjIyMjIyMjIyMiwieSI6MTg2fSx7IngiOjcxNy4yMjIyMjIyMjIyMjIyLCJ5IjoyMjZ9LHsieCI6MjgwLCJ5IjoyMjZ9LHsieCI6MjgwLCJ5IjozNTB9XQ==" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M734.3333333333334,160.33325099945068L734.3333333333334,186L734.3333333333334,238.92893218813452Q734.3333333333334,246 727.262265521468,246L479.0710678118655,246Q472,246 472,253.07106781186548L472,346" id="mermaid-1791780773820-L_Q1_C09_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 438.67181396484375 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C09_0" data-points="W3sieCI6NzM0LjMzMzMzMzMzMzMzMzQsInkiOjE2MC4zMzMyNTA5OTk0NTA2OH0seyJ4Ijo3MzQuMzMzMzMzMzMzMzMzNCwieSI6MTg2fSx7IngiOjczNC4zMzMzMzMzMzMzMzM0LCJ5IjoyNDZ9LHsieCI6NDcyLCJ5IjoyNDZ9LHsieCI6NDcyLCJ5IjozNTB9XQ==" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M751.4444444444445,177.4444169998169L751.4444444444445,186L751.4444444444445,258.9289321881345Q751.4444444444445,266 744.373376632579,266L671.0710678118655,266Q664,266 664,273.0710678118655L664,346" id="mermaid-1791780773820-L_Q1_C10_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 246.67172241210938 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C10_0" data-points="W3sieCI6NzUxLjQ0NDQ0NDQ0NDQ0NDUsInkiOjE3Ny40NDQ0MTY5OTk4MTY5fSx7IngiOjc1MS40NDQ0NDQ0NDQ0NDQ1LCJ5IjoxODZ9LHsieCI6NzUxLjQ0NDQ0NDQ0NDQ0NDUsInkiOjI2Nn0seyJ4Ijo2NjQsInkiOjI2Nn0seyJ4Ijo2NjQsInkiOjM1MH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M768.5555555555555,177.4444169998169L768.5555555555555,186L768.5555555555555,258.9289321881345Q768.5555555555555,266 775.626623367421,266L848.9289321881345,266Q856,266 856,273.0710678118655L856,346" id="mermaid-1791780773820-L_Q1_C17_22_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 246.67173767089844 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C17_22_0" data-points="W3sieCI6NzY4LjU1NTU1NTU1NTU1NTUsInkiOjE3Ny40NDQ0MTY5OTk4MTY5fSx7IngiOjc2OC41NTU1NTU1NTU1NTU1LCJ5IjoxODZ9LHsieCI6NzY4LjU1NTU1NTU1NTU1NTUsInkiOjI2Nn0seyJ4Ijo4NTYsInkiOjI2Nn0seyJ4Ijo4NTYsInkiOjM1MH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M785.6666666666666,160.33325099945068L785.6666666666666,186L785.6666666666666,238.92893218813452Q785.6666666666666,246 792.737734478532,246L1040.9289321881345,246Q1048,246 1048,253.07106781186548L1048,346" id="mermaid-1791780773820-L_Q1_C14_16_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 438.6717834472656 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C14_16_0" data-points="W3sieCI6Nzg1LjY2NjY2NjY2NjY2NjYsInkiOjE2MC4zMzMyNTA5OTk0NTA2OH0seyJ4Ijo3ODUuNjY2NjY2NjY2NjY2NiwieSI6MTg2fSx7IngiOjc4NS42NjY2NjY2NjY2NjY2LCJ5IjoyNDZ9LHsieCI6MTA0OCwieSI6MjQ2fSx7IngiOjEwNDgsInkiOjM1MH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M802.7777777777778,143.22216796875L802.7777777777778,186L802.7777777777778,218.92893218813452Q802.7777777777778,226 809.8488455896434,226L1232.9289321881345,226Q1240,226 1240,233.07106781186548L1240,346" id="mermaid-1791780773820-L_Q1_C13_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 630.6717529296875 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C13_0" data-points="W3sieCI6ODAyLjc3Nzc3Nzc3Nzc3NzgsInkiOjE0My4yMjIxNjc5Njg3NX0seyJ4Ijo4MDIuNzc3Nzc3Nzc3Nzc3OCwieSI6MTg2fSx7IngiOjgwMi43Nzc3Nzc3Nzc3Nzc4LCJ5IjoyMjZ9LHsieCI6MTI0MCwieSI6MjI2fSx7IngiOjEyNDAsInkiOjM1MH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M819.8888888888889,126.11108493804932L819.8888888888889,186L819.8888888888889,198.92893218813452Q819.8888888888889,206 826.9599567007544,206L1424.9289321881345,206Q1432,206 1432,213.07106781186548L1432,346" id="mermaid-1791780773820-L_Q1_C22_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 822.6717529296875 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Q1_C22_0" data-points="W3sieCI6ODE5Ljg4ODg4ODg4ODg4ODksInkiOjEyNi4xMTEwODQ5MzgwNDkzMn0seyJ4Ijo4MTkuODg4ODg4ODg4ODg4OSwieSI6MTg2fSx7IngiOjgxOS44ODg4ODg4ODg4ODg5LCJ5IjoyMDZ9LHsieCI6MTQzMiwieSI6MjA2fSx7IngiOjE0MzIsInkiOjM1MH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M88,398L88,470.9289321881345Q88,478 95.07106781186548,478L701.5955988548012,478Q708.6666666666666,478 708.6666666666666,485.0710678118655L708.6666666666666,494" id="mermaid-1791780773820-L_C07_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 707.33837890625 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C07_IMPL_0" data-points="W3sieCI6ODgsInkiOjM5OH0seyJ4Ijo4OCwieSI6NDc4fSx7IngiOjcwOC42NjY2NjY2NjY2NjY2LCJ5Ijo0Nzh9LHsieCI6NzA4LjY2NjY2NjY2NjY2NjYsInkiOjQ5OH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M280,398L280,450.9289321881345Q280,458 287.0710678118655,458L716.262265521468,458Q723.3333333333334,458 723.3333333333334,465.0710678118655L723.3333333333334,494" id="mermaid-1791780773820-L_C11_12_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 530.0050659179688 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C11_12_IMPL_0" data-points="W3sieCI6MjgwLCJ5IjozOTh9LHsieCI6MjgwLCJ5Ijo0NTh9LHsieCI6NzIzLjMzMzMzMzMzMzMzMzQsInkiOjQ1OH0seyJ4Ijo3MjMuMzMzMzMzMzMzMzMzNCwieSI6NDk4fV0=" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M472,398L472,430.9289321881345Q472,438 479.0710678118655,438L730.9289321881345,438Q738,438 738,445.0710678118655L738,494" id="mermaid-1791780773820-L_C09_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 352.6717224121094 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C09_IMPL_0" data-points="W3sieCI6NDcyLCJ5IjozOTh9LHsieCI6NDcyLCJ5Ijo0Mzh9LHsieCI6NzM4LCJ5Ijo0Mzh9LHsieCI6NzM4LCJ5Ijo0OTh9XQ==" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M664,398L664,410.9289321881345Q664,418 671.0710678118655,418L745.5955988548012,418Q752.6666666666666,418 752.6666666666666,425.0710678118655L752.6666666666666,494" id="mermaid-1791780773820-L_C10_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 175.33836364746094 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C10_IMPL_0" data-points="W3sieCI6NjY0LCJ5IjozOTh9LHsieCI6NjY0LCJ5Ijo0MTh9LHsieCI6NzUyLjY2NjY2NjY2NjY2NjYsInkiOjQxOH0seyJ4Ijo3NTIuNjY2NjY2NjY2NjY2NiwieSI6NDk4fV0=" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M1240,398L1240,450.9289321881345Q1240,458 1232.9289321881345,458L803.7377344785323,458Q796.6666666666667,458 796.6666666666667,465.0710678118655L796.6666666666667,494" id="mermaid-1791780773820-L_C13_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 530.0050048828125 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C13_IMPL_0" data-points="W3sieCI6MTI0MCwieSI6Mzk4fSx7IngiOjEyNDAsInkiOjQ1OH0seyJ4Ijo3OTYuNjY2NjY2NjY2NjY2NywieSI6NDU4fSx7IngiOjc5Ni42NjY2NjY2NjY2NjY3LCJ5Ijo0OTh9XQ==" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M1048,398L1048,430.9289321881345Q1048,438 1040.9289321881345,438L789.0710678118655,438Q782,438 782,445.0710678118655L782,494" id="mermaid-1791780773820-L_C14_16_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 352.67169189453125 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C14_16_IMPL_0" data-points="W3sieCI6MTA0OCwieSI6Mzk4fSx7IngiOjEwNDgsInkiOjQzOH0seyJ4Ijo3ODIsInkiOjQzOH0seyJ4Ijo3ODIsInkiOjQ5OH1d" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M856,398L856,410.9289321881345Q856,418 848.9289321881345,418L774.4044011451988,418Q767.3333333333334,418 767.3333333333334,425.0710678118655L767.3333333333334,494" id="mermaid-1791780773820-L_C17_22_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 175.33837890625 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C17_22_IMPL_0" data-points="W3sieCI6ODU2LCJ5IjozOTh9LHsieCI6ODU2LCJ5Ijo0MTh9LHsieCI6NzY3LjMzMzMzMzMzMzMzMzQsInkiOjQxOH0seyJ4Ijo3NjcuMzMzMzMzMzMzMzMzNCwieSI6NDk4fV0=" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path><path d="M1432,398L1432,470.9289321881345Q1432,478 1424.9289321881345,478L818.4044011451988,478Q811.3333333333334,478 811.3333333333334,485.0710678118655L811.3333333333334,494" id="mermaid-1791780773820-L_C22_IMPL_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 707.33837890625 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_C22_IMPL_0" data-points="W3sieCI6MTQzMiwieSI6Mzk4fSx7IngiOjE0MzIsInkiOjQ3OH0seyJ4Ijo4MTEuMzMzMzMzMzMzMzMzNCwieSI6NDc4fSx7IngiOjgxMS4zMzMzMzMzMzMzMzM0LCJ5Ijo0OTh9XQ==" data-look="neo" marker-end="url(#mermaid-1791780773820_flowchart-v2-pointEnd-margin)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(87.8828125, 298)"><g class="label" data-id="L_Q1_C07_0" transform="translate(-22.3828125, -12)"><foreignObject width="44.765625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Linear</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(279.7578125, 298)"><g class="label" data-id="L_Q1_C11_12_0" transform="translate(-39.2578125, -12)"><foreignObject width="78.515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Tree-based</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(471.7109375, 298)"><g class="label" data-id="L_Q1_C09_0" transform="translate(-41.2109375, -12)"><foreignObject width="82.421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Time Series</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(663.6328125, 298)"><g class="label" data-id="L_Q1_C10_0" transform="translate(-31.1328125, -12)"><foreignObject width="62.265625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Bayesian</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(855.765625, 298)"><g class="label" data-id="L_Q1_C17_22_0" transform="translate(-51.265625, -12)"><foreignObject width="102.53125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Deep Learning</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(1047.7734375, 298)"><g class="label" data-id="L_Q1_C14_16_0" transform="translate(-37.2734375, -12)"><foreignObject width="74.546875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>NLP-based</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(1239.859375, 298)"><g class="label" data-id="L_Q1_C13_0" transform="translate(-47.359375, -12)"><foreignObject width="94.71875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Unsupervised</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(1431.7109375, 298)"><g class="label" data-id="L_Q1_C22_0" transform="translate(-8.7109375, -12)"><foreignObject width="17.421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>RL</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="mermaid-1791780773820-flowchart-Q1-0" data-look="neo" transform="translate(760, 99)"><polygon points="87,0 174,-87 87,-174 0,-87" class="label-container" transform="translate(-86.5, 87)"></polygon><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>ML Model Type?</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C07-2" data-look="neo" transform="translate(88, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 7</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C11_12-4" data-look="neo" transform="translate(280, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 11-12</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C09-6" data-look="neo" transform="translate(472, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 9</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C10-8" data-look="neo" transform="translate(664, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 10</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C17_22-10" data-look="neo" transform="translate(856, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapters 17-22</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C14_16-12" data-look="neo" transform="translate(1048, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapters 14-16</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C13-14" data-look="neo" transform="translate(1240, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 13</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-C22-16" data-look="neo" transform="translate(1432, 374)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Chapter 22</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773820-flowchart-IMPL-18" data-look="neo" transform="translate(760, 546)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"></rect><g class="label" style="" transform="translate(-60, -36)"><rect></rect><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Create notebook in chapter dir</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mermaid-1791780773820-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="mermaid-1791780773820-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs></svg></div><details><summary>Diagram source</summary><pre><code>flowchart TD
+    Q1{ML Model Type?}
+    Q1 --&gt;|Linear| C07[Chapter 7]
+    Q1 --&gt;|Tree-based| C11_12[Chapter 11-12]
+    Q1 --&gt;|Time Series| C09[Chapter 9]
+    Q1 --&gt;|Bayesian| C10[Chapter 10]
+    Q1 --&gt;|Deep Learning| C17_22[Chapters 17-22]
+    Q1 --&gt;|NLP-based| C14_16[Chapters 14-16]
+    Q1 --&gt;|Unsupervised| C13[Chapter 13]
+    Q1 --&gt;|RL| C22[Chapter 22]
+
+    C07 --&gt; IMPL[Create notebook in chapter dir]
+    C11_12 --&gt; IMPL
+    C09 --&gt; IMPL
+    C10 --&gt; IMPL
+    C13 --&gt; IMPL
+    C14_16 --&gt; IMPL
+    C17_22 --&gt; IMPL
+    C22 --&gt; IMPL</code></pre></details>
+<h3 id="step-2-data-preparation">Step 2: Data Preparation</h3>
+<pre><code class="language-python"># Standard data loading pattern
+from pathlib import Path
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+
+PROJECT_DIR = Path('..', '..')
+DATA_DIR = PROJECT_DIR / 'data'
+
+# Load from shared store
+with pd.HDFStore(DATA_DIR / 'assets.h5') as store:
+    prices = store['quandl/wiki/prices']
+</code></pre>
+<h3 id="step-3-feature-engineering">Step 3: Feature Engineering</h3>
+<p>Use the alpha factor library (Chapter 24) as a starting point:</p>
+<pre><code class="language-python">import talib
+
+# Technical indicators
+df['SMA_20'] = talib.SMA(df['close'], timeperiod=20)
+df['RSI_14'] = talib.RSI(df['close'], timeperiod=14)
+df['MACD'], df['MACD_signal'], df['MACD_hist'] = talib.MACD(df['close'])
+
+# Custom factors from Chapter 24
+# See 24_alpha_factor_library/02_common_alpha_factors.ipynb
+</code></pre>
+<h3 id="step-4-model-training-with-time-series-cv">Step 4: Model Training with Time-Series CV</h3>
+<p>Always use <code>MultipleTimeSeriesCV</code> from <code>utils.py</code> for validation:</p>
+<pre><code class="language-python">import sys
+sys.path.insert(0, str(PROJECT_DIR))
+from utils import MultipleTimeSeriesCV
+
+cv = MultipleTimeSeriesCV(
+    n_splits=12,
+    train_period_length=252,
+    test_period_length=63,
+    lookahead=1,
+    date_idx='date'
+)
+
+for train_idx, test_idx in cv.split(X):
+    model.fit(X.iloc[train_idx], y.iloc[train_idx])
+    predictions.append(model.predict(X.iloc[test_idx]))
+</code></pre>
+<h3 id="step-5-signal-evaluation-with-alphalens">Step 5: Signal Evaluation with Alphalens</h3>
+<pre><code class="language-python">from alphalens import utils, tears
+
+factor_data = utils.get_clean_factor_and_forward_returns(
+    factor=signals,
+    prices=prices,
+    quantiles=5,
+    periods=(1, 5, 21)
+)
+
+tears.create_full_tear_sheet(factor_data)
+</code></pre>
+<h3 id="step-6-backtesting">Step 6: Backtesting</h3>
+<p>Choose the appropriate backtesting approach:</p>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>When to Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vectorized</td>
+<td>Quick iteration, simple signals</td>
+<td><code>08/.../02_vectorized_backtest.ipynb</code></td>
+</tr>
+<tr>
+<td>Backtrader</td>
+<td>Realistic execution, complex logic</td>
+<td><code>08/.../03_backtesting_with_backtrader.ipynb</code></td>
+</tr>
+<tr>
+<td>Zipline</td>
+<td>Full ML integration, pipeline API</td>
+<td><code>08/.../04_ml4t_workflow_with_zipline/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-7-performance-evaluation">Step 7: Performance Evaluation</h3>
+<pre><code class="language-python">import pyfolio as pf
+
+pf.create_full_tear_sheet(
+    returns=strategy_returns,
+    positions=positions,
+    transactions=transactions,
+    benchmark_rets=benchmark_returns
+)
+</code></pre>
+<h2 id="ml-best-practices-for-trading">ML Best Practices for Trading</h2>
+<h3 id="avoiding-look-ahead-bias">Avoiding Look-Ahead Bias</h3>
+<div class="diagram"><svg id="mermaid-1791780773855" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 100%; height: auto;" viewBox="4 4 861.46875 522" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-1791780773855{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1791780773855 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1791780773855 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1791780773855 .error-icon{fill:#552222;}#mermaid-1791780773855 .error-text{fill:#552222;stroke:#552222;}#mermaid-1791780773855 .edge-thickness-normal{stroke-width:1px;}#mermaid-1791780773855 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1791780773855 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1791780773855 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1791780773855 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1791780773855 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1791780773855 .marker{fill:#333333;stroke:#333333;}#mermaid-1791780773855 .marker.cross{stroke:#333333;}#mermaid-1791780773855 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1791780773855 p{margin:0;}#mermaid-1791780773855 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1791780773855 .cluster-label text{fill:#333;}#mermaid-1791780773855 .cluster-label span{color:#333;}#mermaid-1791780773855 .cluster-label span p{background-color:transparent;}#mermaid-1791780773855 .label text,#mermaid-1791780773855 span{fill:#333;color:#333;}#mermaid-1791780773855 .node rect,#mermaid-1791780773855 .node circle,#mermaid-1791780773855 .node ellipse,#mermaid-1791780773855 .node polygon,#mermaid-1791780773855 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773855 .rough-node .label text,#mermaid-1791780773855 .node .label text,#mermaid-1791780773855 .image-shape .label,#mermaid-1791780773855 .icon-shape .label{text-anchor:middle;}#mermaid-1791780773855 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1791780773855 .rough-node .label,#mermaid-1791780773855 .node .label,#mermaid-1791780773855 .image-shape .label,#mermaid-1791780773855 .icon-shape .label{text-align:center;}#mermaid-1791780773855 .node.clickable{cursor:pointer;}#mermaid-1791780773855 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1791780773855 .arrowheadPath{fill:#333333;}#mermaid-1791780773855 .edgePaths .path{stroke:#333333;stroke-width:1px;}#mermaid-1791780773855 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1791780773855 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773855 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1791780773855 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773855 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1791780773855 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1791780773855 .cluster text{fill:#333;}#mermaid-1791780773855 .cluster span{color:#333;}#mermaid-1791780773855 .node .collapsed-indicator{fill:#aaaa33;stroke:none;opacity:0.6;}#mermaid-1791780773855 .node .collapsed-separator{stroke:#aaaa33;stroke-width:0.75px;}#mermaid-1791780773855 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1791780773855 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1791780773855 rect.text{fill:none;stroke-width:0;}#mermaid-1791780773855 .icon-shape,#mermaid-1791780773855 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773855 .icon-shape p,#mermaid-1791780773855 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1791780773855 .icon-shape .label rect,#mermaid-1791780773855 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773855 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1791780773855 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1791780773855 .node .neo-node{stroke:#9370DB;}#mermaid-1791780773855 [data-look="neo"].node rect,#mermaid-1791780773855 [data-look="neo"].cluster rect,#mermaid-1791780773855 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773855 [data-look="neo"].swimlane.cluster rect{filter:none;}#mermaid-1791780773855 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773855 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773855 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#mermaid-1791780773855 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773855 [data-look="neo"].node circle .state-start{fill:#000000;}#mermaid-1791780773855 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773855 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773855 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1791780773855_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><marker id="mermaid-1791780773855_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773855_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773855_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773855_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773855_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"></path></marker><marker id="mermaid-1791780773855_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="mermaid-1791780773855-Correct" data-look="neo"><rect style="" x="12" y="323" width="845.46875" height="195"></rect><g class="cluster-label" transform="translate(384.6484375, 323)"><foreignObject width="100.171875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Best Practices</p></span></div></foreignObject></g></g><g class="cluster" id="mermaid-1791780773855-Wrong" data-look="neo"><rect style="" x="31.734375" y="12" width="806" height="147"></rect><g class="cluster-label" transform="translate(371.09375, 12)"><foreignObject width="127.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Common Mistakes</p></span></div></foreignObject></g></g></g><g class="edges edgePaths"><path d="M131.734375,135L131.734375,169L131.734375,184.06640625Q131.734375,189 126.80078125,189L126.80078125,189Q121.8671875,189 121.8671875,193.93359375L121.8671875,248.06640625Q121.8671875,253 116.93359375,253L116.93359375,253Q112,253 112,257.93359375L112,313L111.99999999999999,370" id="mermaid-1791780773855-L_W1_C1_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_W1_C1_0" data-points="W3sieCI6MTMxLjczNDM3NSwieSI6MTM1fSx7IngiOjEzMS43MzQzNzUsInkiOjE2OX0seyJ4IjoxMzEuNzM0Mzc1LCJ5IjoxODl9LHsieCI6MTIxLjg2NzE4NzUsInkiOjE4OX0seyJ4IjoxMjEuODY3MTg3NSwieSI6MjUzfSx7IngiOjExMiwieSI6MjUzfSx7IngiOjExMiwieSI6MzEzfSx7IngiOjExMS45OTk5OTk5OTk5OTk5OSwieSI6Mzc0fV0=" data-look="neo" marker-end="url(#mermaid-1791780773855_flowchart-v2-pointEnd-margin)"></path><path d="M333.734375,135L333.734375,169L333.734375,313L333.734375,370" id="mermaid-1791780773855-L_W2_C2_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_W2_C2_0" data-points="W3sieCI6MzMzLjczNDM3NSwieSI6MTM1fSx7IngiOjMzMy43MzQzNzUsInkiOjE2OX0seyJ4IjozMzMuNzM0Mzc1LCJ5IjozMTN9LHsieCI6MzMzLjczNDM3NSwieSI6Mzc0fV0=" data-look="neo" marker-end="url(#mermaid-1791780773855_flowchart-v2-pointEnd-margin)"></path><path d="M535.734,135 L535.734,169 L535.734,184.066 Q535.734,189 540.668,189 L540.668,189 Q545.602,189 545.602,193.934 L545.602,265.929 Q545.602,273 552.673,273 L645.535,273 A6,6 0 0 1 657.535,273 L750.398,273 Q757.469,273 757.469,280.071 L757.469,313 L757.469,370" id="mermaid-1791780773855-L_W3_C4_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 452.5412292480469 2; stroke-dashoffset: 0;" data-edge="true" data-et="edge" data-id="L_W3_C4_0" data-points="W3sieCI6NTM1LjczNDM3NSwieSI6MTM1fSx7IngiOjUzNS43MzQzNzUsInkiOjE2OX0seyJ4Ijo1MzUuNzM0Mzc1LCJ5IjoxODl9LHsieCI6NTQ1LjYwMTU2MjUsInkiOjE4OX0seyJ4Ijo1NDUuNjAxNTYyNSwieSI6MjczfSx7IngiOjc1Ny40Njg3NSwieSI6MjczfSx7IngiOjc1Ny40Njg3NSwieSI6MzEzfSx7IngiOjc1Ny40Njg3NSwieSI6Mzc0fV0=" data-look="neo" marker-end="url(#mermaid-1791780773855_flowchart-v2-pointEnd-margin)"></path><path d="M737.734375,135L737.734375,169L737.734375,184.06640625Q737.734375,189 742.66796875,189L742.66796875,189Q747.6015625,189 747.6015625,193.93359375L747.6015625,245.92893218813452Q747.6015625,253 740.5304946881345,253L658.6062240618655,253Q651.53515625,253 651.53515625,260.0710678118655L651.53515625,285.9289321881345Q651.53515625,293 644.4640884381345,293L562.5398178118655,293Q555.46875,293 555.46875,300.0710678118655L555.46875,313L555.46875,370" id="mermaid-1791780773855-L_W4_C3_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_W4_C3_0" data-points="W3sieCI6NzM3LjczNDM3NSwieSI6MTM1fSx7IngiOjczNy43MzQzNzUsInkiOjE2OX0seyJ4Ijo3MzcuNzM0Mzc1LCJ5IjoxODl9LHsieCI6NzQ3LjYwMTU2MjUsInkiOjE4OX0seyJ4Ijo3NDcuNjAxNTYyNSwieSI6MjUzfSx7IngiOjY1MS41MzUxNTYyNSwieSI6MjUzfSx7IngiOjY1MS41MzUxNTYyNSwieSI6MjkzfSx7IngiOjU1NS40Njg3NSwieSI6MjkzfSx7IngiOjU1NS40Njg3NSwieSI6MzEzfSx7IngiOjU1NS40Njg3NSwieSI6Mzc0fV0=" data-look="neo" marker-end="url(#mermaid-1791780773855_flowchart-v2-pointEnd-margin)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(121.859375, 221)"><g class="label" data-id="L_W1_C1_0" transform="translate(-10.4921875, -12)"><foreignObject width="20.984375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Fix</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(333.7265625, 221)"><g class="label" data-id="L_W2_C2_0" transform="translate(-10.4921875, -12)"><foreignObject width="20.984375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Fix</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(545.59375, 221)"><g class="label" data-id="L_W3_C4_0" transform="translate(-10.4921875, -12)"><foreignObject width="20.984375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Fix</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(747.59375, 221)"><g class="label" data-id="L_W4_C3_0" transform="translate(-10.4921875, -12)"><foreignObject width="20.984375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>Fix</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="mermaid-1791780773855-flowchart-W1-0" data-look="neo" transform="translate(131.734375, 99)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Using future data in features</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-W2-1" data-look="neo" transform="translate(333.734375, 99)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Information leakage in CV</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-W3-2" data-look="neo" transform="translate(535.734375, 99)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Survivorship bias in universe</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-W4-3" data-look="neo" transform="translate(737.734375, 99)"><rect class="basic label-container" style="" x="-76" y="-36" width="152" height="72"></rect><g class="label" style="" transform="translate(-60, -24)"><rect></rect><foreignObject width="120" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Point-in-time violations</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-C1-4" data-look="neo" transform="translate(112, 422)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"></rect><g class="label" style="" transform="translate(-60, -36)"><rect></rect><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Lag all features by at least 1 period</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-C2-5" data-look="neo" transform="translate(333.734375, 422)"><rect class="basic label-container" style="" x="-95.734375" y="-48" width="191.46875" height="96"></rect><g class="label" style="" transform="translate(-79.734375, -36)"><rect></rect><foreignObject width="159.46875" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Use MultipleTimeSeriesCV with purging</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-C3-6" data-look="neo" transform="translate(555.46875, 434)"><rect class="basic label-container" style="" x="-76" y="-60" width="152" height="120"></rect><g class="label" style="" transform="translate(-60, -48)"><rect></rect><foreignObject width="120" height="96"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Use point-in-time fundamental data</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773855-flowchart-C4-7" data-look="neo" transform="translate(757.46875, 422)"><rect class="basic label-container" style="" x="-76" y="-48" width="152" height="96"></rect><g class="label" style="" transform="translate(-60, -36)"><rect></rect><foreignObject width="120" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>Account for delisted securities</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mermaid-1791780773855-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="mermaid-1791780773855-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs></svg></div><details><summary>Diagram source</summary><pre><code>flowchart TD
+    subgraph Wrong["Common Mistakes"]
+        W1[Using future data in features]
+        W2[Information leakage in CV]
+        W3[Survivorship bias in universe]
+        W4[Point-in-time violations]
+    end
+
+    subgraph Correct["Best Practices"]
+        C1[Lag all features by at least 1 period]
+        C2[Use MultipleTimeSeriesCV with purging]
+        C3[Use point-in-time fundamental data]
+        C4[Account for delisted securities]
+    end
+
+    W1 -.-&gt;|Fix| C1
+    W2 -.-&gt;|Fix| C2
+    W3 -.-&gt;|Fix| C4
+    W4 -.-&gt;|Fix| C3</code></pre></details>
+<h3 id="key-principles">Key Principles</h3>
+<ol>
+<li>
+<p><strong>Time-series aware validation</strong>: Never use standard k-fold CV on financial time series.
+   Always use <code>MultipleTimeSeriesCV</code> or <code>TimeSeriesSplit</code> with appropriate purging gaps.</p>
+</li>
+<li>
+<p><strong>Multiple testing correction</strong>: When testing many strategies, apply statistical corrections
+   (Chapter 8, <code>01_multiple_testing/</code>). A single good backtest among many trials is likely noise.</p>
+</li>
+<li>
+<p><strong>Transaction costs</strong>: Include realistic transaction costs in backtests. Vectorized backtests
+   often omit these, leading to overly optimistic results.</p>
+</li>
+<li>
+<p><strong>Regime awareness</strong>: Financial markets change regimes. Train on diverse market conditions
+   and evaluate robustness across regimes.</p>
+</li>
+<li>
+<p><strong>Feature importance stability</strong>: Check that feature importance is stable across time periods.
+   Chapter 12 demonstrates SHAP analysis for this purpose.</p>
+</li>
+</ol>
+<h3 id="common-pitfalls">Common Pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Chapter Reference</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overfitting</td>
+<td>Ch 6 (<code>03_bias_variance.ipynb</code>)</td>
+<td>Regularization, early stopping, ensemble methods</td>
+</tr>
+<tr>
+<td>Data snooping</td>
+<td>Ch 8 (<code>01_multiple_testing/</code>)</td>
+<td>FDR control, out-of-sample holdout</td>
+</tr>
+<tr>
+<td>Survivorship bias</td>
+<td>Ch 2</td>
+<td>Use point-in-time databases</td>
+</tr>
+<tr>
+<td>Lookahead bias</td>
+<td>Ch 6, 8</td>
+<td>Strict temporal separation in CV</td>
+</tr>
+<tr>
+<td>Regime change</td>
+<td>Ch 9, 10</td>
+<td>Rolling windows, Bayesian updating</td>
+</tr>
+<tr>
+<td>Overly complex models</td>
+<td>Ch 6</td>
+<td>Start simple, increase complexity only if justified</td>
+</tr>
+<tr>
+<td>Ignoring transaction costs</td>
+<td>Ch 5, 8</td>
+<td>Include slippage, commissions, market impact</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adding-new-alpha-factors">Adding New Alpha Factors</h2>
+<h3 id="using-the-alpha-factor-library">Using the Alpha Factor Library</h3>
+<p>Chapter 24 provides the framework for creating and evaluating new factors:</p>
+<ol>
+<li><strong>Define the factor</strong> in a function that takes OHLCV data and returns a signal Series</li>
+<li><strong>Compute across the universe</strong> using <code>04_alpha_factor_research/01_feature_engineering.ipynb</code> patterns</li>
+<li><strong>Evaluate with Alphalens</strong> using <code>24_alpha_factor_library/05_alphalens_analysis.ipynb</code></li>
+<li><strong>Compare with existing factors</strong> using mutual information (<code>06/.../02_mutual_information.ipynb</code>)</li>
+</ol>
+<h3 id="ta-lib-factor-template">TA-Lib Factor Template</h3>
+<pre><code class="language-python">import talib
+import pandas as pd
+
+def compute_custom_factor(df: pd.DataFrame) -&gt; pd.Series:
+    """Compute a custom alpha factor.
+
+    Args:
+        df: DataFrame with OHLCV columns
+
+    Returns:
+        Series with factor values, indexed by date
+    """
+    # Combine multiple indicators
+    rsi = talib.RSI(df['close'], timeperiod=14)
+    bb_upper, bb_middle, bb_lower = talib.BBANDS(df['close'])
+    atr = talib.ATR(df['high'], df['low'], df['close'])
+
+    # Custom signal logic
+    signal = (df['close'] - bb_middle) / atr
+    signal = signal.where(rsi &lt; 70)  # Filter by RSI
+
+    return signal
+</code></pre>
+<h2 id="testing">Testing</h2>
+<h3 id="test-configuration">Test Configuration</h3>
+<p>Tests are configured in <code>pyproject.toml</code>:</p>
+<pre><code class="language-toml">[tool.pytest.ini_options]
+minversion = "9.0"
+addopts = ["-ra", "-q", "--strict-markers", "--import-mode=importlib"]
+testpaths = ["tests"]
+pythonpath = ["src"]
+xfail_strict = true
+filterwarnings = ["error"]
+</code></pre>
+<h3 id="running-tests">Running Tests</h3>
+<pre><code class="language-bash"># Run all tests
+pytest
+
+# Run with verbose output
+pytest -v
+
+# Run specific test file
+pytest tests/test_specific.py
+
+# Run with coverage
+pytest --cov=. --cov-report=html
+</code></pre>
+<h3 id="writing-tests-for-trading-code">Writing Tests for Trading Code</h3>
+<pre><code class="language-python">import pytest
+import numpy as np
+import pandas as pd
+from utils import MultipleTimeSeriesCV
+
+
+def test_multiple_time_series_cv_splits():
+    """Test that CV generates correct number of splits."""
+    dates = pd.date_range('2020-01-01', periods=500, freq='B')
+    symbols = ['AAPL', 'MSFT']
+    idx = pd.MultiIndex.from_product([symbols, dates], names=['symbol', 'date'])
+    X = pd.DataFrame(np.random.randn(len(idx), 5), index=idx)
+
+    cv = MultipleTimeSeriesCV(
+        n_splits=3,
+        train_period_length=126,
+        test_period_length=21,
+        lookahead=1,
+        date_idx='date'
+    )
+
+    splits = list(cv.split(X))
+    assert len(splits) == 3
+    for train_idx, test_idx in splits:
+        assert len(train_idx) &gt; 0
+        assert len(test_idx) &gt; 0
+        # Verify no overlap
+        assert len(set(train_idx) &amp; set(test_idx)) == 0
+</code></pre>
+<h2 id="working-with-notebooks">Working with Notebooks</h2>
+<h3 id="notebook-best-practices">Notebook Best Practices</h3>
+<ol>
+<li><strong>Clear and restart</strong>: Always restart kernel and run all cells before committing</li>
+<li><strong>Deterministic output</strong>: Set random seeds at the top of each notebook</li>
+<li><strong>Memory management</strong>: Clear large DataFrames when no longer needed</li>
+<li><strong>Documentation</strong>: Use markdown cells to explain reasoning and methodology</li>
+</ol>
+<h3 id="notebook-execution-order">Notebook Execution Order</h3>
+<div class="diagram"><svg id="mermaid-1791780773882" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 100%; height: auto;" viewBox="4 4 907.4375 643.109375" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mermaid-1791780773882{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1791780773882 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1791780773882 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1791780773882 .error-icon{fill:#552222;}#mermaid-1791780773882 .error-text{fill:#552222;stroke:#552222;}#mermaid-1791780773882 .edge-thickness-normal{stroke-width:1px;}#mermaid-1791780773882 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1791780773882 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1791780773882 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1791780773882 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1791780773882 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1791780773882 .marker{fill:#333333;stroke:#333333;}#mermaid-1791780773882 .marker.cross{stroke:#333333;}#mermaid-1791780773882 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1791780773882 p{margin:0;}#mermaid-1791780773882 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1791780773882 .cluster-label text{fill:#333;}#mermaid-1791780773882 .cluster-label span{color:#333;}#mermaid-1791780773882 .cluster-label span p{background-color:transparent;}#mermaid-1791780773882 .label text,#mermaid-1791780773882 span{fill:#333;color:#333;}#mermaid-1791780773882 .node rect,#mermaid-1791780773882 .node circle,#mermaid-1791780773882 .node ellipse,#mermaid-1791780773882 .node polygon,#mermaid-1791780773882 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773882 .rough-node .label text,#mermaid-1791780773882 .node .label text,#mermaid-1791780773882 .image-shape .label,#mermaid-1791780773882 .icon-shape .label{text-anchor:middle;}#mermaid-1791780773882 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1791780773882 .rough-node .label,#mermaid-1791780773882 .node .label,#mermaid-1791780773882 .image-shape .label,#mermaid-1791780773882 .icon-shape .label{text-align:center;}#mermaid-1791780773882 .node.clickable{cursor:pointer;}#mermaid-1791780773882 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mermaid-1791780773882 .arrowheadPath{fill:#333333;}#mermaid-1791780773882 .edgePaths .path{stroke:#333333;stroke-width:1px;}#mermaid-1791780773882 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1791780773882 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773882 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1791780773882 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773882 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1791780773882 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1791780773882 .cluster text{fill:#333;}#mermaid-1791780773882 .cluster span{color:#333;}#mermaid-1791780773882 .node .collapsed-indicator{fill:#aaaa33;stroke:none;opacity:0.6;}#mermaid-1791780773882 .node .collapsed-separator{stroke:#aaaa33;stroke-width:0.75px;}#mermaid-1791780773882 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1791780773882 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-1791780773882 rect.text{fill:none;stroke-width:0;}#mermaid-1791780773882 .icon-shape,#mermaid-1791780773882 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1791780773882 .icon-shape p,#mermaid-1791780773882 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1791780773882 .icon-shape .label rect,#mermaid-1791780773882 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1791780773882 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1791780773882 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1791780773882 .node .neo-node{stroke:#9370DB;}#mermaid-1791780773882 [data-look="neo"].node rect,#mermaid-1791780773882 [data-look="neo"].cluster rect,#mermaid-1791780773882 [data-look="neo"].node polygon{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773882 [data-look="neo"].swimlane.cluster rect{filter:none;}#mermaid-1791780773882 [data-look="neo"].node path{stroke:#9370DB;stroke-width:1px;}#mermaid-1791780773882 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773882 [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#mermaid-1791780773882 [data-look="neo"].node circle{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773882 [data-look="neo"].node circle .state-start{fill:#000000;}#mermaid-1791780773882 [data-look="neo"].icon-shape .icon{fill:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773882 [data-look="neo"].icon-shape .icon-neo path{stroke:#9370DB;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1791780773882 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1791780773882_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><marker id="mermaid-1791780773882_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773882_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773882_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773882_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1791780773882_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"></path></marker><marker id="mermaid-1791780773882_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="mermaid-1791780773882-Chapter" data-look="neo"><rect style="" x="335.640625" y="228.109375" width="244.15625" height="411"></rect><g class="cluster-label" transform="translate(344.453125, 228.109375)"><foreignObject width="226.53125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Per-Chapter (sequential within)</p></span></div></foreignObject></g></g><g class="cluster" id="mermaid-1791780773882-Setup" data-look="neo"><rect style="" x="12" y="12" width="891.4375" height="176.109375"></rect><g class="cluster-label" transform="translate(374.6640625, 12)"><foreignObject width="166.109375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Initial Setup (run once)</p></span></div></foreignObject></g></g></g><g class="edges edgePaths"><path d="M457.71875,188.109375L457.71875,224.109375" id="mermaid-1791780773882-L_Setup_Chapter_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 32 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_Setup_Chapter_0" data-points="W3sieCI6NDU3LjcxODc1LCJ5IjoxODguMTA5Mzc1fSx7IngiOjQ1Ny43MTg3NSwieSI6MjI4LjEwOTM3NX1d" data-look="neo" marker-end="url(#mermaid-1791780773882_flowchart-v2-pointEnd-margin)"></path><path d="M457.71875,327.109375L457.71875,347.109375" id="mermaid-1791780773882-L_N00_N01_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 16 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_N00_N01_0" data-points="W3sieCI6NDU3LjcxODc1LCJ5IjozMjcuMTA5Mzc1fSx7IngiOjQ1Ny43MTg3NSwieSI6MzUxLjEwOTM3NX1d" data-look="neo" marker-end="url(#mermaid-1791780773882_flowchart-v2-pointEnd-margin)"></path><path d="M457.71875,399.109375L457.71875,419.109375" id="mermaid-1791780773882-L_N01_N02_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 16 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_N01_N02_0" data-points="W3sieCI6NDU3LjcxODc1LCJ5IjozOTkuMTA5Mzc1fSx7IngiOjQ1Ny43MTg3NSwieSI6NDIzLjEwOTM3NX1d" data-look="neo" marker-end="url(#mermaid-1791780773882_flowchart-v2-pointEnd-margin)"></path><path d="M457.71875,471.109375L457.71875,491.109375" id="mermaid-1791780773882-L_N02_NNN_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 16 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_N02_NNN_0" data-points="W3sieCI6NDU3LjcxODc1LCJ5Ijo0NzEuMTA5Mzc1fSx7IngiOjQ1Ny43MTg3NSwieSI6NDk1LjEwOTM3NX1d" data-look="neo" marker-end="url(#mermaid-1791780773882_flowchart-v2-pointEnd-margin)"></path><path d="M457.71875,543.109375L457.71875,563.109375" id="mermaid-1791780773882-L_NNN_NBT_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style="stroke-dasharray: 0 0 16 4; stroke-dashoffset: 0;;" data-edge="true" data-et="edge" data-id="L_NNN_NBT_0" data-points="W3sieCI6NDU3LjcxODc1LCJ5Ijo1NDMuMTA5Mzc1fSx7IngiOjQ1Ny43MTg3NSwieSI6NTY3LjEwOTM3NX1d" data-look="neo" marker-end="url(#mermaid-1791780773882_flowchart-v2-pointEnd-margin)"></path></g><g class="edgeLabels"></g><g class="nodes"><g class="node default" id="mermaid-1791780773882-flowchart-D1-0" data-look="neo" transform="translate(461.875, 87)"><rect class="basic label-container" style="" x="-116.09375" y="-24" width="232.1875" height="48"></rect><g class="label" style="" transform="translate(-100.09375, -12)"><rect></rect><foreignObject width="200.1875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>data/create_datasets.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-D2-1" data-look="neo" transform="translate(753.703125, 87)"><rect class="basic label-container" style="" x="-125.734375" y="-24" width="251.46875" height="48"></rect><g class="label" style="" transform="translate(-109.734375, -12)"><rect></rect><foreignObject width="219.46875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>data/create_stooq_data.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-D3-2" data-look="neo" transform="translate(165.890625, 87)"><rect class="basic label-container" style="" x="-129.890625" y="-24" width="259.78125" height="48"></rect><g class="label" style="" transform="translate(-113.890625, -12)"><rect></rect><foreignObject width="227.78125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>data/glove_word_vectors.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-N00-3" data-look="neo" transform="translate(457.71875, 303.109375)"><rect class="basic label-container" style="" x="-87.65625" y="-24" width="175.3125" height="48"></rect><g class="label" style="" transform="translate(-71.65625, -12)"><rect></rect><foreignObject width="143.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>00_data_prep.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-N01-4" data-look="neo" transform="translate(457.71875, 375.109375)"><rect class="basic label-container" style="" x="-88.15625" y="-24" width="176.3125" height="48"></rect><g class="label" style="" transform="translate(-72.15625, -12)"><rect></rect><foreignObject width="144.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>01_first_topic.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-N02-5" data-look="neo" transform="translate(457.71875, 447.109375)"><rect class="basic label-container" style="" x="-98.078125" y="-24" width="196.15625" height="48"></rect><g class="label" style="" transform="translate(-82.078125, -12)"><rect></rect><foreignObject width="164.15625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>02_second_topic.ipynb</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-NNN-6" data-look="neo" transform="translate(457.71875, 519.109375)"><rect class="basic label-container" style="" x="-76" y="-24" width="152" height="48"></rect><g class="label" style="" transform="translate(-60, -12)"><rect></rect><foreignObject width="120" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>...</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1791780773882-flowchart-NBT-7" data-look="neo" transform="translate(457.71875, 591.109375)"><rect class="basic label-container" style="" x="-94.125" y="-24" width="188.25" height="48"></rect><g class="label" style="" transform="translate(-78.125, -12)"><rect></rect><foreignObject width="156.25" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 120px; text-align: center; width: 120px;"><span class="nodeLabel"><p>NN_backtesting.ipynb</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mermaid-1791780773882-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="mermaid-1791780773882-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs></svg></div><details><summary>Diagram source</summary><pre><code>flowchart TD
+    subgraph Setup["Initial Setup (run once)"]
+        D1[data/create_datasets.ipynb]
+        D2[data/create_stooq_data.ipynb]
+        D3[data/glove_word_vectors.ipynb]
+    end
+
+    subgraph Chapter["Per-Chapter (sequential within)"]
+        N00[00_data_prep.ipynb]
+        N01[01_first_topic.ipynb]
+        N02[02_second_topic.ipynb]
+        NNN[...]
+        NBT[NN_backtesting.ipynb]
+    end
+
+    Setup --&gt; Chapter
+    N00 --&gt; N01 --&gt; N02 --&gt; NNN --&gt; NBT</code></pre></details>
+<h2 id="dependency-management">Dependency Management</h2>
+<h3 id="key-library-versions">Key Library Versions</h3>
+<p>The project depends on a broad ecosystem. Critical dependencies from <code>installation/ml4t-base.txt</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Libraries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core</td>
+<td>numpy, pandas, scipy, scikit-learn</td>
+</tr>
+<tr>
+<td>ML</td>
+<td>xgboost, lightgbm, catboost, statsmodels</td>
+</tr>
+<tr>
+<td>Deep Learning</td>
+<td>tensorflow, pytorch</td>
+</tr>
+<tr>
+<td>Bayesian</td>
+<td>pymc3, arviz</td>
+</tr>
+<tr>
+<td>NLP</td>
+<td>spacy, gensim, textblob</td>
+</tr>
+<tr>
+<td>Trading</td>
+<td>zipline-reloaded, backtrader, alphalens-reloaded, pyfolio-reloaded, empyrical-reloaded</td>
+</tr>
+<tr>
+<td>Technical Analysis</td>
+<td>ta-lib</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>gym, box2d</td>
+</tr>
+<tr>
+<td>Visualization</td>
+<td>matplotlib, seaborn, plotly, bokeh</td>
+</tr>
+</tbody>
+</table>
+<h3 id="version-conflict-resolution">Version Conflict Resolution</h3>
+<p>The project explicitly recommends per-chapter installation to avoid dependency conflicts.
+Key known constraints:</p>
+<ul>
+<li><code>gensim &lt; 4.0</code> (API changes in 4.x)</li>
+<li><code>zipline-reloaded</code> available on <code>conda-forge</code></li>
+<li><code>talib</code> requires the C library to be installed separately</li>
+</ul>
+<h3 id="development-dependencies">Development Dependencies</h3>
+<pre><code class="language-bash"># Install dev extras
+pip install -e ".[dev]"
+
+# Includes:
+# - ruff &gt;= 0.11
+# - pyright &gt;= 1.1
+# - pytest &gt;= 9.0
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<h3 id="commit-standards">Commit Standards</h3>
+<p>Use conventional commit format:</p>
+<pre><code>feat: add new momentum factor to alpha library
+fix: correct lookahead bias in cross-validation
+docs: update chapter 12 README with SHAP examples
+refactor: simplify data loading in utils.py
+test: add tests for MultipleTimeSeriesCV
+</code></pre>
+<h3 id="pull-request-checklist">Pull Request Checklist</h3>
+<ul>
+<li>[ ] Code passes <code>ruff check .</code> with no errors</li>
+<li>[ ] Code passes <code>pyright</code> type checking</li>
+<li>[ ] Tests pass: <code>pytest</code></li>
+<li>[ ] Notebooks execute cleanly (restart kernel + run all)</li>
+<li>[ ] Random seeds set for reproducibility</li>
+<li>[ ] No look-ahead bias in feature construction</li>
+<li>[ ] Time-series aware cross-validation used</li>
+<li>[ ] README updated if adding new content</li>
+</ul>
+<h2 id="configuration-reference">Configuration Reference</h2>
+<p>The project uses <code>pyproject.toml</code> for tool configuration and conda/pip files for dependencies. There is no single application config file; configuration is per-notebook via inline constants.</p>
+<p><strong>pyproject.toml tool settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[tool.ruff] line-length</code></td>
+<td><code>int</code></td>
+<td><code>88</code></td>
+<td>Maximum line length for linting/formatting</td>
+</tr>
+<tr>
+<td><code>[tool.ruff] target-version</code></td>
+<td><code>str</code></td>
+<td><code>"py313"</code></td>
+<td>Python version target for ruff rules</td>
+</tr>
+<tr>
+<td><code>[tool.ruff.lint] select</code></td>
+<td><code>list[str]</code></td>
+<td><code>["E","W","F","I","UP","B","SIM","C4","RUF","PERF","TC","PTH"]</code></td>
+<td>Enabled lint rule categories</td>
+</tr>
+<tr>
+<td><code>[tool.ruff.lint] ignore</code></td>
+<td><code>list[str]</code></td>
+<td><code>["E501"]</code></td>
+<td>Ignored rules (line length handled by formatter)</td>
+</tr>
+<tr>
+<td><code>[tool.pytest.ini_options] minversion</code></td>
+<td><code>str</code></td>
+<td><code>"9.0"</code></td>
+<td>Minimum pytest version</td>
+</tr>
+<tr>
+<td><code>[tool.pytest.ini_options] testpaths</code></td>
+<td><code>list[str]</code></td>
+<td><code>["tests"]</code></td>
+<td>Test discovery paths</td>
+</tr>
+<tr>
+<td><code>[tool.pytest.ini_options] xfail_strict</code></td>
+<td><code>bool</code></td>
+<td><code>true</code></td>
+<td>xfail tests that pass will fail</td>
+</tr>
+<tr>
+<td><code>[tool.pytest.ini_options] filterwarnings</code></td>
+<td><code>list[str]</code></td>
+<td><code>["error"]</code></td>
+<td>Treat all warnings as errors in tests</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common notebook constants:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Typical Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PROJECT_DIR</code></td>
+<td><code>Path('..', '..')</code></td>
+<td>Path to repo root (used for data access)</td>
+</tr>
+<tr>
+<td><code>DATA_DIR</code></td>
+<td><code>PROJECT_DIR / 'data'</code></td>
+<td>Shared data directory</td>
+</tr>
+<tr>
+<td><code>RESULTS_DIR</code></td>
+<td><code>Path('results')</code></td>
+<td>Per-chapter model artifact storage</td>
+</tr>
+<tr>
+<td><code>np.random.seed(42)</code></td>
+<td><code>42</code></td>
+<td>Standard random seed for reproducibility</td>
+</tr>
+<tr>
+<td><code>idx</code></td>
+<td><code>pd.IndexSlice</code></td>
+<td>Pandas IndexSlice convenience variable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MultipleTimeSeriesCV parameters</strong> (from <code>utils.py</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n_splits</code></td>
+<td><code>int</code></td>
+<td>(required)</td>
+<td>Number of cross-validation folds</td>
+</tr>
+<tr>
+<td><code>train_period_length</code></td>
+<td><code>int</code></td>
+<td>(required)</td>
+<td>Training window in trading days</td>
+</tr>
+<tr>
+<td><code>test_period_length</code></td>
+<td><code>int</code></td>
+<td>(required)</td>
+<td>Test window in trading days</td>
+</tr>
+<tr>
+<td><code>lookahead</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Gap between train and test to prevent leakage</td>
+</tr>
+<tr>
+<td><code>date_idx</code></td>
+<td><code>str</code></td>
+<td><code>"date"</code></td>
+<td>Name of the date level in MultiIndex</td>
+</tr>
+<tr>
+<td><code>shuffle</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Whether to shuffle (should remain False for time series)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="1-importerror-no-module-named-talib">1. <code>ImportError: No module named 'talib'</code></h3>
+<p>TA-Lib requires a C library installed at the system level before the Python wrapper:</p>
+<pre><code class="language-bash"># Ubuntu/Debian
+sudo apt-get install -y libta-lib0-dev
+# macOS
+brew install ta-lib
+# Then install Python wrapper
+pip install TA-Lib
+</code></pre>
+<h3 id="2-conda-environment-creation-fails-with-version-conflicts">2. Conda environment creation fails with version conflicts</h3>
+<p>Use the per-chapter installation approach instead of the full environment:</p>
+<pre><code class="language-bash">pip install numpy pandas scikit-learn matplotlib jupyter
+# Add chapter-specific packages as needed
+</code></pre>
+<h3 id="3-filenotfounderror-dataassetsh5-or-similar-hdf5-file-missing">3. <code>FileNotFoundError: data/assets.h5</code> or similar HDF5 file missing</h3>
+<p>Run the data creation notebooks first:</p>
+<pre><code class="language-bash">cd data/
+jupyter notebook create_datasets.ipynb   # Requires Quandl API key
+jupyter notebook create_stooq_data.ipynb  # Downloads from stooq.com
+</code></pre>
+<h3 id="4-quandl-api-returns-403-forbidden">4. Quandl API returns 403 Forbidden</h3>
+<p>Register for a free API key at <a href="https://data.nasdaq.com/">data.nasdaq.com</a> and set it:</p>
+<pre><code class="language-python">import os
+os.environ['QUANDL_API_KEY'] = 'your_key_here'
+# Or: quandl.ApiConfig.api_key = 'your_key_here'
+</code></pre>
+<h3 id="5-stooq-automatic-download-no-longer-works">5. Stooq automatic download no longer works</h3>
+<p>Since December 2020, Stooq requires CAPTCHA for downloads. Navigate to <a href="https://stooq.com">stooq.com</a> manually, download the zip files, and place them in the expected directory. The <code>create_stooq_data.ipynb</code> notebook explains the expected file structure.</p>
+<h3 id="6-ziplinebacktrader-import-errors">6. Zipline/Backtrader import errors</h3>
+<p>These packages have complex dependency chains. Install from conda-forge:</p>
+<pre><code class="language-bash">conda install -c conda-forge zipline-reloaded backtrader
+</code></pre>
+<h3 id="7-notebook-kernel-dies-during-large-model-training">7. Notebook kernel dies during large model training</h3>
+<p>Deep learning chapters (17-22) require significant memory. Reduce batch sizes or use a subset of data. GPU is recommended for chapters 17-22.</p>
+<h3 id="8-gensim-api-incompatibility-errors">8. <code>gensim</code> API incompatibility errors</h3>
+<p>The book was written for gensim &lt; 4.0. If using gensim 4.x, note that <code>Word2Vec</code> model access changed from <code>model.wv[word]</code> to <code>model.wv.get_vector(word)</code>, and <code>most_similar()</code> moved to <code>model.wv.most_similar()</code>.</p>
+<h3 id="9-pymc3-sampling-extremely-slow">9. PyMC3 sampling extremely slow</h3>
+<p>Chapter 10 uses PyMC3 for Bayesian inference. Install <code>theano-pymc</code> (not plain theano) and ensure a BLAS library is available:</p>
+<pre><code class="language-bash">conda install -c conda-forge pymc3 mkl-service
+</code></pre>
+<h3 id="10-alphalenspyfolio-import-fails">10. Alphalens/pyfolio import fails</h3>
+<p>Use the "reloaded" forks which are actively maintained:</p>
+<pre><code class="language-bash">pip install alphalens-reloaded pyfolio-reloaded empyrical-reloaded
+</code></pre>
+<h2 id="security-considerations">Security Considerations</h2>
+<ul>
+<li><strong>API keys</strong>: Several notebooks require API keys (Quandl, Twitter, etc.). Never hardcode keys in notebooks. Use environment variables or a <code>.env</code> file excluded from version control via <code>.gitignore</code>.</li>
+<li><strong>Data licensing</strong>: Market data from Quandl, Algoseek, NASDAQ ITCH, and Stooq may have redistribution restrictions. Do not commit downloaded datasets to public repositories.</li>
+<li><strong>Pickle files</strong>: Some notebooks save models using <code>pickle</code> or <code>joblib</code>. Pickle files can execute arbitrary code on load. Only load pickle files you created yourself.</li>
+<li><strong>HDF5 store</strong>: The <code>assets.h5</code> file can grow to several GB. It stores raw market data and should be treated as sensitive if it contains licensed data. Set file permissions appropriately.</li>
+<li><strong>Notebook outputs</strong>: Clear notebook outputs before committing, as cell outputs may contain data samples, API responses, or paths that reveal infrastructure details.</li>
+<li><strong>Third-party packages</strong>: The dependency list is extensive (50+ packages). Pin versions in requirements files and audit updates, especially for packages with native extensions (TA-Lib, PyTorch, TensorFlow).</li>
+<li><strong>Reproducibility vs security</strong>: Setting <code>np.random.seed(42)</code> is for reproducibility, not security. Do not use Python's <code>random</code> module or NumPy's legacy random for cryptographic purposes.</li>
+</ul>
+<hr>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="README.md">README</a> — Project overview and quick start</li>
+<li><a href="architecture.md">Architecture</a> — System design and components</li>
+<li><a href="workflow.md">Workflow</a> — Event flows and processing pipelines</li>
+<li><a href="state-management.md">State Management</a> — State lifecycle and data models</li>
+</ul>
+<h2 id="maintained-uv-environment-2026-10-12">Maintained uv environment (2026-10-12)</h2>
+<p>The tested interpreter selection is Python 3.14.8. uv 0.13.0 resolves runtime dependencies, optional extras, development groups, and build isolation. <code>uv.lock</code> records exact versions; <code>--upgrade</code> refreshes them within the project and compatibility constraints. Review <a href="validation.md">validation evidence</a> before treating a build or test command as successful on this host.</p>
+<p>Python 3.15 full resolution fails because the current Feast Pandas constraint conflicts with the Python 3.15 ml4t-backtest wheel requirements. Python 3.14.8 resolves the full upstream environment. Native thread settings alone did not make the monolithic suite stable. The complete existing test inventory is therefore also exercised with a fresh process for each original module, preserving every case and assertion.</p>
+<h3 id="layout-and-build-ownership">Layout and build ownership</h3>
+<p>The upstream chapter, utils/, data/, case_studies/, and scripts/ layout is preserved because chapter imports and notebook-relative paths are part of the curriculum. The upstream setuptools build and managed uv environment are retained.</p>
+<p>Apple Command Line Tools and compiler headers are required when a dependency or extension builds from source.</p>
+<h3 id="commands-from-the-repository-root">Commands from the repository root</h3>
+<pre><code class="language-sh">uv python install 3.14.8
+uv lock --upgrade --python 3.14.8
+uv sync --all-groups --all-extras --python 3.14.8
+uv build
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run --no-sync pytest
+</code></pre>
+<h3 id="external-inputs-and-test-scope">External inputs and test scope</h3>
+<p>Large production datasets, notebook execution, provider credentials, database servers, Chrome for Kaleido, and specialized machine-learning wheels are separate requirements. Optional environments cover packages with narrower interpreter support. A package build does not execute every notebook or provision every dataset, and test evidence records those limits explicitly.</p>
+<p>Existing upstream skips and xfails remain unchanged. Full suite failures, incomplete runs, and supplemental scoped checks are listed separately in validation. No new test cases were added. The architecture document links existing implementation files and explains the component contracts.</p>
+<h2 id="dependency-identities-after-the-2026-10-12-migration">Dependency identities after the 2026-10-12 migration</h2>
+<p>Polars 2 removes string-to-Date casting. GBM and TabM now parse ISO fold boundaries
+explicitly using the materialized Date/Datetime schema, including its time unit and
+zone. The unchanged fold intervals still define exactly the same training rows.</p>
+<p>Polars 2 changes <code>hash_rows</code> and serialized Parquet bytes and fails the original
+immutable digest contracts. The latest compatible Polars 1.44.2 preserves the
+original canonical SHA-256 and holdout identity; the lock therefore constrains
+Polars below 2. All original numeric and byte digest literals remain unchanged.
+Torch 2.11.0 remains selected: controlled 2.10.0 and Python 3.13 runs produce the
+same CAE mismatch, so neither downgrade is a justified fix. CAE model version 1
+and its original <code>82a8721e8c074459</code> prediction guard remain intact; the current
+macOS result <code>22ba1b43276579c8</code> fails that guard. The unchanged original case
+passes on genuine canonical Linux/amd64 CPU with both Torch 2.10.0 and the latest
+2.11.0; this is recorded as a platform-scoped identity contract, without altering
+the host backend, model version, or original expected digest.</p>
+<p>Feast constrains Pandas to 2.3.3, and the compatible public Vectorbt 1.0 requires
+Plotly below 7 because Plotly 7 removes its Scattermapbox template. The lock selects
+Plotly 6.9.0. Ruff 0.15.14 remains aligned with the existing notebook-render and
+pre-commit gate. These constraints are recorded against actual original contracts.</p>
+<p>The notebook path sanitizer now recognizes <code>/Users/&lt;name&gt;/</code> as well as Linux home
+paths while preserving source cells and binary payloads. Provenance scanning prunes
+existing ignored environment directories before recursion and retains every existing
+project-notebook inclusion and exclusion rule.</p>
+<p>The existing tiny LightGBM importance fixtures explicitly own one native worker
+(<code>n_jobs=1</code>): their 12 unchanged cases and exact feature-importance assertions pass.
+The same fixture crashed with its implicit all-core pool on both LightGBM 4.7 and a
+4.6 control. Standalone model fitting passes with either default or one worker, so
+this is a process-level interaction exposed by the full research import graph;
+the production model's declared thread counts remain part of its identity.</p>
+<p>Provenance library digests use one <code>git hash-object --stdin-paths</code> process for the
+complete transitive source list. Git's own path/filter semantics and the existing
+path-plus-content digest remain unchanged. All 25 existing digest cases pass;
+this avoids spawning one Git process for every imported helper in each notebook.</p>
+<p>The local validation fetched real public Yahoo ETF data: all 100 configured funds
+and 470,662 rows, including the separate traded-price panel. AlgoSeek's public
+NASDAQ and options archives are downloaded into ignored
+<code>data/.maintenance-downloads/</code> and converted by the existing repository commands.
+These assets are local prerequisites and are excluded from commits. The FRED API
+downloader and NASDAQ Data Link downloader still require their configured keys;
+the separate official FRED public CSV control below supplies the observed-series
+panel without claiming to supply ALFRED vintages or licensed equities data.</p>
+<p>The CFTC control demonstrated an HTTP403 HTML payload with Python requests at
+both public hostnames, while curl retrieves the genuine public ZIP. The book's
+COT downloader extends the same current <code>ml4t-data</code> fetcher with a bounded curl
+fallback only when archive parsing fails, validates the ZIP, reads its named CSV
+without extracting arbitrary files, and retains the provider's cache and schema.
+The existing live drift case calls this same downloader provider. All 34 existing
+live-data/coverage/registry cases pass with two unchanged key-dependent skips.
+Curl is therefore a runtime requirement for this fallback on affected hosts;
+unrelated download errors still propagate.</p>
+<h3 id="public-fred-control">Public FRED control</h3>
+<p>The configured API downloader correctly refuses without <code>FRED_API_KEY</code>. Official graph CSV downloads provide the real observed public series without that key. The reproducible workspace helper <code>docs/maintenance-2026-10-12/mlft-fred-public-csv.py</code> downloads all 23 configured series into ignored <code>data/.maintenance-downloads/fred</code>, validates each schema, filters the original 2000–2025 date range, and calls the book’s existing alignment, derived-series, metadata, atomic-write, and profile functions. It refuses to overwrite an existing panel. The result contains 9,497 daily rows and 79,842 native-frequency observations; provenance records every URL and series interval. All 8 existing ETF baseline cases pass, including the original published Sharpe 0.743 and total return 1.9675 assertions. This observed-series panel does not supply ALFRED initial-release vintages. FRED describes its public CSV downloads in <a href="https://fred.stlouisfed.org/help/data/downloading/using-the-download-data-link/">the official download guide</a>.</p>
+<h3 id="complete-public-market-data-preparation">Complete public market-data preparation</h3>
+<p>The unchanged AlgoSeek converter wrote all 48,880,176 NASDAQ one-minute rows
+across 505 sessions and all 366,242,819 S&amp;P500 option-chain rows across 1,259
+sessions. The original NASDAQ label and financial-feature scripts completed
+without reducing symbols, dates, or calculations. The current financial stage
+wrote 66 features over 16,871,167 rows after its documented warmup/null policy.
+The original options materializer wrote 530,711 surface rows and 362,199 straddle
+rows; all 50 existing options research cases now pass on these genuine inputs.
+The original lifecycle builder also completed all five years, retaining
+58,423,379 observed rows for 716,591 candidate contracts in 1,378.4 MB.</p>
+<p>The two pilot helper cases request <code>seeded_output_dir</code>. The upstream fixture
+checkout requires <code>TEST_DATA_DEPLOY_KEY</code>; a noninteractive Git read failed with
+exit 128 on this host. Genuine producer outputs can also seed that fixture:
+the original NASDAQ overrides prescribe 12 symbols and a 2000-01-01 start,
+and all five original producer stages now pass in 984 seconds. Stage four
+supplies the temporal features alongside the 66 financial features; the exact
+original pilot helper passes its unchanged 88-feature and two-fold assertions.
+The recorded output contains real observations and real fitted temporal features. Full public source data and these declared test
+outputs have separate purposes; no numerical expectations are changed to make
+them interchangeable. CME continuous futures still require the configured
+DataBento source and its key.</p>
+<h3 id="native-blas-ownership">Native BLAS ownership</h3>
+<p>The selected NumPy/SciPy wheels use Apple Accelerate. Its macOS 15 API exposes
+automatic and single-thread modes through <code>BLASGetThreading</code> and
+<code>BLASSetThreading</code>; this setting belongs to the calling thread. The native
+controller in <a href="../case_studies/utils/native_threads.py">native_threads.py</a>
+uses <code>threadpoolctl</code>'s public registration API to inspect and control that real
+loaded library. Automatic mode reports an unknown worker count; a positive
+requested cap selects the API's supported one-worker mode. It restores the
+previous native mode when leaving the context.</p>
+<p>Parallel IPCA gives each actual pool worker its own bounded BLAS context,
+alongside the original outer context for process-wide BLAS implementations.
+All 38 existing no-leak cases and all 15 numerical identity cases pass. A
+combined diagnostic exposed CV fixtures leaving Torch at eight threads with
+deterministic mode enabled. Their module fixture now restores the actual owned
+thread, determinism, cuDNN and RNG settings; the same diagnostic confirms the
+original state before and after. All 140 combined concurrency, identity and
+temporal cases pass with the same pinned predictions. The complete canonical
+inventory uses the documented module process isolation that avoids the
+separately observed native Darts/Torch crashes.</p>
+<p>Earlier controls built the same NumPy 2.3.5 against genuine pthread OpenBLAS.
+That backend passes the no-leak cases but changes seeded numerical identity;
+it remains separate from the locked environment. Homebrew's OpenMP OpenBLAS
+control aborts because of duplicate Torch/OpenMP runtimes. Both rejected
+controls remain in the validation evidence.</p>
+<h3 id="current-public-data-compatibility-checks">Current public-data compatibility checks</h3>
+<p>Polars 2 rejects casting a string expression directly to Date. The ETF model
+feature notebook now constructs the same holdout boundary as a Python date
+before passing it to Polars. Its paired notebook retains the original outputs
+and execution time through the repository's documented <code>sync-inert</code> provenance
+workflow, with the exact equivalence reason recorded. The original model-feature,
+evaluation and factor-regime notebook cases all pass; the first five ETF
+producer stages also complete on actual downloaded data in 149 seconds.</p>
+<p>The public AlgoSeek options extract uses <code>BRKB</code> and <code>BFB</code> for the class-B shares
+that its bundled stock bars identify as <code>BRK.B</code> and <code>BF.B</code>. All five options
+loaders normalize those two published aliases before filtering or joining.
+Prices, observations and the roster size are unchanged. All 75 existing option
+research and equity-option roster cases pass, including the unchanged check
+that every option underlying has real share bars.</p>
+<p>The original broader inventory collects 8,333 cases in 430 modules. Its initial
+runner was interrupted; completed module outcomes and per-node notebook
+progress are retained, and only unfinished or failed work is resumed. A current
+full-inventory terminal success has not yet been recorded. Private fixture
+catalogs and file-size contracts remain asserted, alongside original credential
+requirements; full public data is never fabricated or hidden to restore skips.</p>
+<h3 id="one-openmp-runtime-for-the-native-notebook-stack">One OpenMP runtime for the native notebook stack</h3>
+<p>Current macOS wheels can load separate OpenMP libraries from Torch and sklearn
+alongside Homebrew's LightGBM runtime. A real ETF Darts notebook crashed with
+SIGSEGV inside an OpenMP barrier that crossed two of those libraries. Select one
+actual loader runtime when starting the notebook or its parent test command:</p>
+<pre><code class="language-sh">DYLD_LIBRARY_PATH="$(brew --prefix libomp)/lib" uv run --no-sync pytest
+</code></pre>
+<p>The selected library on this host is Homebrew libomp 23.1.3. A physical
+<code>threadpoolctl</code> inventory confirms one OpenMP image after importing real
+LightGBM, sklearn and Torch together. The latest main strict check passes 151
+existing identity, thread-state and research-config cases; its CAE identity fails
+on macOS and passes unchanged on canonical Linux/amd64 as described above.
+Earlier runs with a changed CAE pin do not validate the original contract. Kernel children
+inherit the loader environment; no duplicate-library bypass or binary patch is
+used. ETF NLinear also executes successfully. The LSTM and TSMixer comparison
+cells additionally need actual Ridge and GBM results from their earlier pipeline
+stages, so their validation executes those original fits in the same workspace.</p>
+<h3 id="native-pytensor-compilation-and-positional-arima-input">Native PyTensor compilation and positional ARIMA input</h3>
+<p>PyTensor 2.38.2 adds <code>-ld64</code> on macOS versions above 15. Current Apple clang
+interprets that argument as a request for a nonexistent library; the installed
+Apple linker also reports that the old <code>-ld_classic</code> selector is unsupported.
+The optional <a href="../envs/ml4t/pytensor-clang++.py">compiler adapter</a> invokes the real
+<code>/usr/bin/clang++</code>, removes only <code>-ld64</code>, and forwards every other argument. Its
+compiler name retains PyTensor's native optimization detection. Use it for the
+original PyMC workflows on this host:</p>
+<pre><code class="language-sh">DYLD_LIBRARY_PATH="$(brew --prefix libomp)/lib" \
+PYTENSOR_FLAGS="cxx=$PWD/envs/ml4t/pytensor-clang++.py" \
+uv run --no-sync pytest
+</code></pre>
+<p>The original S&amp;P500 options CI producer completes stages 01–05 with its original
+SV sampler counts and diagnostic thresholds; the native compiler, C/JIT path and
+default graph optimizer remain enabled. The original ARIMA teaching notebook
+passes after giving statsmodels an explicit positional RangeIndex for its
+irregular-session Series. Every return, order, fitting option and chronological
+position is unchanged. Its paired source provenance preserves the existing
+executed outputs and records this indexing compatibility fix.</p>
+<p>The fallback release digest excludes only transient <code>_executed_*.ipynb</code> files
+and bytecode caches, so concurrent notebook cleanup cannot remove a file between
+the canonical source listing and read. The original 48 research-config cases
+and the 74-case source/provenance/config scope pass.</p>
+<h3 id="original-public-ci-fixture-contracts">Original public CI fixture contracts</h3>
+<p>The unchanged <code>tests/create_test_data.py</code> builders prepare their originally
+declared ETF, NASDAQ and options CI budgets from the complete retained public
+production inputs. The original <code>tests/generate_intermediates.py</code> then completes
+all five stages for ETFs, NASDAQ, equity-option analytics and options. Additional
+genuine AQR, Fama–French and options EDA fixture files come from their unchanged
+builders. Available observed FRED files are copied verbatim with SHA provenance;
+ALFRED initial-release vintages still require <code>FRED_API_KEY</code> and are never
+substituted with current observations.</p>
+<p>The NASDAQ financial fixture holds 558,456 rows and 66 financial features; the
+original temporal producer adds 22 features to satisfy the original 88-feature
+pilot contract. Its canonical financial file is 114.94 MiB. Genuine publication
+uses physical Parquet parts below the unchanged 90 MiB ceiling and a verified
+manifest; <a href="../case_studies/utils/published_artifacts.py">runtime materialization</a>
+reconstructs the original regular file when seeding the separate execution tree.
+All 1,177 published physical files pass the original ceiling, and all six logical
+NASDAQ hashes remain exact. Original canonical encoding, source-pinned lineage,
+numeric data and seven original guard/writer files are unchanged. The freshly
+integrated 132-case original storage scope passes in 9.34 seconds. Earlier
+single-file compression controls remain diagnostics, rather than a current
+publication failure.</p>
+<h3 id="completed-cryptocftc-prerequisites-and-the-original-lstm-registry-contract">Completed crypto/CFTC prerequisites and the original LSTM registry contract</h3>
+<p>The unchanged configured Binance public downloader completes all 19 symbols:
+866,868 real hourly bars and 107,839 premium-index rows, with zero missing
+symbols. The unchanged official funding downloader adds 108,157 settlements
+from 1,192 monthly archives; 176 archive requests are genuine pre-listing 404s.
+The unchanged original CI builder writes its prescribed 10-symbol hourly,
+premium and funding panes. Crypto's financial stage explicitly matches the
+funding timestamp unit to its actual price schema before joining: official
+whole-hour UTC funding milliseconds become the loader's UTC microseconds,
+preserving every timestamp, row and rate. All five original crypto producer
+stages then pass in 86 seconds.</p>
+<p>The original COT downloader completes 35 observed product panels (13,603 rows)
+across its configured default products/years; one mapped product returns no
+observations. The unchanged CI builder copies all 35 panels verbatim. Both
+original COT chapter and Docker-notebook cases pass in 12.08 seconds.</p>
+<p>The model-registry ETF LSTM assertion requires actual checkpoint epochs 5 and 6,
+but its shared preset fixture trains only two epochs. A function-scoped fixture
+lets only that existing case's actual copied LSTM presets reach six epochs and
+restores their original bytes afterwards. Shared two-epoch producer defaults and
+the assertion remain unchanged. With the original linear/GBM prerequisite fits
+in the same session, all four original cases pass in 101.74 seconds, including
+the real checkpoint registration check. No checkpoint file or row is invented.</p>
+<h3 id="exact-yahoo-adjustment-at-the-download-boundary">Exact Yahoo adjustment at the download boundary</h3>
+<p>The <a href="../data/etfs/market/download.py">ETF producer</a> temporarily wraps the actual
+yfinance conversion during its synchronous download. When a raw OHLC field
+exactly equals raw Close, its adjusted result uses the provider's exact AdjClose.
+Every unequal value retains the original upstream multiplication. This prevents
+one-ULP inequality caused by dividing then multiplying an equal raw low while
+Close is assigned directly. The provider callable is restored in <code>finally</code>.</p>
+<p>A genuine full-config refresh retains 100 symbols and 470,662 rows in a separate
+snapshot, with earlier production inputs preserved. Both existing commission
+notebooks and all eight original baseline contracts pass; numerical pins,
+strict OHLC validation and strategy parameters remain unchanged.</p>
+<h3 id="current-publication-evidence-and-continuing-work">Current publication evidence and continuing work</h3>
+<p>The <a href="maintenance/mlft-original-case-coverage.json">original per-node snapshot</a>
+records 7,583 passes, 481 existing conditional skips and 269 failures across
+8,333 original nodes, with no unknown identities. This combines real retained
+terminal runs and platform-scoped controls; no single complete green invocation
+is claimed. <a href="maintenance/mlft-original-failure-explanations.json">Failure details</a>
+preserve unresolved original cases. Genuine ETF and equity-option validation,
+allocation, risk and cost producers continue with their original parameters.
+Their locally producible artifacts remain work in progress, independently of
+paid input, ALFRED credential and image-specific runtime prerequisites.</p></main>
+<div class="mermaidTooltip" style="opacity: 0; position: absolute; text-align: center; max-width: 200px; padding: 2px; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(51, 51, 51); border-radius: 2px; pointer-events: none; z-index: 100;"></div></body></html>
