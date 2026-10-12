@@ -1192,7 +1192,7 @@ def _drop_stale_conformal_widths(cs_dir: Path) -> None:
 def _record_prediction_artifact_digests(cs_dir: Path) -> None:
     """Record the digest the artifact actually has, once the artifact exists.
 
-    `PredictionResult.complete` verifies `value_digest(...)` of the parquet against
+    `PredictionResult.complete` verifies `published_prediction_digest(...)` against
     `prediction_coverage.artifact_digest` (`research/results.py:419-423`), and that check is
     stricter than the catalog's `complete` column - which reads `coverage.status` and stops
     there. So a population can freeze cleanly from the catalog and be rejected by
@@ -1200,6 +1200,10 @@ def _record_prediction_artifact_digests(cs_dir: Path) -> None:
     fabricated 12-character `_make_hash` value where `value_digest` produces 16, so no
     seeded prediction could ever match and every path reaching the stricter definition saw
     `complete=False`.
+
+    Use the same published-frame function as the real writer and reader: a constant
+    label column is metadata already carried by the training identity, and is excluded
+    from content identity. Including it invalidates an otherwise unchanged real artifact.
 
     Recording the real digest is better than recording none. `results.py:412-418` treats a
     NULL as "legacy, backfill it" rather than as a conflict, so NULL would also have worked -
@@ -1222,7 +1226,7 @@ def _record_prediction_artifact_digests(cs_dir: Path) -> None:
         return
     import polars as pl
 
-    from case_studies.utils.artifact_digest import value_digest
+    from case_studies.utils.artifact_digest import published_prediction_digest
 
     with sqlite3.connect(str(db_path)) as db:
         rows = db.execute(
@@ -1233,7 +1237,7 @@ def _record_prediction_artifact_digests(cs_dir: Path) -> None:
             if not artifact.is_file():
                 continue
             try:
-                digest = value_digest(pl.read_parquet(artifact))
+                digest = published_prediction_digest(pl.read_parquet(artifact))
             except Exception:
                 continue
             if digest == recorded:
