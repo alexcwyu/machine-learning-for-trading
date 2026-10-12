@@ -7,7 +7,9 @@ import sys
 from contextlib import contextmanager
 from datetime import date, timedelta
 from pathlib import Path
+from threading import RLock
 
+import numpy as np
 import polars as pl
 
 from utils.downloading import (
@@ -21,6 +23,8 @@ from utils.downloading import (
     resolve_storage_path,
 )
 
+_ADJUSTMENT_LOCK = RLock()
+
 
 @contextmanager
 def exact_equal_close_adjustment():
@@ -28,24 +32,32 @@ def exact_equal_close_adjustment():
 
     yfinance multiplies OHLC by Adj Close / Close but assigns Adj Close directly
     to Close. The multiply can round an equal raw low above the adjusted close.
-    Keep its conversion for every unequal value and restore its callable on exit.
+    Keep its conversion for unequal or invalid values and restore its callable on
+    exit. This producer owns the process-wide override while its synchronous
+    download completes; concurrent callers of this context are serialized.
     """
     import yfinance.utils as yf_utils
 
-    original = yf_utils.auto_adjust
+    with _ADJUSTMENT_LOCK:
+        original = yf_utils.auto_adjust
 
-    def adjust(data):
-        adjusted = original(data)
-        for field in ("Open", "High", "Low"):
-            equal_close = data[field].eq(data["Close"])
-            adjusted.loc[equal_close, field] = data.loc[equal_close, "Adj Close"]
-        return adjusted
+        def adjust(data):
+            adjusted = original(data)
+            valid_close = (
+                np.isfinite(data["Close"])
+                & data["Close"].gt(0)
+                & np.isfinite(data["Adj Close"])
+            )
+            for field in ("Open", "High", "Low"):
+                equal_close = valid_close & data[field].eq(data["Close"])
+                adjusted.loc[equal_close, field] = data.loc[equal_close, "Adj Close"]
+            return adjusted
 
-    yf_utils.auto_adjust = adjust
-    try:
-        yield
-    finally:
-        yf_utils.auto_adjust = original
+        yf_utils.auto_adjust = adjust
+        try:
+            yield
+        finally:
+            yf_utils.auto_adjust = original
 
 
 def undo_splits(panel: pl.DataFrame) -> pl.DataFrame:
