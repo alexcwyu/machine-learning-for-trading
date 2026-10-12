@@ -80,6 +80,23 @@
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
     "exit_code": 0,
+    "elapsed_seconds": 1.52,
+    "step": "build-final-genuine-gensim-canonical-route-source",
+    "started": 1791784895.044191,
+    "seconds": 1.52,
+    "evidence_record": "machine-learning-for-trading-build-final-genuine-gensim-canonical-route-source.json",
+    "original_log": "machine-learning-for-trading-build-final-genuine-gensim-canonical-route-source.log",
+    "log_sha256": "a664413e3fe515f2bdae2d425b8c1a2ca3f58884caea65f0fdac680956abe855",
+    "log_bytes": 41886,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
     "elapsed_seconds": 3.03,
     "step": "build-final314",
     "started": 1791740989.63026,
@@ -447,6 +464,26 @@
     "original_log": "machine-learning-for-trading-compileall-native-thread-final.log",
     "log_sha256": "e05569656cbd2281159c809767d683cd59c1507072bc2fc5c791abb7c822be1a",
     "log_bytes": 67,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "--collect-only",
+      "-q"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 11.22,
+    "step": "current-original-node-collection-after-expired-declarations",
+    "started": 1791783373.798538,
+    "seconds": 11.22,
+    "evidence_record": "machine-learning-for-trading-current-original-node-collection-after-expired-declarations.json",
+    "original_log": "machine-learning-for-trading-current-original-node-collection-after-expired-declarations.log",
+    "log_sha256": "bda62728ee1174164ef26a5cb58afd58a1a74eaa976f193e85344e05c165582e",
+    "log_bytes": 722009,
     "outcome_lines": []
   },
   {
@@ -916,6 +953,102 @@
   },
   {
     "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-W",
+      "error",
+      "-c",
+      "import pathlib,py_compile,subprocess; paths=subprocess.check_output([\"git\",\"ls-files\",\"-z\",\"--\",\"*.py\"]).decode().split(\"\\0\"); files=[p for p in paths if p and pathlib.Path(p).is_file()]; [py_compile.compile(p,doraise=True) for p in files]; print(\"Strict tracked Python source compilation:\",len(files),\"files\")"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.71,
+    "check": "gensim-all-tracked-source-compile",
+    "source_snapshot": {
+      "head": "4736e2707da2a48160da582492060e316550dcd9",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-gensim-all-tracked-source-compile.json",
+    "original_log": "machine-learning-for-trading-gensim-all-tracked-source-compile.log",
+    "log_sha256": "86284dc28444c18d40bb7e7bd92fd73cfffacdadd658f123f14838688ffcbd95",
+    "log_bytes": 516,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "run",
+      "--no-sync",
+      "python",
+      "-W",
+      "error",
+      "-m",
+      "compileall",
+      "-q",
+      "-f",
+      "src",
+      "case_studies/utils",
+      "ci",
+      "tests/fixtures"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 0.34,
+    "check": "gensim-source-compile",
+    "source_snapshot": {
+      "head": "4736e2707da2a48160da582492060e316550dcd9",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "coverage_limitation": "compileall returned zero but src and ci do not exist in this repository. Only case_studies/utils and tests/fixtures were covered. Superseded for broad source coverage by gensim-all-tracked-source-compile.",
+    "evidence_record": "machine-learning-for-trading-gensim-source-compile.json",
+    "original_log": "machine-learning-for-trading-gensim-source-compile.log",
+    "log_sha256": "3b5a183fc9ac917f2117b7a899764c89a628b662cd447f16c3bc43ceb4bd8588",
+    "log_bytes": 244,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "build"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "seconds": 1.34,
+    "check": "gensim-source-wheel-sdist",
+    "source_snapshot": {
+      "head": "4736e2707da2a48160da582492060e316550dcd9",
+      "tracked_source_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Tracked source snapshot at command start; untracked additions and later edits are not covered by this hash."
+    },
+    "evidence_record": "machine-learning-for-trading-gensim-source-wheel-sdist.json",
+    "original_log": "machine-learning-for-trading-gensim-source-wheel-sdist.log",
+    "log_sha256": "2f879a51b78d5e70aaebb7feebd804ad43a6d8f91a793025d41e16c446f9b917",
+    "log_bytes": 41965,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/mlft-genuine-itch-pipeline.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 663.54,
+    "step": "genuine-complete-itch-original-parser-ci-builder",
+    "started": 1791782381.3843992,
+    "seconds": 663.54,
+    "evidence_record": "machine-learning-for-trading-genuine-complete-itch-original-parser-ci-builder.json",
+    "original_log": "machine-learning-for-trading-genuine-complete-itch-original-parser-ci-builder.log",
+    "log_sha256": "0f59ff0a5d2fe821a6447d630371a363c7e04047463f64d03c9378aa2e6c59de",
+    "log_bytes": 6594,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       "env",
       "DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib",
       "OMP_NUM_THREADS=1",
@@ -954,6 +1087,64 @@
   },
   {
     "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/mlft-gensim-supported-regeneration.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 2,
+    "elapsed_seconds": 0.8,
+    "step": "genuine-gensim-native314-supported-cython-regeneration",
+    "started": 1791783624.777843,
+    "seconds": 0.8,
+    "evidence_record": "machine-learning-for-trading-genuine-gensim-native314-supported-cython-regeneration.json",
+    "original_log": "machine-learning-for-trading-genuine-gensim-native314-supported-cython-regeneration.log",
+    "log_sha256": "b1334555565fa9ae2e6998fa7c4bacfb591160efe30d40e151a560a5030e1a6b",
+    "log_bytes": 25703,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      ".venv/bin/python",
+      "--target",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-gensim-native314-uv-git",
+      "--no-deps",
+      "gensim @ git+https://github.com/piskvorky/gensim.git@ee2642b4fa26e689ba4595067504668bc7a89016"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 21.59,
+    "step": "genuine-gensim-native314-uv-official-release-git-build",
+    "started": 1791783969.189641,
+    "seconds": 21.59,
+    "evidence_record": "machine-learning-for-trading-genuine-gensim-native314-uv-official-release-git-build.json",
+    "original_log": "machine-learning-for-trading-genuine-gensim-native314-uv-official-release-git-build.log",
+    "log_sha256": "eeb6b2d7ea257b161ed96e0bd3d68b2331091a7af8b7b7ef1649cf83f4f1b4e5",
+    "log_bytes": 897,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/mlft-gensim-official-tag-regeneration.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 11.78,
+    "step": "genuine-gensim-official-tag-native314-cython-regeneration",
+    "started": 1791783804.423181,
+    "seconds": 11.78,
+    "evidence_record": "machine-learning-for-trading-genuine-gensim-official-tag-native314-cython-regeneration.json",
+    "original_log": "machine-learning-for-trading-genuine-gensim-official-tag-native314-cython-regeneration.log",
+    "log_sha256": "02a97e5cc25acb443a2fe70003eda45444c2bdf283e4cb3b6733b42bff243637",
+    "log_bytes": 154812,
+    "outcome_lines": []
+  },
+  {
+    "command": [
       "env",
       "POLARS_MAX_THREADS=2",
       ".venv/bin/python",
@@ -969,6 +1160,54 @@
     "original_log": "machine-learning-for-trading-genuine-lossless-financial-storage-control.log",
     "log_sha256": "000bf2fb5349c02177068b44169601b54e7644a41f30b2514997cd31b5cea4ac",
     "log_bytes": 2835,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-compatible313/bin/python",
+      "--target",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-gensim-native313",
+      "--no-deps",
+      "gensim"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 1.05,
+    "step": "genuine-native-gensim-latest-python313",
+    "started": 1791783372.6988878,
+    "seconds": 1.05,
+    "evidence_record": "machine-learning-for-trading-genuine-native-gensim-latest-python313.json",
+    "original_log": "machine-learning-for-trading-genuine-native-gensim-latest-python313.log",
+    "log_sha256": "ba9ccc7ea8bc8c87baad3a5b926c2bbb8bd616fa37209d53081f9e9268cb229c",
+    "log_bytes": 510,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "pip",
+      "install",
+      "--python",
+      ".venv/bin/python",
+      "--target",
+      "<workspace>/.runtime/maintenance-2026-10-12/mlft-gensim-native314",
+      "--no-deps",
+      "gensim"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 2.43,
+    "step": "genuine-native-gensim-latest-python314-build",
+    "started": 1791783252.5869062,
+    "seconds": 2.43,
+    "evidence_record": "machine-learning-for-trading-genuine-native-gensim-latest-python314-build.json",
+    "original_log": "machine-learning-for-trading-genuine-native-gensim-latest-python314-build.log",
+    "log_sha256": "b097290d50c77e3b862ed5c3327653af81816850fb8cfabd384461d980150660",
+    "log_bytes": 75694,
     "outcome_lines": []
   },
   {
@@ -1037,6 +1276,44 @@
   {
     "command": [
       ".venv/bin/python",
+      "data/equities/positioning/13f_download.py",
+      "--mode",
+      "bulk",
+      "--quarters",
+      "2024Q3"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 4.14,
+    "step": "genuine-original-sec13f-bulk-2024q3",
+    "started": 1791784142.123713,
+    "seconds": 4.14,
+    "evidence_record": "machine-learning-for-trading-genuine-original-sec13f-bulk-2024q3.json",
+    "original_log": "machine-learning-for-trading-genuine-original-sec13f-bulk-2024q3.log",
+    "log_sha256": "be58687fbe9e9f1ff2de94a2d609b818d4b02c39b6de5a1a9b24a45633fc31ff",
+    "log_bytes": 623,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "data/equities/positioning/13f_download.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 23.46,
+    "step": "genuine-original-sec13f-curated-all-default",
+    "started": 1791784433.266616,
+    "seconds": 23.46,
+    "evidence_record": "machine-learning-for-trading-genuine-original-sec13f-curated-all-default.json",
+    "original_log": "machine-learning-for-trading-genuine-original-sec13f-curated-all-default.log",
+    "log_sha256": "af7fda49ff893cf8f165a1d11e38feaf2adadbfe9951f95f0e72d9cf969f7a15",
+    "log_bytes": 3380,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "data/equities/firm_characteristics/download.py"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
@@ -1049,6 +1326,23 @@
     "original_log": "machine-learning-for-trading-genuine-public-firm-characteristics-original-downloader.log",
     "log_sha256": "213a999d0b334734b45fcc085da52f20e29d73a539c6dfaba09f48e170326eba",
     "log_bytes": 34972,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "data/equities/market/microstructure/nasdaq_itch_download.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 1783.61,
+    "step": "genuine-public-nasdaq-itch-original-downloader",
+    "started": 1791781126.640414,
+    "seconds": 1783.61,
+    "evidence_record": "machine-learning-for-trading-genuine-public-nasdaq-itch-original-downloader.json",
+    "original_log": "machine-learning-for-trading-genuine-public-nasdaq-itch-original-downloader.log",
+    "log_sha256": "acc3d149d268061d7b282ec968d6868dbf7038c3eb5af40f1152797f6cfd78de",
+    "log_bytes": 3031,
     "outcome_lines": []
   },
   {
@@ -1309,6 +1603,25 @@
     "original_log": "machine-learning-for-trading-lock-accelerate-controller.log",
     "log_sha256": "6fb26de843442222663282a10154f79f750bdae710228b0cd5eaca1516a39a5d",
     "log_bytes": 73,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "lock",
+      "--python",
+      "3.14.8"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 2.22,
+    "step": "lock-genuine-current-gensim-complete-release-source",
+    "started": 1791784209.648105,
+    "seconds": 2.22,
+    "evidence_record": "machine-learning-for-trading-lock-genuine-current-gensim-complete-release-source.json",
+    "original_log": "machine-learning-for-trading-lock-genuine-current-gensim-complete-release-source.log",
+    "log_sha256": "3fbfa84618fa7b060bb0b2757a421152c90c61baf3333a9be8913aa7c622b808",
+    "log_bytes": 417,
     "outcome_lines": []
   },
   {
@@ -1670,6 +1983,50 @@
       "-m",
       "pytest",
       "-vv",
+      "tests/test_fold_resolution.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 2.32,
+    "step": "original-activated-fold-resolution-existing-cases",
+    "started": 1791783805.527406,
+    "seconds": 2.32,
+    "evidence_record": "machine-learning-for-trading-original-activated-fold-resolution-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+    "log_sha256": "adc50920bfa6e523afe8a239628f37160c8019c129399da7cb9e43a71b045a6a",
+    "log_bytes": 4773,
+    "outcome_lines": [
+      "======================== 13 passed, 19 skipped in 1.42s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 17.14,
+    "step": "original-asset-embeddings-real-curated-prerequisite-final",
+    "started": 1791784605.415948,
+    "seconds": 17.14,
+    "evidence_record": "machine-learning-for-trading-original-asset-embeddings-real-curated-prerequisite-final.json",
+    "original_log": "machine-learning-for-trading-original-asset-embeddings-real-curated-prerequisite-final.log",
+    "log_sha256": "6be0d9d0cd7cce5cef72203f8bdd2f572ea157e6e1bf3eca7dc2a7a0cd09e9f9",
+    "log_bytes": 2214,
+    "outcome_lines": [
+      "======================== 1 passed, 8 warnings in 15.90s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
       "@<workspace>/docs/maintenance-2026-10-12/mlft-original-canonical-seeding-affected-consumer-nodeids.txt"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
@@ -1825,6 +2182,23 @@
   {
     "command": [
       ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-holdout-strategy.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 17.53,
+    "step": "original-firm-canonical-holdout-strategy-producers",
+    "started": 1791782542.946982,
+    "seconds": 17.53,
+    "evidence_record": "machine-learning-for-trading-original-firm-canonical-holdout-strategy-producers.json",
+    "original_log": "machine-learning-for-trading-original-firm-canonical-holdout-strategy-producers.log",
+    "log_sha256": "4a45df74c7bc89d59be2b22b33e173acf9ecda7be5969ace59f9768aa0165e45",
+    "log_bytes": 2180,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "-m",
       "pytest",
       "-vv",
@@ -1894,6 +2268,75 @@
   {
     "command": [
       ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_overrides_schema.py",
+      "tests/test_skip_blockers.py",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 28.77,
+    "step": "original-firm-holdout-canonical-routing-existing-cases",
+    "started": 1791783169.515848,
+    "seconds": 28.77,
+    "evidence_record": "machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+    "log_sha256": "b50b526919288319cda383653f072f83ca68c2e1a0f0abf1625fdf8c9b9afe28",
+    "log_bytes": 14050,
+    "outcome_lines": [
+      "================== 82 passed, 7 skipped, 8 warnings in 27.75s =================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_overrides_schema.py",
+      "tests/test_skip_blockers.py",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest]",
+      "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 28.31,
+    "step": "original-firm-holdout-strategy-expired-skip-existing-cases",
+    "started": 1791783025.94188,
+    "seconds": 28.31,
+    "evidence_record": "machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+    "log_sha256": "34683a42bea4f56fb9fa5656996bd836481285a0327687ae3bfc005c5a883aad",
+    "log_bytes": 23345,
+    "outcome_lines": [
+      "============= 7 failed, 83 passed, 7 skipped, 8 warnings in 26.59s ============="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-strategy-with-benchmark.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 10.12,
+    "step": "original-firm-strategy-original-release-benchmark",
+    "started": 1791782856.3250382,
+    "seconds": 10.12,
+    "evidence_record": "machine-learning-for-trading-original-firm-strategy-original-release-benchmark.json",
+    "original_log": "machine-learning-for-trading-original-firm-strategy-original-release-benchmark.log",
+    "log_sha256": "d5fb134a6945a4762e29f80600449e9e0979ce48770c69102c1f3c9280070abc",
+    "log_bytes": 881,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
       "<workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-validation-backtests.py"
     ],
     "cwd": "<workspace>/machine-learning-for-trading",
@@ -1907,6 +2350,126 @@
     "log_sha256": "f668403b263fd51921affaf6e30080f71ef3a83366c1d6bada8807ee626977dc",
     "log_bytes": 14284,
     "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::01_word2vec_training.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::01_word2vec_training.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::02_asset_embeddings.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 69.94,
+    "step": "original-gensim-frozen-main-genuine-sec13f-existing-cases",
+    "started": 1791784393.736435,
+    "seconds": 69.94,
+    "evidence_record": "machine-learning-for-trading-original-gensim-frozen-main-genuine-sec13f-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-gensim-frozen-main-genuine-sec13f-existing-cases.log",
+    "log_sha256": "3db44ae4467b9371a8136bfceacd694b6ea898385e46db6f1fe1066a50f96b4e",
+    "log_bytes": 6114,
+    "outcome_lines": [
+      "============== 1 failed, 3 passed, 8 warnings in 67.89s (0:01:07) =============="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::01_word2vec_training.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::01_word2vec_training.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::02_asset_embeddings.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 52.78,
+    "step": "original-gensim-native314-real-wheel-existing-cases",
+    "started": 1791783912.940473,
+    "seconds": 52.78,
+    "evidence_record": "machine-learning-for-trading-original-gensim-native314-real-wheel-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-gensim-native314-real-wheel-existing-cases.log",
+    "log_sha256": "a30cd6635b89d37b171aeebf360d833a3cce2eb14a0b7dce0ab7e130b4fbea68",
+    "log_bytes": 6373,
+    "outcome_lines": [
+      "=================== 2 failed, 2 passed, 8 warnings in 51.66s ==================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_artifact_digest_encoding.py",
+      "tests/test_holdout_cv_derivation.py",
+      "tests/test_model_source_identity_versions.py",
+      "tests/test_registry_lineage.py"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 6.67,
+    "step": "original-gensim-new-runtime-immutable-guards",
+    "started": 1791784865.4476218,
+    "seconds": 6.67,
+    "evidence_record": "machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.json",
+    "original_log": "machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
+    "log_sha256": "f431d8bb59c03ce7fc7cb0b81f87f506c6b7ada2b8beb7c4c6af91ee620de333",
+    "log_bytes": 7094,
+    "outcome_lines": [
+      "============================== 53 passed in 4.91s =============================="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "@<workspace>/docs/maintenance-2026-10-12/mlft-original-itch-genuine-input-nodeids.txt"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 1,
+    "elapsed_seconds": 38.97,
+    "step": "original-itch-genuine-input-existing-cases",
+    "started": 1791783276.8536682,
+    "seconds": 38.97,
+    "evidence_record": "machine-learning-for-trading-original-itch-genuine-input-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
+    "log_sha256": "65b416b1c5649c8ab4a389f305fe31da91dd1b06dc92252c0ef1f71e14d1e014",
+    "log_bytes": 23221,
+    "outcome_lines": [
+      "============= 6 failed, 6 passed, 2 skipped, 8 warnings in 37.77s =============="
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 44.52,
+    "step": "original-itch-lifecycle-genuine-full-session",
+    "started": 1791784395.294469,
+    "seconds": 44.52,
+    "evidence_record": "machine-learning-for-trading-original-itch-lifecycle-genuine-full-session.json",
+    "original_log": "machine-learning-for-trading-original-itch-lifecycle-genuine-full-session.log",
+    "log_sha256": "05602b13ea7b5409ed03e807185887af6384812e6716f9aa70c2f1f4164f8a93",
+    "log_bytes": 2561,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 42.83s ========================"
+    ]
   },
   {
     "command": [
@@ -2042,6 +2605,100 @@
     "outcome_lines": [
       "================== 4 failed, 7 warnings in 282.50s (0:04:42) ==================="
     ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tests/create_test_data.py",
+      "--source",
+      "data",
+      "--output",
+      "../.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "--dataset",
+      "institutional_holdings_13f_bulk"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 0.39,
+    "step": "original-real-sec13f-bulk-ci-builder",
+    "started": 1791784394.8611999,
+    "seconds": 0.39,
+    "evidence_record": "machine-learning-for-trading-original-real-sec13f-bulk-ci-builder.json",
+    "original_log": "machine-learning-for-trading-original-real-sec13f-bulk-ci-builder.log",
+    "log_sha256": "30e9171de0dd921694aa02abd458332da5585b50ea7035b4f886c37354b4c6d5",
+    "log_bytes": 838,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py]",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[22_rag_financial_research::07_institutional_holdings_graph.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[22_rag_financial_research::07_institutional_holdings_graph.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 29.63,
+    "step": "original-real-sec13f-bulk-rag-existing-cases",
+    "started": 1791784649.725899,
+    "seconds": 29.63,
+    "evidence_record": "machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.log",
+    "log_sha256": "ece508bf5c51fd0b6abda278cef8576cb9c6c531b57a8ca6e2e7cf17cd476b30",
+    "log_bytes": 3105,
+    "outcome_lines": [
+      "======================== 4 passed, 8 warnings in 28.49s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-vv",
+      "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py]",
+      "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py]"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 17.79,
+    "step": "original-real-sec13f-neo4j-owned-service-existing-cases",
+    "started": 1791784606.569686,
+    "seconds": 17.79,
+    "evidence_record": "machine-learning-for-trading-original-real-sec13f-neo4j-owned-service-existing-cases.json",
+    "original_log": "machine-learning-for-trading-original-real-sec13f-neo4j-owned-service-existing-cases.log",
+    "log_sha256": "8b5beaaff236c0ee73280d5d556b09f161ca27ce72d8ec28bdebd2ab41cb0123",
+    "log_bytes": 2453,
+    "outcome_lines": [
+      "======================== 2 passed, 8 warnings in 16.61s ========================"
+    ]
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tests/create_test_data.py",
+      "--source",
+      "data",
+      "--output",
+      "../.runtime/maintenance-2026-10-12/mlft-fixture/data",
+      "--dataset",
+      "institutional_holdings_13f"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 0.89,
+    "step": "original-sec13f-curated-ci-builder",
+    "started": 1791784547.505766,
+    "seconds": 0.89,
+    "evidence_record": "machine-learning-for-trading-original-sec13f-curated-ci-builder.json",
+    "original_log": "machine-learning-for-trading-original-sec13f-curated-ci-builder.log",
+    "log_sha256": "19c0abef040442b70d6ac4db38e15e15458bac5880c246e625e6fa9c101d76f6",
+    "log_bytes": 895,
+    "outcome_lines": []
   },
   {
     "command": [
@@ -2576,6 +3233,28 @@
     "original_log": "machine-learning-for-trading-sync-accelerate-current-final.log",
     "log_sha256": "a40cc884516e056931d6f3c15cea1406b7fbf49a9a0d3617a7c3831977e75952",
     "log_bytes": 406,
+    "outcome_lines": []
+  },
+  {
+    "command": [
+      "uv",
+      "sync",
+      "--frozen",
+      "--all-groups",
+      "--all-extras",
+      "--python",
+      "3.14.8"
+    ],
+    "cwd": "<workspace>/machine-learning-for-trading",
+    "exit_code": 0,
+    "elapsed_seconds": 0.96,
+    "step": "sync-main-frozen-genuine-gensim-native314",
+    "started": 1791784345.193856,
+    "seconds": 0.96,
+    "evidence_record": "machine-learning-for-trading-sync-main-frozen-genuine-gensim-native314.json",
+    "original_log": "machine-learning-for-trading-sync-main-frozen-genuine-gensim-native314.log",
+    "log_sha256": "2918effce772ee1777640ba3d45fd9f13dfa5d4a54883997143efce0e1f2530c",
+    "log_bytes": 538,
     "outcome_lines": []
   },
   {

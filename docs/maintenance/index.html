@@ -38,6 +38,12 @@
 <td><code>uv build</code></td>
 </tr>
 <tr>
+<td>build-final-genuine-gensim-canonical-route-source</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.52s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
 <td>build-final314</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">3.03s</td>
@@ -140,6 +146,12 @@
 <td><code>uv run --no-sync python -m compileall -q case_studies data utils</code></td>
 </tr>
 <tr>
+<td>current-original-node-collection-after-expired-declarations</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11.22s</td>
+<td><code>.venv/bin/python -m pytest --collect-only -q</code></td>
+</tr>
+<tr>
 <td>darts-single-thread</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">40.17s</td>
@@ -236,6 +248,30 @@
 <td><code>env POLARS_MAX_THREADS=2 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 MPLBACKEND=Agg .venv/bin/python -m tests.generate_intermediates --output intermediates --case-studies nasdaq100_microstructure --through-stage 5</code></td>
 </tr>
 <tr>
+<td>gensim-all-tracked-source-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.71s</td>
+<td><code>uv run --no-sync python -W error -c import pathlib,py_compile,subprocess; paths=subprocess.check_output(["git","ls-files","-z","--","*.py"]).decode().split("\0"); files=[p for p in paths if p and pathlib.Path(p).is_file()]; [py_compile.compile(p,doraise=True) for p in files]; print("Strict tracked Python source compilation:",len(files),"files")</code></td>
+</tr>
+<tr>
+<td>gensim-source-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.34s</td>
+<td><code>uv run --no-sync python -W error -m compileall -q -f src case_studies/utils ci tests/fixtures</code></td>
+</tr>
+<tr>
+<td>gensim-source-wheel-sdist</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.34s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
+<td>genuine-complete-itch-original-parser-ci-builder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">663.54s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-genuine-itch-pipeline.py</code></td>
+</tr>
+<tr>
 <td>genuine-current-homebrew-omp-image-inventory</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">2.81s</td>
@@ -248,10 +284,40 @@
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-genuine-financial-phrasebank.py</code></td>
 </tr>
 <tr>
+<td>genuine-gensim-native314-supported-cython-regeneration</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.8s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-gensim-supported-regeneration.py</code></td>
+</tr>
+<tr>
+<td>genuine-gensim-native314-uv-official-release-git-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">21.59s</td>
+<td><code>uv pip install --python .venv/bin/python --target &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-gensim-native314-uv-git --no-deps gensim @ git+https://github.com/piskvorky/gensim.git@ee2642b4fa26e689ba4595067504668bc7a89016</code></td>
+</tr>
+<tr>
+<td>genuine-gensim-official-tag-native314-cython-regeneration</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11.78s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-gensim-official-tag-regeneration.py</code></td>
+</tr>
+<tr>
 <td>genuine-lossless-financial-storage-control</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">7.64s</td>
 <td><code>env POLARS_MAX_THREADS=2 .venv/bin/python ../docs/maintenance-2026-10-12/mlft-lossless-financial-storage-control.py</code></td>
+</tr>
+<tr>
+<td>genuine-native-gensim-latest-python313</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.05s</td>
+<td><code>uv pip install --python &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-compatible313/bin/python --target &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-gensim-native313 --no-deps gensim</code></td>
+</tr>
+<tr>
+<td>genuine-native-gensim-latest-python314-build</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.43s</td>
+<td><code>uv pip install --python .venv/bin/python --target &lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-gensim-native314 --no-deps gensim</code></td>
 </tr>
 <tr>
 <td>genuine-omp-loader-runtime-control</td>
@@ -272,10 +338,28 @@
 <td><code>docker pull --platform linux/amd64 ml4t/ml4t-py312:latest</code></td>
 </tr>
 <tr>
+<td>genuine-original-sec13f-bulk-2024q3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4.14s</td>
+<td><code>.venv/bin/python data/equities/positioning/13f_download.py --mode bulk --quarters 2024Q3</code></td>
+</tr>
+<tr>
+<td>genuine-original-sec13f-curated-all-default</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">23.46s</td>
+<td><code>.venv/bin/python data/equities/positioning/13f_download.py</code></td>
+</tr>
+<tr>
 <td>genuine-public-firm-characteristics-original-downloader</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">115.66s</td>
 <td><code>.venv/bin/python data/equities/firm_characteristics/download.py</code></td>
+</tr>
+<tr>
+<td>genuine-public-nasdaq-itch-original-downloader</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1783.61s</td>
+<td><code>.venv/bin/python data/equities/market/microstructure/nasdaq_itch_download.py</code></td>
 </tr>
 <tr>
 <td>genuine-yahoo-producer-adapter-control</td>
@@ -342,6 +426,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.6s</td>
 <td><code>uv lock --upgrade-package threadpoolctl</code></td>
+</tr>
+<tr>
+<td>lock-genuine-current-gensim-complete-release-source</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.22s</td>
+<td><code>uv lock --python 3.14.8</code></td>
 </tr>
 <tr>
 <td>lock-strict-original-identity-compatible</td>
@@ -428,6 +518,18 @@
 <td><code>env POLARS_MAX_THREADS=2 MPLBACKEND=Agg uv run --no-sync python data/equities/market/sp500/materialize_options.py</code></td>
 </tr>
 <tr>
+<td>original-activated-fold-resolution-existing-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.32s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_fold_resolution.py</code></td>
+</tr>
+<tr>
+<td>original-asset-embeddings-real-curated-prerequisite-final</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">17.14s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]</code></td>
+</tr>
+<tr>
 <td>original-canonical-seeding-affected-consumers</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">41.52s</td>
@@ -470,6 +572,12 @@
 <td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset financial_phrasebank</code></td>
 </tr>
 <tr>
+<td>original-firm-canonical-holdout-strategy-producers</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17.53s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-holdout-strategy.py</code></td>
+</tr>
+<tr>
 <td>original-firm-canonical-insight-consumers-correct-sibling</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">26.68s</td>
@@ -488,10 +596,58 @@
 <td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-firm-input-unlocked-nodeids.txt</code></td>
 </tr>
 <tr>
+<td>original-firm-holdout-canonical-routing-existing-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">28.77s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_overrides_schema.py tests/test_skip_blockers.py tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions] tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest] tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]</code></td>
+</tr>
+<tr>
+<td>original-firm-holdout-strategy-expired-skip-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">28.31s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_overrides_schema.py tests/test_skip_blockers.py tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions] tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest] tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]</code></td>
+</tr>
+<tr>
+<td>original-firm-strategy-original-release-benchmark</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">10.12s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-strategy-with-benchmark.py</code></td>
+</tr>
+<tr>
 <td>original-firm-validation-backtest-producers</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">104.07s</td>
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/generate-mlft-original-firm-validation-backtests.py</code></td>
+</tr>
+<tr>
+<td>original-gensim-frozen-main-genuine-sec13f-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">69.94s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::01_word2vec_training.py] tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py] tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::01_word2vec_training.py] tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::02_asset_embeddings.py]</code></td>
+</tr>
+<tr>
+<td>original-gensim-native314-real-wheel-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">52.78s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::01_word2vec_training.py] tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py] tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::01_word2vec_training.py] tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::02_asset_embeddings.py]</code></td>
+</tr>
+<tr>
+<td>original-gensim-new-runtime-immutable-guards</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6.67s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_artifact_digest_encoding.py tests/test_holdout_cv_derivation.py tests/test_model_source_identity_versions.py tests/test_registry_lineage.py</code></td>
+</tr>
+<tr>
+<td>original-itch-genuine-input-existing-cases</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">38.97s</td>
+<td><code>.venv/bin/python -m pytest -vv @&lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-itch-genuine-input-nodeids.txt</code></td>
+</tr>
+<tr>
+<td>original-itch-lifecycle-genuine-full-session</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">44.52s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py] tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]</code></td>
 </tr>
 <tr>
 <td>original-public-firm-canonical-stages1-6</td>
@@ -522,6 +678,30 @@
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">284.46s</td>
 <td><code>docker run --rm --name mlft-maintenance-py312-original-cases --label codex.task=mlft-maintenance-2026-10-12 --platform linux/amd64 -v &lt;workspace&gt;/machine-learning-for-trading:/app -v &lt;workspace&gt;/machine-learning-for-trading/data:/data:ro -v &lt;workspace&gt;/machine-learning-for-trading/intermediates:/intermediates:ro -v &lt;workspace&gt;/docs/maintenance-2026-10-12/mlft-original-py312-source-nodeids.txt:/tmp/original-nodeids.txt:ro -e ML4T_DATA_PATH=/data -e ML4T_PATH=/app -w /app ml4t/ml4t-py312@sha256:2cbccb0fa069160d6a3e8a3a45902fa9a25ff26fb8c0a567af6500f72455f388 timeout 3900 python -m pytest -vv @/tmp/original-nodeids.txt</code></td>
+</tr>
+<tr>
+<td>original-real-sec13f-bulk-ci-builder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.39s</td>
+<td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset institutional_holdings_13f_bulk</code></td>
+</tr>
+<tr>
+<td>original-real-sec13f-bulk-rag-existing-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">29.63s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py] tests/test_docker_notebooks.py::test_docker_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py] tests/test_chapter_notebooks.py::test_chapter_notebook[22_rag_financial_research::07_institutional_holdings_graph.py] tests/test_docker_notebooks.py::test_docker_notebook[22_rag_financial_research::07_institutional_holdings_graph.py]</code></td>
+</tr>
+<tr>
+<td>original-real-sec13f-neo4j-owned-service-existing-cases</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">17.79s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py] tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py]</code></td>
+</tr>
+<tr>
+<td>original-sec13f-curated-ci-builder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.89s</td>
+<td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset institutional_holdings_13f</code></td>
 </tr>
 <tr>
 <td>original-skipblocker-exact-failure-diagnosis</td>
@@ -672,6 +852,12 @@
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.11s</td>
 <td><code>uv sync --all-groups --all-extras --frozen --python 3.14.8</code></td>
+</tr>
+<tr>
+<td>sync-main-frozen-genuine-gensim-native314</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.96s</td>
+<td><code>uv sync --frozen --all-groups --all-extras --python 3.14.8</code></td>
 </tr>
 <tr>
 <td>sync-original-identity-python313-control</td>
