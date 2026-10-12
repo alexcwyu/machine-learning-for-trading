@@ -311,18 +311,36 @@ def download_filings(
         if max_filings > 0 and count >= max_filings:
             break
 
-        # Check per-filing cache
-        if cache_dir:
-            cache_path = (
-                cache_dir / symbol / f"{year}_{filing.accession_no.replace('-', '')[:12]}.parquet"
-            )
-            if cache_path.exists():
-                import polars as pl
+        # The full accession identifies one filing; its first 12 digits do not.
+        # Legacy prefix-keyed files remain untouched and are not trusted here.
+        cache_path = (
+            cache_dir / symbol / f"{year}_{filing.accession_no.replace('-', '')}.parquet"
+            if cache_dir
+            else None
+        )
+        if cache_path and cache_path.exists():
+            import polars as pl
 
+            try:
                 cached = pl.read_parquet(cache_path).to_dicts()
-                records.extend(cached)
-                count += len(cached)
-                continue
+            except (OSError, pl.exceptions.PolarsError) as e:
+                if verbose:
+                    print(f"  {symbol}: unreadable filing cache {cache_path.name} - {e}")
+            else:
+                if len(cached) == 1 and all(
+                    cached[0].get(key) == value
+                    for key, value in {
+                        "accession_no": filing.accession_no,
+                        "symbol": symbol,
+                        "form": filing.form,
+                        "year": year,
+                    }.items()
+                ):
+                    records.extend(cached)
+                    count += 1
+                    continue
+                if verbose:
+                    print(f"  {symbol}: ignoring mismatched filing cache {cache_path.name}")
 
         try:
             text = get_filing_text(filing)
@@ -361,14 +379,9 @@ def download_filings(
             count += 1
 
             # Cache individual filing
-            if cache_dir:
+            if cache_path:
                 import polars as pl
 
-                cache_path = (
-                    cache_dir
-                    / symbol
-                    / f"{year}_{filing.accession_no.replace('-', '')[:12]}.parquet"
-                )
                 cache_path.parent.mkdir(parents=True, exist_ok=True)
                 pl.DataFrame([record]).write_parquet(cache_path)
 
