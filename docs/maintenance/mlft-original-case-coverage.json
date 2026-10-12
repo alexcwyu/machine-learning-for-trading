@@ -1,12 +1,99 @@
 {
-  "scope": "Composite retained original-node evidence, not one full-suite green run",
+  "scope": "Composite retained original-source node evidence, not one full-suite green run; current dynamic collection explicitly reconciled against original inventory",
   "original_nodes": 8333,
+  "current_nodes": 8328,
   "counts": {
-    "passed": 7621,
-    "skipped": 472,
-    "failed": 240
+    "passed": 7633,
+    "skipped": 471,
+    "failed": 224
   },
+  "retained_original_evidence_counts": {
+    "passed": 7638,
+    "skipped": 467,
+    "failed": 228
+  },
+  "retired_original_identities": {
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
+      "method": "ordered original collection / quiet pytest progress",
+      "retirement_reason": "Empty parameter placeholder replaced by actual existing artifact parameterizations",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/18_holdout_predictions]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/19_holdout_backtest]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/15_holdout_predictions]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/16_holdout_backtest]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/18_holdout_predictions]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/19_holdout_backtest]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/15_holdout_predictions]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/16_holdout_backtest]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/17_strategy_analysis]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
+      "method": "ordered original collection / quiet pytest progress",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    }
+  },
+  "activated_existing_parameterized_nodes": [
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[crypto_perps_funding]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[etfs]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[nasdaq100_microstructure]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_equity_option_analytics]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_options]"
+  ],
+  "new_test_source_cases": 0,
   "inventory_sha256": "32a2b3037d3dd9514a89b502c7430cd2c5a3a7ea05cc079b21559826176f7078",
+  "current_inventory_sha256": "a5b265a126c53e518c98313163549999baf5d304a27daa948a73a19d1f740b85",
   "coverage": {
     "tests/test_13f_provenance.py::test_recent_filings_preserve_sec_report_date": {
       "status": "passed",
@@ -965,27 +1052,27 @@
     },
     "tests/test_artifact_digest_encoding.py::test_the_bytes_a_fixed_frame_produces_are_the_recorded_ones": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_settings_are_stated_rather_than_inherited": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_encoding_is_what_the_byte_digest_is_sensitive_to": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_settings_map_names_only_parameters_the_writer_accepts": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_digest_encoding.py::test_the_chunk_layout_a_frame_arrives_in_does_not_move_the_bytes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_artifact_quality.py::test_a_complete_frame_that_is_a_thousandth_of_the_universe_reports_the_shortfall": {
@@ -4164,18 +4251,18 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-15_holdout_predictions]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-16_holdout_backtest]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[us_firm_characteristics-17_strategy_analysis]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-canonical-unlocked-existing-cases.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_case_studies.py::test_case_study_pipeline[fx_pairs-01_feasibility_analysis]": {
@@ -6650,27 +6737,27 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::01_itch_parser.py]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-remaining313.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::02_itch_lob_reconstruction.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::03_itch_lob_analysis.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-lifecycle-genuine-full-session.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::05_itch_trading_activity.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::06_itch_intraday_patterns.py]": {
@@ -6725,7 +6812,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::16_itch_information_bars.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[03_market_microstructure::17_databento_bar_sampling.py]": {
@@ -6784,8 +6871,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[04_fundamental_alternative_data::11_defi_tvl_evaluation.py]": {
@@ -7024,13 +7111,13 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::01_word2vec_training.py]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-remaining313.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-frozen-main-genuine-sec13f-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::02_asset_embeddings.py]": {
-      "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-remaining313.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-asset-embeddings-real-curated-prerequisite-final.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[10_text_feature_engineering::03_sentiment_evolution.py]": {
@@ -7699,8 +7786,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[22_rag_financial_research::07_institutional_holdings_graph.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[22_rag_financial_research::08_rag_security.py]": {
@@ -7729,8 +7816,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-neo4j-owned-service-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[23_knowledge_graphs::06_gnn_feature_engineering.py]": {
@@ -7925,7 +8012,7 @@
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::equities::market::microstructure::dataset_card.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-chapter-failures-latest-compatible-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_chapter_notebooks.py::test_chapter_notebook[data::equities::market::us_equities::dataset_card.py]": {
@@ -11755,27 +11842,27 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::01_itch_parser.py]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_docker_notebooks.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::02_itch_lob_reconstruction.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::03_itch_lob_analysis.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::04_itch_order_lifecycle_analysis.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-lifecycle-genuine-full-session.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::05_itch_trading_activity.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::06_itch_intraday_patterns.py]": {
@@ -11830,7 +11917,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::16_itch_information_bars.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[03_market_microstructure::17_databento_bar_sampling.py]": {
@@ -11889,8 +11976,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[04_fundamental_alternative_data::10_institutional_holdings_13f.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[04_fundamental_alternative_data::11_defi_tvl_evaluation.py]": {
@@ -12080,7 +12167,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::06_path_signatures.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-early-failures-current-genuine-prerequisites.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-py312-canonical-image-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[09_model_based_features::07_arima_features.py]": {
@@ -12129,13 +12216,13 @@
       "method": "ordered original collection / quiet pytest progress"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::01_word2vec_training.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-frozen-main-genuine-sec13f-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::02_asset_embeddings.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-frozen-main-genuine-sec13f-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[10_text_feature_engineering::03_sentiment_evolution.py]": {
@@ -12405,7 +12492,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::06_fed_announcement_bsts.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-py312-canonical-image-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[15_causal_estimation::07_tigramite_time_series.py]": {
@@ -12804,8 +12891,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[22_rag_financial_research::07_institutional_holdings_graph.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-bulk-rag-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[22_rag_financial_research::08_rag_security.py]": {
@@ -12834,8 +12921,8 @@
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::05_institutional_holdings_kg.py]": {
-      "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-neo4j-cases-owned-actual-service.log",
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-real-sec13f-neo4j-owned-service-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[23_knowledge_graphs::06_gnn_feature_engineering.py]": {
@@ -13030,7 +13117,7 @@
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::equities::market::microstructure::dataset_card.py]": {
       "status": "failed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-docker-notebook-unverified-nodes.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-itch-genuine-input-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_docker_notebooks.py::test_docker_notebook[data::equities::market::us_equities::dataset_card.py]": {
@@ -15503,145 +15590,165 @@
       "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_renumbering.py.log",
       "method": "ordered original collection / quiet pytest progress"
     },
-    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[crypto_perps_funding]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
+    },
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[etfs]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
+    },
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[nasdaq100_microstructure]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
+    },
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_equity_option_analytics]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
+    },
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_options]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[cme_futures]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[crypto_perps_funding]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[etfs]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[fx_pairs]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[nasdaq100_microstructure]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[sp500_equity_option_analytics]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[sp500_options]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[us_equities_panel]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_excludes_fold_from_feature_columns[us_firm_characteristics]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[cme_futures]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[crypto_perps_funding]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[etfs]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[fx_pairs]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[nasdaq100_microstructure]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[sp500_equity_option_analytics]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[sp500_options]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[us_equities_panel]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_validation_windows_also_narrow_the_evaluation_panel[us_firm_characteristics]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[cme_futures]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[crypto_perps_funding]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[etfs]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[fx_pairs]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[nasdaq100_microstructure]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[sp500_equity_option_analytics]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[sp500_options]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[us_equities_panel]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_resolution.py::test_evaluation_does_not_resolve_folds_by_deduplication[us_firm_characteristics]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-activated-fold-resolution-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_fold_seed_coupling.py::test_the_seed_a_fold_is_fitted_under_is_the_base_plus_its_index": {
       "status": "passed",
@@ -16965,162 +17072,162 @@
     },
     "tests/test_holdout_cv_derivation.py::test_the_evaluation_interval_is_the_case_studys_own_declared_holdout_window": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_training_starts_at_the_earliest_fold_not_the_first_one_in_the_list": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_buffer_is_counted_in_observations_not_calendar_time": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_month_buffer_on_a_monthly_panel_is_one_observation": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_buffer_shorter_than_the_outcome_horizon_is_refused_as_a_leak": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_case_study_with_no_declared_holdout_window_is_refused_by_name": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_empty_training_interval_is_refused_rather_than_produced": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_spec_with_no_resolved_folds_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_folds_missing_a_boundary_are_named_rather_than_read_as_none": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_derived_interval_is_a_new_one_and_not_the_validation_interval": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_holdout_reusing_a_validation_fold_id_is_refused_on_that_folds_rows": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_holdout_fold_absent_from_the_artifact_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_case_study_without_fold_scoped_temporal_features_is_not_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_gap_is_the_case_studys_widest_buffer_whatever_label_is_selected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_no_case_study_declares_an_outcome_horizon_its_widest_buffer_cannot_cover": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_midnight_boundary_is_written_as_a_date_because_the_panel_carries_dates": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_consumer_reads_either_rendering_of_the_same_midnight_boundary[date]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_the_consumer_reads_either_rendering_of_the_same_midnight_boundary[datetime]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_boundary_that_is_not_a_date_at_all_is_named_rather_than_read_as_none": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_date_only_val_end_covers_the_whole_final_session_on_an_intraday_panel[naive]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_date_only_val_end_covers_the_whole_final_session_on_an_intraday_panel[aware]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_covered_holdout_fold_is_accepted_and_a_gap_in_it_is_not": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_hole_in_the_middle_of_a_covered_range_is_still_a_gap": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_artifact_one_session_short_of_the_window_end_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_coverage_refuses_both_cases_the_fold_id_check_refuses": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_later_than_the_earliest_fold_moves_the_training_start": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_earlier_than_the_earliest_fold_changes_nothing_at_all": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_floor_that_swallows_the_training_interval_is_refused_not_silently_empty": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_reduced_fold_list_numbers_the_holdout_over_a_fold_that_still_exists": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_an_intraday_panel_derives_its_holdout_rather_than_raising_on_the_comparison": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_tz_naive_panel_hashes_exactly_as_it_did_before_the_zone_was_resolved": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_cv_derivation.py::test_a_daily_panel_still_closes_its_holdout_on_the_declared_date": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_holdout_generation_retirement.py::test_a_validation_fitted_row_is_found_rather_than_filtered_out": {
@@ -18841,7 +18948,7 @@
     "tests/test_latent_factors_identity.py::TestTheDeclaredVersions::test_cae_reproduces_its_pinned_predictions": {
       "status": "passed",
       "platform": "canonical Linux amd64 CPU",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-cae-linux-amd64-latest-torch.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-cae-canonical-linux-python314-latest-torch.log",
       "method": "unchanged original version 1 / 82a8721e8c074459, actual Linux Torch2.11 CPU passed",
       "host_status": "failed on macOS arm64: actual 22ba1b43276579c8",
       "host_evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log"
@@ -20333,72 +20440,72 @@
     },
     "tests/test_model_source_identity_versions.py::test_sequence_identity_is_declared_and_architecture_scoped": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_sequence_identity_rejects_an_unversioned_architecture": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_tabm_identity_is_declared": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[pca]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[ipca]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[cae]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[sae]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_latent_identity_is_declared_and_model_scoped[sdf]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_causal_identity_is_declared": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[<lambda>0]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[_tabm_source_identity]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[<lambda>1]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_a_declared_version_change_moves_the_training_hash[_causal_source_identity]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_source_identity_versions.py::test_active_source_identities_contain_no_file_digests": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-tests-original-strict-guards-latest-compatible-main.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_model_viz_alt_text.py::test_fold_heatmap_publishes_alt_carrying_the_plotted_range": {
@@ -26853,43 +26960,43 @@
     },
     "tests/test_overrides_schema.py::test_no_entry_carries_a_key_nothing_reads": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::test_every_declared_reduction_reaches_papermill": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_key_check_rejects_the_entry_that_prompted_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_key_check_passes_a_key_the_loader_does_read": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_rejects_the_entry_that_prompted_it": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_passes_the_same_names_written_correctly": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_the_reduction_check_reads_invocations_too": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_overrides_schema.py::TestTheChecksCanFail::test_a_non_parameter_mapping_is_not_read_as_a_reduction": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_overrides_schema.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_paired_metrics_retired_lineage.py::test_a_retired_validation_prediction_retires_its_holdout_sibling": {
       "status": "passed",
@@ -30033,12 +30140,12 @@
     },
     "tests/test_registry_lineage.py::test_registry_lineage_source_matches_audited_fixture_bytes": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_registry_lineage.py::test_registry_exports_modeling_input_fingerprint": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-canonical-seeding-digest-contracts.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-gensim-new-runtime-immutable-guards.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_registry_maintenance.py::test_semantic_backtest_deduplication_is_idempotent": {
@@ -34978,438 +35085,393 @@
     },
     "tests/test_skip_blockers.py::test_every_skip_declares_a_blocker": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/06_futures_continuous]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/16_provider_comparison]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[02_financial_data_universe/17_complete_pipeline]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[03_market_microstructure/01_itch_parser]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[03_market_microstructure/10_iex_lob_reconstruction]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[15_causal_estimation/05_momentum_causal_trading]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[23_knowledge_graphs/07_dynamic_kg_temporal]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[24_autonomous_agents/11_research_operator]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/03_ib_paper_trading_demo]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/09_crypto_funding_deployment_loop]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/11_fx_deployment_loop]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[25_live_trading/12_ib_basket_rebalance_demo]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/10b_stochastic_discount_factor]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/cme_futures/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/crypto_perps_funding/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/18_holdout_predictions]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/19_holdout_backtest]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/20_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/12_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/fx_pairs/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/18_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/19_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/nasdaq100_microstructure/20_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/11_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/14_risk_management]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/16_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/17_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/sp500_options/18_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/20_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/21_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_equities_panel/22_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/15_holdout_predictions]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/16_holdout_backtest]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/17_strategy_analysis]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_is_well_formed[data/equities/market/us_equities/dataset_card]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_external_blockers_are_off_the_per_commit_tier": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_undecidable_blockers_stay_a_minority": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[02_financial_data_universe/06_futures_continuous]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[03_market_microstructure/01_itch_parser]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[03_market_microstructure/10_iex_lob_reconstruction]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/cme_futures/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/cme_futures/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/crypto_perps_funding/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/crypto_perps_funding/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/18_holdout_predictions]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/19_holdout_backtest]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/17_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/18_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/fx_pairs/19_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/18_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/19_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/nasdaq100_microstructure/20_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/11_model_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/14_risk_management]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/16_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/17_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/sp500_options/18_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/20_holdout_predictions]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/21_holdout_backtest]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_equities_panel/22_strategy_analysis]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/15_holdout_predictions]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
-    },
-    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/16_holdout_backtest]": {
-      "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration0-True]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration1-False]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration2-True]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_fixture_path_evaluator_reports_both_outcomes[declaration3-False]": {
       "status": "skipped",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration0-True]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-skipblocker-exact-failure-diagnosis.log",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
       "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration2-True]": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_no_canonical_selection_reports_an_expiry_when_the_resolver_returns": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_declaration_naming_two_kinds_is_rejected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_declaration_naming_no_kind_is_rejected": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_every_decidable_kind_is_exercised_by_the_declarations": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_docker_runner_honours_a_skip_whose_blocker_still_holds": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_docker_runner_still_executes_once_the_blocker_expires": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_fixture_checkout_is_recognised": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_another_repository_and_a_plain_directory_are_not_the_fixture": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_root_that_is_not_the_fixture_is_refused": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_no_data_root_at_all_is_still_the_other_undecidable": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_a_skip_is_honoured_on_a_machine_holding_the_file": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_blockers.py::test_the_same_skip_expires_against_a_fixture_that_grew_the_file": {
       "status": "passed",
-      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
-      "method": "ordered original collection / quiet pytest progress"
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-canonical-routing-existing-cases.log",
+      "method": "explicit original node terminal status"
     },
     "tests/test_skip_recent_momentum_construction.py::test_skip_momentum_is_not_a_difference_of_returns[cme_futures/03_financial_features.py]": {
       "status": "passed",

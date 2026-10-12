@@ -1,0 +1,90 @@
+{
+  "original_inventory": 8333,
+  "current_inventory": 8328,
+  "current_counts": {
+    "passed": 7633,
+    "skipped": 471,
+    "failed": 224
+  },
+  "retired_original_identities": {
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[NOTSET]": {
+      "status": "skipped",
+      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_fold_resolution.py.log",
+      "method": "ordered original collection / quiet pytest progress",
+      "retirement_reason": "Empty parameter placeholder replaced by actual existing artifact parameterizations",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/18_holdout_predictions]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/etfs/19_holdout_backtest]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/15_holdout_predictions]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_has_not_outlived_its_reason[case_studies/us_firm_characteristics/16_holdout_backtest]": {
+      "status": "failed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/18_holdout_predictions]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/etfs/19_holdout_backtest]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/15_holdout_predictions]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/16_holdout_backtest]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/machine-learning-for-trading-original-firm-holdout-strategy-expired-skip-existing-cases.log",
+      "method": "explicit original node terminal status",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    },
+    "tests/test_skip_blockers.py::test_declaration_is_well_formed[case_studies/us_firm_characteristics/17_strategy_analysis]": {
+      "status": "passed",
+      "evidence": "docs/maintenance-2026-10-12/mlft314-final-module-processes/tests__test_skip_blockers.py.log",
+      "method": "ordered original collection / quiet pytest progress",
+      "retirement_reason": "Original parameterized guard concerned only an obsolete skip declaration removed after its original notebook genuinely executed",
+      "current_collection_contains_node": false
+    }
+  },
+  "activated_existing_parameterized_nodes": [
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[crypto_perps_funding]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[etfs]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[nasdaq100_microstructure]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_equity_option_analytics]",
+    "tests/test_fold_resolution.py::test_fold_resolution_yields_unique_join_keys[sp500_options]"
+  ],
+  "new_test_source_cases": 0,
+  "reason": "Nine parameterized skip-declaration guard identities retire with their obsolete declarations; one empty fold placeholder retires when genuine artifacts activate five parameterizations of the unchanged existing test. Retired evidence is retained separately and is not counted as a current pass."
+}

@@ -133,7 +133,7 @@ does not work on Intel Macs or in native Windows Python.
 | Image | What it covers | Platforms |
 |-------|----------------|-----------|
 | **ml4t** | All chapters (Ch01-Ch27) + all 9 case studies | amd64 + arm64 |
-| **ml4t-py312** | Ch05 NB01/03/07, Ch09 NB06/12, Ch10 NB01-03, Ch12 NB10, Ch14 NB06, Ch15 NB06 (signatory, esig, gensim, tfcausalimpact) | amd64 only |
+| **ml4t-py312** | Ch05 NB01/03/07, Ch09 NB06/12, Ch10 NB01-03, Ch12 NB10, Ch14 NB06, Ch15 NB06 (signatory, esig, tfcausalimpact) | amd64 only |
 | **benchmark** | Ch02 storage benchmarks (DuckDB, HDF5, database clients) | amd64 + arm64 |
 | **rapids** | Ch12 GBM GPU benchmark (RAPIDS cuML, LightGBM CUDA) | amd64 + NVIDIA GPU |
 
@@ -513,7 +513,6 @@ A small number of notebooks require Python 3.12 libraries not available on Pytho
 |----------|---------|---------|
 | `01_timegan`, `03_sigcwgan_signatures`, `07_dp_gan` | signatory, torch CUDA bug on 3.14 | Ch05 |
 | `06_path_signatures` | signatory, esig | Ch09 |
-| `01_word2vec`, `02_asset_embeddings`, `03_sentiment_evolution` | gensim | Ch10 |
 | `10_shap_nlp_sentiment` | torch CUDA bug + shap | Ch12 |
 | `06_conditional_autoencoder` | torch CUDA bug + shap | Ch14 |
 | `06_fed_announcement_bsts` | tfcausalimpact (TFP BSTS) | Ch15 |
@@ -735,7 +734,6 @@ A few notebooks require Docker because their dependencies have no Python 3.14 wh
 |----------|--------|-------------|
 | Ch05 `03_sigcwgan_signatures` | signatory requires Python 3.12 | py312 |
 | Ch09 `06_path_signatures` | esig requires Python 3.12 | py312 |
-| Ch10 `01-03` (word2vec, embeddings, sentiment) | gensim requires Python 3.12 | py312 |
 | Ch12 `10_shap_nlp_sentiment` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch14 `06_conditional_autoencoder` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch15 `06_fed_announcement_bsts` | tfcausalimpact requires Python 3.12 | py312 |
@@ -759,3 +757,17 @@ GPU-intensive notebooks (Ch05 GANs, Ch13 deep learning, Ch14 autoencoders, Ch21 
 
 - [Running Notebooks](running-notebooks.md) — How to execute notebooks, Papermill test mode, case study pipelines
 - [Data Guide](../data/README.md) — Download required datasets
+
+
+### Locally verified Gensim 4.4.0 native build
+
+The frozen uv environment uses the complete official Gensim 4.4.0 release commit
+`ee2642b4fa26e689ba4595067504668bc7a89016`. Its supported Cython regeneration builds
+native Python 3.14 extensions locally; the official PyPI source archive's stale
+generated C and missing regeneration source do not establish a Python 3.12-only
+requirement. This is local compatibility evidence, not upstream official support.
+Use the repository's uv source configuration and frozen lock: plain pip installation
+of this project's wheel does not carry the Git source selection. The dependency's
+PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
+The original word2vec and asset-embedding cases pass with genuine Phrasebank and
+SEC holdings inputs. Other notebooks still need their own documented prerequisites.

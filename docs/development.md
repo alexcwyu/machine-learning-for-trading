@@ -937,16 +937,17 @@ strict OHLC validation and strategy parameters remain unchanged.
 
 ### Current publication evidence and continuing work
 
-The [original per-node snapshot](maintenance/mlft-original-case-coverage.json)
-records 7,621 passes, 472 existing conditional skips and 240 failures across
-8,333 original nodes, with no unknown identities. This combines real retained
-terminal runs and platform-scoped controls; no single complete green invocation
-is claimed. [Failure details](maintenance/mlft-original-failure-explanations.json)
-preserve unresolved original cases. Genuine ETF and equity-option validation,
-allocation, risk and cost producers continue with their original parameters.
-Their locally producible artifacts remain work in progress, independently of
-paid input, ALFRED credential and image-specific runtime prerequisites.
-
+The [per-node snapshot](maintenance/mlft-original-case-coverage.json) records
+7,633 passes, 471 conditional skips and 224 failures in the current 8,328-node
+collection, with no unknown identities. The original 8,333-node inventory is
+retained separately: nine obsolete skip-guard parameter identities and one
+empty fold placeholder retire; genuine artifacts activate five parameterizations
+of the unchanged fold test. [Reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json)
+retains every retired outcome without calling it a current pass. No test source
+cases or assertions change. Composite platform/input scopes are explicit;
+[remaining failures](maintenance/mlft-original-failure-explanations.json) include
+187 genuine prerequisite gaps and 37 runtime/contract diagnoses. ETF canonical
+holdout/strategy producers are the next concrete recovery chain.
 
 ### Further genuine public fixture recovery
 
@@ -976,6 +977,16 @@ previously failing equity-option strategy analysis.
 
 The genuine Financial Phrasebank author archive supplies all four agreement
 levels (2,264/3,453/4,217/4,846 sentences). Its original CI builder copies the
-2,264 all-agreement rows verbatim. The source-declared official Python 3.12
-image and genuine NASDAQ ITCH session/parser workflows continue separately;
-these currently running checks are not reported as passing.
+2,264 all-agreement rows verbatim. The genuine complete ITCH producer and unchanged CI builder finish; full-input
+lifecycle cases pass separately from the smaller declared CI fixture. Real SEC
+13F bulk/curated producers unlock all four original word2vec/asset-embedding
+nodes and the institutional-holdings graph scopes against owned Neo4j.
+
+The current Gensim 4.4.0 official release Git source supplies the complete unchanged
+`.pyx` files. Its default supported Cython regeneration builds native CPython 3.14
+extensions, avoiding the stale generated C in the incomplete PyPI source archive.
+All 201 original algorithm/header files remain unchanged. This local compatibility
+proof is not an upstream support claim; uv source configuration is necessary and
+plain pip wheel metadata does not carry that Git route. PEP 517 build lower bounds
+do not fully lock the compiler toolchain. Fresh wheel/sdist and strict compilation
+of all 1,218 tracked Python files pass at `4736e270`.

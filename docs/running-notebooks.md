@@ -47,7 +47,6 @@ subset requires a non-default profile such as `py312`, `benchmark`, or `rapids`.
 |----------------------|--------|-------|
 | Ch05 `03_sigcwgan_signatures` | signatory (no Python 3.14 wheel) | py312 |
 | Ch09 `06_path_signatures` | signatory, esig (no Python 3.14 wheel) | py312 |
-| Ch10 `01_word2vec`, `02_asset_embeddings`, `03_sentiment_evolution` | gensim (no Python 3.14 wheel) | py312 |
 | Ch12 `10_shap_nlp_sentiment` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch14 `06_conditional_autoencoder` | torch CUDA bug on 3.14 + shap | py312 |
 | Ch15 `06_fed_announcement_bsts` | tfcausalimpact (TFP BSTS, isolated `/opt/bsts/bin/python`) | py312 |
@@ -738,3 +737,17 @@ Case study notebooks check for upstream artifacts. If a file is missing, the not
 ### Slow notebooks
 
 Some model training notebooks take several minutes. Notebooks with long runtimes print progress during execution. For faster iteration, reduce the data scope in the parameters cell at the top of each notebook.
+
+
+### Locally verified Gensim 4.4.0 native build
+
+The frozen uv environment uses the complete official Gensim 4.4.0 release commit
+`ee2642b4fa26e689ba4595067504668bc7a89016`. Its supported Cython regeneration builds
+native Python 3.14 extensions locally; the official PyPI source archive's stale
+generated C and missing regeneration source do not establish a Python 3.12-only
+requirement. This is local compatibility evidence, not upstream official support.
+Use the repository's uv source configuration and frozen lock: plain pip installation
+of this project's wheel does not carry the Git source selection. The dependency's
+PEP 517 build requirements are lower bounds, not a fully locked build toolchain.
+The original word2vec and asset-embedding cases pass with genuine Phrasebank and
+SEC holdings inputs. Other notebooks still need their own documented prerequisites.

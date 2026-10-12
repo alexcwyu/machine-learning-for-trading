@@ -1,6 +1,8 @@
 # MLFT validation — 2026-10-12
 
-The original inventory contains **8,333 existing test nodes in 430 modules**. Validation combines retained terminal module results and exact original-node recovery runs. It is not a claim that one full-suite invocation passed. The authoritative per-node record is [original case coverage](maintenance/mlft-original-case-coverage.json); unresolved identities and genuine prerequisites are recorded in [failure explanations](maintenance/mlft-original-failure-explanations.json). The current source publication snapshot reconciles all original identities: **7,621 pass, 472 original conditional skips and 240 fail, with zero unverified nodes**. These are composite results across actual input/platform scopes. The unresolved failures remain visible; genuine ETF and equity-option validation/backtest/allocation/risk/cost producers are currently running with unchanged original parameters. Locally producible artifacts are not classified as externally unavailable.
+The original inventory contains **8,333 existing test nodes in 430 modules**. The current dynamic collection contains **8,328 identities: 7,633 pass, 471 conditional skips and 224 fail, with zero unverified current nodes**. Results combine retained terminal runs and exact-node recovery across actual input/platform scopes; no single full-suite green invocation is claimed. [Per-node coverage](maintenance/mlft-original-case-coverage.json), [failure explanations](maintenance/mlft-original-failure-explanations.json) and [inventory reconciliation](maintenance/mlft-original-current-inventory-reconciliation.json) preserve the evidence.
+
+Nine obsolete skip-declaration guard parameter identities and one empty fold placeholder retire from the original collection. Genuine artifacts activate five parameterizations of the unchanged existing fold test. Historical outcomes of all ten retired identities remain separate; none is relabeled as a current pass. No test source cases or assertions were removed or added. The 224 current failures comprise 187 missing genuine input/artifact prerequisites and 37 runtime or contract failures requiring diagnosis. Their modules are: chapter notebooks 85, Docker notebooks 90, case studies 44, model registry two, artifact specs one, backtest presets one and fixture-population backtests one. Locally producible prerequisites remain actionable work.
 
 No cases were added. All original numeric/hash literals and CAE model version 1 are preserved. The five previously modified identity files have been restored byte-for-byte from the original HEAD. Earlier results obtained with changed pins do not validate those original contracts.
 
@@ -40,7 +42,7 @@ The earlier 114.94 MiB single-file failure and lossless encoding controls (112.6
 
 ## Build and remaining scope
 
-The latest main `uv sync --frozen --all-groups --all-extras`, wheel, source distribution and source `compileall` pass. Focused source Ruff checks pass. Existing conditional skips retain their original blocker logic.
+The current source `4736e270` passes fresh wheel/source-distribution builds (1.34 seconds) and strict compilation of all 1,218 Git-tracked Python files (1.71 seconds). The frozen all-groups/all-extras environment contains 541 packages. Focused source Ruff checks pass. Genuine completed prerequisites permit obsolete skip declarations to retire; remaining conditional skips retain their blocker logic.
 
 Remaining original notebook nodes execute with their declared parameters and prerequisites. The original model registry fixture explicitly reads production case-study directories, so it must receive actual matching producer artifacts rather than merely an environment path. Missing paid CME/DataBento and US-equity/Quandl inputs, ALFRED API access, private test-data checkout access, model populations, specialized containers/services and native platform requirements are reported separately. A missing artifact is not called privately unobtainable without proving its genuine public producer prerequisites.
 
@@ -90,7 +92,7 @@ the previous seed view is retained separately.
 
 The original Chapter 16 signal-method comparison and its Docker notebook case
 now both pass after genuine crypto canonical producers complete. The repeated
-Chapter 11/12 consumers advance to absent US firm-characteristic model populations.
+Chapter 11/12 consumers subsequently advance through genuine firm populations to absent FX populations.
 Other latent-factor/DL/causal and downstream allocation/cost populations still
 require their actual producers; the current failed-node record distinguishes
 these from credentialed inputs and image-specific native prerequisites.
@@ -124,6 +126,15 @@ previously failing equity-option strategy analysis.
 
 The genuine Financial Phrasebank author archive supplies all four agreement
 levels (2,264/3,453/4,217/4,846 sentences). Its original CI builder copies the
-2,264 all-agreement rows verbatim. The source-declared official Python 3.12
-image and genuine NASDAQ ITCH session/parser workflows continue separately;
-these currently running checks are not reported as passing.
+2,264 all-agreement rows verbatim. The complete genuine NASDAQ ITCH session is 5,597,158,940 bytes. Its unchanged official Rust parser processes the full session; the original CI builder retains its prescribed first 500 A/P messages per five symbols plus five R rows. Two lifecycle cases additionally pass against the complete production input, without enlarging the CI budget. Four remaining microstructure cases require real DataBento MBO, a distinct input.
+
+The original SEC 13F bulk quarter provides 2,863,210 canonical holdings; the original CI builder selects its declared 600 managers, retaining 1,327,852 whole positions. The actual ten-institution producer supplies 25,414 edges and 8,311 stock features. The four original word2vec/asset-embedding nodes now pass across retained native recovery runs. Original institutional-holdings chapter/Docker scopes pass against the genuine owned Neo4j service. The supply-graph workflow still requires its actual SEC corpus and Qwen extraction.
+
+The original firm strategy analysis executes all 70 cells successfully after verbatim copies of 40 tracked release benchmark files. The corrected canonical route and expired-declaration guard scope records 82 passes and seven existing skips. ETF holdout predictions/backtests and strategy analysis are the next concrete producer chain for the remaining live-trading winner prerequisite; equity-option holdout registry and ETF SDF assertions remain separate diagnoses.
+
+
+## Current Gensim native source route
+
+Gensim 4.4.0 remains the current release. Its PyPI source archive contains stale generated C incompatible with Python 3.14 and omits one `.pyx` file needed for complete regeneration. The lock instead selects the complete official release commit `ee2642b4fa26e689ba4595067504668bc7a89016`. Its supported Cython regeneration builds genuine native CPython 3.14 extensions; 201 original algorithm/header files remain unchanged. No compiler flag or numerical algorithm changes are used. All four original text-node scopes pass after genuine Phrasebank and 13F recovery. The unchanged immutable guard scope passes 53 cases in 4.91 seconds.
+
+This is locally verified Python 3.14 compatibility, not a claim of upstream official support. The Git source selection belongs to uv configuration/lock data and is not conveyed by plain pip installation of this project's wheel metadata. PEP 517 build requirements are lower bounds rather than a fully locked compiler toolchain. The original official amd64 Python 3.12 image remains available, but its four investigated notebook runs failed kernel startup under this host's emulation; those terminal failures remain recorded.
