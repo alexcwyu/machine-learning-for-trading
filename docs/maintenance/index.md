@@ -48,7 +48,9 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | genuine-current-homebrew-omp-image-inventory | 0 | 2.81s | `env DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib OMP_NUM_THREADS=1 .venv/bin/python -c import lightgbm, sklearn, torch; from threadpoolctl import threadpool_info; print(threadpool_info()); print(torch.mm(torch.ones((8,8)),torch.ones((8,8))))` |
 | genuine-lossless-financial-storage-control | 0 | 7.64s | `env POLARS_MAX_THREADS=2 .venv/bin/python ../docs/maintenance-2026-10-12/mlft-lossless-financial-storage-control.py` |
 | genuine-omp-loader-runtime-control | 0 | 4.85s | `env DYLD_LIBRARY_PATH=<workspace>/machine-learning-for-trading/.venv/lib/python3.14/site-packages/torch/lib OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -c import lightgbm, sklearn, torch; from threadpoolctl import threadpool_info; print(threadpool_info()); from darts.models import RNNModel; print(RNNModel); print(torch.mm(torch.ones((8,8)),torch.ones((8,8))))` |
+| genuine-public-firm-characteristics-original-downloader | 0 | 115.66s | `.venv/bin/python data/equities/firm_characteristics/download.py` |
 | genuine-yahoo-producer-adapter-control | 0 | 1.07s | `.venv/bin/python <workspace>/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py` |
+| genuine-yahoo-producer-adapter-reviewed-control | 0 | 1.25s | `.venv/bin/python <workspace>/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py` |
 | inspect-original-real-ci-fred-requirements | 1 | 0.26s | `.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset fred_macro` |
 | integrated-published-storage-original-cases | 0 | 9.34s | `env ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-shards-controls/fixture/data DYLD_LIBRARY_PATH=/opt/homebrew/opt/libomp/lib .venv/bin/python -m pytest -q tests/test_fixture_file_size_ceiling.py tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs tests/test_seeded_output_dir.py tests/test_modeling_input_lineage.py tests/test_holdout_cv_derivation.py tests/test_create_experiment.py tests/test_research_workspace.py tests/test_artifact_audit_names_its_scope.py tests/test_fixture_registry_prune.py tests/test_registry_lineage.py tests/test_artifact_digest_encoding.py --tb=short` |
 | integrated-storage-and-provider-final-build | 0 | 1.42s | `uv build` |
@@ -76,7 +78,9 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | original-crypto-canonical-model-producers | 0 | 25.61s | `.venv/bin/python <workspace>/docs/maintenance-2026-10-12/tools/generate-mlft-original-crypto-model-fixtures.py` |
 | original-etf-equality-contracts | 1 | 12.18s | `.venv/bin/python -m pytest -vv tests/test_etf_baseline_parity.py tests/test_chapter_notebooks.py::test_chapter_notebook[18_transaction_costs::12_commission_slippage_comparison.py] tests/test_docker_notebooks.py::test_docker_notebook[18_transaction_costs::12_commission_slippage_comparison.py]` |
 | original-etf-fresh-baseline-guards | 0 | 4.55s | `env ML4T_DATA_PATH=<workspace>/.runtime/maintenance-2026-10-12/mlft-etf-exact-provider/data .venv/bin/python -m pytest -vv tests/test_etf_baseline_parity.py` |
+| original-public-firm-characteristics-ci-builder | 0 | 2.09s | `.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset firm_characteristics` |
 | original-published-fixture-ceiling-final | 0 | 0.76s | `.venv/bin/python -m pytest -vv tests/test_fixture_file_size_ceiling.py` |
+| original-skipblocker-exact-failure-diagnosis | 0 | 5.1s | `.venv/bin/python -m pytest -vv tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]` |
 | prepare-original-official-crypto-funding-settlements | 0 | 16.74s | `.venv/bin/python case_studies/crypto_perps_funding/funding_data.py` |
 | prepare-original-public-cot-all-default-products-years | 0 | 7.37s | `.venv/bin/python data/futures/positioning/cot_download.py` |
 | prepare-original-public-crypto-all-configured-inputs | 0 | 292.82s | `.venv/bin/python data/crypto/market/download.py` |
@@ -92,6 +96,8 @@ Original logs remain in the workspace maintenance evidence. Tracked source hashe
 | python314-lock | 0 | 9.85s | `uv lock --upgrade --python 3.14.8` |
 | python314-sync | 0 | 153.54s | `uv sync --all-groups --all-extras --python 3.14.8` |
 | python315-lock | 1 | 4.56s | `uv lock --upgrade --python 3.15` |
+| reviewed-finite-provider-guard-build | 0 | 1.5s | `uv build` |
+| reviewed-finite-provider-guard-source-compile | 0 | 0.05s | `.venv/bin/python -m compileall -q data/etfs/market/download.py` |
 | root-independent-published-storage-existing-cases | 0 | unknowns | `<workspace>/machine-learning-for-trading/.venv/bin/python -m pytest tests/test_fixture_file_size_ceiling.py tests/test_artifact_specs.py::test_microstructure_pilot_helpers_preserve_current_outputs tests/test_seeded_output_dir.py tests/test_modeling_input_lineage.py tests/test_holdout_cv_derivation.py tests/test_create_experiment.py tests/test_research_workspace.py tests/test_artifact_audit_names_its_scope.py tests/test_fixture_registry_prune.py tests/test_registry_lineage.py tests/test_artifact_digest_encoding.py --tb=short` |
 | ruff-date-symbol-literals | 0 | 0.12s | `.venv/bin/python -m ruff check data/equities/loader.py case_studies/etfs/04_model_based_features.py` |
 | ruff-genuine-date-symbol-source | 0 | 0.13s | `.venv/bin/python -m ruff check data/equities/loader.py case_studies/etfs/04_model_based_features.py` |

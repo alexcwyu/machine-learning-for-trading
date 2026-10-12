@@ -254,9 +254,21 @@
 <td><code>env DYLD_LIBRARY_PATH=&lt;workspace&gt;/machine-learning-for-trading/.venv/lib/python3.14/site-packages/torch/lib OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -c import lightgbm, sklearn, torch; from threadpoolctl import threadpool_info; print(threadpool_info()); from darts.models import RNNModel; print(RNNModel); print(torch.mm(torch.ones((8,8)),torch.ones((8,8))))</code></td>
 </tr>
 <tr>
+<td>genuine-public-firm-characteristics-original-downloader</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">115.66s</td>
+<td><code>.venv/bin/python data/equities/firm_characteristics/download.py</code></td>
+</tr>
+<tr>
 <td>genuine-yahoo-producer-adapter-control</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.07s</td>
+<td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py</code></td>
+</tr>
+<tr>
+<td>genuine-yahoo-producer-adapter-reviewed-control</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.25s</td>
 <td><code>.venv/bin/python &lt;workspace&gt;/docs/maintenance-2026-10-12/tools/mlft-real-yahoo-ohlc-adapter-control.py</code></td>
 </tr>
 <tr>
@@ -422,10 +434,22 @@
 <td><code>env ML4T_DATA_PATH=&lt;workspace&gt;/.runtime/maintenance-2026-10-12/mlft-etf-exact-provider/data .venv/bin/python -m pytest -vv tests/test_etf_baseline_parity.py</code></td>
 </tr>
 <tr>
+<td>original-public-firm-characteristics-ci-builder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.09s</td>
+<td><code>.venv/bin/python tests/create_test_data.py --source data --output ../.runtime/maintenance-2026-10-12/mlft-fixture/data --dataset firm_characteristics</code></td>
+</tr>
+<tr>
 <td>original-published-fixture-ceiling-final</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.76s</td>
 <td><code>.venv/bin/python -m pytest -vv tests/test_fixture_file_size_ceiling.py</code></td>
+</tr>
+<tr>
+<td>original-skipblocker-exact-failure-diagnosis</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5.1s</td>
+<td><code>.venv/bin/python -m pytest -vv tests/test_skip_blockers.py::test_registry_evaluators_report_both_outcomes[declaration1-False]</code></td>
 </tr>
 <tr>
 <td>prepare-original-official-crypto-funding-settlements</td>
@@ -516,6 +540,18 @@
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4.56s</td>
 <td><code>uv lock --upgrade --python 3.15</code></td>
+</tr>
+<tr>
+<td>reviewed-finite-provider-guard-build</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.5s</td>
+<td><code>uv build</code></td>
+</tr>
+<tr>
+<td>reviewed-finite-provider-guard-source-compile</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.05s</td>
+<td><code>.venv/bin/python -m compileall -q data/etfs/market/download.py</code></td>
 </tr>
 <tr>
 <td>root-independent-published-storage-existing-cases</td>
@@ -1082,5 +1118,4 @@
 <td><code>uv pip install --python .venv/bin/python --dry-run torch&lt;2.14.1</code></td>
 </tr>
 </tbody>
-</table></main>
-</body></html>
+</table></main></body></html>
